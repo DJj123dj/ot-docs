@@ -38,7 +38,7 @@ const config = {
             "current":{
                 label:"🚧 Dev Version",
                 path:"current",
-                badge:true,
+                badge:false,
                 banner:"unreleased"
             },
           },
@@ -185,6 +185,9 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+    scripts:[
+        "/js/sidebarbadges.js"
+    ]
 };
 
 module.exports = config;

@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer").themes.github;
+const darkCodeTheme = require("./openticket.theme");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -31,7 +31,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:'https://github.com/DJj123dj/ot-docs',
+          editUrl:'https://github.com/DJj123dj/ot-docs/blob/main',
           includeCurrentVersion:true,
           lastVersion: 'current',
           versions:{
@@ -40,7 +40,7 @@ const config = {
                 path:"current",
                 badge:false,
                 banner:"unreleased"
-            },
+            }
           },
         },
         blog: {
@@ -183,10 +183,13 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages:["json","diff"]
       },
     }),
     scripts:[
-        "/js/sidebarbadges.js"
+        "/js/sidebarbadges.js",
+        "/js/twemoji.js",
+        "https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
     ]
 };
 

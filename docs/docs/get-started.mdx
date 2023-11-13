@@ -1,0 +1,264 @@
+---
+title: 🏁 Getting Started
+description: How to get started with Open Ticket!
+---
+import {ColorText,GoodImage,LinkBlock} from "@site/src/components/openticket.jsx"
+
+:::info Discord Bot Knowledge
+It is highly recommended that you know some **basic principles** about `discord bots` & `node.js` before working with Open Ticket!
+This documentation won't explain how to invite your bot or how to install node.js, but we will provide some basic info about hosting this bot on different platforms.
+:::
+
+## Installation
+You can install Open Ticket from [github](https://www.github.com/DJj123dj/open-ticket) by **cloning** or **downloading it as a ZIP file**. We recommend downloading it from the official repository, because other versions may be modified! When downloading as a ZIP file, you need to extract it ofcourse!
+
+<GoodImage src="/img/docs/download.png" size="60%"/>
+
+### Libraries
+Open Ticket needs some npm libraries to work! You can install these all at once with the following command:
+```
+npm install
+```
+
+## Bot Setup
+### creation
+Before you can use Open Ticket, you need to create a discord bot! You can create one at the [discord developer portal](https://discord.com/developers/applications). Open Ticket also needs some **permissions** & **intents** to function properly. These need to be configured in the discord developer portal!
+
+<GoodImage src="/img/docs/app_create.png" size="60%"/>
+
+### permissions
+When inviting your bot to a discord server, we recommend giving your bot the `Administrator` permission! It is also possible to define your own permissions, but it can affect the bot's ability to do some things.
+
+![image](/img/docs/app_permissions.png)
+
+### intents
+Every discord bot also needs some **Privileged Gateaway Intents**. These intents give the bot some extra permissions that may be important for some things. The `Message Content` intent allows the bot to read text messages in the server. This is the most important one, because it is needed for some commands to work properly!
+
+![image](/img/docs/app_intents.png)
+
+## Configuration
+Open Ticket has 2 config files! `config.json` and `transcriptconfig.json`! The transcript config is not that important for now, but can later be used to configure HTML transcripts.
+However, **the main config is very important** for many things in the bot! We will focus on the most important parts from `config.json` for now!
+
+:::tip
+If you need a more detailed explaination about all the config variables, visit this page:
+**[TEST](https://www.dj-dj.be)**
+:::
+
+### Main Settings
+These are the main settings or the most important ones. You can find them at the top of your `config.json` file.
+They include the main color for embeds, the server ID, the bot token & more!
+In the code block below, you can find some notes about what every variable does!
+
+```json title="config.json"
+"color":"#f8ba00", //the main embed color
+"serverId":"12345678910", //your server id
+"token":{
+    "value":"insert your bot token here", //your bot token
+    "fromENV":false //load your token from the ENV
+},
+"adminRoles":["role id 1","role id 2"], //the role ids from your admin team (splitted by comma's)
+"prefix":"!ticket ", //the prefix for text-based commands (oes not apply to slash commands)
+"languageFile":"english", //select one of the available languages (visit the ./language/ folder)
+
+"status":{
+    "enabled":true, //enable the bot status
+    "type":"PLAYING", //the status type: PLAYING, WATCHING or LISTENING (CUSTOM isn't available yet)
+    "text":"!ticket help" //the status text
+},
+```
+
+### System Settings
+The system settings are settings related to the entire system. Here you can configure some message settings & limits for users.
+
+```json title="config.json"
+"system":{
+    "maxAmountOfTickets":3, //the maximum amount of tickets per user
+    "dmMessages":false, //send a DM message to users when their ticket changes
+
+    "memberRole":"member role (or empty)", //the role ID that doesn't have access to tickets!
+    "closeMode":"adminonly OR normal (select one!)", //can everyone or admins close tickets?
+
+    "transcripts":"...", //you can find everything about transcripts in transcriptconfig.json!
+
+    "showSlashcmdsInHelp":false, //show slash commands in the help menu instead of the default prefix.
+    "answerInEphemeralOnOpen":true //answer in ephemeral when you create a ticket (or it will be visible to everyone)
+},
+```
+
+### Option Settings (buttons) {#option-settings}
+The options are the **variables that create the buttons** in your ticket bot. Every button can be configured as much as you want!
+There are 3 types: `ticket`, `website` & `role`. We are going to focus on the `ticket` type first! The other ones are less important buttons.
+
+In the code block below, you can find an example of a `ticket` option! It is everything between the `{...}`.
+There are also other types like `website` & `role`, but you can **remove these if you don't need them**!
+
+:::warning every option needs a unique id!
+Every option needs a unique ID. You can configure this in the `"id":"..."` variable! You will need this ID later to add the button to the embed!
+:::
+:::tip
+To create multiple `ticket` options, you need to copy the entire part **<ColorText color="green">between & together with the curly brackets</ColorText>**!
+Then, you need to paste it **<ColorText color="green">after the original</ColorText>**, but separate it with a comma!
+Make sure that they don't have the same ID or the bot will error!
+:::
+
+If you are ready with the options, you can move on to the **[Message Settings](#message-settings)** below for creating embeds!
+
+```json title="config.json"
+"options":[
+    {
+        "id":"general", //the unique ID for each option
+        "name":"Question", //the ticket name
+        "description":"Create this ticket if you have a question.", //the ticket description
+        "icon":"🎫", //the button emoji (leave empty if none)
+        "label":"question", //the button label (leave empty if none)
+        "type":"ticket", //the option type ("ticket" in this case!)
+
+        "color":"gray", //the button color (gray, red, blue or green)
+        "adminroles":["role id"], //the role ids from your admin team but for this ticket only!
+        "readonlyAdminroles":["role id"], //the role ids that can only read tickets!
+        "channelprefix":"question-", //the channel prefix (example: "question-" => "#question-username")
+        "category":"category id (or leave empty)", //the category for this ticket
+        "message":"You created a ticket!", //the message sent to the user in DM on ticket creation
+        "enableDmOnOpen":true, //enable the DM message above
+        "ticketmessage":"Our team will help you soon", //this will be the embed description in this ticket
+
+        //add an embed thumbnail in this ticket
+        "thumbnail":{
+            "enable":false,
+            "url":"https://www.example.com/catmemes/cat.png"
+        },
+        //add an embed image in this ticket
+        "image":{
+            "enable":false,
+            "url":"https://www.dj-dj.be/wp-content/uploads/2022/09/pfp-cropped.png"
+        },
+
+        //the category to move to when this ticket gets closed
+        "closedCategory":{
+            "enable":false,
+            "id":"category id"
+        },
+
+        //automatically close this ticket after ...h of inactivity
+        "autoclose":{
+            "enable":false,
+            "inactiveHours":24
+        },
+
+        //who do you want to ping when this ticket is created
+        "ping":{
+            "@here":true,
+            "@everyone":false,
+            "custom":{
+                "enable":false,
+                "roleId":"012345678910"
+            }
+        }
+        
+    }
+],
+```
+
+### Message Settings (embeds) {#message-settings}
+The messages are the **variables that create the embeds** in your ticket bot.
+Every embed can be configured as much as you want!
+The embed can be spawned in discord with the `/message <id>` command.
+
+To add a button/option to the embed, you need to add the button id to the `"options":[...]` list inside the message!
+The multiple options are splitted by a comma in the list!
+
+:::warning every message needs a unique id!
+Every message needs a unique ID. You can configure this in the `"id":"..."` variable! You will need this for the `/message <id>` command!
+:::
+:::tip
+To create multiple messages, you need to copy the entire part **<ColorText color="green">between & together with the curly brackets</ColorText>**!
+Then, you need to paste it **<ColorText color="green">after the original</ColorText>**, but separate it with a comma!
+Make sure that they don't have the same ID or the bot will error!
+:::
+
+If you are ready with the messages, you can move on to **[Testing](#testing)**!
+
+```json title="config.json"
+"messages":[
+    {
+        "id":"1", //the unique ID for each embed/message
+        "name":"Choose Your Ticket", //the embed title
+        "description":"You can click one of the buttons below!", //the embed description
+        "dropdown":false, //create a dropdown instead of buttons
+
+        //add a footer to the embed
+        "enableFooter":false,
+        "footer":"Open Ticket v3.4.4 - I'm a footer!",
+
+        //add a footer image to the embed
+        "enableFooterImage":false,
+        "footerImage":"https://www.example.com/catmemes/cat.png",
+
+        //add a thumbnail to the embed
+        "enableThumbnail":false,
+        "thumbnail":"https://www.example.com/catmemes/cat.png",
+
+        //add an image to the embed
+        "enableImage":false,
+        "image":"https://www.example.com/catmemes/cat.png",
+
+        //set a custom color for this embed only
+        "enableCustomColor":false,
+        "color":"#ffffff",
+
+        //add the option ids here to show them below the embed!
+        "options":["general","apply"],
+        
+        "other":{
+            "enableTicketExplaination":true, //enable the default ticket explaination
+            "enableMaxTicketsWarning":true, //enable the maximum amount of tickets warning
+            
+            //set a custom dropdown placeholder
+            "customDropdownPlaceholder":{
+                "enable":false,
+                "text":"Choose a ticket"
+            },
+
+            //change the category text in the default ticket explaination
+            "customCategoryText":{
+                "enable":false,
+                "text":"choose a category:"
+            },
+
+            //change the title of the embed into a URL
+            "embedTitleURL":{
+                "enable":false,
+                "url":"https://www.dj-dj.be/projects/open-ticket"
+            }
+        }
+    }
+]
+```
+
+## Testing
+Now you've configured the bot, you can start it with the following command:
+```
+npm start
+```
+
+### On Success
+When you have configured your `config.json` correctly, you will see a startup screen with the Open Ticket logo displayed in yellow. It will also show some logs & statistics.
+<GoodImage src="/img/docs/console_startscreen.png" size="80%"/>
+### On Failiure
+When you made a mistake, the bot will tell you what's wrong with your config. Try to follow the instructions from the errors as good as possible. When you don't find the solution, you can always join our [discord server](https://discord.dj-dj.be)!
+<GoodImage src="/img/docs/console_checkerjs.png" size="80%"/>
+
+### 🎉 Now you can try out the bot!{#tryout}
+Use the `/help` command for a guide of all available commands. Use the `/message <id>` command to generate an embed with buttons.
+
+<GoodImage src="/img/docs/command_help.png" size="60%"/>
+
+### Advanced Guides
+Also make sure to check out these advanced guides!
+This way, you can get even more out of Open Ticket!
+<LinkBlock url="https://www.dj-dj.Be" isdoc="false" mode="emoji" emoji="🌐" name="Hosting Open Ticket" description="A guide about hosting this bot 24/7!"/>
+<LinkBlock url="https://www.dj-dj.Be" isdoc="false" mode="emoji" emoji="📄" name="HTML Transcripts" description="How to set-up HTML transcripts?"/>
+<LinkBlock url="https://www.dj-dj.Be" isdoc="false" mode="emoji" emoji="⚙️" name="Config.json In Detail" description="Every variable of config.json explained in the best way possible!"/>
+<LinkBlock url="https://www.dj-dj.Be" isdoc="false" mode="emoji" emoji="✅" name="Reaction Roles & Websites" description="Discover the other option types!"/>
+<LinkBlock url="https://www.dj-dj.Be" isdoc="false" mode="emoji" emoji="🧑‍💻" name="Creating Plugins" description="Are you interested in creating plugins for Open Ticket?"/>

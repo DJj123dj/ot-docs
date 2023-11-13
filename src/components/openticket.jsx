@@ -80,3 +80,79 @@ export function ColorText(params){
         </span>
     )
 }
+
+export function LinkBlock(params){
+    if (params.url){
+        var linkClasses = "otdocs-linkblock bg-[#222] w-full h-20 my-3 border-[#606770] border-[1px] border-solid rounded-lg flex items-center hover:no-underline hover:scale-[102%] hover:border-[--ifm-color-primary] hover:border-2 transition-all duration-200"
+    }else{
+        var linkClasses = "otdocs-linkblock bg-[#222] w-full h-20 my-3 border-[#606770] border-[1px] border-solid rounded-lg flex items-center hover:no-underline"
+    }
+
+    if (params.url &&  params.isdoc == "true"){
+        var linkUrl = "/docs/"+document.documentElement.getAttribute("docs-path")+"/"+params.url
+    }else{
+        var linkUrl = params.url
+    }
+
+    const target = (params.url) ? ((params.url.startsWith("/") || params.url.startsWith("https://")) ? "_blank" : "_self") : "_self"
+
+    if (params.mode == "image" && params.image){
+        return (
+            <a url={params.url} href={linkUrl} target={target} className={linkClasses}>
+                <img className="w-12 h-12 m-0 mx-2" src={params.image}/>
+                <div className='flex flex-col justify-center'>
+                    <p className="m-0 text-white font-bold text-xl">{params.name}</p>
+                    <p className="m-0 text-neutral-400">{params.description}</p>
+                </div>
+            </a>
+        )
+    }else if (params.mode == "emoji" && params.emoji){
+        return (
+            <a url={params.url} href={linkUrl} target={target} className={linkClasses}>
+                <p className="text-5xl m-0 mx-2">{params.emoji}</p>
+                <div className='flex flex-col justify-center'>
+                    <p className="m-0 text-white font-bold text-xl">{params.name}</p>
+                    <p className="m-0 text-neutral-400">{params.description}</p>
+                </div>
+            </a>
+        )
+    }else{
+        return (<p className='text-red-500'>[INVALID LinkBlock Element!]</p>)
+    }
+}
+
+export function GoodImage(params){
+    if (!params.src) return (<p className='text-red-500'>[INVALID GoodImage Element!]</p>)
+    const size = (params.size) ? params.size : "100%"
+    const src = params.src
+
+    if (size == "100%"){
+        var classes = `w-full`
+    }else if (size == "90%"){
+        var classes = `max-lg:w-full w-[90%]`
+    }else if (size == "80%"){
+        var classes = `max-lg:w-full w-[80%]`
+    }else if (size == "70%"){
+        var classes = `max-lg:w-full w-[70%]`
+    }else if (size == "60%"){
+        var classes = `max-lg:w-full w-[60%]`
+    }else if (size == "50%"){
+        var classes = `max-lg:w-full w-[50%]`
+    }else if (size == "40%"){
+        var classes = `max-lg:w-full w-[40%]`
+    }else if (size == "30%"){
+        var classes = `max-lg:w-full w-[30%]`
+    }else if (size == "20%"){
+        var classes = `max-lg:w-full w-[20%]`
+    }else if (size == "10%"){
+        var classes = `max-lg:w-full w-[10%]`
+    }else if (size == "75%"){
+        var classes = `max-lg:w-full w-[75%]`
+    }else if (size == "25%"){
+        var classes = `max-lg:w-full w-[25%]`
+    }else{
+        var classes = `w-full`
+    }
+
+    return (<img src={src} className={classes}></img>)
+}

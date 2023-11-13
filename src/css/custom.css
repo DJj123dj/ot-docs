@@ -12,7 +12,7 @@
   --ifm-color-primary-lighter: #ffc71e;
   --ifm-color-primary-lightest: #ffd043;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: #40404088 !important;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -74,4 +74,11 @@
     display: flex;
     height: 24px;
     width: 24px;
+}
+
+img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
 }

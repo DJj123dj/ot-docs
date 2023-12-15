@@ -1,0 +1,35 @@
+---
+title: /help
+description: Show the help menu in Open Ticket
+---
+import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+
+### General Information
+- **Permissions:** 🟢 Everyone
+- **Usable Locations:** 🟢 Everywhere (DM, server & ticket)
+- **Text Command:** `!ticket help`
+- **Slash Command:** `/help`
+
+## Quick overview
+This is probably the first command you will run when working with open ticket.
+It explains all the other commands inside of Open Ticket!
+But now that you are here in the documentation, you can better check everything here!
+
+<GoodImage src="/img/docs/command_help_slash.png" size="50%"></GoodImage>
+
+## Config
+These are the <InlineLink url="category/config" isdoc="true">configurable settings</InlineLink> for this command.
+Some of them will make the command look different!
+Other ones can disable the command or change how it works!
+
+### <LabelText color="blue">config.json</LabelText> system/showSlashcmdsInHelp {#option-show-slashcmds}
+Using `system/showSlashcmdsInHelp`, you can change the way commands are showed in the help menu!
+You can choose for showing the **slash commands** or by showing the **text commands**
+
+- Image 1: `true`
+- Image 2: `false` 
+
+<FlexHorizontal mode="left">
+    <GoodImage src="/img/docs/command_help_slash.png" size="40%"></GoodImage>
+    <GoodImage src="/img/docs/command_help_text.png" size="40%"></GoodImage>
+</FlexHorizontal>

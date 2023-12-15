@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from '@docusaurus/Link';
 
 export function LabelText(params){
     //color selector
@@ -35,6 +36,7 @@ export function LabelText(params){
             color:"#e5e5e5",
             paddingLeft:"0.3em",
             paddingRight:"0.3em",
+            paddingBottom:"0.1em",
             borderRadius:"0.3em",
             fontWeight:"bold"
         }}>
@@ -121,6 +123,16 @@ export function LinkBlock(params){
     }
 }
 
+export function InlineLink(params){
+    if (params.url && params.isdoc == "true"){
+        var linkUrl = "/docs/"+document.documentElement.getAttribute("docs-path")+"/"+params.url
+    }else{
+        var linkUrl = params.url
+    }
+
+    return (<Link to={linkUrl}>{params.children}</Link>)
+}
+
 export function GoodImage(params){
     if (!params.src) return (<p className='text-red-500'>[INVALID GoodImage Element!]</p>)
     const size = (params.size) ? params.size : "100%"
@@ -155,4 +167,17 @@ export function GoodImage(params){
     }
 
     return (<img src={src} className={classes}></img>)
+}
+
+export function FlexHorizontal(params){
+    /**@type {"center"|"left"|"right"} */
+    const mode = (params.mode == "center" || params.mode == "left" || params.mode == "right") ? params.mode : "center"
+    
+    if (mode == "center"){
+        return (<div className="flex gap-4 w-full justify-center max-lg:flex-col">{params.children}</div>)
+    }else if (mode == "left"){
+        return (<div className="flex gap-4 w-full justify-start max-lg:flex-col">{params.children}</div>)
+    }else if (mode == "right"){
+        return (<div className="flex gap-4 w-full justify-end max-lg:flex-col">{params.children}</div>)
+    }
 }

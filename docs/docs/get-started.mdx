@@ -1,8 +1,9 @@
 ---
 title: 🏁 Getting Started
 description: How to get started with Open Ticket!
+sidebar_position: 1
 ---
-import {ColorText,GoodImage,LinkBlock} from "@site/src/components/openticket.jsx"
+import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
 
 :::info Discord Bot Knowledge
 It is highly recommended that you know some **basic principles** about `discord bots` & `node.js` before working with Open Ticket!
@@ -12,7 +13,7 @@ This documentation won't explain how to invite your bot or how to install node.j
 ## Installation
 You can install Open Ticket from [github](https://www.github.com/DJj123dj/open-ticket) by **cloning** or **downloading it as a ZIP file**. We recommend downloading it from the official repository, because other versions may be modified! When downloading as a ZIP file, you need to extract it ofcourse!
 
-<GoodImage src="/img/docs/download.png" size="60%"/>
+<GoodImage src="/img/docs/download.png" size="50%"/>
 
 ### Libraries
 Open Ticket needs some npm libraries to work! You can install these all at once with the following command:
@@ -24,7 +25,7 @@ npm install
 ### creation
 Before you can use Open Ticket, you need to create a discord bot! You can create one at the [discord developer portal](https://discord.com/developers/applications). Open Ticket also needs some **permissions** & **intents** to function properly. These need to be configured in the discord developer portal!
 
-<GoodImage src="/img/docs/app_create.png" size="60%"/>
+<GoodImage src="/img/docs/app_create.png" size="50%"/>
 
 ### permissions
 When inviting your bot to a discord server, we recommend giving your bot the `Administrator` permission! It is also possible to define your own permissions, but it can affect the bot's ability to do some things.
@@ -42,7 +43,7 @@ However, **the main config is very important** for many things in the bot! We wi
 
 :::tip
 If you need a more detailed explaination about all the config variables, visit this page:
-**[TEST](https://www.dj-dj.be)**
+**<InlineLink url="category/config" isdoc="true">everything about config.json</InlineLink>**
 :::
 
 ### Main Settings
@@ -252,7 +253,7 @@ When you made a mistake, the bot will tell you what's wrong with your config. Tr
 ### 🎉 Now you can try out the bot!{#tryout}
 Use the `/help` command for a guide of all available commands. Use the `/message <id>` command to generate an embed with buttons.
 
-<GoodImage src="/img/docs/command_help.png" size="60%"/>
+<GoodImage src="/img/docs/command_help.png" size="50%"/>
 
 ### Advanced Guides
 Also make sure to check out these advanced guides!

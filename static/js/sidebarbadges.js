@@ -16,9 +16,9 @@ const addPageBadge = (element,color,text) => {
     spanElement.style.paddingRight = "5px"
 
     spanElement.style.borderRadius = "10px"
-    spanElement.style.marginRight = "4px"
+    spanElement.style.marginLeft = "4px"
 
-    textElement.innerHTML = spanElement.outerHTML+textElement.innerHTML
+    textElement.innerHTML = textElement.innerHTML+spanElement.outerHTML
 }
 
 const addCategoryBadge = (element,color,text) => {
@@ -39,9 +39,9 @@ const addCategoryBadge = (element,color,text) => {
     spanElement.style.paddingRight = "5px"
 
     spanElement.style.borderRadius = "10px"
-    spanElement.style.marginRight = "4px"
+    spanElement.style.marginLeft = "4px"
 
-    textElement.innerHTML = spanElement.outerHTML+textElement.innerHTML
+    textElement.innerHTML = textElement.innerHTML+spanElement.outerHTML
 }
 
 

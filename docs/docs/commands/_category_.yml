@@ -1,7 +1,7 @@
 label: 🔨 Commands
-position: 6
+position: 5
 link:
   type: generated-index
   title: Commands
-  slug: category/commands
+  slug: docs/category/commands
   description: In this category, every open ticket command is explained!

@@ -1,7 +1,5 @@
 label: ⚙️ Config
 position: 2
 link:
-  type: generated-index
-  title: Everything about config.json!
-  slug: category/config
-  description: In the guides below, you can discover all the parts of config.json in the best way possible!
+  type: doc
+  id: config

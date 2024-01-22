@@ -11,21 +11,25 @@ import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from 
 - **Slash Command:** `/message <id>`
 
 ## Quick overview
-The message command is one of the most important commands in Open Ticket!
+The /message command is one of the most important commands in Open Ticket!
 It allows you to spawn an embed with buttons like the one below!
 Every embed can be customized to your wishes!
-The buttons & design can be configured in the <InlineLink url="category/config" isdoc="true">config file</InlineLink>!
+The buttons & design can be configured in the <InlineLink url="docs/config/main" isdoc="true">config file</InlineLink>!
 
-<GoodImage src="/img/docs/command_message.png" size="50%"></GoodImage>
+<GoodImage src="/img/docs/commands/message.png" size="50%"></GoodImage>
 
 ## Config
-These are the <InlineLink url="category/config" isdoc="true">configurable settings</InlineLink> for this command.
+These are the <InlineLink url="docs/config/main" isdoc="true">configurable settings</InlineLink> for this command.
 Some of them will make the command look different!
 Other ones can disable the command or change how it works!
 
-### <LabelText color="blue">config.json</LabelText> messages {#option-messages}
+### <InlineLink url="docs/config/main" isdoc="true"><LabelText color="blue">config.json</LabelText></InlineLink> messages {#config-messages}
 All the messages are stored in the `messages` array in the config.json file!
 The id's of these messages can be used in combination with the command to spawn a specific embed!
 
 To add buttons to your embed, check the page below:
 <LinkBlock url="docs/get-started#configuration" isdoc="true" mode="emoji" emoji="⚙️" name="Getting Started (Configuration)" description="A full walktrough of the steps to add your first button to an embed!"></LinkBlock>
+
+### <InlineLink url="docs/config/api" isdoc="true"><LabelText color="red">api.json</LabelText></InlineLink> disable {#config-disable}
+You can disable this command using the `api.json` file! This way, no-one can use this command!
+This may be useful if you want to replace a command by your own!

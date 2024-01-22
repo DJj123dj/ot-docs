@@ -85,9 +85,9 @@ export function ColorText(params){
 
 export function LinkBlock(params){
     if (params.url){
-        var linkClasses = "otdocs-linkblock bg-[#222] w-full h-20 my-3 border-[#606770] border-[1px] border-solid rounded-lg flex items-center hover:no-underline hover:scale-[102%] hover:border-[--ifm-color-primary] hover:border-2 transition-all duration-200"
+        var linkClasses = "otdocs-linkblock bg-[#222] w-full h-20 max-lg:h-28 my-3 border-[#606770] border-[1px] border-solid rounded-lg flex items-center hover:no-underline hover:scale-[102%] hover:border-[--ifm-color-primary] hover:border-2 transition-all duration-200"
     }else{
-        var linkClasses = "otdocs-linkblock bg-[#222] w-full h-20 my-3 border-[#606770] border-[1px] border-solid rounded-lg flex items-center hover:no-underline"
+        var linkClasses = "otdocs-linkblock bg-[#222] w-full h-20 max-lg:h-28 my-3 border-[#606770] border-[1px] border-solid rounded-lg flex items-center hover:no-underline"
     }
 
     if (params.url &&  params.isdoc == "true"){
@@ -101,8 +101,8 @@ export function LinkBlock(params){
     if (params.mode == "image" && params.image){
         return (
             <a url={params.url} href={linkUrl} target={target} className={linkClasses}>
-                <img className="w-12 h-12 m-0 mx-2" src={params.image}/>
-                <div className='flex flex-col justify-center'>
+                <img className="w-12 h-12 m-0 mx-2 max-lg:mr-4" src={params.image}/>
+                <div className='flex flex-col justify-center max-lg:mr-4'>
                     <p className="m-0 text-white font-bold text-xl">{params.name}</p>
                     <p className="m-0 text-neutral-400">{params.description}</p>
                 </div>
@@ -111,8 +111,8 @@ export function LinkBlock(params){
     }else if (params.mode == "emoji" && params.emoji){
         return (
             <a url={params.url} href={linkUrl} target={target} className={linkClasses}>
-                <p className="text-5xl m-0 mx-2">{params.emoji}</p>
-                <div className='flex flex-col justify-center'>
+                <p className="text-5xl m-0 mx-2 max-lg:mr-4">{params.emoji}</p>
+                <div className='flex flex-col justify-center max-lg:mr-4'>
                     <p className="m-0 text-white font-bold text-xl">{params.name}</p>
                     <p className="m-0 text-neutral-400">{params.description}</p>
                 </div>

@@ -13,7 +13,7 @@ This documentation won't explain how to invite your bot or how to install node.j
 ## Installation
 You can install Open Ticket from [github](https://www.github.com/DJj123dj/open-ticket) by **cloning** or **downloading it as a ZIP file**. We recommend downloading it from the official repository, because other versions may be modified! When downloading as a ZIP file, you need to extract it ofcourse!
 
-<GoodImage src="/img/docs/download.png" size="50%"/>
+<GoodImage src="/img/docs/installation/download.png" size="50%"/>
 
 ### Libraries
 Open Ticket needs some npm libraries to work! You can install these all at once with the following command:
@@ -25,17 +25,17 @@ npm install
 ### creation
 Before you can use Open Ticket, you need to create a discord bot! You can create one at the [discord developer portal](https://discord.com/developers/applications). Open Ticket also needs some **permissions** & **intents** to function properly. These need to be configured in the discord developer portal!
 
-<GoodImage src="/img/docs/app_create.png" size="50%"/>
+<GoodImage src="/img/docs/installation/devportal_create.png" size="50%"/>
 
 ### permissions
 When inviting your bot to a discord server, we recommend giving your bot the `Administrator` permission! It is also possible to define your own permissions, but it can affect the bot's ability to do some things.
 
-![image](/img/docs/app_permissions.png)
+![image](/img/docs/installation/devportal_permissions.png)
 
 ### intents
 Every discord bot also needs some **Privileged Gateaway Intents**. These intents give the bot some extra permissions that may be important for some things. The `Message Content` intent allows the bot to read text messages in the server. This is the most important one, because it is needed for some commands to work properly!
 
-![image](/img/docs/app_intents.png)
+![image](/img/docs/installation/devportal_intents.png)
 
 ## Configuration
 Open Ticket has 2 config files! `config.json` and `transcriptconfig.json`! The transcript config is not that important for now, but can later be used to configure HTML transcripts.
@@ -43,7 +43,7 @@ However, **the main config is very important** for many things in the bot! We wi
 
 :::tip
 If you need a more detailed explaination about all the config variables, visit this page:
-**<InlineLink url="category/config" isdoc="true">everything about config.json</InlineLink>**
+**<InlineLink url="docs/config/main" isdoc="true">everything about config.json</InlineLink>**
 :::
 
 ### Main Settings
@@ -245,15 +245,15 @@ npm start
 
 ### On Success
 When you have configured your `config.json` correctly, you will see a startup screen with the Open Ticket logo displayed in yellow. It will also show some logs & statistics.
-<GoodImage src="/img/docs/console_startscreen.png" size="80%"/>
+<GoodImage src="/img/docs/installation/console_startscreen.png" size="80%"/>
 ### On Failiure
 When you made a mistake, the bot will tell you what's wrong with your config. Try to follow the instructions from the errors as good as possible. When you don't find the solution, you can always join our [discord server](https://discord.dj-dj.be)!
-<GoodImage src="/img/docs/console_checkerjs.png" size="80%"/>
+<GoodImage src="/img/docs/installation/console_checkerjs.png" size="80%"/>
 
 ### 🎉 Now you can try out the bot!{#tryout}
 Use the `/help` command for a guide of all available commands. Use the `/message <id>` command to generate an embed with buttons.
 
-<GoodImage src="/img/docs/command_help.png" size="50%"/>
+<GoodImage src="/img/docs/commands/help_slash.png" size="50%"/>
 
 ### Advanced Guides
 Also make sure to check out these advanced guides!

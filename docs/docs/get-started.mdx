@@ -59,12 +59,12 @@ In the code block below, you can find some notes about what every variable does!
     "fromENV":false //load your token from the ENV
 },
 "adminRoles":["role id 1","role id 2"], //the role ids from your admin team (splitted by comma's)
-"prefix":"!ticket ", //the prefix for text-based commands (oes not apply to slash commands)
+"prefix":"!ticket ", //the prefix for text-based commands (does not apply to slash commands)
 "languageFile":"english", //select one of the available languages (visit the ./language/ folder)
 
 "status":{
     "enabled":true, //enable the bot status
-    "type":"PLAYING", //the status type: PLAYING, WATCHING or LISTENING (CUSTOM isn't available yet)
+    "type":"PLAYING", //the status type: PLAYING, WATCHING, LISTENING or CUSTOM
     "text":"!ticket help" //the status text
 },
 ```
@@ -87,7 +87,7 @@ The system settings are settings related to the entire system. Here you can conf
 },
 ```
 
-### Option Settings (buttons) {#option-settings}
+### Option Settings (buttons) \{#option-settings}
 The options are the **variables that create the buttons** in your ticket bot. Every button can be configured as much as you want!
 There are 3 types: `ticket`, `website` & `role`. We are going to focus on the `ticket` type first! The other ones are less important buttons.
 
@@ -161,7 +161,7 @@ If you are ready with the options, you can move on to the **[Message Settings](#
 ],
 ```
 
-### Message Settings (embeds) {#message-settings}
+### Message Settings (embeds) \{#message-settings}
 The messages are the **variables that create the embeds** in your ticket bot.
 Every embed can be configured as much as you want!
 The embed can be spawned in discord with the `/message <id>` command.
@@ -250,7 +250,7 @@ When you have configured your `config.json` correctly, you will see a startup sc
 When you made a mistake, the bot will tell you what's wrong with your config. Try to follow the instructions from the errors as good as possible. When you don't find the solution, you can always join our [discord server](https://discord.dj-dj.be)!
 <GoodImage src="/img/docs/installation/console_checkerjs.png" size="80%"/>
 
-### 🎉 Now you can try out the bot!{#tryout}
+### 🎉 Now you can try out the bot! \{#tryout}
 Use the `/help` command for a guide of all available commands. Use the `/message <id>` command to generate an embed with buttons.
 
 <GoodImage src="/img/docs/commands/help_slash.png" size="50%"/>

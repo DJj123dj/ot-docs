@@ -50,6 +50,10 @@ window.addEventListener('load', function () {
     const newCategoryItems = Array.from(document.getElementsByClassName("otdocs-new-category"))
     const betaPageItems = Array.from(document.getElementsByClassName("otdocs-beta-page"))
     const betaCategoryItems = Array.from(document.getElementsByClassName("otdocs-beta-category"))
+    const officialPageItems = Array.from(document.getElementsByClassName("otdocs-official-page"))
+    const officialCategoryItems = Array.from(document.getElementsByClassName("otdocs-official-category"))
+    const verifiedPageItems = Array.from(document.getElementsByClassName("otdocs-verified-page"))
+    const verifiedCategoryItems = Array.from(document.getElementsByClassName("otdocs-verified-category"))
     
     //render newPageItems
     newPageItems.forEach((item) => {
@@ -71,6 +75,26 @@ window.addEventListener('load', function () {
         addCategoryBadge(item,"#3d84e0","BETA!")
     })
 
+    //render officialPageItems
+    officialPageItems.forEach((item) => {
+        addPageBadge(item,"#3d84e0","OFFICIAL")
+    })
+
+    //render officialCategoryItems
+    officialCategoryItems.forEach((item) => {
+        addCategoryBadge(item,"#3d84e0","OFFICIAL")
+    })
+
+    //render verifiedPageItems
+    verifiedPageItems.forEach((item) => {
+        addPageBadge(item,"#35c43a","VERIFIED")
+    })
+
+    //render verifiedCategoryItems
+    verifiedCategoryItems.forEach((item) => {
+        addCategoryBadge(item,"#35c43a","VERIFIED")
+    })
+
 
     //INTERVAL
     setInterval(() => {
@@ -78,6 +102,10 @@ window.addEventListener('load', function () {
         const newCategoryItems = Array.from(document.getElementsByClassName("otdocs-new-category"))
         const betaPageItems = Array.from(document.getElementsByClassName("otdocs-beta-page"))
         const betaCategoryItems = Array.from(document.getElementsByClassName("otdocs-beta-category"))
+        const officialPageItems = Array.from(document.getElementsByClassName("otdocs-official-page"))
+        const officialCategoryItems = Array.from(document.getElementsByClassName("otdocs-official-category"))
+        const verifiedPageItems = Array.from(document.getElementsByClassName("otdocs-verified-page"))
+        const verifiedCategoryItems = Array.from(document.getElementsByClassName("otdocs-verified-category"))
         
         //render newPageItems
         newPageItems.forEach((item) => {
@@ -104,6 +132,34 @@ window.addEventListener('load', function () {
         betaCategoryItems.forEach((item) => {
             if (!item.firstElementChild.firstElementChild.firstElementChild){
                 addCategoryBadge(item,"#3d84e0","BETA!")
+            }
+        })
+
+        //render officialPageItems
+        officialPageItems.forEach((item) => {
+            if (!item.firstElementChild.firstElementChild){
+                addPageBadge(item,"#3d84e0","OFFICIAL")
+            }
+        })
+    
+        //render officialCategoryItems
+        officialCategoryItems.forEach((item) => {
+            if (!item.firstElementChild.firstElementChild.firstElementChild){
+                addCategoryBadge(item,"#3d84e0","OFFICIAL")
+            }
+        })
+
+        //render verifiedPageItems
+        verifiedPageItems.forEach((item) => {
+            if (!item.firstElementChild.firstElementChild){
+                addPageBadge(item,"#35c43a","VERIFIED")
+            }
+        })
+    
+        //render verifiedCategoryItems
+        verifiedCategoryItems.forEach((item) => {
+            if (!item.firstElementChild.firstElementChild.firstElementChild){
+                addCategoryBadge(item,"#35c43a","VERIFIED")
             }
         })
     },100)

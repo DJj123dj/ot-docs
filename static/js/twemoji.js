@@ -8,7 +8,7 @@ setInterval(() => {
 
     //manage LinkBlocks
     if (document.documentElement.classList.contains("docs-version-current")){
-        document.documentElement.setAttribute("docs-path","current")
+        document.documentElement.setAttribute("docs-path","dev")
     }else if (document.documentElement.classList.contains("docs-version-3.4.4")){
         document.documentElement.setAttribute("docs-path","3.4.4")
     }

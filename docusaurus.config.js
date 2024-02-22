@@ -37,7 +37,7 @@ const config = {
           versions:{
             "current":{
                 label:"🚧 Dev Version",
-                path:"current",
+                path:"dev",
                 badge:false,
                 banner:"unreleased"
             }
@@ -79,9 +79,9 @@ const config = {
           },
           {
             type: 'docSidebar',
-            sidebarId: 'apiSidebar',
+            sidebarId: 'developerSidebar',
             position: 'left',
-            label: 'API',
+            label: 'Developer',
           },
           {
             type: 'docSidebar',
@@ -131,11 +131,11 @@ const config = {
             ],
           },
           {
-            title: 'API Reference',
+            title: 'Developer',
             items: [
               {
                 label: 'Get Started',
-                to: '/docs/current/api/get-started',
+                to: '/docs/current/developer/get-started',
               },
             ],
           },
@@ -185,6 +185,11 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages:["json","diff"]
       },
+      docs:{
+        sidebar:{
+            autoCollapseCategories:true
+        }
+      }
     }),
     scripts:[
         "/js/sidebarbadges.js",

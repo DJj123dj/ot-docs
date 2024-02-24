@@ -3,3 +3,98 @@ title: System Settings
 description: All settings about the Open Ticket system
 sidebar_position: 3
 ---
+import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+
+The system settings are settings related to the ticket system.
+Here you can configure things like the maximum amount of tickets per user, the close mode and some other small options!
+
+```json title="config.json"
+"system":{
+    "maxAmountOfTickets":3, //the maximum amount of tickets per user
+    "dmMessages":false, //send a DM message to users when their ticket changes
+
+    "memberRole":"member role (or empty)", //the role ID that doesn't have access to tickets!
+    "closeMode":"adminonly OR normal (select one!)", //can everyone or admins close tickets?
+
+    "transcripts":"...", //you can find everything about transcripts in transcriptconfig.json!
+
+    "showSlashcmdsInHelp":false, //show slash commands in the help menu instead of the default prefix.
+    "answerInEphemeralOnOpen":true //answer in ephemeral when you create a ticket (or it will be visible to everyone)
+},
+```
+
+### "system/maxAmountOfTickets" (number) \{#system-maxtickets}
+This number is **the maximum amount of tickets a user can create at the same time**. It counts globaly for every ticket type.
+
+:::tip
+If you want users to be able to create an infinite amount of tickets, just put a large number like `999999` in the variable!
+:::
+
+- Default value: `3`
+- Allowed values: `any number`
+- Required: `false`
+- Type: `number`
+
+### "system/dmMessages" (boolean) \{#system-dmmessages}
+When enabled, the bot sends the creator of the ticket a message when something happens in their ticket!
+<br></br>**The actions that will be sent include:**
+- Ticket closing
+- Ticket reopening
+- Ticket claiming
+
+⚠️ **This variable won't change anything about messages sent when a ticket gets created!**
+
+- Default value: `false`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`
+
+### "system/memberRole" (role id) \{#system-memberrole}
+The member role is a discord role that **does not** have access to tickets!
+Put the default role of your server in here, or just leave it empty if you don't have a member role!
+
+- Default value: `""` (empty)
+- Allowed values: `"role id"` or `""` (empty)
+- Required: `false`
+- Type: `string`
+
+### "system/closeMode" (valid close mode) \{#system-closemode}
+**The close mode decides who can close a ticket.** When set to `"normal"`, everyone who has access to the ticket can close & re-open it.
+When set to `"adminonly"`, only global admins or ticket admins can close & re-open the ticket.
+
+:::warning
+The `"adminonly"` mode doesn't apply on ticket re-opening yet! This will be added in a future version!
+:::
+
+- Default value: `"normal"`
+- Allowed values: `"normal"` or `"adminonly"`
+- Required: `false`
+- Type: `string`
+
+### "system/transcripts" (information) \{#system-transcripts}
+This is just information about where you can find the configuration for transcripts!
+For more info, check this:
+
+<LinkBlock mode="emoji" emoji="⚙️" name="transcriptconfig.json" description="A detailed explaination of the transcript config!" isdoc="true" url="docs/config/transcripts"></LinkBlock>
+
+### "system/showSlashcmdsInHelp" (boolean) \{#system-showslashcmdsinhelp}
+When enabled, you will see slash commands in the help menu instead of the default text commands.
+Here is a comparison:
+
+<FlexHorizontal mode="center">
+<GoodImage src="/img/docs/commands/help_text.png" size="40%"></GoodImage>
+<GoodImage src="/img/docs/commands/help_slash.png" size="40%"></GoodImage>
+</FlexHorizontal>
+<br></br>
+- Default value: `false`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`
+
+### "system/answerInEphemeralOnOpen" (boolean) \{#system-answerinephemeralonopen}
+When enabled, the message sent in the channel where you created a ticket will be an <ColorText color="blue">**ephemeral (blue invisible)**</ColorText> message!
+
+- Default value: `true`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`

@@ -6,7 +6,7 @@ sidebar_position: 2
 import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
 
 In the status settings, you can set the status of the bot. The status is shown below the name of the bot in the user list!
-Open Ticket has support for all status types except `"STREAMING"`!
+**Open Ticket has support for <ColorText color="green">all status types </ColorText><ColorText color="red">except `"STREAMING"`</ColorText>**!
 
 ```json title="config.json"
 "status":{
@@ -25,17 +25,17 @@ Enable or disable the bot status. When `true`, the status will be enabled using 
 - Type: `boolean`
 
 ### "status/type" (status type) \{#status-type}
-The type of the status. This will be the prefix for the status text. `CUSTOM` disables this prefix and just renders the text.
+The type of the status. This will be the prefix for the status text. **`"CUSTOM"` disables this prefix and just renders the text.**
 
-- Default value: `PLAYING`
-- Allowed values: `PLAYING`, `WATCHING`, `LISTENING` or `CUSTOM`
+- Default value: `"PLAYING"`
+- Allowed values: `"PLAYING"`, `"WATCHING"`, `"LISTENING"` or `"CUSTOM"`
 - Required: `false`
 - Type: `string`
 
 ### "status/text" (string) \{#status-text}
 The text for the bot status. Will be rendered after the status type.
 
-- Default value: `!ticket help`
-- Allowed values: `anything`
+- Default value: `"!ticket help"`
+- Allowed values: `"any string"`
 - Required: `false`
 - Type: `string`

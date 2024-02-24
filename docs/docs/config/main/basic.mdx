@@ -22,9 +22,9 @@ In the code block below, you can find some notes about what every variable does!
 ```
 
 ### "color" (hex color) \{#color}
-This is the main color of the bot. It's used in almost every embed!
+This is the **main color** of the bot. It's used in almost every embed!
 The color is written in hex, if you need help with this, you can always visit [Encycolorpedia](https://www.encycolorpedia.com)!
-Just remember to put a `#` in-front of the code!
+**Just remember to put a `#` in-front of the code!**
 
 - Default value: `#ffffff` (white)
 - Allowed values: `"#hex color"`
@@ -32,7 +32,7 @@ Just remember to put a `#` in-front of the code!
 - Type: `string`
 
 ### "serverId" (server id) \{#serverid}
-Here, you need to put the id of the discord server that the bot is in. This id will be used to create slash commands & save data!
+Here, you need to put the id of the discord server that the bot is in. This id will be used to create **slash commands & save data**!
 
 - Default value: `""` (empty)
 - Allowed values: `"server id"`
@@ -40,7 +40,7 @@ Here, you need to put the id of the discord server that the bot is in. This id w
 - Type: `string`
 
 ### "token/value" (bot token) \{#token-value}
-This is the password of your bot. It allows open ticket to communicate with discord!
+This is <ColorText color="red">**the password of your bot**</ColorText>. It allows open ticket to communicate with discord!
 
 - Default value: `""` (empty)
 - Allowed values: `"bot token"`
@@ -57,7 +57,8 @@ This is the password of your bot. It allows open ticket to communicate with disc
 :::
 
 ### "token/fromENV" (boolean) \{#token-env}
-Enable this boolean to get the token from the `.env` file instead of the `"value"`. Add it to the file like this:
+Enable this boolean to <ColorText color="red">**get the bot token from the `.env` file instead of the `"value":"..."`**</ColorText>.
+When using this, you can leave the `"value"` empty! Oh, and here is an example of a `.env` file:
 ```toml title=".env"
 TOKEN=your-token-here
 ```
@@ -68,11 +69,13 @@ TOKEN=your-token-here
 - Type: `boolean`
 
 ### "adminRoles" (role id list) \{#adminroles}
-The adminroles variable is a list of all global admin role id's! Roles inside this list can:
-- visit & reply to all tickets
-- use every command everywhere
+The `"adminRoles"` variable is a list of all **global admin role id's**! Roles inside this list can:
+- ✅ read in every ticket
+- ✅ write in every ticket
+- ✅ use commands in every ticket
+- ✅ use buttons in every ticket
 
-**Only use this for roles that are allowed to have full power over the bot!**
+**⚠️ Only use this for roles that are allowed to have full power over the bot!**
 
 - Default value: `[]` (empty)
 - Allowed values: `["role id 1","role id 2","role id 3",...]`
@@ -80,7 +83,7 @@ The adminroles variable is a list of all global admin role id's! Roles inside th
 - Type: `string array`
 
 ### "prefix" (string) \{#prefix}
-This is the prefix for all text commands in the bot, so it won't be used for slash commands!
+This is **the prefix for all text commands** in the bot, so it won't be used for slash commands!
 <br></br>Here are some examples:
 |prefix                   |help command      |close command              |
 |-------------------------|------------------|---------------------------|
@@ -95,9 +98,10 @@ This is the prefix for all text commands in the bot, so it won't be used for sla
 - Type: `string`
 
 ### "languageFile" (valid language) \{#languagefile}
-The language file is the variable that decides what language the bot is in.
+The language file decides what **language** the bot will use!
 When you set the language, all embeds & messages from the bot are translated into this language!
-<br></br>**Make sure you write the language in lowercase!**
+
+**⚠️ Make sure you write the language in lowercase!**
 
 <LinkBlock mode="emoji" emoji="🌐" name="Translation" description="Here is a list of all the available languages!" isdoc="true" url="docs/translation"></LinkBlock>
 

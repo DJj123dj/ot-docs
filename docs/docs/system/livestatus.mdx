@@ -1,0 +1,45 @@
+---
+title: Livestatus
+description: What is livestatus?
+---
+import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+
+Open Ticket has a **live communication system called <ColorText color="blue">LiveStatus</ColorText>**.
+This system can show messages when the bot starts. The messages are fetched from an online `json` file.
+
+The messages shown are created by [DJj123dj](https://www.github.com/DJj123dj) from [DJdj Development](https://discord.dj-dj.be)!
+<ColorText color="red">**It is recommended to read these messages**</ColorText> because they contain important information about updates, issues & announcements.
+
+✅ **LiveStatus is always shown at the startup screen before the logs!**
+
+<GoodImage src="/img/docs/installation/console_startscreen_livestatus.png" size="80%"></GoodImage>
+
+## Examples
+Here are some examples of messages that could be sent:
+- There is a new major update (cool new features,...)
+- There is a new imporant update (security fixes, critical bugs,...)
+- Something doesn't work like expected
+- There is a HTML Transcript outage
+- There are dangerous plugins being spread online (virusses, bot nukers,...)
+- ...
+
+## Variety
+<ColorText color="green">**LiveStatus can show different messages for different target groups!**</ColorText>
+
+Your bot can be included in a target group when they match a set of variables set by the system.
+The variables that the bot will look for are the following:
+
+- Version
+- Language
+- Plugins
+- Slash Commands (enabled/disabled)
+- Text Transcripts (enabled/disabled)
+- HTML Transcripts (enabled/disabled)
+
+## Safety
+:::warning note
+**LiveStatus** only downloads the json file and inspects the messages.
+<ColorText color="red">**It doesn't upload any data from the bot to the internet!**</ColorText>
+
+This is the url where livestatus gets its data from:<br></br>`https://apis.dj-dj.be/livestatus/announcements/openticket.json`
+:::

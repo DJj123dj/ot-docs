@@ -264,11 +264,48 @@ Most of the time, the contents of this message are used for:
 - ...
 :::
 
+### "thumbnail" (enabled property) \{#ticket-thumbnail}
+Using the `"thumbnail"` object, you can enable a thumbnail in the embed of this ticket. Set `"enable"` to `true` & insert a valid image url in `"url"`.
 
-- Default value: `""` (empty)
-- Allowed values: `"any string"`
+- Default value: `enabled:false, url:""` (disabled)
+- Allowed values: `enabled:boolean, url:"valid image url"`
 - Required: `false`
-- Type: `string`
+- Type: `object`
+
+### "image" (enabled property) \{#ticket-image}
+Using the `"image"` object, you can enable a image in the embed of this ticket. Set `"enable"` to `true` & insert a valid image url in `"url"`.
+
+- Default value: `enabled:false, url:""` (disabled)
+- Allowed values: `enabled:boolean, url:"valid image url"`
+- Required: `false`
+- Type: `object`
+
+### "closedCategory" (enabled property) \{#ticket-closedcategory}
+Using the `"closedCategory"` object, you can enable a closedCategory for this ticket. Set `"enable"` to `true` & insert a valid discord category id in `"id"`.
+
+- Default value: `enabled:false, id:""` (disabled)
+- Allowed values: `enabled:boolean, id:"category id"`
+- Required: `false`
+- Type: `object`
+
+### "autoclose" (enabled property) \{#ticket-autoclose}
+Using the `"autoclose"` object, you can enable autoclose for this ticket. Set `"enable"` to `true` & select the amount of inactive hours before closing using `"inactiveHours"`.
+
+- Default value: `enabled:false, inactiveHours:24` (disabled)
+- Allowed values: `enabled:boolean, inactiveHours:number`
+- Required: `false`
+- Type: `object`
+
+### "ping" (ping property) \{#ticket-ping}
+Using the `"ping"` object, you can enable/disable pings for this ticket.
+- `"@here"` => ping everyone who has access to this ticket & is online
+- `"@everyone"` => ping everyone who has access to this ticket
+- `"custom"` => ping a custom role (when enabled)
+
+- Default value: `@here enabled` (disabled)
+- Allowed values: `@here:boolean, @everyone:boolean, custom:{enable:boolean, roleId:string}`
+- Required: `false`
+- Type: `object`
 
 ## Website Option \{#website-option}
 ```json title="config.json"
@@ -287,6 +324,16 @@ Most of the time, the contents of this message are used for:
     },
 ]
 ```
+
+### "url" (string) \{#website-url}
+The `"url"` variable will determine the url that the user goes to when clicking this button.
+
+⚠️ **The user will be warned by discord before they actually go to the link!**
+
+- Default value: `""` (empty)
+- Allowed values: `"valid url"`
+- Required: `true`
+- Type: `string`
 
 ## Reaction Role Option \{#role-option}
 ```json title="config.json"
@@ -308,3 +355,47 @@ Most of the time, the contents of this message are used for:
     },
 ]
 ```
+
+### "color" (button color) \{#role-color}
+Set the color of the button. These colors are defined by discord and it's impossible to add other colors!
+
+- Default value: `"gray"`
+- Allowed values: `"gray"`, `"red"`, `"green"` or `"blue"`
+- Required: `true`
+- Type: `string`
+
+### "roles" (role id list) \{#role-roles}
+The `"roles"` variable is a list of all roles that will be given to or removed from a user clicking the button.
+
+**✅ Use this for reaction roles in your server!**
+
+:::warning member verification
+It's not recommended to use this system for **member verification** because there **aren't any safety measures**!
+:::
+
+- Default value: `[]` (empty)
+- Allowed values: `["role id 1","role id 2","role id 3",...]`
+- Required: `false`
+- Type: `string array`
+
+### "mode" (reactionrole mode) \{#role-mode}
+The mode determines how this button will act when someone clicks it. It can have one of the following values: `"add&remove"`, `"add"` or `"remove"`
+
+|Mode         |Description                                                       |
+|-------------|------------------------------------------------------------------|
+|`add&remove` |Give the roles to the user. When already present, remove the roles. |
+|`add`        |Only give the roles to the user.                                   |
+|`remove`     |Only remove the roles from the user.                               |
+
+- Default value: `"add&remove"`
+- Allowed values: `"add&remove"`, `"add"` or `"remove"`
+- Required: `true`
+- Type: `string`
+
+### "enableDmOnOpen" (boolean) \{#role-enabledmonopen}
+When enabled, the bot sends a DM to the user when clicking the button.
+
+- Default value: `true`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`

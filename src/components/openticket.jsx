@@ -166,7 +166,7 @@ export function GoodImage(params){
         var classes = `w-full`
     }
 
-    return (<img src={src} className={classes}></img>)
+    return (<img src={src} className={classes} style={{height:"100%"}}></img>)
 }
 
 export function FlexHorizontal(params){

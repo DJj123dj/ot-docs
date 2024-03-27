@@ -85,13 +85,14 @@ export function ColorText(params){
 
 export function LinkBlock(params){
     if (params.url){
-        var linkClasses = "otdocs-linkblock bg-[#222] w-full h-20 max-lg:h-28 my-3 border-[#606770] border-[1px] border-solid rounded-lg flex items-center hover:no-underline hover:scale-[102%] hover:border-[--ifm-color-primary] hover:border-2 transition-all duration-200"
+        var linkClasses = "bg-[#222] w-full h-20 max-lg:h-28 my-3 border-[#606770] border-[1px] border-solid rounded-lg flex items-center hover:no-underline hover:scale-[102%] hover:border-[--ifm-color-primary] hover:border-2 transition-all duration-200"
     }else{
-        var linkClasses = "otdocs-linkblock bg-[#222] w-full h-20 max-lg:h-28 my-3 border-[#606770] border-[1px] border-solid rounded-lg flex items-center hover:no-underline"
+        var linkClasses = "bg-[#222] w-full h-20 max-lg:h-28 my-3 border-[#606770] border-[1px] border-solid rounded-lg flex items-center hover:no-underline"
     }
 
     if (params.url &&  params.isdoc == "true"){
         var linkUrl = "/docs/"+document.documentElement.getAttribute("docs-path")+"/"+params.url
+        linkClasses = linkClasses + " require-url-update"
     }else{
         var linkUrl = params.url
     }
@@ -126,11 +127,13 @@ export function LinkBlock(params){
 export function InlineLink(params){
     if (params.url && params.isdoc == "true"){
         var linkUrl = "/docs/"+document.documentElement.getAttribute("docs-path")+"/"+params.url
+        var extraClass = "require-url-update"
     }else{
         var linkUrl = params.url
+        var extraClass = ""
     }
 
-    return (<Link to={linkUrl}>{params.children}</Link>)
+    return (<Link to={linkUrl} className={extraClass}>{params.children}</Link>)
 }
 
 export function GoodImage(params){

@@ -14,11 +14,9 @@ setInterval(() => {
     }
 
     if (localDocsPath != document.documentElement.getAttribute("docs-path")){
-        const linkblocks = Array.from(document.getElementsByClassName("otdocs-linkblock"))
+        const linkblocks = Array.from(document.getElementsByClassName("require-url-update"))
         linkblocks.forEach((el) => {
-            if (!el.getAttribute("url").startsWith("http://") && !el.getAttribute("url").startsWith("https://")){
-                el.setAttribute("href","/docs/"+document.documentElement.getAttribute("docs-path")+"/"+el.getAttribute("url"))
-            }
+            el.setAttribute("href","/docs/"+document.documentElement.getAttribute("docs-path")+"/"+el.getAttribute("url"))
         })
 
         const versionDropdown = Array.from(document.getElementsByClassName("navbar__item"))[4]
@@ -30,3 +28,10 @@ setInterval(() => {
     //reset localDocsPath
     localDocsPath = document.documentElement.getAttribute("docs-path")
 },100)
+
+setTimeout(() => {
+    const linkblocks = Array.from(document.getElementsByClassName("require-url-update"))
+    linkblocks.forEach((el) => {
+        el.setAttribute("href","/docs/"+document.documentElement.getAttribute("docs-path")+"/"+el.getAttribute("url"))
+    })
+},1000)

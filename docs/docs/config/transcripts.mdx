@@ -3,3 +3,165 @@ title: transcriptconfig.json
 description: Configure HTML Transcripts!
 sidebar_position: 2
 ---
+import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+
+In this file, you can enable **text & <InlineLink isdoc="true" url="docs/system/transcripts">HTML Transcripts</InlineLink>**! 
+Transcripts are a sort of log file that gets generated when the ticket is closed. You can then look back at it whenever you want!
+
+⚠️ <ColorText color="red">**It's recommended to read this first before configuring this config:**</ColorText>
+<LinkBlock mode="emoji" emoji="📄" isdoc="true" url="docs/system/transcripts" name="Open Ticket Transcripts" description="How do HTML & text transcripts work?"></LinkBlock>
+
+# Transcriptconfig
+
+```json title="config.json"
+//here you can enable/disable transcripts in the bot
+"sendTranscripts":{
+    "enableChannel":false, //send the transcript in a channel (configure below)
+    "enableDM":false, //send the transcript to the creator of the ticket in DM
+
+    "channel":"transcript channel id", //the channel to send the transcript to
+    "useHTMLtranscripts":true //use HTML Transcripts (online). Else it will use Text Transcripts (local)
+},
+
+//the style of the HTML Transcripts. Ignore this if you are using Text Transcripts!
+"style":{
+    //set a custom background (image or color)
+    "background":{ 
+        "enableCustomBackground":false,
+        "backgroundModus":"image OR color",
+        "backgroundData":"image url OR hex color (#ffffff)"
+    },
+    //customise the header (background, deco & text color)
+    "header":{
+        "enableCustomHeader":false,
+        "backgroundColor":"#202225",
+        "decoColor":"#F8BA00",
+        "textColor":"#ffffff"
+    },
+    //customise the stats popup (background, button & text color)
+    "stats":{
+        "enableCustomStats":false,
+        "backgroundColor":"#202225",
+        "keyTextColor":"#737373",
+        "valueTextColor":"#ffffff",
+        "hideBackgroundColor":"#40444a",
+        "hideTextColor":"#ffffff"
+    },
+    //set a custom favicon for the transcript (small images only)
+    "favicon":{
+        "enableCustomFavicon":false,
+        "imageUrl":"https://transcripts.dj-dj.be/favicon.png"
+    }
+}
+```
+
+## "sendTranscripts" \{#send}
+In this category, you can enable & disable the HTML or text transcripts.
+
+### "enableChannel" (boolean) \{#send-enablechannel}
+When enabled, the bot will send transcripts to the `"channel"`.
+It is a small embed with a url or file attachment (`html` or `text` transcripts)
+
+<GoodImage src="/img/docs/core/transcripts_msg.png" size="40%"></GoodImage>
+
+- Default value: `false`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`
+
+### "enableDM" (boolean) \{#send-enabledm}
+When enabled, the bot will send transcripts to the **creator of the ticket in DM**.
+It is a small embed with a url or file attachment (`html` or `text` transcripts)
+
+<GoodImage src="/img/docs/core/transcripts_msg.png" size="40%"></GoodImage>
+
+- Default value: `false`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`
+
+### "channel" (channel id) \{#send-channel}
+The transcript log from `"enableChannel"` will be sent to this channel.
+
+- Default value: `""` (empty)
+- Allowed values: `"valid channel id"`
+- Required: `true`
+- Type: `string`
+
+### "useHTMLtranscripts" (boolean) \{#send-htmltranscripts}
+When enabled, the bot uses <InlineLink isdoc="true" url="docs/system/transcripts">**HTML Transcripts**</InlineLink> instead of Text Transcripts.<br></br>
+**More info about it can be found here:**
+<LinkBlock mode="emoji" emoji="📄" isdoc="true" url="docs/system/transcripts" name="Open Ticket Transcripts" description="How do HTML & text transcripts work?"></LinkBlock>
+
+
+- Default value: `true`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`
+
+## "style" \{#style}
+**This category is only for <ColorText color="red">HTML Transcripts</ColorText>!**
+Here, you can change the design of the transcript. You can change the background, UI colors & text colors!
+**Ignore this block if you are using Text Transcripts!**
+
+### "background" (transcript style) \{#style-background}
+Use this block to customise the background of your HTML Transcript. You can choose between a color and an image!
+
+|Property                   |Type       |Default    |Notes                                      |
+|---------------------------|-----------|-----------|-------------------------------------------|
+|`enableCustomBackground`   |`boolean`  |`false`    |Enable this to use a custom background.    |
+|`backgroundModus`          |`string`   |`color`    |Set this to `image` or `color`.            |
+|`backgroundData`           |`string`   |`#808080`  |Insert a `hex-color` or `url` here.        |
+
+- Default value: ` `
+- Allowed values: ` `
+- Required: `false`
+- Type: `object`
+
+### "header" (transcript style) \{#style-header}
+Use this block to customise the header of your HTML Transcript. You can edit the colors of different parts!
+
+|Property                   |Type       |Default    |Notes                                              |
+|---------------------------|-----------|-----------|---------------------------------------------------|
+|`enableCustomHeader`       |`boolean`  |`false`    |Enable this to use a custom header.                |
+|`backgroundColor`          |`string`   |`#202225`  |The background. Insert a `hex-color` here.         |
+|`decoColor`                |`string`   |`#f8ba00`  |The deco line. Insert a `hex-color` or `url` here. |
+|`textColor`                |`string`   |`#ffffff`  |The text. Insert a `hex-color` or `url` here.      |
+
+- Default value: ` `
+- Allowed values: ` `
+- Required: `false`
+- Type: `object`
+
+### "stats" (transcript style) \{#style-stats}
+Use this block to customise the stats in your HTML Transcript. You can edit the colors of different parts!
+
+|Property                   |Type       |Default    |Notes                                                |
+|---------------------------|-----------|-----------|-----------------------------------------------------|
+|`enableCustomStats`        |`boolean`  |`false`    |Enable this to use a custom stats window.            |
+|`backgroundColor`          |`string`   |`#202225`  |The background. Insert a `hex-color` here.           |
+|`keyTextColor`             |`string`   |`#737373`  |The key text. Insert a `hex-color` or `url` here.    |
+|`valueTextColor`           |`string`   |`#ffffff`  |The value text. Insert a `hex-color` or `url` here.  |
+|`hideBackgroundColor`      |`string`   |`#40444a`  |The hide button. Insert a `hex-color` or `url` here. |
+|`hideTextColor`            |`string`   |`#ffffff`  |The hide text. Insert a `hex-color` or `url` here.   |
+
+- Default value: ` `
+- Allowed values: ` `
+- Required: `false`
+- Type: `object`
+
+### "favicon" (transcript style) \{#style-favicon}
+Use this block to customise the stats in your HTML Transcript. You can edit the colors of different parts!
+
+|Property              |Type       |Default                                    |Notes                                |
+|----------------------|-----------|-------------------------------------------|-------------------------------------|
+|`enableCustomFavicon` |`boolean`  |`false`                                    |Enable this to use a custom favicon. |
+|`imageUrl`            |`string`   |`https://transcripts.dj-dj.be/favicon.png` |The url to the favicon image.        |
+
+- Default value: ` `
+- Allowed values: ` `
+- Required: `false`
+- Type: `object`
+
+# How do transcripts work?
+<LinkBlock mode="emoji" emoji="📄" isdoc="true" url="docs/system/transcripts" name="Open Ticket Transcripts" description="How do HTML & text transcripts work?"></LinkBlock>

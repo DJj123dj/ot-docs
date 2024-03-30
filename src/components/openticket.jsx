@@ -104,7 +104,7 @@ export function LinkBlock(params){
         if (params.mode == "image" && params.image){
             return (
                 <a url={params.url} href={linkUrl} target={target} className={linkClasses}>
-                    <img className="w-12 h-12 m-0 mx-2 max-lg:mr-4" src={params.image}/>
+                    <img className="w-12 m-0 mx-4 max-lg:mr-4" src={params.image}/>
                     <div className='flex flex-col justify-center max-lg:mr-4'>
                         <p className="m-0 text-white font-bold text-xl">{params.name}</p>
                         <p className="m-0 text-neutral-400">{params.description}</p>

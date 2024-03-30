@@ -24,18 +24,21 @@ npm install
 ## Bot Setup
 ### creation
 Before you can use Open Ticket, you need to create a discord bot! You can create one at the [discord developer portal](https://discord.com/developers/applications). Open Ticket also needs some **permissions** & **intents** to function properly. These need to be configured in the discord developer portal!
-
 <GoodImage src="/img/docs/installation/devportal_create.png" size="50%"/>
 
 ### permissions
-When inviting your bot to a discord server, we recommend giving your bot the `Administrator` permission! It is also possible to define your own permissions, but it can affect the bot's ability to do some things.
+When inviting your bot to a discord server, we recommend giving your bot the `Administrator` permission!
+It is also possible to define your own permissions, but it can affect the bot's ability to do some things.
 
-![image](/img/docs/installation/devportal_permissions.png)
+<GoodImage src="/img/docs/installation/devportal_permissions.png" size="70%"></GoodImage>
 
 ### intents
-Every discord bot also needs some **Privileged Gateaway Intents**. These intents give the bot some extra permissions that may be important for some things. The `Message Content` intent allows the bot to read text messages in the server. This is the most important one, because it is needed for some commands to work properly!
+Every discord bot also needs some **Privileged Gateaway Intents**.
+These intents give the bot some extra permissions that may be important for some things.
+The `Message Content` intent allows the bot to read text messages in the server.
+This is the most important one, because it is needed for some commands to work properly!
 
-![image](/img/docs/installation/devportal_intents.png)
+<GoodImage src="/img/docs/installation/devportal_intents.png" size="70%"></GoodImage>
 
 ## Configuration
 Open Ticket has 2 config files! `config.json` and `transcriptconfig.json`! The transcript config is not that important for now, but can later be used to configure HTML transcripts.

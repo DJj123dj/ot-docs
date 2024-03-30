@@ -6,191 +6,202 @@ const darkCodeTheme = require("./openticket.theme");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Open Ticket Docs',
-  tagline: 'A guide for the most advanced open source discord ticket bot!',
-  favicon: 'img/logo_vertical.png',
+    title: 'Open Ticket Docs',
+    tagline: 'This is the documentation for Open Ticket, the most advanced & customisable open-source ticket bot in existence!',
+    favicon: 'img/logo_vertical.png',
 
-  url: 'https://docs.openticket.dj-dj.be',
-  baseUrl: '/',
+    url: 'https://otdocs.dj-dj.be',
+    baseUrl: '/',
 
-  organizationName: 'djdj-development',
-  projectName: 'ot-docs',
+    organizationName: 'djdj-development',
+    projectName: 'ot-docs',
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+    onBrokenLinks: 'throw',
+    onBrokenMarkdownLinks: 'warn',
 
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
-  },
+    i18n: {
+        defaultLocale: 'en',
+        locales: ['en'],
+    },
 
-  presets: [
-    [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:'https://github.com/DJj123dj/ot-docs/blob/main',
-          includeCurrentVersion:true,
-          lastVersion: 'current',
-          versions:{
-            "current":{
-                label:"🚧 Dev Version",
-                path:"dev",
-                badge:false,
-                banner:"unreleased"
-            }
-          },
-        },
-        blog: {
-          showReadingTime: true,
-          editUrl:'https://github.com/DJj123dj/ot-docs',
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-      }),
+    presets: [
+        [
+        'classic',
+        /** @type {import('@docusaurus/preset-classic').Options} */
+        ({
+            docs: {
+            sidebarPath: require.resolve('./sidebars.js'),
+            editUrl:'https://github.com/DJj123dj/ot-docs/blob/main',
+            includeCurrentVersion:true,
+            lastVersion: 'current',
+            versions:{
+                "current":{
+                    label:"🚧 Dev Version",
+                    path:"dev",
+                    badge:false,
+                    banner:"unreleased"
+                }
+            },
+            },
+            blog: {
+                showReadingTime: true,
+                editUrl:'https://github.com/DJj123dj/ot-docs/blob/main',
+                blogTitle:"News & Updates",
+                blogDescription:"Here, you will find news & updates from Open Ticket!",
+            },
+            theme: {
+                customCss: require.resolve('./src/css/custom.css'),
+            },
+        }),
+        ],
     ],
-  ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      // Replace with your project's social card
-      colorMode:{
-        defaultMode:"dark",
-        disableSwitch:true,
-        respectPrefersColorScheme:false
-      },
-      image: 'img/logo_banner.png',
-      navbar: {
-        title: '',
-        logo: {
-          alt: 'Open Ticket Logo',
-          src: 'img/logo_main.png',
+    themeConfig:
+        /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+        ({
+        colorMode:{
+            defaultMode:"dark",
+            disableSwitch:true,
+            respectPrefersColorScheme:false
         },
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'documentationSidebar',
-            position: 'left',
-            label: 'Docs',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'developerSidebar',
-            position: 'left',
-            label: 'Developer',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'pluginSidebar',
-            position: 'left',
-            label: 'Plugins',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
-            dropdownActiveClassDisabled: true,
-          },
-          {
-            type: 'localeDropdown',
-            position: 'right',
-            dropdownItemsAfter: [
-              {
-                to: 'https://discord.dj-dj.be',
-                label: 'Help us translate',
-              },
+        image: 'img/logo_banner.png',
+        navbar:{
+            title: '',
+            logo: {
+                alt: 'Open Ticket Logo',
+                src: 'img/logo_main.png',
+            },
+            items:[
+                {
+                    type: 'docSidebar',
+                    sidebarId: 'documentationSidebar',
+                    position: 'left',
+                    label: 'Docs',
+                },
+                {
+                    type: 'docSidebar',
+                    sidebarId: 'developerSidebar',
+                    position: 'left',
+                    label: 'Developer',
+                },
+                {
+                    type: 'docSidebar',
+                    sidebarId: 'apiSidebar',
+                    position: 'left',
+                    label: 'API',
+                },
+                {
+                    type: 'docSidebar',
+                    sidebarId: 'pluginSidebar',
+                    position: 'left',
+                    label: 'Plugins',
+                },
+                {to: '/blog', label: 'Blog', position: 'left'},
+                {
+                    type: 'docsVersionDropdown',
+                    position: 'right',
+                    dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+                    dropdownActiveClassDisabled: true,
+                },
+                {
+                    type: 'localeDropdown',
+                    position: 'right',
+                    dropdownItemsAfter: [
+                    {
+                        to: 'https://discord.dj-dj.be',
+                        label: 'Help us translate',
+                    },
+                    ],
+                },
+                {
+                    href: 'https://discord.dj-dj.be',
+                    position: 'right',
+                    className:"header-discord-link"
+                },
+                {
+                    href: 'https://github.com/DJj123dj/open-ticket',
+                    position: 'right',
+                    className:"header-github-link"
+                },
             ],
-          },
-          {
-            href: 'https://discord.dj-dj.be',
-            position: 'right',
-            className:"header-discord-link"
-          },
-          {
-            href: 'https://github.com/DJj123dj/open-ticket',
-            position: 'right',
-            className:"header-github-link"
-          },
-        ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Get Started',
-                to: '/docs/current/docs/get-started',
-              },
+        },
+        footer: {
+            style: 'dark',
+            links: [
+                {
+                    title: 'Docs',
+                    items: [
+                        {
+                            label: 'Get Started',
+                            to: '/docs/dev/docs/get-started',
+                        },
+                    ],
+                },
+                {
+                    title: 'Developer',
+                    items: [
+                        {
+                            label: 'Get Started',
+                            to: '/docs/dev/developer/get-started',
+                        },
+                        {
+                            label: 'API Reference',
+                            to: '/docs/dev/api/get-started',
+                        },
+                    ],
+                },
+                {
+                    title: 'Community',
+                    items: [
+                        {
+                            label: 'Discord',
+                            href: 'https://discord.dj-dj.be',
+                        },
+                        {
+                            label: 'Website',
+                            href: 'https://www.dj-dj.be',
+                        },
+                        {
+                            label: 'Twitter',
+                            href: 'https://twitter.com/djdjdevelopment',
+                        },
+                        {
+                            label:"Youtube",
+                            href:"https://www.youtube.com/@djdjdevelopment"
+                        }
+                    ],
+                },
+                {
+                    title: 'More',
+                    items: [
+                        {
+                            label: 'Blog',
+                            to: '/blog',
+                        },
+                        {
+                            label: 'Plugins',
+                            to: '/docs/dev/plugin/get-started',
+                        },
+                        {
+                            label: 'GitHub',
+                            href: 'https://github.com/DJj123dj/open-ticket',
+                        },
+                    ],
+                },
             ],
-          },
-          {
-            title: 'Developer',
-            items: [
-              {
-                label: 'Get Started',
-                to: '/docs/current/developer/get-started',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Discord',
-                href: 'https://discord.dj-dj.be',
-              },
-              {
-                label: 'Website',
-                href: 'https://www.dj-dj.be',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/djdjdevelopment',
-              },
-              {
-                label:"Youtube",
-                href:"https://www.youtube.com/@djdjdevelopment"
-              }
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'Plugins',
-                to: '/docs/current/plugin/get-started',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/DJj123dj/open-ticket',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} <a target="_blank" href="https://www.dj-dj.be">DJdj Development</a>. Made by <a target="_blank" href="https://www.github.com/DJj123dj">DJj123dj</a>.`,
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-        additionalLanguages:["json","diff"]
-      },
-      docs:{
-        sidebar:{
-            autoCollapseCategories:true
+            copyright: `Copyright © ${new Date().getFullYear()} <a target="_blank" href="https://www.dj-dj.be">DJdj Development</a>. Made by <a target="_blank" href="https://www.github.com/DJj123dj">DJj123dj</a>.`,
+        },
+        prism: {
+            theme: lightCodeTheme,
+            darkTheme: darkCodeTheme,
+            additionalLanguages:["json","diff"]
+        },
+        docs:{
+            sidebar:{
+                autoCollapseCategories:true
+            }
         }
-      }
-    }),
+        }),
     scripts:[
         "/js/sidebarbadges.js",
         "/js/twemoji.js",

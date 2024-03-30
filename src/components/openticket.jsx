@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 export function LabelText(params){
     //color selector
@@ -84,56 +85,60 @@ export function ColorText(params){
 }
 
 export function LinkBlock(params){
-    if (params.url){
-        var linkClasses = "bg-[#222] w-full h-20 max-lg:h-28 my-3 border-[#606770] border-[1px] border-solid rounded-lg flex items-center hover:no-underline hover:scale-[102%] hover:border-[--ifm-color-primary] hover:border-2 transition-all duration-200"
-    }else{
-        var linkClasses = "bg-[#222] w-full h-20 max-lg:h-28 my-3 border-[#606770] border-[1px] border-solid rounded-lg flex items-center hover:no-underline"
-    }
+    return <BrowserOnly>{() => {
+        if (params.url){
+            var linkClasses = "bg-[#222] w-full h-20 max-lg:h-28 my-3 border-[#606770] border-[1px] border-solid rounded-lg flex items-center hover:no-underline hover:scale-[102%] hover:border-[--ifm-color-primary] hover:border-2 transition-all duration-200"
+        }else{
+            var linkClasses = "bg-[#222] w-full h-20 max-lg:h-28 my-3 border-[#606770] border-[1px] border-solid rounded-lg flex items-center hover:no-underline"
+        }
 
-    if (params.url &&  params.isdoc == "true"){
-        var linkUrl = "/docs/"+document.documentElement.getAttribute("docs-path")+"/"+params.url
-        linkClasses = linkClasses + " require-url-update"
-    }else{
-        var linkUrl = params.url
-    }
+        if (params.url &&  params.isdoc == "true"){
+            var linkUrl = "/docs/"+document.documentElement.getAttribute("docs-path")+"/"+params.url
+            linkClasses = linkClasses + " require-url-update"
+        }else{
+            var linkUrl = params.url
+        }
 
-    const target = (params.url) ? ((params.url.startsWith("/") || params.url.startsWith("https://")) ? "_blank" : "_self") : "_self"
+        const target = (params.url) ? ((params.url.startsWith("/") || params.url.startsWith("https://")) ? "_blank" : "_self") : "_self"
 
-    if (params.mode == "image" && params.image){
-        return (
-            <a url={params.url} href={linkUrl} target={target} className={linkClasses}>
-                <img className="w-12 h-12 m-0 mx-2 max-lg:mr-4" src={params.image}/>
-                <div className='flex flex-col justify-center max-lg:mr-4'>
-                    <p className="m-0 text-white font-bold text-xl">{params.name}</p>
-                    <p className="m-0 text-neutral-400">{params.description}</p>
-                </div>
-            </a>
-        )
-    }else if (params.mode == "emoji" && params.emoji){
-        return (
-            <a url={params.url} href={linkUrl} target={target} className={linkClasses}>
-                <p className="text-5xl m-0 mx-2 max-lg:mr-4">{params.emoji}</p>
-                <div className='flex flex-col justify-center max-lg:mr-4'>
-                    <p className="m-0 text-white font-bold text-xl">{params.name}</p>
-                    <p className="m-0 text-neutral-400">{params.description}</p>
-                </div>
-            </a>
-        )
-    }else{
-        return (<p className='text-red-500'>[INVALID LinkBlock Element!]</p>)
-    }
+        if (params.mode == "image" && params.image){
+            return (
+                <a url={params.url} href={linkUrl} target={target} className={linkClasses}>
+                    <img className="w-12 h-12 m-0 mx-2 max-lg:mr-4" src={params.image}/>
+                    <div className='flex flex-col justify-center max-lg:mr-4'>
+                        <p className="m-0 text-white font-bold text-xl">{params.name}</p>
+                        <p className="m-0 text-neutral-400">{params.description}</p>
+                    </div>
+                </a>
+            )
+        }else if (params.mode == "emoji" && params.emoji){
+            return (
+                <a url={params.url} href={linkUrl} target={target} className={linkClasses}>
+                    <p className="text-5xl m-0 mx-2 max-lg:mr-4">{params.emoji}</p>
+                    <div className='flex flex-col justify-center max-lg:mr-4'>
+                        <p className="m-0 text-white font-bold text-xl">{params.name}</p>
+                        <p className="m-0 text-neutral-400">{params.description}</p>
+                    </div>
+                </a>
+            )
+        }else{
+            return (<p className='text-red-500'>[INVALID LinkBlock Element!]</p>)
+        }
+    }}</BrowserOnly>
 }
 
 export function InlineLink(params){
-    if (params.url && params.isdoc == "true"){
-        var linkUrl = "/docs/"+document.documentElement.getAttribute("docs-path")+"/"+params.url
-        var extraClass = "require-url-update"
-    }else{
-        var linkUrl = params.url
-        var extraClass = ""
-    }
+    return <BrowserOnly>{() => {
+        if (params.url && params.isdoc == "true"){
+            var linkUrl = "/docs/"+document.documentElement.getAttribute("docs-path")+"/"+params.url
+            var extraClass = "require-url-update"
+        }else{
+            var linkUrl = params.url
+            var extraClass = ""
+        }
 
-    return (<Link to={linkUrl} className={extraClass}>{params.children}</Link>)
+        return (<Link to={linkUrl} className={extraClass}>{params.children}</Link>)
+    }}</BrowserOnly>
 }
 
 export function GoodImage(params){

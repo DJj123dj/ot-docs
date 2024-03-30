@@ -1,0 +1,64 @@
+---
+title: Ticket Flow
+description: What is the general layout & flow of a ticket?
+---
+import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+
+In discord, most tickets follow a general style/flow which is almost exactly the same in every discord bot.
+**Here is an example:**
+- [Creation](#creation)
+- [Claiming](#claiming)
+- [Closing](#closing)
+- [Reopening](#reopening)
+- [Deletion](#deletion)
+- [Transcript](#transcript)
+
+Learning this flow can also help you understand some commands & when to use them.
+It doesn't make sense to use **reopen before the ticket has been closed**.
+Or to **claim a ticket when it already has been answered**!
+Also note that some messages & embeds are very important for Open Ticket & can't be deleted!
+
+## Creation
+When you create a ticket, you will be greeted with a small embed (which you can customise) with a few buttons. In Open Ticket, it's called the **header of the ticket**.
+<GoodImage src="/img/docs/core/firstmsg.png" size="60%"></GoodImage>
+
+:::danger don't delete!
+It's <ColorText color="red">**very important**</ColorText> to keep this message. It's used in the back-end of open ticket to identify the ticket.
+
+If you still manage to delete it, <ColorText color="red">**Open Ticket won't recognise the channel as a ticket anymore**</ColorText>. As a result, you can't use commands, buttons & transcripts anymore!
+:::
+
+The buttons are for **[Claiming](#claiming)**, **[Closing](#closing)** & **[Deleting](#deletion)**!
+
+## Claiming
+You can claim a ticket by running the `/claim` command or using the claim button.
+A claimed ticket doesn't do anything special.
+
+✅ **Claiming is just a notifier for the support team that you are handling this ticket!**
+
+<GoodImage src="/img/docs/core/firstmsg_claimed.png" size="60%"></GoodImage>
+
+In future versions, the ticket claiming system will be 10x more advanced! But still it's cool to have!
+
+## Closing
+When you close a ticket in Open Ticket, the creator of the ticket can't talk anymore (they can press buttons).
+It's the step you do before deleting the ticket. A closed ticket can also be [reopened](#reopening) to continue the conversation.
+
+✅ **Closing is mostly used when you are finished with the conversation, but you still want to keep the ticket open!**
+
+<GoodImage src="/img/docs/commands/close.png" size="50%"></GoodImage>
+
+## Reopening
+If you have a [closed ticket](#closing) where you want to continue the conversation, you can reopen it.
+Now, the creator of the ticket can talk again! And that's all! You can do it as many times as you want!
+
+✅ **Reopening is used when you want to continue with the conversation!**
+
+<GoodImage src="/img/docs/commands/reopen.png" size="50%"></GoodImage>
+
+## Deletion
+If you are sure that everything has been finished, you can delete the ticket. <ColorText color="red">**Remember that this is permanent, you can't undo this action!**</ColorText>
+If you have enabled <InlineLink isdoc="true" url="docs/system/transcripts">**transcripts**</InlineLink>, the transcript will also be created.
+
+And that's it, there is not much to say about it :)
+<GoodImage src="/img/docs/commands/delete.png" size="50%"></GoodImage>

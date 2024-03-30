@@ -3,7 +3,8 @@ setInterval(() => {
     //parse twemoji
     twemoji.parse(document.body,{
         folder: 'svg',
-        ext: '.svg'
+        ext: '.svg',
+        base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/'
     })
 
     //manage LinkBlocks
@@ -22,7 +23,7 @@ setInterval(() => {
         const versionDropdown = Array.from(document.getElementsByClassName("navbar__item"))[4]
         if (versionDropdown){
             const activeVersion = versionDropdown.getElementsByClassName("dropdown__link--active")[0]
-            versionDropdown.firstElementChild.innerHTML = activeVersion.innerHTML
+            if (activeVersion) versionDropdown.firstElementChild.innerHTML = activeVersion.innerHTML
         }
     }
     //reset localDocsPath

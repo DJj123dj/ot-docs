@@ -1,3 +1,10 @@
+//BADGES FRONT MATTER:
+//sidebar_class_name: otdocs-new-(page/category)
+//sidebar_class_name: otdocs-beta-(page/category)
+//sidebar_class_name: otdocs-official-(page/category)
+//sidebar_class_name: otdocs-verified-(page/category)
+
+
 const addPageBadge = (element,color,text) => {
     const textElement = element.firstElementChild
 
@@ -45,7 +52,7 @@ const addCategoryBadge = (element,color,text) => {
 }
 
 
-window.addEventListener('load', function () {
+document.addEventListener("DOMContentLoaded",() => {
     const newPageItems = Array.from(document.getElementsByClassName("otdocs-new-page"))
     const newCategoryItems = Array.from(document.getElementsByClassName("otdocs-new-category"))
     const betaPageItems = Array.from(document.getElementsByClassName("otdocs-beta-page"))
@@ -107,58 +114,60 @@ window.addEventListener('load', function () {
         const verifiedPageItems = Array.from(document.getElementsByClassName("otdocs-verified-page"))
         const verifiedCategoryItems = Array.from(document.getElementsByClassName("otdocs-verified-category"))
         
+        console.log("hey",newPageItems)
+
         //render newPageItems
         newPageItems.forEach((item) => {
-            if (!item.firstElementChild.firstElementChild){
+            if (!item.firstElementChild.querySelector("#otdocs-badge")){
                 addPageBadge(item,"#ff4545","NEW!")
             }
         })
     
         //render newCategoryItems
         newCategoryItems.forEach((item) => {
-            if (!item.firstElementChild.firstElementChild.firstElementChild){
+            if (!item.firstElementChild.firstElementChild.querySelector("#otdocs-badge")){
                 addCategoryBadge(item,"#ff4545","NEW!")
             }
         })
     
         //render betaPageItems
         betaPageItems.forEach((item) => {
-            if (!item.firstElementChild.firstElementChild){
+            if (!item.firstElementChild.querySelector("#otdocs-badge")){
                 addPageBadge(item,"#3d84e0","BETA!")
             }
         })
     
         //render betaCategoryItems
         betaCategoryItems.forEach((item) => {
-            if (!item.firstElementChild.firstElementChild.firstElementChild){
+            if (!item.firstElementChild.firstElementChild.querySelector("#otdocs-badge")){
                 addCategoryBadge(item,"#3d84e0","BETA!")
             }
         })
 
         //render officialPageItems
         officialPageItems.forEach((item) => {
-            if (!item.firstElementChild.firstElementChild){
+            if (!item.firstElementChild.querySelector("#otdocs-badge")){
                 addPageBadge(item,"#3d84e0","OFFICIAL")
             }
         })
     
         //render officialCategoryItems
         officialCategoryItems.forEach((item) => {
-            if (!item.firstElementChild.firstElementChild.firstElementChild){
+            if (!item.firstElementChild.firstElementChild.querySelector("#otdocs-badge")){
                 addCategoryBadge(item,"#3d84e0","OFFICIAL")
             }
         })
 
         //render verifiedPageItems
         verifiedPageItems.forEach((item) => {
-            if (!item.firstElementChild.firstElementChild){
+            if (!item.firstElementChild.querySelector("#otdocs-badge")){
                 addPageBadge(item,"#35c43a","VERIFIED")
             }
         })
     
         //render verifiedCategoryItems
         verifiedCategoryItems.forEach((item) => {
-            if (!item.firstElementChild.firstElementChild.firstElementChild){
+            if (!item.firstElementChild.firstElementChild.querySelector("#otdocs-badge")){
                 addCategoryBadge(item,"#35c43a","VERIFIED")
             }
         })

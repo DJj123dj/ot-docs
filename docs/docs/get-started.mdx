@@ -7,7 +7,7 @@ import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from 
 
 :::info Discord Bot Knowledge
 It is highly recommended that you know some **basic principles** about `discord bots` & `node.js` before working with Open Ticket!
-This documentation won't explain how to invite your bot or how to install node.js, but we will provide some basic info about hosting this bot on different platforms.
+This documentation won't explain how to create your bot or how to write javascript, but we will provide some basic info about hosting this bot on different platforms.
 :::
 
 ## Installation
@@ -15,11 +15,23 @@ You can install Open Ticket from [github](https://www.github.com/DJj123dj/open-t
 
 <GoodImage src="/img/docs/installation/download.png" size="50%"/>
 
-### Libraries
-Open Ticket needs some npm libraries to work! You can install these all at once with the following command:
+### Npm Packages
+Open Ticket needs some npm packages to work! You can install them all at once with `npm install`
+If you prefer to do it manually, you can use:
+```text title="Manual Installation"
+npm install discord.js axios chalk
 ```
-npm install
-```
+
+### Engine
+To run Open Ticket, you can use `node.js`, `deno` or `bun`. <ColorText color="blue">**If you are a beginner, it's recommended to use `node.js`!**</ColorText>
+
+**You can install them here:**
+:::warning
+Be aware that Bun & Deno are not officially supported by Open Ticket. Use them at your own risk!
+:::
+<LinkBlock mode="image" image="/img/logo/nodejs.png" isdoc="false" url="https://nodejs.org/en/download" name="Node.js Downloads" description="Install Node.js! (default engine)"></LinkBlock>
+<LinkBlock mode="image" image="/img/logo/bun.png" isdoc="false" url="https://bun.sh" name="Bun Downloads" description="Install Bun! (much faster)"></LinkBlock>
+<LinkBlock mode="image" image="/img/logo/deno.svg" isdoc="false" url="https://deno.com" name="Deno Downloads" description="Install Deno! (more secure)"></LinkBlock>
 
 ## Bot Setup
 ### creation
@@ -27,26 +39,29 @@ Before you can use Open Ticket, you need to create a discord bot! You can create
 <GoodImage src="/img/docs/installation/devportal_create.png" size="50%"/>
 
 ### permissions
-When inviting your bot to a discord server, we recommend giving your bot the `Administrator` permission!
+When inviting your bot to a discord server, we recommend giving your bot the `ADMINISTRATOR` permission!
 It is also possible to define your own permissions, but it can affect the bot's ability to do some things.
 
 <GoodImage src="/img/docs/installation/devportal_permissions.png" size="70%"></GoodImage>
 
+More info can be found here:
+<LinkBlock mode="emoji" emoji="✅" isdoc="true" url="docs/system/installation-permissions" name="Installation Permissions" description="Everything about bot permissions!"></LinkBlock>
+
 ### intents
 Every discord bot also needs some **Privileged Gateaway Intents**.
-These intents give the bot some extra permissions that may be important for some things.
-The `Message Content` intent allows the bot to read text messages in the server.
-This is the most important one, because it is needed for some commands to work properly!
+These intents give the bot some extra permissions that are required for some features!
+The `Message Content Intent` allows the bot to read text messages in the server.
+**If you don't enable this, transcripts & text commands won't work!**
 
 <GoodImage src="/img/docs/installation/devportal_intents.png" size="70%"></GoodImage>
 
 ## Configuration
 Open Ticket has 2 config files! `config.json` and `transcriptconfig.json`! The transcript config is not that important for now, but can later be used to configure HTML transcripts.
-However, **the main config is very important** for many things in the bot! We will focus on the most important parts from `config.json` for now!
+However, **the main config is very important!** We will focus on the most important parts from `config.json` for now!
 
 :::tip
 If you need a more detailed explaination about all the config variables, visit this page:
-**<InlineLink url="docs/config/main" isdoc="true">everything about config.json</InlineLink>**
+**<InlineLink url="docs/config/main" isdoc="true">`config.json` in detail!</InlineLink>**
 :::
 
 ### Main Settings
@@ -241,9 +256,12 @@ If you are ready with the messages, you can move on to **[Testing](#testing)**!
 ```
 
 ## Testing
-Now you've configured the bot, you can start it with the following command:
-```
+Now you've configured the bot, you can start it with one of the following commands:
+```text title="Start using npm (recommended)"
 npm start
+```
+```text title="Start using node.js (for developers & hosting)"
+node index.js
 ```
 
 ### On Success
@@ -252,17 +270,20 @@ When you have configured your `config.json` correctly, you will see a startup sc
 ### On Failiure
 When you made a mistake, the bot will tell you what's wrong with your config. Try to follow the instructions from the errors as good as possible. When you don't find the solution, you can always join our [discord server](https://discord.dj-dj.be)!
 <GoodImage src="/img/docs/installation/console_checkerjs.png" size="80%"/>
+<LinkBlock mode="emoji" emoji="❓" isdoc="true" url="docs/system/config-errors" name="Open Ticket Config Errors!" description="What are these config errors?"></LinkBlock>
+
 
 ### 🎉 Now you can try out the bot! \{#tryout}
 Use the `/help` command for a guide of all available commands. Use the `/message <id>` command to generate an embed with buttons.
 
 <GoodImage src="/img/docs/commands/help_slash.png" size="50%"/>
 
-### Advanced Guides
+## Advanced Guides
 Also make sure to check out these advanced guides!
 This way, you can get even more out of Open Ticket!
-<LinkBlock url="https://www.dj-dj.Be" isdoc="false" mode="emoji" emoji="🌐" name="Hosting Open Ticket" description="A guide about hosting this bot 24/7!"/>
-<LinkBlock url="https://www.dj-dj.Be" isdoc="false" mode="emoji" emoji="📄" name="HTML Transcripts" description="How to set-up HTML transcripts?"/>
-<LinkBlock url="https://www.dj-dj.Be" isdoc="false" mode="emoji" emoji="⚙️" name="Config.json In Detail" description="Every variable of config.json explained in the best way possible!"/>
-<LinkBlock url="https://www.dj-dj.Be" isdoc="false" mode="emoji" emoji="✅" name="Reaction Roles & Websites" description="Discover the other option types!"/>
-<LinkBlock url="https://www.dj-dj.Be" isdoc="false" mode="emoji" emoji="🧑‍💻" name="Creating Plugins" description="Are you interested in creating plugins for Open Ticket?"/>
+<LinkBlock url="category/hosting" isdoc="true" mode="emoji" emoji="🌐" name="Hosting Open Ticket" description="A guide about hosting this bot 24/7!"/>
+<LinkBlock url="docs/system/transcripts" isdoc="true" mode="emoji" emoji="📄" name="HTML Transcripts" description="How to set-up HTML transcripts?"/>
+<LinkBlock url="docs/system/ticket-flow" isdoc="true" mode="emoji" emoji="💡" name="Ticket Flow" description="Discover how some of the cool features work!"/>
+<LinkBlock url="docs/config/main" isdoc="true" mode="emoji" emoji="⚙️" name="Config.json In Detail" description="Every variable of config.json explained in the best way possible!"/>
+<LinkBlock url="docs/config/main/options" isdoc="true" mode="emoji" emoji="✅" name="Reaction Roles & Websites" description="Discover the other option types!"/>
+<LinkBlock url="docs/system/plugins" isdoc="true" mode="emoji" emoji="🔌" name="Plugins" description="Are you interested in plugins for Open Ticket?"/>

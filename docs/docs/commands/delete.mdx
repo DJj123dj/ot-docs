@@ -1,21 +1,21 @@
 ---
-title: /ticket
-description: Use this command to open a ticket!
+title: /delete
+description: Deleta a ticket & create a transcript!
 ---
 import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
 
 ### General Information
-- **Permissions:** 🟢 Everyone
-- **Usable Locations:** 🟠 Server (server & ticket)
-- **Text Command:** `none`
-- **Slash Command:** `/ticket <id>`
+- **Permissions:** 🟠 Ticket Admins
+- **Usable Locations:** 🔴 Ticket Only
+- **Text Command:** `!ticket delete`
+- **Slash Command:** `/delete`
 
 ## Quick Overview
-With the /ticket command, you can create a ticket without spawning an embed using the <InlineLink url="docs/commands/message" isdoc="true">/message command</InlineLink>!
-The buttons & design can be configured in the <InlineLink url="docs/config/main" isdoc="true">config file</InlineLink>!
-This is very usefull if you don't want to have a channel for tickets! And remember that this command can also be disabled!
+The /delete command is used to delete a ticket. **It permanently deletes the ticket!**
+If you have configured transcripts in `transcriptconfig.json`, then they will also be created!
+**More info about ticket deletion <InlineLink isdoc="true" url="docs/system/ticket-flow#deletion">can be found here</InlineLink>!**
 
-<GoodImage src="/img/docs/commands/ticket.png" size="50%"></GoodImage>
+<GoodImage src="/img/docs/commands/delete.png" size="50%"></GoodImage>
 
 ## Config
 These are the <InlineLink url="docs/config/main" isdoc="true">configurable settings</InlineLink> for this command.

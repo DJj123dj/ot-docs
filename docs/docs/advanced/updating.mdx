@@ -3,3 +3,41 @@ title: Updating
 description: How to update Open Ticket to a new version?
 sidebar_position: 3
 ---
+import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+
+To update Open Ticket to a new version, you need to follow a few steps! If you don't follow these, you might lose some important data or settings. And let's not forget about unknown errors!
+
+## STEP 1: Stop the bot \{#step-1}
+Before starting, stop the bot & wait until it's completely offline. Then you can continue to the next step!
+
+## STEP 2: Collect old data \{#step-2}
+Collect all old data from the bot. The data can be used again in the updated bot, this way you don't have to reconfigure everything!
+**The files that you need to keep are:**
+- `./config.json`
+- `./transcriptconfig.json`
+- `./storage/database.json`
+- `./storage/stats.json`
+- `./plugins/...` (all plugins)
+
+## STEP 3: Install the new version \{#step-3}
+Download & install a new version of the bot like you already did before! **Visit this page for more information:**
+<LinkBlock mode="emoji" emoji="📥" name="Installation" description="How to install Open Ticket?" isdoc="true" url="docs/advanced/installation"></LinkBlock>
+
+## STEP 4: Check the changelog \{#step-4}
+**Check the changelog or update announcement to know what changed.** By reading these, you can find out what changed compared to the previous version.
+:::tip
+If you skip one or more version, it's best to also check their changelog for extra info!
+:::
+
+## STEP 5: Configure the config \{#step-5}
+Now you can copy-paste some parts of the old config to the new config. <ColorText color="red">**But remember what has been changed from the changelog!**</ColorText>
+Repeat this process until you have the entire config moved over!
+
+Do this for `config.json` & `transcriptconfig.json`!
+
+## STEP 6: Insert database files \{#step-6}
+The last thing you need to do is add the old database files (`./storage/database.json` & `./storage/stats.json`) back to the `./storage/` directory!
+<ColorText color="red">**But remember what has been changed from the changelog!**</ColorText>
+
+## STEP 7: Start the bot \{#step-7}
+🎉 Tadaaaa, now you can run the new bot again! **Slash commands will be updated automatically!**

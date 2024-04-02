@@ -1,0 +1,26 @@
+---
+title: /rename
+description: Rename a ticket channel!
+---
+import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+
+### General Information
+- **Permissions:** 🟠 Ticket Admins
+- **Usable Locations:** 🔴 Ticket Only
+- **Text Command:** `!ticket rename <channel_name>`
+- **Slash Command:** `/rename <channel_name>`
+
+## Quick Overview
+The /rename command is used to rename the channel of the ticket.
+**It will only rename the suffix from the channel name! Not the ticket type!**
+
+<GoodImage src="/img/docs/commands/rename.png" size="50%"></GoodImage>
+
+## Config
+These are the <InlineLink url="docs/config/main" isdoc="true">configurable settings</InlineLink> for this command.
+Some of them will make the command look different!
+Other ones can disable the command or change how it works!
+
+### <InlineLink url="docs/config/api" isdoc="true"><LabelText color="red">api.json</LabelText></InlineLink> disable \{#config-disable}
+You can disable this command using the `api.json` file! This way, no-one can use this command!
+This may be usefull if you want to replace a command by your own!

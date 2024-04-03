@@ -11,7 +11,7 @@ setInterval(() => {
     if (document.documentElement.classList.contains("docs-version-current")){
         document.documentElement.setAttribute("docs-path","dev")
     }else if (document.documentElement.classList.contains("docs-version-3.5.x")){
-        document.documentElement.setAttribute("docs-path","3.5.x")
+        document.documentElement.setAttribute("docs-path","current")
     }
 
     if (localDocsPath != document.documentElement.getAttribute("docs-path")){

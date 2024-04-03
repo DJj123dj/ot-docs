@@ -135,6 +135,22 @@ const config = {
                             label: 'Get Started',
                             to: '/docs/dev/docs/get-started',
                         },
+                        {
+                            label: 'Ticket Flow',
+                            to: '/docs/dev/docs/system/ticket-flow',
+                        },
+                        {
+                            label: 'Transcripts',
+                            to: '/docs/dev/docs/system/transcripts',
+                        },
+                        {
+                            label: 'Translation',
+                            to: '/docs/dev/docs/translation',
+                        },
+                        {
+                            label: 'Configuration',
+                            to: '/docs/dev/docs/config/config',
+                        }
                     ],
                 },
                 {
@@ -145,8 +161,16 @@ const config = {
                             to: '/docs/dev/developer/get-started',
                         },
                         {
+                            label: 'Plugins',
+                            to: '/docs/dev/docs/system/plugins',
+                        },
+                        {
                             label: 'API Reference',
                             to: '/docs/dev/api/get-started',
+                        },
+                        {
+                            label: 'Plugin List',
+                            to: '/docs/dev/plugin/get-started',
                         },
                     ],
                 },
@@ -179,12 +203,16 @@ const config = {
                             to: '/blog',
                         },
                         {
-                            label: 'Plugins',
+                            label: 'Community Plugins',
                             to: '/docs/dev/plugin/get-started',
                         },
                         {
-                            label: 'GitHub',
-                            href: 'https://github.com/DJj123dj/open-ticket',
+                            label: 'Contributing',
+                            href: '/contributing',
+                        },
+                        {
+                            label: 'Open Ticket 4.0',
+                            href: '/docs/dev/docs/openticket-4',
                         },
                     ],
                 },

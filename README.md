@@ -1,41 +1,15 @@
-# Website
+# Open Ticket Docs
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+<img src="https://apis.dj-dj.be/cdn/openticket/logo.png" alt="Open Ticket" width="600px">
 
-### Installation
+[![discord](https://img.shields.io/badge/discord-join%20our%20server-5865F2.svg?style=flat-square&logo=discord)](https://discord.com/invite/26vT9wt3n3)  [![version](https://img.shields.io/badge/version-3.5.x-brightgreen.svg?style=flat-square)](https://github.com/DJj123dj/open-ticket/releases/tag/v3.5.x)  [![stars](https://img.shields.io/github/stars/djj123dj/ot-docs?color=yellow&label=stars&logo=github&style=flat-square)](https://otdocs.dj-dj.be)
 
-```
-$ yarn
-```
+This is the official documentation, plugin list & blog for Open Ticket!
+[Click here to visit the documentation!](https://otdocs.dj-dj.be)
 
-### Local Development
+## Contributing
+More info about contributing to this documentation can be found [here](https://otdocs.dj-dj.be/contributing)
 
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## Other Stuff
+© 2024 - DJdj Development
+[Join our discord!](https://discord.dj-dj.be)

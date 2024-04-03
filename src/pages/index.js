@@ -7,7 +7,7 @@ import "../css/output.css"
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <Layout title="" description="A guide for the most advanced open source discord ticket bot ever!">
+    <Layout title="Open Ticket Documentation" description="The official documentation for the most advanced open-source discord ticket bot ever!">
     <main className='flex justify-center items-center h-screen flex-col'>
         <p className='m-0 text-3xl font-bold max-md:text-2xl'>Welcome to the official</p>
         <img src="/img/logo_docs_dark.png" draggable="false" className='h-72 opacity-90 hidden dark:block max-md:h-32'></img>

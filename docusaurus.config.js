@@ -33,8 +33,14 @@ const config = {
             sidebarPath: require.resolve('./sidebars.js'),
             editUrl:'https://github.com/DJj123dj/ot-docs/blob/main',
             includeCurrentVersion:true,
-            lastVersion: 'current',
+            lastVersion: '3.5.x',
             versions:{
+                "3.5.x":{
+                    label:"v3.5.x",
+                    path:"current",
+                    badge:false,
+                    banner:"none"
+                },
                 "current":{
                     label:"🚧 Dev Version",
                     path:"dev",
@@ -133,23 +139,23 @@ const config = {
                     items: [
                         {
                             label: 'Get Started',
-                            to: '/docs/dev/docs/get-started',
+                            to: '/docs/current/docs/get-started',
                         },
                         {
                             label: 'Ticket Flow',
-                            to: '/docs/dev/docs/system/ticket-flow',
+                            to: '/docs/current/docs/system/ticket-flow',
                         },
                         {
                             label: 'Transcripts',
-                            to: '/docs/dev/docs/system/transcripts',
+                            to: '/docs/current/docs/system/transcripts',
                         },
                         {
                             label: 'Translation',
-                            to: '/docs/dev/docs/translation',
+                            to: '/docs/current/docs/translation',
                         },
                         {
                             label: 'Configuration',
-                            to: '/docs/dev/docs/config/config',
+                            to: '/docs/current/docs/config/config',
                         }
                     ],
                 },
@@ -158,19 +164,19 @@ const config = {
                     items: [
                         {
                             label: 'Get Started',
-                            to: '/docs/dev/developer/get-started',
+                            to: '/docs/current/developer/get-started',
                         },
                         {
                             label: 'Plugins',
-                            to: '/docs/dev/docs/system/plugins',
+                            to: '/docs/current/docs/system/plugins',
                         },
                         {
                             label: 'API Reference',
-                            to: '/docs/dev/api/get-started',
+                            to: '/docs/current/api/get-started',
                         },
                         {
                             label: 'Plugin List',
-                            to: '/docs/dev/plugin/get-started',
+                            to: '/docs/current/plugin/get-started',
                         },
                     ],
                 },
@@ -204,7 +210,7 @@ const config = {
                         },
                         {
                             label: 'Community Plugins',
-                            to: '/docs/dev/plugin/get-started',
+                            to: '/docs/current/plugin/get-started',
                         },
                         {
                             label: 'Contributing',
@@ -212,7 +218,7 @@ const config = {
                         },
                         {
                             label: 'Open Ticket 4.0',
-                            href: '/docs/dev/docs/openticket-4',
+                            href: '/docs/current/docs/openticket-4',
                         },
                     ],
                 },

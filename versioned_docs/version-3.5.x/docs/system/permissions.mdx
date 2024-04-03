@@ -1,0 +1,137 @@
+---
+title: Permissions
+description: Who can use which commands & buttons?
+keywords: [open-ticket, open ticket, discord ticket bot, permissions, buttons, commands]
+---
+import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+
+On this page, you can find a list of the permissions required for commands, buttons & more actions in Open Ticket!
+You will also get some information about where you can use it!
+
+### Ticket Creation \{#creation}
+Create a ticket using the embed or with `/ticket <id>`!
+
+<table>
+  <tr>
+    <th>Permission</th>
+    <td>🟢 Everyone</td>
+  </tr>
+  <tr>
+    <th>Location</th>
+    <td>🟠 Server, Ticket</td>
+  </tr>
+</table>
+
+### Ticket Closing \{#closing}
+Close a ticket using one of the buttons or with `/close`!
+The permission differs based on `"closeMode"` property in config.
+
+<table>
+  <tr>
+    <th>Permission</th>
+    <td>🟢 Everyone</td>
+  </tr>
+  <tr>
+    <th>Location</th>
+    <td>🔴 Ticket</td>
+  </tr>
+</table>
+
+### Ticket Deletion \{#deletion}
+Delete a ticket using one of the buttons or with `/delete`!
+This will also create a transcript when enabled.
+
+<table>
+  <tr>
+    <th>Permission</th>
+    <td>🟠 Ticket & Global Admins</td>
+  </tr>
+  <tr>
+    <th>Location</th>
+    <td>🔴 Ticket</td>
+  </tr>
+</table>
+
+### Ticket Reopening \{#reopening}
+Reopen a ticket using one of the buttons or with `/reopen`!
+
+<table>
+  <tr>
+    <th>Permission</th>
+    <td>🟢 Everyone</td>
+  </tr>
+  <tr>
+    <th>Location</th>
+    <td>🔴 Ticket</td>
+  </tr>
+</table>
+
+### Ticket Claiming \{#claiming}
+Claim a ticket using the claim button or with `/claim`!
+
+<table>
+  <tr>
+    <th>Permission</th>
+    <td>🟠 Ticket & Global Admins</td>
+  </tr>
+  <tr>
+    <th>Location</th>
+    <td>🔴 Ticket</td>
+  </tr>
+</table>
+
+### Ticket Renaming/Changing \{#rename-changing}
+Rename/Change a ticket using the `/rename` & `/change` command!
+
+<table>
+  <tr>
+    <th>Permission</th>
+    <td>🟠 Ticket & Global Admins</td>
+  </tr>
+  <tr>
+    <th>Location</th>
+    <td>🔴 Ticket</td>
+  </tr>
+</table>
+
+### Ticket Add/Remove \{#add-remove}
+Add/Remove a user from a ticket using the `/add` & `/remove` command!
+
+<table>
+  <tr>
+    <th>Permission</th>
+    <td>🟠 Ticket & Global Admins</td>
+  </tr>
+  <tr>
+    <th>Location</th>
+    <td>🔴 Ticket</td>
+  </tr>
+</table>
+
+### Help Command \{#help-command}
+Show the help menu using the `/help` command!
+
+<table>
+  <tr>
+    <th>Permission</th>
+    <td>🟢 Everyone</td>
+  </tr>
+  <tr>
+    <th>Location</th>
+    <td>🟢 DM, Server, Ticket</td>
+  </tr>
+</table>
+
+### Message Command \{#message-command}
+Spawn an embed using the `/message` command!
+
+<table>
+  <tr>
+    <th>Permission</th>
+    <td>🔴 Global Admins</td>
+  </tr>
+  <tr>
+    <th>Location</th>
+    <td>🟠 Server, Ticket</td>
+  </tr>
+</table>

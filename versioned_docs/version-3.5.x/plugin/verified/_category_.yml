@@ -1,0 +1,7 @@
+label: ✅ Verified
+position: 3
+link:
+  type: generated-index
+  title: Verified
+  slug: category/list-verified
+  description: These are the verified plugins. They are made by the community, but are verified by the Open Ticket team.

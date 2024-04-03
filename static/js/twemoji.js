@@ -7,11 +7,11 @@ setInterval(() => {
         base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/'
     })
 
-    //manage LinkBlocks
+    //manage LinkBlocks (UPDATE THIS EVERY TIME THERE IS A NEW RELEASE!!!!!)
     if (document.documentElement.classList.contains("docs-version-current")){
         document.documentElement.setAttribute("docs-path","dev")
-    }else if (document.documentElement.classList.contains("docs-version-3.4.4")){
-        document.documentElement.setAttribute("docs-path","3.4.4")
+    }else if (document.documentElement.classList.contains("docs-version-3.5.x")){
+        document.documentElement.setAttribute("docs-path","3.5.x")
     }
 
     if (localDocsPath != document.documentElement.getAttribute("docs-path")){
@@ -20,9 +20,10 @@ setInterval(() => {
             el.setAttribute("href","/docs/"+document.documentElement.getAttribute("docs-path")+"/"+el.getAttribute("url"))
         })
 
-        const versionDropdown = Array.from(document.getElementsByClassName("navbar__item"))[4]
+        //UPDATE WHEN EXTRA DROPDOWN ADDED
+        const versionDropdown = document.querySelector("div.navbar__item.dropdown.dropdown--hoverable.dropdown--right")
         if (versionDropdown){
-            const activeVersion = versionDropdown.getElementsByClassName("dropdown__link--active")[0]
+            const activeVersion = versionDropdown.querySelector(".dropdown__link--active")
             if (activeVersion) versionDropdown.firstElementChild.innerHTML = activeVersion.innerHTML
         }
     }

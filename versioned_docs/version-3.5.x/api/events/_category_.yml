@@ -1,0 +1,7 @@
+label: 📩 Events
+position: 2
+link:
+  type: generated-index
+  title: Events
+  slug: category/api-events
+  description: You can listen for certain events. Then, you can do an action based on that event!

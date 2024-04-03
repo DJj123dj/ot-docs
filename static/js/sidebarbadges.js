@@ -113,8 +113,6 @@ document.addEventListener("DOMContentLoaded",() => {
         const officialCategoryItems = Array.from(document.getElementsByClassName("otdocs-official-category"))
         const verifiedPageItems = Array.from(document.getElementsByClassName("otdocs-verified-page"))
         const verifiedCategoryItems = Array.from(document.getElementsByClassName("otdocs-verified-category"))
-        
-        console.log("hey",newPageItems)
 
         //render newPageItems
         newPageItems.forEach((item) => {

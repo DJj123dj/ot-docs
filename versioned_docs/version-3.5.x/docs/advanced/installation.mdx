@@ -1,0 +1,44 @@
+---
+title: Installation
+description: Everything about node.js, npm & the installation
+sidebar_position: 1
+keywords: [open-ticket, open ticket, discord ticket bot, installation, configuration, npm, node.js]
+---
+import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+
+You can install Open Ticket from [github](https://www.github.com/DJj123dj/open-ticket) by **cloning** or **downloading it as a ZIP file**. We recommend downloading it from the official repository, because other versions may be modified! When downloading as a ZIP file, you need to extract it ofcourse!
+
+<GoodImage src="/img/docs-v3/installation/download.png" size="50%"/>
+
+## Npm Packages
+Open Ticket needs some npm packages to work! You can install them all at once with `npm install`
+If you prefer to do it manually, you can use:
+```text title="Manual Installation"
+npm install discord.js axios chalk
+```
+
+|Package      |Version     |Notes                               |
+|-------------|------------|------------------------------------|
+|`discord.js` |`>= v14.14` |Used for discord communication      |
+|`axios`      |`>= v1.6`   |Used for uploading HTML Transcripts |
+|`chalk`      |`>= v5.0`   |Used for colors in the cmd          |
+
+## Engine
+To run Open Ticket, you can use `node.js`, `deno` or `bun`. <ColorText color="blue">**If you are a beginner, it's recommended to use `node.js`!**</ColorText>
+
+**You can install them here:**
+:::warning
+Be aware that Bun & Deno are not officially supported by Open Ticket. Use them at your own risk!
+:::
+<LinkBlock mode="image" image="/img/logo/nodejs.png" isdoc="false" url="https://nodejs.org/en/download" name="Node.js Downloads" description="Install Node.js! (default engine)"></LinkBlock>
+<LinkBlock mode="image" image="/img/logo/bun.png" isdoc="false" url="https://bun.sh" name="Bun Downloads" description="Install Bun! (much faster)"></LinkBlock>
+<LinkBlock mode="image" image="/img/logo/deno.svg" isdoc="false" url="https://deno.com" name="Deno Downloads" description="Install Deno! (more secure)"></LinkBlock>
+
+## Starting
+Start the bot using one of the following commands:
+```text title="Start using npm (recommended)"
+npm start
+```
+```text title="Start using node.js (for developers & hosting)"
+node index.js
+```

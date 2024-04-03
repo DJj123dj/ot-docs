@@ -1,0 +1,26 @@
+---
+title: Plugins
+description: How to use Open Ticket plugins?
+keywords: [open-ticket, open ticket, discord ticket bot, plugins, developer, api]
+---
+import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+
+:::tip new plugin system
+<InlineLink isdoc="true" url="docs/openticket-4">**Open Ticket 4.0**</InlineLink> will have a fully rewritten plugin system with <ColorText color="green">**200x the capabilities**</ColorText> of the current system!
+With the new system, you can edit embeds, overwrite systems, add your own buttons & more!
+:::
+
+Open Ticket v3 has a small plugin system that you can use for lots of cool things! **Here are some examples:**
+- Run custom code
+- Add extra systems (moderation, giveaway, minigames,...)
+- Respond to events (ticket creation, closing, deleting,...)
+
+## Structure
+Plugins are stored in `./plugins/` and are <ColorText color="red">**required to have the `.plugin.js` extension!**</ColorText>
+
+If you want to know how to write plugins yourself, consider checking the developer wiki!
+<LinkBlock mode="emoji" emoji="🖥️" isdoc="true" url="developer/get-started" name="Developer: Get Started!" description="A perfect beginner guide for writing OT Plugins!"></LinkBlock>
+
+## Plugin List
+Open Ticket has an official plugin list. You can find it in this documentation! Here, you can find offical, verified & other plugins that may be the one that you are searching for!
+<LinkBlock mode="emoji" emoji="📜" isdoc="true" url="plugin/list" name="Plugin List!" description="A list of all known public plugins!"></LinkBlock>

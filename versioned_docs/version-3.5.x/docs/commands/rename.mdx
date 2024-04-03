@@ -1,22 +1,22 @@
 ---
-title: /reopen
-description: Re-Open a closed ticket!
-sidebar_position: 6
-keywords: [open-ticket, open ticket, discord ticket bot, command, slash command, reopen]
+title: /rename
+description: Rename a ticket channel!
+sidebar_position: 12
+keywords: [open-ticket, open ticket, discord ticket bot, command, slash command, rename]
 ---
 import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
 
 ### General Information
-- **Permissions:** 🟢 Everyone
+- **Permissions:** 🟠 Ticket Admins
 - **Usable Locations:** 🔴 Ticket Only
-- **Text Command:** `!ticket reopen`
-- **Slash Command:** `/reopen`
+- **Text Command:** `!ticket rename <channel_name>`
+- **Slash Command:** `/rename <channel_name>`
 
 ## Quick Overview
-The /reopen command is used to re-open a closed ticket. Now, the ticket creator can talk again!
-**More info about ticket reopening <InlineLink isdoc="true" url="docs/system/ticket-flow#reopening">can be found here</InlineLink>!**
+The /rename command is used to rename the channel of the ticket.
+**It will only rename the suffix from the channel name! Not the ticket type!**
 
-<GoodImage src="/img/docs-v3/commands/reopen.png" size="50%"></GoodImage>
+<GoodImage src="/img/docs-v3/commands/rename.png" size="50%"></GoodImage>
 
 ## Config
 These are the <InlineLink url="docs/config/main" isdoc="true">configurable settings</InlineLink> for this command.

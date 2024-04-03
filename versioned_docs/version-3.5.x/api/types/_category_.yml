@@ -1,0 +1,7 @@
+label: 📌 Types
+position: 3
+link:
+  type: generated-index
+  title: Types
+  slug: category/api-types
+  description: Types are templates for objects or variables. They make it easier to communicate!

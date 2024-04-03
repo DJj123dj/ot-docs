@@ -6,3 +6,6 @@ What to do when there is a new version of the documentation?
 - update links on homepage `/src/pages/index.js`
 - update `/src/pages/versions.mdx`
 - update version in README.md header & footer things
+- change `./versions.json`
+- update everything in `docusaurus.config.js`
+- check if version dropdown still functions properly (& change if needed)

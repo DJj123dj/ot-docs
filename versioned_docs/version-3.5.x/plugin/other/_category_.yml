@@ -1,0 +1,7 @@
+label: ⚠️ Other
+position: 4
+link:
+  type: generated-index
+  title: Other
+  slug: category/list-other
+  description: These are the other plugins. They aren't verified & may contain bugs or malicious content! It isn't recommended to use these!

@@ -1,0 +1,402 @@
+---
+title: Option Settings
+description: Configure the options/buttons
+sidebar_position: 4
+keywords: [open-ticket, open ticket, discord ticket bot, config, config.json, settings, options, buttons, dropdown]
+---
+import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+
+The options are the <ColorText color="red">**variables that create the buttons**</ColorText> in your ticket bot. Every button can be configured as much as you want!
+There are **3 types**: `ticket`, `website` & `role`.
+
+In this page, we will explain what every ticket type does and how to use it!
+
+:::warning every option needs a unique id!
+Every option needs a unique ID. You can configure this in the `"id":"..."` variable! You will need this ID later to add the button to the embed!
+:::
+:::tip
+To create multiple `ticket` options, you need to copy the entire part <ColorText color="green">**between & together with the curly brackets `{...}`**</ColorText>!
+Then, you need to paste it <ColorText color="green">**after the original**</ColorText>, but separate it with a comma!
+Make sure that they don't have the same ID or the bot will give an error!
+:::
+
+
+If you are ready with the options, you can move on to the <InlineLink url="docs/config/main/messages" isdoc="true">**Message Settings**</InlineLink> below to create embeds!
+
+## Basic Option \{#basic-option}
+The basic option does not really exist, but the settings you will see here are <ColorText color="red">**required in every option!**</ColorText>
+The `"id"` is a unique id for every option in Open Ticket. <ColorText color="blue">**There can't be any options with the same id!**</ColorText>
+Then you also have the `"name"` & `"description"` properties. These will be shown to users using this bot!
+
+Now, we will explain what every variable does!
+
+```json title="config.json"
+"options":[
+    {
+        "id":"option-id", //the unique ID for each option
+        "name":"Option Name", //the option/ticket name
+        "description":"The option description!", //the option/ticket description
+        "icon":"✅", //the button emoji (leave empty if none)
+        "label":"click here!", //the button label (leave empty if none)
+        "type":"ticket", //the option type ("ticket", "website" or "role")
+    },
+]
+```
+
+### "id" (unique id) \{#basic-id}
+This is the identifier of a `ticket`, `website button` or `reaction role`. It's used **behind the scenes** and isn't shown to users.
+Allowed characters are: `A-Z`, `a-z`, `0-9`, `_` & `-`
+
+
+⚠️ **You will need this id later to <InlineLink url="docs/config/main/messages" isdoc="true">configure the messages!</InlineLink>**
+
+- Default value: `"general"`, `"website"` or `"role"`
+- Allowed values: `"any lowercase string"` (max `20` characters)
+- Required: `true`
+- Type: `string`
+
+### "name" (string) \{#basic-name}
+The `"name"` variable sets the name of the option/ticket. This name will be used in embeds & messages from the bot.
+This message won't be translated when you set the language, so you need to translate it yourself!
+
+- Default value: `""` (empty)
+- Allowed values: `"any string"` (max `100` characters)
+- Required: `true`
+- Type: `string`
+
+### "description" (string) \{#basic-description}
+The `"description"` variable is the description of the option/ticket. This description will be used in embeds & messages from the bot.
+This message won't be translated when you set the language, so you need to translate it yourself!
+
+- Default value: `""` (empty)
+- Allowed values: `"any string"`
+- Required: `false`
+- Type: `string`
+
+### "icon" (emoji) \{#basic-icon}
+Set the icon used on the button/dropdown of the ticket/option. If you don't want an icon, just leave it empty!
+
+:::warning
+You need to have at least 1 of these properties **(`"icon"` or `"label"`)**!
+Else you get an empty button and thats not allowed by discord!
+:::
+
+- Default value: `""` (empty)
+- Allowed values: `"any emoji"` (max `1` emoji) or `""` (empty)
+- Required: `partially`
+- Type: `string`
+
+### "label" (string) \{#basic-label}
+Set the label used on the button/dropdown of the ticket/option. If you don't want a label, just leave it empty!
+
+:::warning
+You need to have at least 1 of these properties **(`"icon"` or `"label"`)**!
+Else you get an empty button and thats not allowed by discord!
+:::
+
+- Default value: `""` (empty)
+- Allowed values: `"any string"` (max `100` characters) or `""` (empty)
+- Required: `partially`
+- Type: `string`
+
+### "type" (option type) \{#basic-type}
+This variable sets the type of option! Every type needs extra variables that you can find in this page!
+
+When you select the `"ticket"` type, you will also need these variables:
+<LinkBlock mode="emoji" emoji="🎫" url="#ticket-option" name="Ticket Option" description="All the extra variables for the ticket option!"></LinkBlock>
+
+When you select the `"website"` type, you will also need these variables:
+<LinkBlock mode="emoji" emoji="🌐" url="#website-option" name="Website Option" description="All the extra variables for the website option!"></LinkBlock>
+
+When you select the `"role"` type, you will also need these variables:
+<LinkBlock mode="emoji" emoji="✅" url="#role-option" name="Reaction Role Option" description="All the extra variables for the reaction role option!"></LinkBlock>
+
+- Default value: `"ticket"`
+- Allowed values: `"ticket"`, `"website"` or `"role"`
+- Required: `true`
+- Type: `string`
+
+## Ticket Option \{#ticket-option}
+```json title="config.json"
+"options":[
+    {
+        //BASIC OPTIONS
+        "id":"general", //the unique ID for each option
+        "name":"Question", //the ticket name
+        "description":"Create this ticket if you have a question.", //the ticket description
+        "icon":"🎫", //the button emoji (leave empty if none)
+        "label":"question", //the button label (leave empty if none)
+        "type":"ticket", //the option type ("ticket" in this case!)
+
+        //TICKET OPTIONS
+        "color":"gray", //the button color (gray, red, blue or green)
+        "adminroles":["role id"], //the role ids from your admin team but for this ticket only!
+        "readonlyAdminroles":["role id"], //the role ids that can only read tickets!
+        "channelprefix":"question-", //the channel prefix (example: "question-" => "#question-username")
+        "category":"category id (or leave empty)", //the category for this ticket
+        "message":"You created a ticket!", //the message sent to the user in DM on ticket creation
+        "enableDmOnOpen":true, //enable the DM message above
+        "ticketmessage":"Our team will help you soon", //this will be the embed description in this ticket
+
+        //add an embed thumbnail in this ticket
+        "thumbnail":{
+            "enable":false,
+            "url":"https://www.example.com/catmemes/cat.png"
+        },
+        //add an embed image in this ticket
+        "image":{
+            "enable":false,
+            "url":"https://www.example.com/catmemes/cat.png"
+        },
+
+        //the category to move to when this ticket gets closed
+        "closedCategory":{
+            "enable":false,
+            "id":"category id"
+        },
+
+        //automatically close this ticket after ...h of inactivity
+        "autoclose":{
+            "enable":false,
+            "inactiveHours":24
+        },
+
+        //who do you want to ping when this ticket is created
+        "ping":{
+            "@here":true,
+            "@everyone":false,
+            "custom":{
+                "enable":false,
+                "roleId":"012345678910"
+            }
+        }
+    },
+],
+```
+
+### "color" (button color) \{#ticket-color}
+Set the color of the button. These colors are defined by discord and it's impossible to add other colors!
+
+- Default value: `"gray"`
+- Allowed values: `"gray"`, `"red"`, `"green"` or `"blue"`
+- Required: `true`
+- Type: `string`
+
+### "adminroles" (role id list) \{#ticket-adminroles}
+The `"adminroles"` variable is a list of all **ticket admin role id's**! Roles inside this list can:
+- ✅ read in this ticket
+- ✅ write in this ticket
+- 🟠 use some commands in this ticket
+- ✅ use buttons in this ticket
+
+**✅ This is the best way of adding your support team to tickets!**
+
+- Default value: `[]` (empty)
+- Allowed values: `["role id 1","role id 2","role id 3",...]`
+- Required: `false`
+- Type: `string array`
+
+### "readonlyAdminroles" (role id list) \{#ticket-readonlyadminroles}
+The `"readonlyAdminroles"` variable is a list of all **ticket admin role id's**! Roles inside this list can:
+- ✅ read in this ticket
+- ❌ can't write in this ticket
+- ❌ can't use any commands in this ticket
+- ✅ use buttons in this ticket
+
+**Use this for people that only need to read but don't reply to certain tickets!**
+
+- Default value: `[]` (empty)
+- Allowed values: `["role id 1","role id 2","role id 3",...]`
+- Required: `false`
+- Type: `string array`
+
+### "channelprefix" (string) \{#ticket-channelprefix}
+Set the prefix of the channels from this ticket type. **Every character except `spaces` are allowed!**
+The suffix will be the username of the user that created the ticket. In the future, you will also be able to use numbers!
+
+**Here are some examples:**
+|prefix         |channel name         |
+|---------------|---------------------|
+|`ticket-`      |`ticket-djj123dj`    |
+|`support-`     |`support-sankedev`   |
+|`shop-`        |`shop-wumpus`        |
+
+- Default value: `"ticket-"`
+- Allowed values: `"any string except spaces"` (max `50` characters)
+- Required: `true`
+- Type: `string`
+
+### "category" (category id) \{#ticket-category}
+Here, you can put the id of a **discord channel category**! This can be used to create all tickets inside of this category!
+
+⚠️ **When no category is specified, tickets will be created at the top of the channel list!**
+
+- Default value: `""` (empty)
+- Allowed values: `"category id"`
+- Required: `false`
+- Type: `string`
+
+### "message" (string) \{#ticket-message}
+The `"message"` variable is a message that will be sent to the user in dm when they create this ticket!
+
+⚠️ **This message will only be sent if the variable `""enableDmOnOpen"` is `true`**
+
+- Default value: `""` (empty)
+- Allowed values: `"any string"`
+- Required: `false`
+- Type: `string`
+
+### "enableDmOnOpen" (boolean) \{#ticket-enabledmonopen}
+Enable or disable the `"message"` variable! (more info above)
+
+- Default value: `true`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`
+
+### "ticketmessage" (string) \{#ticket-ticketmessage}
+The contents of `"ticketmessage"` are sent in the embed of this ticket. You can leave it empty if you don't want anything here!
+
+:::tip
+Most of the time, the contents of this message are used for:
+- Saying when the team will respond (`We will respond within 4h!`)
+- Providing some info about this ticket
+- Providing a url/form that the user needs to fill in
+- ...
+:::
+
+### "thumbnail" (enabled property) \{#ticket-thumbnail}
+Using the `"thumbnail"` object, you can enable a thumbnail in the embed of this ticket. Set `"enable"` to `true` & insert a valid image url in `"url"`.
+
+- Default value: `enabled:false, url:""` (disabled)
+- Allowed values: `enabled:boolean, url:"valid image url"`
+- Required: `false`
+- Type: `object`
+
+### "image" (enabled property) \{#ticket-image}
+Using the `"image"` object, you can enable a image in the embed of this ticket. Set `"enable"` to `true` & insert a valid image url in `"url"`.
+
+- Default value: `enabled:false, url:""` (disabled)
+- Allowed values: `enabled:boolean, url:"valid image url"`
+- Required: `false`
+- Type: `object`
+
+### "closedCategory" (enabled property) \{#ticket-closedcategory}
+Using the `"closedCategory"` object, you can enable a closedCategory for this ticket. Set `"enable"` to `true` & insert a valid discord category id in `"id"`.
+
+- Default value: `enabled:false, id:""` (disabled)
+- Allowed values: `enabled:boolean, id:"category id"`
+- Required: `false`
+- Type: `object`
+
+### "autoclose" (enabled property) \{#ticket-autoclose}
+Using the `"autoclose"` object, you can enable autoclose for this ticket. Set `"enable"` to `true` & select the amount of inactive hours before closing using `"inactiveHours"`.
+
+- Default value: `enabled:false, inactiveHours:24` (disabled)
+- Allowed values: `enabled:boolean, inactiveHours:number`
+- Required: `false`
+- Type: `object`
+
+### "ping" (ping property) \{#ticket-ping}
+Using the `"ping"` object, you can enable/disable pings for this ticket.
+- `"@here"` => ping everyone who has access to this ticket & is online
+- `"@everyone"` => ping everyone who has access to this ticket
+- `"custom"` => ping a custom role (when enabled)
+
+- Default value: `@here enabled` (disabled)
+- Allowed values: `@here:boolean, @everyone:boolean, custom:{enable:boolean, roleId:string}`
+- Required: `false`
+- Type: `object`
+
+## Website Option \{#website-option}
+```json title="config.json"
+"options":[
+    {
+        //BASIC OPTIONS
+        "id":"website", //the unique ID for each option
+        "name":"Website", //the option name
+        "description":"Go to our website.", //the option description
+        "icon":"✅", //the button emoji (leave empty if none)
+        "label":"click here", //the button label (leave empty if none)
+        "type":"website", //the option type ("website" in this case!)
+
+        //WEBSITE OPTIONS
+        "url":"https://www.dj-dj.be" //the url that the button will redirect to
+    },
+]
+```
+
+### "url" (string) \{#website-url}
+The `"url"` variable will determine the url that the user goes to when clicking this button.
+
+⚠️ **The user will be warned by discord before they actually go to the link!**
+
+- Default value: `""` (empty)
+- Allowed values: `"valid url"`
+- Required: `true`
+- Type: `string`
+
+## Reaction Role Option \{#role-option}
+```json title="config.json"
+"options":[
+    {
+        //BASIC OPTIONS
+        "id":"role", //the unique ID for each option
+        "name":"Verify", //the option name
+        "description":"Click here to get the verify role.", //the option description
+        "icon":"👮🏼", //the button emoji (leave empty if none)
+        "label":"get a role", //the button label (leave empty if none)
+        "type":"role", //the option type ("website" in this case!)
+
+        //REACTION ROLE OPTIONS
+        "color":"red", //the button color (gray, red, blue or green)
+        "roles":["discord role id"], //the roles to give or take from a user
+        "mode":"add&remove|remove|add", //add the roles, remove the roles or both (add when user doesn't have it yet, remove otherwise)
+        "enableDmOnOpen":true //receive a dm message when clicking this button
+    },
+]
+```
+
+### "color" (button color) \{#role-color}
+Set the color of the button. These colors are defined by discord and it's impossible to add other colors!
+
+- Default value: `"gray"`
+- Allowed values: `"gray"`, `"red"`, `"green"` or `"blue"`
+- Required: `true`
+- Type: `string`
+
+### "roles" (role id list) \{#role-roles}
+The `"roles"` variable is a list of all roles that will be given to or removed from a user clicking the button.
+
+**✅ Use this for reaction roles in your server!**
+
+:::warning member verification
+It's not recommended to use this system for **member verification** because there **aren't any safety measures**!
+:::
+
+- Default value: `[]` (empty)
+- Allowed values: `["role id 1","role id 2","role id 3",...]`
+- Required: `false`
+- Type: `string array`
+
+### "mode" (reactionrole mode) \{#role-mode}
+The mode determines how this button will act when someone clicks it. It can have one of the following values: `"add&remove"`, `"add"` or `"remove"`
+
+|Mode         |Description                                                       |
+|-------------|------------------------------------------------------------------|
+|`add&remove` |Give the roles to the user. When already present, remove the roles. |
+|`add`        |Only give the roles to the user.                                   |
+|`remove`     |Only remove the roles from the user.                               |
+
+- Default value: `"add&remove"`
+- Allowed values: `"add&remove"`, `"add"` or `"remove"`
+- Required: `true`
+- Type: `string`
+
+### "enableDmOnOpen" (boolean) \{#role-enabledmonopen}
+When enabled, the bot sends a DM to the user when clicking the button.
+
+- Default value: `true`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`

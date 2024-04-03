@@ -1,22 +1,22 @@
 ---
-title: /reopen
-description: Re-Open a closed ticket!
-sidebar_position: 6
-keywords: [open-ticket, open ticket, discord ticket bot, command, slash command, reopen]
+title: /add
+description: Add a user to a ticket!
+sidebar_position: 9
+keywords: [open-ticket, open ticket, discord ticket bot, command, slash command, add]
 ---
 import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
 
 ### General Information
-- **Permissions:** 🟢 Everyone
+- **Permissions:** 🟠 Ticket Admins
 - **Usable Locations:** 🔴 Ticket Only
-- **Text Command:** `!ticket reopen`
-- **Slash Command:** `/reopen`
+- **Text Command:** `!ticket add <user>`
+- **Slash Command:** `/add <user>`
 
 ## Quick Overview
-The /reopen command is used to re-open a closed ticket. Now, the ticket creator can talk again!
-**More info about ticket reopening <InlineLink isdoc="true" url="docs/system/ticket-flow#reopening">can be found here</InlineLink>!**
+The /add command is used to add a user to a ticket. You can also remove the user using the /remove command!
+The added user has the same permissions as the ticket creator!
 
-<GoodImage src="/img/docs-v3/commands/reopen.png" size="50%"></GoodImage>
+<GoodImage src="/img/docs-v3/commands/add.png" size="50%"></GoodImage>
 
 ## Config
 These are the <InlineLink url="docs/config/main" isdoc="true">configurable settings</InlineLink> for this command.

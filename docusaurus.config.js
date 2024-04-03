@@ -155,7 +155,7 @@ const config = {
                         },
                         {
                             label: 'Configuration',
-                            to: '/docs/current/docs/config/config',
+                            to: '/docs/current/docs/config',
                         }
                     ],
                 },
@@ -176,7 +176,7 @@ const config = {
                         },
                         {
                             label: 'Plugin List',
-                            to: '/docs/current/plugin/get-started',
+                            to: '/docs/current/plugin/list',
                         },
                     ],
                 },
@@ -210,7 +210,7 @@ const config = {
                         },
                         {
                             label: 'Community Plugins',
-                            to: '/docs/current/plugin/get-started',
+                            to: '/docs/current/plugin/list',
                         },
                         {
                             label: 'Contributing',

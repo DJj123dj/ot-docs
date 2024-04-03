@@ -1,38 +1,282 @@
+---
+title: Contributing
+description: How to contribute to this wiki?
+hide_table_of_contents: false
+---
 import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
 
-# test: <ColorText color="red">MacOS</ColorText>
+# Contributing
+On this page, we will explain how to contribute to this documentation.
+This documentation is created using [docusaurus](https://docusaurus.io), a static-site generator built with react & mdx!
+<ColorText color="blue">**You don't need to know anything about React to contribute, only markdown & a little bit of HTML is required!**</ColorText>
 
-:::tip
-<LabelText color="red">MacOS</LabelText> 
-<LabelText color="orange">MacOS</LabelText> 
-<LabelText color="yellow">MacOS</LabelText> 
-<LabelText color="green">MacOS</LabelText> 
-<LabelText color="cyan">MacOS</LabelText>
-<LabelText color="blue">MacOS</LabelText>
-<LabelText color="purple">MacOS</LabelText>
-<LabelText color="pink">MacOS</LabelText>
-<LabelText color="black">MacOS</LabelText>
-<LabelText color="gray">MacOS</LabelText>
-<LabelText color="brown">MacOS</LabelText>
+The repository of this documentation is hosted on github:
+<LinkBlock mode="image" image="/img/logo/github.png" name="Github: DJj123dj/ot-docs" description="The official Open Ticket documentation!" isdoc="false" url="https://www.github.com/djj123dj/ot-docs"></LinkBlock>
+
+You can create a pull request to contribute to the documentation, but be aware that it may be rejected because of the rules! **All the rules & tips can be found in this page!**
+
+# Structure
+The documentation is structured into different parts. <ColorText color="red">**The only parts that contributors should edit are the following ones:**</ColorText>
+All other files are reserved for the admins from this documentation!
+
+- `./docs/` (documentation)
+- `./src/pages/` (extra pages, like this one)
+- `./blog/` (the blog)
+
+Here you can find even more info about the different parts:
+
+|Name           |Path                |Notes                                                                                                                                                           |
+|---------------|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|User Docs      |`./docs/docs/`      |The main/general documentation. It's for normal users, please explain everything as clearly as possible!                                                        |
+|Developer Docs |`./docs/developer/` |The developer documentation. This is for developers only, you can write a little bit more technical in here!                                                    |
+|API Reference  |`./docs/api/`       |The API reference for plugins. Try to use as little text as possible & put links to definitions if possible!                                                    |
+|Plugin List    |`./docs/plugin/`    |The plugin list. Here you can discover plugins! <ColorText color="orange">**Contributors are only allowed to add plugins to the `other` category!**</ColorText> |
+|Blog           |`./blog/`           |The official blog. <ColorText color="green">**You are allowed to create your own articles, but please ask it before doing so!**</ColorText>                     |
+|Custom Pages   |`./src/pages/`      |Custom pages. These include "this page", the home page & some other ones. **Don't edit anything here except if it's really needed!**                            |
+
+# Sidebar, Titles & Page Structure
+Try to follow the style of the other pages when it comes to naming & styling.
+**For Example:** only add an emoji if pages in the same category have an emoji!
+
+**Don't use heading level `1`, `4`, `5` & `6` in pages.** This is because they don't show up in the table of contents & they are most of the time too large or too small!
+Here is an example of how a page should look like:
+
+```js title="example.mdx"
+---
+title: The Page Title
+description: The Page Description
+keywords: [keyword_a, keyword_b, keyword_c] //page keywords (SEO)
+sidebar_position: 1 //(optional) position in sidebar
+---
+//import custom components
+import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+
+//short description of what this page is about
+Lorem Ipsum
+
+## First Category \{#custom-id} //the first large heading
+Some content here
+
+### Subcategory //a small subcategory
+Some extra content here
+
+### Subcategory //a small subcategory
+Some extra content here
+
+## Second Category \{#custom-id} //the second large heading
+Some content here
+
+### Subcategory //a small subcategory
+Some extra content here
+
+### Subcategory //a small subcategory
+Some extra content here
+
+## Third Category \{#custom-id} //the third large heading
+Some content here
+
+### Subcategory //a small subcategory
+Some extra content here
+
+### Subcategory //a small subcategory
+Some extra content here
+```
+
+# Markdown & Styling
+There is a lot of styling available, here we will list some examples!
+If you want to use one of these examples, check this page out in the github repository!
+
+I'm normal text<br></br>
+**I'm bold text**<br></br>
+*I'm italic text*<br></br>
+`I'm code text`
+
+There are also a lot of colors. They can be created using the `<ColorText color="...">` component!
+**Try to use colors in combination with bold text for better visibility!**
+
+<FlexHorizontal mode="left">
+
+|Color                                            |Usage (as text)                                    |
+|-------------------------------------------------|---------------------------------------------------|
+|<ColorText color="red">**red**</ColorText>       |✅ Use this on very important text!                |
+|<ColorText color="orange">**orange**</ColorText> |✅ Use this on less important text!                |
+|<ColorText color="yellow">**yellow**</ColorText> |❌ Don't use this! It looks a lot like hyperlinks! |
+|<ColorText color="green">**green**</ColorText>   |✅ Use this for tips & tricks!                     |
+|<ColorText color="cyan">**cyan**</ColorText>     |⚠️ This color doesn't have a use case yet!          |
+|<ColorText color="blue">**blue**</ColorText>     |✅ Use this for things that are nice to know!      |
+|<ColorText color="purple">**purple**</ColorText> |⚠️ This color doesn't have a use case yet!          |
+|<ColorText color="pink">**pink**</ColorText>     |⚠️ This color doesn't have a use case yet!          |
+|<ColorText color="black">**black**</ColorText>   |❌ Don't use this! It is invisible on most pages!  |
+|<ColorText color="gray">**gray**</ColorText>     |✅ Use this for small details that nobody needs!   |
+|<ColorText color="brown">**brown**</ColorText>   |⚠️ This color doesn't have a use case yet!          |
+
+|Color                                            |Usage (as label)                                     |
+|-------------------------------------------------|-----------------------------------------------------|
+|<LabelText color="red">**red**</LabelText>       |✅ Used for `api.json` & API `types`                 |
+|<LabelText color="orange">**orange**</LabelText> |✅ Used for API `class/object properties`            |
+|<LabelText color="yellow">**yellow**</LabelText> |✅ Used for API `enums`                              |
+|<LabelText color="green">**green**</LabelText>   |✅ Used for `transcriptconfig.json` & API `functions`|
+|<LabelText color="cyan">**cyan**</LabelText>     |✅ Used for API `globals`                            |
+|<LabelText color="blue">**blue**</LabelText>     |✅ Used for `config.json` & API `classes`            |
+|<LabelText color="purple">**purple**</LabelText> |✅ Used for API `events`                             |
+|<LabelText color="pink">**pink**</LabelText>     |✅ Used for API `parameters`                         |
+|<LabelText color="black">**black**</LabelText>   |⚠️ This color doesn't have a use case yet!            |
+|<LabelText color="gray">**gray**</LabelText>     |⚠️ This color doesn't have a use case yet!            |
+|<LabelText color="brown">**brown**</LabelText>   |⚠️ This color doesn't have a use case yet!            |
+
+</FlexHorizontal>
+
+When displaying large amounts of data, you can use lists & tables like these:
+
+<FlexHorizontal mode="left">
+    <div style={{width:"25%"}}>
+    #### Normal List
+    - Data A
+        - Data A.1
+        - Data A.2
+    - Data B
+        - Data B.1
+        - Data B.2
+    - Data C
+        - Data C.1
+        - Data C.2
+    </div>
+
+    <div style={{width:"25%"}}>
+    #### Numbered List
+    1. Data A
+        1. Data A.1
+        2. Data A.2
+    2. Data B
+        1. Data B.1
+        2. Data B.2
+    3. Data C
+        1. Data C.1
+        2. Data C.2
+    </div>
+
+    <div style={{width:"25%"}}>
+    #### Mixed List
+    1. Data A
+        - Data A.1
+        - Data A.2
+    2. Data B
+        - Data B.1
+        - Data B.2
+    3. Data C
+        - Data C.1
+        - Data C.2
+    </div>
+
+    <div style={{width:"25%"}}>
+    #### Checkbox List
+    - [x] Data A
+        - [x] Data A.1
+        - [ ] Data A.2
+    - [x] Data B
+        - [x] Data B.1
+        - [ ] Data B.2
+    - [x] Data C
+        - [x] Data C.1
+        - [ ] Data C.2
+    </div>
+
+</FlexHorizontal>
+
+<FlexHorizontal mode="left">
+    <div>
+    #### Horizontal Table
+    |Column 1|Column 2|Column 3|
+    |--------|--------|--------|
+    |Row 1   |        |        |
+    |Row 2   |        |        |
+    |Row 3   |        |        |
+    </div>
+    <div>
+    #### Vertical Table
+    <table>
+        <tr>
+            <th>Row 1</th>
+            <td>Column 1</td>
+            <td>Column 2</td>
+            <td>Column 3</td>
+        </tr>
+        <tr>
+            <th>Row 2</th>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Row 3</th>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Row 4</th>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    </div>
+</FlexHorizontal>
+
+#### Code Blocks
+There are also code blocks! You can use them to show data with a little bit syntax-highlighting!
+You can customise the language, title & line numbering!
+
+```json
+{
+    "abc":123,
+    "hey":"Hello World!"
+}
+```
+```javascript title="test.js" showLineNumbers
+//this is coooooool!
+const a = 1
+const b = 2
+const c = a+b
+console.log("hello world",c)
+```
+```diff title="changelog"
+ADDED:
++ something cool
++ very small features
++ a rickroll
+
+REMOVED:
+- boring stuff
+- old stuff
+```
+
+#### Admonitions
+Admonitions are special notes that deserve extra attention! You can put any other markdown inside of them (so you can see them as a sort of container)
+
+:::tip your custom title here
+This is the `tip` admonition! Use it for giving tips to users!
 :::
-hey! this is <ColorText color="red">some colored text</ColorText>!
+:::warning your custom title here
+This is the `warning` admonition! Use it for something very important!
+:::
+:::danger your custom title here
+This is the `danger` admonition! Use it for something that is so important that you absolutely need to see it!
+:::
+:::info your custom title here
+This is the `info` admonition! Use it for something that deservers attention, but isn't important!
+:::
+:::note your custom title here
+This is the `note` admonition! This admonition is rarely used! (An alternative for the `info` admonition)
+:::
 
-hey! this is <ColorText color="orange">some colored text</ColorText>!
+# Content & Readability
+- ✅ All text on the wiki needs to be in **English**.
+- ✅ Don't make the page to short, but also don't make it to long.
+- ✅ Use Admonitions **only when really needed**! Most of the time, you can also just use colored text!
+- ✅ Check your text for grammatical errors before uploading!
+- ✅ When you write an article in the blog, make sure it's linked to your name!
 
-hey! this is <ColorText color="yellow">some colored text</ColorText>!
+And thats it! For more questions, visit our discord server!
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Join our discord server!" description="DJdj Development"></LinkBlock>
 
-hey! this is <ColorText color="green">some colored text</ColorText>!
-
-hey! this is _<ColorText color="cyan">some **colored** text</ColorText>_!
-
-hey! this is <ColorText color="blue">some colored text</ColorText>!
-
-hey! this is <ColorText color="purple">some colored text</ColorText>!
-
-hey! this is <ColorText color="pink">some colored text</ColorText>!
-
-hey! this is <ColorText color="black">some colored text</ColorText>!
-
-hey! this is <ColorText color="gray">some colored text</ColorText>!
-
-hey! this is <ColorText color="brown">some colored text</ColorText>!

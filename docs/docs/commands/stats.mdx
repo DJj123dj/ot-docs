@@ -1,21 +1,24 @@
 ---
-title: /add
-description: Add a user to a ticket!
-sidebar_position: 9
+title: /stats
+description: See the stats of the server, users & tickets!
+sidebar_position: 11
 ---
 import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
 
 ### General Information
 - **Permissions:** 🟠 Ticket Admins
 - **Usable Locations:** 🔴 Ticket Only
-- **Text Command:** `!ticket add <user>`
-- **Slash Command:** `/add <user>`
+- **Text Command:** `!ticket stats <global|user|ticket> [user]`
+- **Slash Command:** `/stats <global|user|ticket> [user]`
 
 ## Quick Overview
-The /add command is used to add a user to a ticket. You can also remove the user using the /remove command!
-The added user has the same permissions as the ticket creator!
+The /stats command is used to see stats of the ticket. It can also be used to see global & user statistics!
 
-<GoodImage src="/img/docs-v3/commands/add.png" size="50%"></GoodImage>
+<FlexHorizontal mode="left">
+<GoodImage src="/img/docs-v3/commands/stats_ticket.png" size="30%"></GoodImage>
+<GoodImage src="/img/docs-v3/commands/stats_global.png" size="30%"></GoodImage>
+<GoodImage src="/img/docs-v3/commands/stats_user.png" size="30%"></GoodImage>
+</FlexHorizontal>
 
 ## Config
 These are the <InlineLink url="docs/config/main" isdoc="true">configurable settings</InlineLink> for this command.

@@ -13,7 +13,7 @@ This documentation won't explain how to create your bot or how to write javascri
 ## Installation
 You can install Open Ticket from [github](https://www.github.com/DJj123dj/open-ticket) by **cloning** or **downloading it as a ZIP file**. We recommend downloading it from the official repository, because other versions may be modified! When downloading as a ZIP file, you need to extract it ofcourse!
 
-<GoodImage src="/img/docs/installation/download.png" size="50%"/>
+<GoodImage src="/img/docs-v3/installation/download.png" size="50%"/>
 
 ### Npm Packages
 Open Ticket needs some npm packages to work! You can install them all at once with `npm install`
@@ -36,13 +36,13 @@ Be aware that Bun & Deno are not officially supported by Open Ticket. Use them a
 ## Bot Setup
 ### creation
 Before you can use Open Ticket, you need to create a discord bot! You can create one at the [discord developer portal](https://discord.com/developers/applications). Open Ticket also needs some **permissions** & **intents** to function properly. These need to be configured in the discord developer portal!
-<GoodImage src="/img/docs/installation/devportal_create.png" size="50%"/>
+<GoodImage src="/img/docs-v3/installation/devportal_create.png" size="50%"/>
 
 ### permissions
 When inviting your bot to a discord server, we recommend giving your bot the `ADMINISTRATOR` permission!
 It is also possible to define your own permissions, but it can affect the bot's ability to do some things.
 
-<GoodImage src="/img/docs/installation/devportal_permissions.png" size="70%"></GoodImage>
+<GoodImage src="/img/docs-v3/installation/devportal_permissions.png" size="70%"></GoodImage>
 
 More info can be found here:
 <LinkBlock mode="emoji" emoji="✅" isdoc="true" url="docs/system/installation-permissions" name="Installation Permissions" description="Everything about bot permissions!"></LinkBlock>
@@ -53,7 +53,7 @@ These intents give the bot some extra permissions that are required for some fea
 The `Message Content Intent` allows the bot to read text messages in the server.
 **If you don't enable this, transcripts & text commands won't work!**
 
-<GoodImage src="/img/docs/installation/devportal_intents.png" size="70%"></GoodImage>
+<GoodImage src="/img/docs-v3/installation/devportal_intents.png" size="70%"></GoodImage>
 
 ## Configuration
 Open Ticket has 2 config files! `config.json` and `transcriptconfig.json`! The transcript config is not that important for now, but can later be used to configure HTML transcripts.
@@ -266,17 +266,17 @@ node index.js
 
 ### On Success
 When you have configured your `config.json` correctly, you will see a startup screen with the Open Ticket logo displayed in yellow. It will also show some logs & statistics.
-<GoodImage src="/img/docs/installation/console_startscreen.png" size="80%"/>
+<GoodImage src="/img/docs-v3/installation/console_startscreen.png" size="80%"/>
 ### On Failiure
 When you made a mistake, the bot will tell you what's wrong with your config. Try to follow the instructions from the errors as good as possible. When you don't find the solution, you can always join our [discord server](https://discord.dj-dj.be)!
-<GoodImage src="/img/docs/installation/console_checkerjs.png" size="80%"/>
+<GoodImage src="/img/docs-v3/installation/console_checkerjs.png" size="80%"/>
 <LinkBlock mode="emoji" emoji="❓" isdoc="true" url="docs/system/config-errors" name="Open Ticket Config Errors!" description="What are these config errors?"></LinkBlock>
 
 
 ### 🎉 Now you can try out the bot! \{#tryout}
 Use the `/help` command for a guide of all available commands. Use the `/message <id>` command to generate an embed with buttons.
 
-<GoodImage src="/img/docs/commands/help_slash.png" size="50%"/>
+<GoodImage src="/img/docs-v3/commands/help_slash.png" size="50%"/>
 
 ## Advanced Guides
 Also make sure to check out these advanced guides!

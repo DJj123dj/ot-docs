@@ -1,0 +1,78 @@
+---
+title: 📦 Example Plugin
+description: This plugin doesn't do anything!
+---
+import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+
+<FlexHorizontal mode="left">
+    <table style={{width:"100%"}}>
+        <tr>
+            <th align="left">Name</th>
+            <td>Example Plugin</td>
+        </tr>
+        <tr>
+            <th align="left">Author</th>
+            <td>[DJj123dj](https://www.github.com/djj123dj)</td>
+        </tr>
+        <tr>
+            <th align="left">Filename</th>
+            <td>`example.plugin.js`</td>
+        </tr>
+        <tr>
+            <th align="left">Compatible Versions</th>
+            <td>`v2.5.x` & `v3.x.x`</td>
+        </tr>
+        <tr>
+            <th align="left">Category</th>
+            <td>Useless</td>
+        </tr>
+    </table>
+    <div style={{width:"100%"}}>
+        This is the description of the plugin! Here you can specify many details about what the plugin does!
+        You can even include markdown like **this**, *this* or `this`. And what about **<ColorText color="red">c</ColorText><ColorText color="orange">o</ColorText><ColorText color="yellow">l</ColorText><ColorText color="green">o</ColorText><ColorText color="blue">r</ColorText><ColorText color="purple">s</ColorText>**?
+        - You can also 
+        - provide lists
+        - like this
+        
+    </div>
+</FlexHorizontal>
+<LinkBlock mode="emoji" emoji="📥" name="Download" description="Download this plugin! (example.plugin.js)" isdoc="false" url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"></LinkBlock>
+
+## Description
+This is the long description of the plugin! Here you can write your entire life story... and what the plugin does!
+You can even include markdown like **this**, *this* or `this`. And what about **<ColorText color="red">c</ColorText><ColorText color="orange">o</ColorText><ColorText color="yellow">l</ColorText><ColorText color="green">o</ColorText><ColorText color="blue">r</ColorText><ColorText color="purple">s</ColorText>**?
+- You can also 
+- provide lists
+- like this
+
+:::tip for the detectives
+Did you know that this description is copied from the short description! I didn't have any inspiration!
+:::
+:::warning for the noobs
+It's recommended to install the plugin before starting the bot!
+:::
+:::danger for the pros
+It's recommended to not click the link if you are sensitive for rickrolls!
+:::
+:::info for the hackers
+Did you put a token stealer in there? 👀
+:::
+:::note for the dark mode users
+Here is a little bit of light!
+:::
+
+## Preview
+```javascript title="example.plugin.js" showLineNumbers
+const discord = require("discord.js")
+const {client,config,events,utils,actions} = require("../core/api/api.js")
+
+module.exports = () => {
+    console.log("yay!")
+}
+```
+
+## Version History
+- [v1.3.0](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+- [v1.2.0](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+- [v1.1.0](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+- [v1.0.0](https://www.youtube.com/watch?v=dQw4w9WgXcQ)

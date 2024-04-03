@@ -1,41 +1,76 @@
 ---
-title: Get Started!
+title: 🏁 Getting Started
+description: Getting started with Open Ticket plugins!
+sidebar_position: 1
 ---
 import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
 
-# test: <ColorText color="red">MacOS</ColorText>
+Hey there! If you see this page, you are probably someone who wants to create an Open Ticket plugin!
+But no worries, in this documentation you will find everything you will need!
 
-:::tip
-<LabelText color="red">MacOS</LabelText> 
-<LabelText color="orange">MacOS</LabelText> 
-<LabelText color="yellow">MacOS</LabelText> 
-<LabelText color="green">MacOS</LabelText> 
-<LabelText color="cyan">MacOS</LabelText>
-<LabelText color="blue">MacOS</LabelText>
-<LabelText color="purple">MacOS</LabelText>
-<LabelText color="pink">MacOS</LabelText>
-<LabelText color="black">MacOS</LabelText>
-<LabelText color="gray">MacOS</LabelText>
-<LabelText color="brown">MacOS</LabelText>
+## Use Cases \{#use-cases}
+It's recommended to **read this page before creating plugins** if you didn't visit this page before!
+<LinkBlock mode="emoji" emoji="🔌" isdoc="true" url="docs/system/plugins" name="Plugins!" description="What can Open Ticket plugins do & where can you find them?"></LinkBlock>
+
+## Location & Filename \{#location-filename}
+Open Ticket plugins are stored in the `./plugins/` directory! All plugins are required to have a filename with `.plugin.js`!
+If your plugin doesn't have this, then it won't work!
+
+:::tip filename tips
+Please use a simple file name that is easy to remember, read & write. **Here are some tips:**
+- ✅ use lowercase characters & numbers (e.g. `moderation.plugin.js`)
+- ✅ use a dash (`-`) instead of spaces & underscores (e.g. `log-system.plugin.js`)
+- ❌ don't use long file names (e.g. `this-is-a-very-cool-plugin.plugin.js`)
 :::
-hey! this is <ColorText color="red">some colored text</ColorText>!
 
-hey! this is <ColorText color="orange">some colored text</ColorText>!
+## Plugin Structure \{#structure}
+Every plugin needs to have some basic code that is required to run the plugin.
+We will go trough the following code step-by-step!
 
-hey! this is <ColorText color="yellow">some colored text</ColorText>!
+```javascript title="example.plugin.js" showLineNumbers
+//import discord
+const discord = require("discord.js")
+//import api & get modules
+const {client,config,events,utils,actions} = require("../core/api/api.js")
 
-hey! this is <ColorText color="green">some colored text</ColorText>!
+//everything inside this function will be executed at startup
+module.exports = () => {
+    //...
+}
+```
 
-hey! this is _<ColorText color="cyan">some **colored** text</ColorText>_!
+### Imports & Modules \{#imports-modules}
+The first part of the code are the imports. Here, you will import `discord.js` & the `Open Ticket API` for methods that plugins can use!
 
-hey! this is <ColorText color="blue">some colored text</ColorText>!
+```javascript title="example.plugin.js"
+//import discord
+const discord = require("discord.js")
+//import api & get modules
+const {client,config,events,utils,actions} = require("../core/api/api.js")
+```
 
-hey! this is <ColorText color="purple">some colored text</ColorText>!
+Here you can find everything related to modules from the Open Ticket api!
+|Module    |Type             |Notes                                                                       |
+|----------|-----------------|----------------------------------------------------------------------------|
+|`client`  |`discord.Client` |The client of the bot. Used for almost everything!                          |
+|`config`  |`object`         |The Open Ticket config. Same variables as `config.json`                     |
+|`events`  |`object`         |Collection of Open Ticket events. Event listeners can be added!             |
+|`utils`   |`object`         |<ColorText color="orange">**[PARTIALLY BROKEN]**</ColorText> Utilities like the log system & the database. |
+|`actions` |`empty object`   |<ColorText color="red">**[BROKEN]**</ColorText> Using actions, plugins could control the bot in a limited way! (e.g. creating & closing tickets)|
 
-hey! this is <ColorText color="pink">some colored text</ColorText>!
+All information about events can be found in the API Reference!
+<LinkBlock mode="emoji" emoji="🔎" isdoc="true" url="api/get-started" name="API Reference!" description="The official Open Ticket api reference!"></LinkBlock>
 
-hey! this is <ColorText color="black">some colored text</ColorText>!
+### The Main Code \{#main-code}
+The main code is the part of the plugin that will be executed on startup. It's everything in the `module.exports` function!
+Here, you need to put all the code from your plugin!
 
-hey! this is <ColorText color="gray">some colored text</ColorText>!
-
-hey! this is <ColorText color="brown">some colored text</ColorText>!
+```javascript title="example.plugin.js"
+//everything inside this function will be executed at startup
+module.exports = () => {
+    //...
+}
+```
+## Examples \{#examples}
+You can find many examples in the official plugin list. Here, you can also upload your own plugin if you want to make it a public plugin!
+<LinkBlock mode="emoji" emoji="📜" isdoc="true" url="plugin/list" name="Plugin List!" description="A list of all known public plugins!"></LinkBlock>

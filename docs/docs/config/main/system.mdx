@@ -4,6 +4,9 @@ description: All settings about the Open Ticket system
 sidebar_position: 3
 keywords: [open-ticket, open ticket, discord ticket bot, config, config.json, settings, system, help]
 ---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
 import {ColorText,LabelText,GoodImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
 
 The system settings are settings related to the ticket system.
@@ -76,15 +79,15 @@ The `"adminonly"` mode doesn't apply on ticket re-opening yet! This will be adde
 This is just information about where you can find the configuration for transcripts!
 For more info, check this:
 
-<LinkBlock mode="emoji" emoji="⚙️" name="transcriptconfig.json" description="A detailed explaination of the transcript config!" isdoc="true" url="docs/config/transcripts"></LinkBlock>
+<LinkBlock mode="emoji" emoji="⚙️" name="transcriptconfig.json" description="A detailed explanation of the transcript config!" isdoc="true" url="docs/config/transcripts"></LinkBlock>
 
 ### "system/showSlashcmdsInHelp" (boolean) \{#system-showslashcmdsinhelp}
 When enabled, you will see slash commands in the help menu instead of the default text commands.
 Here is a comparison:
 
 <FlexHorizontal mode="center">
-<GoodImage src="/img/docs-v3/commands/help_text.png" size="40%"></GoodImage>
-<GoodImage src="/img/docs-v3/commands/help_slash.png" size="40%"></GoodImage>
+<GoodImage src="/img/docs-v3/commands/help_text.png" alt="Image of /help command" size="40%"></GoodImage>
+<GoodImage src="/img/docs-v3/commands/help_slash.png" alt="Image of /help command" ize="40%"></GoodImage>
 </FlexHorizontal>
 <br></br>
 - Default value: `false`

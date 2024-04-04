@@ -237,8 +237,7 @@ const config = {
         }
         }),
     scripts:[
-        "/js/sidebarbadges.js",
-        "/js/twemoji.js",
+        "/js/openticket.js",
         "https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
     ]
 };

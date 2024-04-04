@@ -145,6 +145,7 @@ export function GoodImage(params){
     if (!params.src) return (<p className='text-red-500'>[INVALID GoodImage Element!]</p>)
     const size = (params.size) ? params.size : "100%"
     const src = params.src
+    const alt = (params.alt) ? params.alt : ""
 
     if (size == "100%"){
         var classes = `w-full`
@@ -174,7 +175,7 @@ export function GoodImage(params){
         var classes = `w-full`
     }
 
-    return (<img src={src} className={classes} style={{height:"100%"}}></img>)
+    return (<img src={src} alt={alt} className={classes} style={{height:"100%"}}></img>)
 }
 
 export function FlexHorizontal(params){

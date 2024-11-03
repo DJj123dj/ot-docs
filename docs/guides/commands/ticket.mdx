@@ -1,0 +1,32 @@
+---
+title: /ticket
+description: Use this command to open a ticket!
+sidebar_position: 3
+keywords: [open-ticket, open ticket, discord ticket bot, command, slash command, ticket, create]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+
+### General Information
+- **Permissions:** 🟢 Everyone
+- **Usable Locations:** 🟠 Server (server & ticket)
+- **Text Command:** `none`
+- **Slash Command:** `/ticket <id>`
+
+## Quick Overview
+With the /ticket command, you can create a ticket without spawning an embed using the <InlineLink url="docs/commands/message" isdoc="true">/message command</InlineLink>!
+The buttons & design can be configured in the <InlineLink url="docs/config/general" isdoc="true">config file</InlineLink>!
+This is very usefull if you don't want to have a channel for tickets! And remember that this command can also be disabled!
+
+<ScaleImage src="/img/docs-v3/commands/ticket.png" alt="Image of /ticket command" size="50%"></ScaleImage>
+
+## Config
+These are the <InlineLink url="docs/config/general" isdoc="true">configurable settings</InlineLink> for this command.
+Some of them will make the command look different!
+Other ones can disable the command or change how it works!
+
+### <InlineLink url="docs/config/api" isdoc="true"><M color="red">api.json</M></InlineLink> disable \{#config-disable}
+You can disable this command using the `api.json` file! This way, no-one can use this command!
+This may be usefull if you want to replace a command by your own!

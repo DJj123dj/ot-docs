@@ -1,0 +1,45 @@
+---
+title: Status Settings
+description: All settings related to the bot status
+sidebar_position: 2
+keywords: [open-ticket, open ticket, discord ticket bot, config, config.json, settings, status]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+
+In the status settings, you can set the status of the bot. The status is shown below the name of the bot in the user list!
+**Open Ticket has support for <C color="green">all status types </C><C color="red">except `"STREAMING"`</C>**!
+
+```json title="config.json"
+"status":{
+    "enabled":true, //enable the bot status
+    "type":"PLAYING", //the status type: PLAYING, WATCHING, LISTENING or CUSTOM
+    "text":"!ticket help" //the status text
+},
+```
+
+### "status/enabled" (boolean) \{#status-enabled}
+Enable or disable the bot status. When `true`, the status will be enabled using the parameters below!
+
+- Default value: `true`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`
+
+### "status/type" (status type) \{#status-type}
+The type of the status. This will be the prefix for the status text. **`"CUSTOM"` disables this prefix and just renders the text.**
+
+- Default value: `"PLAYING"`
+- Allowed values: `"PLAYING"`, `"WATCHING"`, `"LISTENING"` or `"CUSTOM"`
+- Required: `false`
+- Type: `string`
+
+### "status/text" (string) \{#status-text}
+The text for the bot status. Will be rendered after the status type.
+
+- Default value: `"!ticket help"`
+- Allowed values: `"any string"`
+- Required: `false`
+- Type: `string`

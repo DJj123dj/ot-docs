@@ -1,0 +1,115 @@
+---
+title: Basic Settings
+description: The most important variables in the bot
+sidebar_position: 1
+keywords: [open-ticket, open ticket, discord ticket bot, config, config.json, settings, basic, main, token]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+
+These are the main settings or the most important ones. You can find them at the top of your `config.json` file.
+They include the main color for embeds, the server ID, the bot token & more!
+In the code block below, you can find some notes about what every variable does!
+
+```json title="config.json"
+"color":"#f8ba00", //the main embed color
+"serverId":"12345678910", //your server id
+"token":{
+    "value":"insert your bot token here", //your bot token
+    "fromENV":false //load your token from the ENV
+},
+"adminRoles":["role id 1","role id 2"], //the role ids from your admin team (splitted by comma's)
+"prefix":"!ticket ", //the prefix for text-based commands (does not apply to slash commands)
+"languageFile":"english", //select one of the available languages (visit the ./language/ folder)
+```
+
+### "color" (hex color) \{#color}
+This is the **main color** of the bot. It's used in almost every embed!
+The color is written in hex, if you need help with this, you can always visit [Encycolorpedia](https://www.encycolorpedia.com)!
+**Just remember to put a `#` in-front of the code!**
+
+- Default value: `#ffffff` (white)
+- Allowed values: `"#hex color"`
+- Required: `false`
+- Type: `string`
+
+### "serverId" (server id) \{#serverid}
+Here, you need to put the id of the discord server that the bot is in. This id will be used to create **slash commands & save data**!
+
+- Default value: `""` (empty)
+- Allowed values: `"server id"`
+- Required: `true`
+- Type: `string`
+
+### "token/value" (bot token) \{#token-value}
+This is <C color="red">**the password of your bot**</C>. It allows open ticket to communicate with discord!
+
+- Default value: `""` (empty)
+- Allowed values: `"bot token"`
+- Required: `true`
+- Type: `string`
+
+:::danger token safety
+**NEVER EVER** share your discord token! If someone can get your token, he can nuke your entire discord server!
+#### Here are some tips for protecting your token:
+- never send your token to someone
+- when uploading the bot to github, make sure the token isn't sent with it
+- get the token from the `.env` file
+- when sending your `config.json` to someone for help, make sure the token isn't sent with it
+:::
+
+### "token/fromENV" (boolean) \{#token-env}
+Enable this boolean to <C color="red">**get the bot token from the `.env` file instead of the `"value":"..."`**</C>.
+When using this, you can leave the `"value"` empty! Oh, and here is an example of a `.env` file:
+```toml title=".env"
+TOKEN=your-token-here
+```
+
+- Default value: `false`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`
+
+### "adminRoles" (role id list) \{#adminroles}
+The `"adminRoles"` variable is a list of all **global admin role id's**! Roles inside this list can:
+- ✅ read in every ticket
+- ✅ write in every ticket
+- ✅ use commands in every ticket
+- ✅ use buttons in every ticket
+
+**⚠️ Only use this for roles that are allowed to have full power over the bot!**
+
+- Default value: `[]` (empty)
+- Allowed values: `["role id 1","role id 2","role id 3",...]`
+- Required: `false`
+- Type: `string array`
+
+### "prefix" (string) \{#prefix}
+This is **the prefix for all text commands** in the bot, so it won't be used for slash commands!
+<br></br>Here are some examples:
+|prefix                   |help command      |close command              |
+|-------------------------|------------------|---------------------------|
+|`!ticket` (with space)   |`!ticket help`    |`!ticket close <reason>`   |
+|`?`                      |`?help`           |`?close <reason>`          |
+|`!ot`                    |`!othelp`         |`!otclose <reason>`        |
+
+
+- Default value: `!ticket` (with space at the end)
+- Allowed values: `max length: 20 characters`
+- Required: `false`
+- Type: `string`
+
+### "languageFile" (valid language) \{#languagefile}
+The language file decides what **language** the bot will use!
+When you set the language, all embeds & messages from the bot are translated into this language!
+
+**⚠️ Make sure you write the language in lowercase!**
+
+<LinkBlock mode="emoji" emoji="🌐" name="Translation" description="Here is a list of all the available languages!" isdoc="true" url="docs/translation"></LinkBlock>
+
+- Default value: `english`
+- Allowed values: `any of the available languages`
+- Required: `false`
+- Type: `string`

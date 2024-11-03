@@ -1,7 +1,0 @@
-label: config.json
-position: 1
-link:
-  type: generated-index
-  title: config.json
-  slug: docs/config/main
-  description: Here, you will find all the variables in config.json explained as clearly as possible!

@@ -30,24 +30,9 @@ const config = {
         /** @type {import('@docusaurus/preset-classic').Options} */
         ({
             docs: {
-            sidebarPath: require.resolve('./sidebars.js'),
-            editUrl:'https://github.com/DJj123dj/ot-docs/blob/main',
-            includeCurrentVersion:true,
-            lastVersion: '3.5.x',
-            versions:{
-                "3.5.x":{
-                    label:"v3.5.x",
-                    path:"current",
-                    badge:false,
-                    banner:"none"
-                },
-                "current":{
-                    label:"🚧 Dev Version",
-                    path:"dev",
-                    badge:false,
-                    banner:"unreleased"
-                }
-            },
+                sidebarPath: require.resolve('./sidebars.js'),
+                editUrl:'https://github.com/DJj123dj/ot-docs/blob/main',
+                includeCurrentVersion:true
             },
             blog: {
                 showReadingTime: true,
@@ -80,21 +65,9 @@ const config = {
             items:[
                 {
                     type: 'docSidebar',
-                    sidebarId: 'documentationSidebar',
+                    sidebarId: 'guideSidebar',
                     position: 'left',
-                    label: 'Docs',
-                },
-                {
-                    type: 'docSidebar',
-                    sidebarId: 'developerSidebar',
-                    position: 'left',
-                    label: 'Developer',
-                },
-                {
-                    type: 'docSidebar',
-                    sidebarId: 'apiSidebar',
-                    position: 'left',
-                    label: 'API',
+                    label: 'Guides',
                 },
                 {
                     type: 'docSidebar',
@@ -102,22 +75,21 @@ const config = {
                     position: 'left',
                     label: 'Plugins',
                 },
-                {to: '/blog', label: 'Blog', position: 'left'},
                 {
-                    type: 'docsVersionDropdown',
-                    position: 'right',
-                    dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
-                    dropdownActiveClassDisabled: true,
+                    type: 'docSidebar',
+                    sidebarId: 'referenceSidebar',
+                    position: 'left',
+                    label: 'Reference',
                 },
                 {
-                    type: 'localeDropdown',
+                    to: '/blog',
+                    label: 'Blog',
+                    position: 'left'
+                },
+                {
+                    href: 'https://github.com/sponsors/DJj123dj',
                     position: 'right',
-                    dropdownItemsAfter: [
-                    {
-                        to: 'https://discord.dj-dj.be',
-                        label: 'Help us translate',
-                    },
-                    ],
+                    label:"❤️ Sponsor Us"
                 },
                 {
                     href: 'https://discord.dj-dj.be',
@@ -135,89 +107,89 @@ const config = {
             style: 'dark',
             links: [
                 {
-                    title: 'Docs',
+                    title: 'Docs (TODO)',
                     items: [
                         {
-                            label: 'Get Started',
+                            label: 'Get Started (TODO)',
                             to: '/docs/current/docs/get-started',
                         },
                         {
-                            label: 'Ticket Flow',
+                            label: 'Ticket Flow (TODO)',
                             to: '/docs/current/docs/system/ticket-flow',
                         },
                         {
-                            label: 'Transcripts',
+                            label: 'Transcripts (TODO)',
                             to: '/docs/current/docs/system/transcripts',
                         },
                         {
-                            label: 'Translation',
+                            label: 'Translation (TODO)',
                             to: '/docs/current/docs/translation',
                         },
                         {
-                            label: 'Configuration',
+                            label: 'Configuration (TODO)',
                             to: '/docs/current/docs/config',
                         }
                     ],
                 },
                 {
-                    title: 'Developer',
+                    title: 'Developer (TODO)',
                     items: [
                         {
-                            label: 'Get Started',
+                            label: 'Get Started (TODO)',
                             to: '/docs/current/developer/get-started',
                         },
                         {
-                            label: 'Plugins',
+                            label: 'Plugins (TODO)',
                             to: '/docs/current/docs/system/plugins',
                         },
                         {
-                            label: 'API Reference',
+                            label: 'API Reference (TODO)',
                             to: '/docs/current/api/get-started',
                         },
                         {
-                            label: 'Plugin List',
+                            label: 'Plugin List (TODO)',
                             to: '/docs/current/plugin/list',
                         },
                     ],
                 },
                 {
-                    title: 'Community',
+                    title: 'Community (TODO)',
                     items: [
                         {
-                            label: 'Discord',
+                            label: 'Discord (TODO)',
                             href: 'https://discord.dj-dj.be',
                         },
                         {
-                            label: 'Website',
+                            label: 'Website (TODO)',
                             href: 'https://www.dj-dj.be',
                         },
                         {
-                            label: 'Twitter',
+                            label: 'Twitter (TODO)',
                             href: 'https://twitter.com/djdjdevelopment',
                         },
                         {
-                            label:"Youtube",
+                            label:"Youtube (TODO)",
                             href:"https://www.youtube.com/@djdjdevelopment"
                         }
                     ],
                 },
                 {
-                    title: 'More',
+                    title: 'More (TODO)',
                     items: [
                         {
-                            label: 'Blog',
+                            label: 'Blog (TODO)',
                             to: '/blog',
                         },
                         {
-                            label: 'Community Plugins',
+                            label: 'Community Plugins (TODO)',
                             to: '/docs/current/plugin/list',
                         },
                         {
-                            label: 'Contributing',
+                            label: 'Contributing (TODO)',
                             href: '/contributing',
                         },
                         {
-                            label: 'Open Ticket 4.0',
+                            label: 'Open Ticket 4.0 (TODO)',
                             href: '/docs/current/docs/openticket-4',
                         },
                     ],
@@ -228,7 +200,7 @@ const config = {
         prism: {
             theme: lightCodeTheme,
             darkTheme: darkCodeTheme,
-            additionalLanguages:["json","diff"]
+            additionalLanguages:["json","diff","toml"]
         },
         docs:{
             sidebar:{

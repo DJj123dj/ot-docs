@@ -1,0 +1,290 @@
+---
+title: Message Settings
+description: Configure the embeds/messages
+sidebar_position: 5
+keywords: [open-ticket, open ticket, discord ticket bot, config, config.json, settings, messages, embeds]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+
+The messages are the <C color="red">**variables that create the embeds**</C> in your ticket bot.
+Every embed can be configured as much as you want!
+The embed can be spawned in discord with the `/message <id>` command.
+
+To add a button/option to the embed, you need to add the button id to the `"options":[...]` list inside the message!
+The multiple options are splitted by a comma in the list!
+
+:::warning every message needs a unique id!
+Every message needs a unique ID. You can configure this in the `"id":"..."` variable! You will need this for the `/message <id>` command!
+:::
+:::tip
+To create multiple messages, you need to copy the entire part **<C color="green">between & together with the curly brackets</C>**!
+Then, you need to paste it **<C color="green">after the original</C>**, but separate it with a comma!
+Make sure that they don't have the same ID or the bot will error!
+:::
+
+If you are ready with the messages, you can move on to <InlineLink url="docs/get-started#testing" isdoc="true">**Testing**</InlineLink>!
+
+## Message \{#message}
+You can compare a "message" to an embed in discord. Every message you create is a unique embed in discord.
+It can have it's own buttons, colors, images & text!
+The `"id"` is a unique id for every message in Open Ticket. <C color="blue">**There can't be any messages with the same id!**</C>
+
+Now, we will explain what every variable does!
+
+```json title="config.json"
+"messages":[
+    {
+        "id":"1", //the unique ID for each embed/message
+        "name":"Choose Your Ticket", //the embed title
+        "description":"You can click one of the buttons below!", //the embed description
+        "dropdown":false, //create a dropdown instead of buttons
+
+        //add a footer to the embed
+        "enableFooter":false,
+        "footer":"Open Ticket v3.4.4 - I'm a footer!",
+
+        //add a footer image to the embed
+        "enableFooterImage":false,
+        "footerImage":"https://www.example.com/catmemes/cat.png",
+
+        //add a thumbnail to the embed
+        "enableThumbnail":false,
+        "thumbnail":"https://www.example.com/catmemes/cat.png",
+
+        //add an image to the embed
+        "enableImage":false,
+        "image":"https://www.example.com/catmemes/cat.png",
+
+        //set a custom color for this embed only
+        "enableCustomC":false,
+        "color":"#ffffff",
+
+        //add the option ids here to show them below the embed!
+        "options":["general","apply"],
+        
+        "other":{
+            "enableTicketExplanation":true, //enable the default ticket explanation
+            "enableMaxTicketsWarning":true, //enable the maximum amount of tickets warning
+            
+            //set a custom dropdown placeholder
+            "customDropdownPlaceholder":{
+                "enable":false,
+                "text":"Choose a ticket"
+            },
+
+            //change the category text in the default ticket explanation
+            "customCategoryText":{
+                "enable":false,
+                "text":"choose a category:"
+            },
+
+            //change the title of the embed into a URL
+            "embedTitleURL":{
+                "enable":false,
+                "url":"https://www.dj-dj.be/projects/open-ticket"
+            }
+        }
+    }
+]
+```
+
+### "id" (unique id) \{#message-id}
+This is the identifier of the embed. It's used **behind the scenes** and isn't shown to users.
+Allowed characters are: `A-Z`, `a-z`, `0-9`, `_` & `-`
+
+⚠️ **You will need this id later to spawn the embed!**
+
+- Default value: `"1"`
+- Allowed values: `"any lowercase string"` (max `20` characters)
+- Required: `true`
+- Type: `string`
+
+### "name" (string) \{#message-name}
+The `"name"` variable sets the name of the message. This name will be shown as the title in the embed.
+This message won't be translated when you set the language, so you need to translate it yourself!
+
+- Default value: `""` (empty)
+- Allowed values: `"any string"` (max `100` characters)
+- Required: `true`
+- Type: `string`
+
+### "description" (string) \{#message-description}
+The `"description"` variable is the description of the message. This name will be shown as the description in the embed.
+This message won't be translated when you set the language, so you need to translate it yourself!
+
+- Default value: `""` (empty)
+- Allowed values: `"any string"`
+- Required: `false`
+- Type: `string`
+
+
+### "dropdown" (boolean) \{#message-dropdown}
+When enabled, the buttons are shown as a dropdown instead of individual buttons.
+If you use this, button colors won't be used! **Here you can see the difference:**
+
+<FlexHorizontal mode="left">
+    <ScaleImage src="/img/docs-v3/commands/message.png" alt="Image of ticket embed with buttons" size="40%"></ScaleImage>
+    <ScaleImage src="/img/docs-v3/commands/message_dropdown.png" alt="Image of ticket embed with dropdown" size="40%"></ScaleImage>
+</FlexHorizontal>
+<br></br>
+- Default value: `true`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`
+
+### "enableFooter" (boolean) \{#message-enablefooter}
+Enable the footer in the embed. When enabled, you can set the value using `"footer"`!
+
+- Default value: `false`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`
+
+### "footer" (string) \{#message-footer}
+The contents of the embed footer. Enable it using `"enableFooter"`!
+
+- Default value: `""` (empty)
+- Allowed values: `"any string"`
+- Required: `false`
+- Type: `string`
+
+### "enableFooterImage" (boolean) \{#message-enablefooterimage}
+Enable the footer image in the embed. When enabled, you can set the value using `"footerImage"`!
+
+- Default value: `false`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`
+
+### "footerImage" (string) \{#message-footerimage}
+The contents of the embed footer image. Enable it using `"enableFooterImage"`!
+This needs to be a valid image url.
+
+- Default value: `""` (empty)
+- Allowed values: `"any image url"`
+- Required: `false`
+- Type: `string`
+
+### "enableThumbnail" (boolean) \{#message-enablethumbnail}
+Enable the thumbnail in the embed. When enabled, you can set the value using `"thumbnail"`!
+
+- Default value: `false`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`
+
+### "thumbnail" (string) \{#message-thumbnail}
+The contents of the embed thumbnail. Enable it using `"enableThumbnail"`!
+This needs to be a valid image url.
+
+- Default value: `""` (empty)
+- Allowed values: `"any image url"`
+- Required: `false`
+- Type: `string`
+
+### "enableImage" (boolean) \{#message-enableimage}
+Enable the image in the embed. When enabled, you can set the value using `"image"`!
+
+- Default value: `false`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`
+
+### "image" (string) \{#message-image}
+The contents of the embed image. Enable it using `"enableImage"`!
+This needs to be a valid image url.
+
+- Default value: `""` (empty)
+- Allowed values: `"any image url"`
+- Required: `false`
+- Type: `string`
+
+### "enableCustomC" (boolean) \{#message-enablecustomcolor}
+Use a custom color in the embed (instead of the default one). When enabled, you can set the value using `"color"`!
+
+- Default value: `false`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`
+
+### "color" (string) \{#message-color}
+The custom embed color in `hex` format! Enable it using `"enableCustomC"`!
+This needs to be a valid color url.
+
+- Default value: `"#ffffff"` (white)
+- Allowed values: `"any hex color"`
+- Required: `false`
+- Type: `string`
+
+### "options" (id array) \{#message-options}
+The options array is a list of option ids that will create the buttons or dropdown under the embed.
+Many people forget this step and complain why there are no buttons. It's because of this :)
+
+✅ **Insert the option ids from <InlineLink url="docs/config/general/options" isdoc="true">**the options category**</InlineLink> here!**
+
+- Default value: `["general","apply"]` (2 default options)
+- Allowed values: `["id 1","id 2","id 3",...]`
+- Required: `true`
+- Type: `string array`
+
+## Other
+These are just extra settings for additional stuff that you can do with the embed!
+
+
+### "enableTicketExplanation" (boolean) \{#other-ticketexplanation}
+Enable the ticket explanation in the embed.
+When enabled, you will see the tickets explained under the description! **Here you can see the difference:**
+
+<FlexHorizontal mode="left">
+    <ScaleImage src="/img/docs-v3/commands/message.png" alt="Image of ticket embed" size="40%"></ScaleImage>
+    <ScaleImage src="/img/docs-v3/commands/message_explanation.png" alt="Image of ticket embed without explanation" size="40%"></ScaleImage>
+</FlexHorizontal>
+
+- Default value: `true`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`
+
+### "enableMaxTicketsWarning" (boolean) \{#other-maxticketswarning}
+Enable the max tickets warning in the embed.
+When enabled, the embed will have a small text that says how much tickets you can create. **Here you can see it:**
+
+<ScaleImage src="/img/docs-v3/commands/message_warning.png" alt="Image of ticket message with warning" size="40%"></ScaleImage>
+
+- Default value: `true`
+- Allowed values: `true` or `false`
+- Required: `false`
+- Type: `boolean`
+
+### "customDropdownPlaceholder" (enabled property) \{#other-dropdownplaceholder}
+Using the `"customDropdownPlaceholder"` object, you can set a custom placeholder in the dropdown under the embed. Set `"enable"` to `true` & insert some text in `"text"`.
+
+⚠️ **The placeholder can have a maximum length of 50 characters!**
+
+<ScaleImage src="/img/docs-v3/commands/message_placeholder.png" alt="Image of dropdown placeholder" size="40%"></ScaleImage>
+
+- Default value: `enabled:false, text:""` (disabled)
+- Allowed values: `enabled:boolean, text:"any string"`
+- Required: `false`
+- Type: `object`
+
+### "customCategoryText" (enabled property) \{#other-categorytext}
+Using the `"customCategoryText"` object, you can set a custom text in the `ticketexplanation` in the embed. Set `"enable"` to `true` & insert some text in `"text"`.
+
+<ScaleImage src="/img/docs-v3/commands/message_categorytext.png" alt="Image of category text" size="40%"></ScaleImage>
+
+- Default value: `enabled:false, text:""` (disabled)
+- Allowed values: `enabled:boolean, text:"any string"`
+- Required: `false`
+- Type: `object`
+
+### "embedTitleURL" (enabled property) \{#other-embedtitleurl}
+Using the `"embedTitleURL"` object, you can create a url from the embed title. Set `"enable"` to `true` & insert a url in `"url"`.
+
+- Default value: `enabled:false, url:""` (disabled)
+- Allowed values: `enabled:boolean, url:"any url"`
+- Required: `false`
+- Type: `object`

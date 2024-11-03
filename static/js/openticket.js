@@ -1,12 +1,22 @@
-//BADGES FRONT MATTER:
-//sidebar_class_name: otdocs-new-(page/category)
-//sidebar_class_name: otdocs-beta-(page/category)
-//sidebar_class_name: otdocs-official-(page/category)
-//sidebar_class_name: otdocs-verified-(page/category)
+document.addEventListener("DOMContentLoaded",() => {
+    //parse twemoji and set interval for pushstate page loads
+    setInterval(() => {
+        twemoji.parse(document.body,{
+            folder: 'svg',
+            ext: '.svg',
+            base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/'
+        })
+    },100)    
+})
 
+/** SIDEBAR BADGES:
+ * - REQUIRED => otdocs-badge-(page/category)
+ * - METADATA => otdocs-meta-(color)-(text)
+ */
 
 const addPageBadge = (element,color,text) => {
     const textElement = element.firstElementChild
+    if (textElement.querySelector("span")) return
 
     const spanElement = document.createElement("span")
     spanElement.innerHTML = text
@@ -30,6 +40,7 @@ const addPageBadge = (element,color,text) => {
 
 const addCategoryBadge = (element,color,text) => {
     const textElement = element.firstElementChild.firstElementChild
+    if (textElement.querySelector("span")) return
 
     const spanElement = document.createElement("span")
     spanElement.innerHTML = text
@@ -52,68 +63,77 @@ const addCategoryBadge = (element,color,text) => {
 }
 
 
+function otdocsHandleBadges(){
+    const pageItems = document.querySelectorAll(".otdocs-badge-page")
+    const categoryItems = document.querySelectorAll(".otdocs-badge-category")
+
+    function colorToHex(color){
+        if (color == "red"){
+            return "#ff4545"
+        }else if (color == "orange"){
+            return "#ff9f45"
+        }else if (color == "yellow"){
+            return "#e0bd0b"
+        }else if (color == "green"){
+            return "#35c43a"
+        }else if (color == "cyan"){
+            return "#3dd5e0"
+        }else if (color == "blue"){
+            return "#3d84e0"
+        }else if (color == "purple"){
+            return "#7b3de0"
+        }else if (color == "pink"){
+            return "#e03dd0"
+        }else if (color == "black"){
+            return "#111111"
+        }else if (color == "gray"){
+            return "#999999"
+        }else if (color == "brown"){
+            return "#7d5831"
+        }else{
+            return "#ffffff"
+        }
+    }
+
+    pageItems.forEach((item) => {
+        let color = "#ffffff"
+        let text = "<unknown>"
+        item.classList.forEach((c) => {
+            if (c.startsWith("otdocs-meta-")){
+                const splitted = c.split("-")
+                color = colorToHex(splitted[2])
+                text = splitted[3]
+            }
+        })
+
+        addPageBadge(item,color,text)
+    })
+    categoryItems.forEach((item) => {
+        let color = "#ffffff"
+        let text = "<unknown>"
+        item.classList.forEach((c) => {
+            if (c.startsWith("otdocs-meta-")){
+                const splitted = c.split("-")
+                color = colorToHex(splitted[2])
+                text = splitted[3]
+            }
+        })
+
+        addCategoryBadge(item,color,text)
+    })
+}
+
 document.addEventListener("DOMContentLoaded",() => {
-    const newPageItems = Array.from(document.getElementsByClassName("otdocs-new-page"))
-    const newCategoryItems = Array.from(document.getElementsByClassName("otdocs-new-category"))
-    const betaPageItems = Array.from(document.getElementsByClassName("otdocs-beta-page"))
-    const betaCategoryItems = Array.from(document.getElementsByClassName("otdocs-beta-category"))
-    const officialPageItems = Array.from(document.getElementsByClassName("otdocs-official-page"))
-    const officialCategoryItems = Array.from(document.getElementsByClassName("otdocs-official-category"))
-    const verifiedPageItems = Array.from(document.getElementsByClassName("otdocs-verified-page"))
-    const verifiedCategoryItems = Array.from(document.getElementsByClassName("otdocs-verified-category"))
-    
-    //render newPageItems
-    newPageItems.forEach((item) => {
-        addPageBadge(item,"#ff4545","NEW!")
-    })
-
-    //render newCategoryItems
-    newCategoryItems.forEach((item) => {
-        addCategoryBadge(item,"#ff4545","NEW!")
-    })
-
-    //render betaPageItems
-    betaPageItems.forEach((item) => {
-        addPageBadge(item,"#3d84e0","BETA!")
-    })
-
-    //render betaCategoryItems
-    betaCategoryItems.forEach((item) => {
-        addCategoryBadge(item,"#3d84e0","BETA!")
-    })
-
-    //render officialPageItems
-    officialPageItems.forEach((item) => {
-        addPageBadge(item,"#3d84e0","OFFICIAL")
-    })
-
-    //render officialCategoryItems
-    officialCategoryItems.forEach((item) => {
-        addCategoryBadge(item,"#3d84e0","OFFICIAL")
-    })
-
-    //render verifiedPageItems
-    verifiedPageItems.forEach((item) => {
-        addPageBadge(item,"#35c43a","VERIFIED")
-    })
-
-    //render verifiedCategoryItems
-    verifiedCategoryItems.forEach((item) => {
-        addCategoryBadge(item,"#35c43a","VERIFIED")
-    })
-
+    setInterval(() => {
+        otdocsHandleBadges()
+    },100)
 
     //INTERVAL
+    /*
     setInterval(() => {
         const newPageItems = Array.from(document.getElementsByClassName("otdocs-new-page"))
         const newCategoryItems = Array.from(document.getElementsByClassName("otdocs-new-category"))
-        const betaPageItems = Array.from(document.getElementsByClassName("otdocs-beta-page"))
-        const betaCategoryItems = Array.from(document.getElementsByClassName("otdocs-beta-category"))
-        const officialPageItems = Array.from(document.getElementsByClassName("otdocs-official-page"))
-        const officialCategoryItems = Array.from(document.getElementsByClassName("otdocs-official-category"))
-        const verifiedPageItems = Array.from(document.getElementsByClassName("otdocs-verified-page"))
-        const verifiedCategoryItems = Array.from(document.getElementsByClassName("otdocs-verified-category"))
-
+        
         //render newPageItems
         newPageItems.forEach((item) => {
             if (!item.firstElementChild.querySelector("#otdocs-badge")){
@@ -127,87 +147,6 @@ document.addEventListener("DOMContentLoaded",() => {
                 addCategoryBadge(item,"#ff4545","NEW!")
             }
         })
-    
-        //render betaPageItems
-        betaPageItems.forEach((item) => {
-            if (!item.firstElementChild.querySelector("#otdocs-badge")){
-                addPageBadge(item,"#3d84e0","BETA!")
-            }
-        })
-    
-        //render betaCategoryItems
-        betaCategoryItems.forEach((item) => {
-            if (!item.firstElementChild.firstElementChild.querySelector("#otdocs-badge")){
-                addCategoryBadge(item,"#3d84e0","BETA!")
-            }
-        })
-
-        //render officialPageItems
-        officialPageItems.forEach((item) => {
-            if (!item.firstElementChild.querySelector("#otdocs-badge")){
-                addPageBadge(item,"#3d84e0","OFFICIAL")
-            }
-        })
-    
-        //render officialCategoryItems
-        officialCategoryItems.forEach((item) => {
-            if (!item.firstElementChild.firstElementChild.querySelector("#otdocs-badge")){
-                addCategoryBadge(item,"#3d84e0","OFFICIAL")
-            }
-        })
-
-        //render verifiedPageItems
-        verifiedPageItems.forEach((item) => {
-            if (!item.firstElementChild.querySelector("#otdocs-badge")){
-                addPageBadge(item,"#35c43a","VERIFIED")
-            }
-        })
-    
-        //render verifiedCategoryItems
-        verifiedCategoryItems.forEach((item) => {
-            if (!item.firstElementChild.firstElementChild.querySelector("#otdocs-badge")){
-                addCategoryBadge(item,"#35c43a","VERIFIED")
-            }
-        })
     },100)
+    */
 })
-
-var localDocsPath = ""
-setInterval(() => {
-    //parse twemoji
-    twemoji.parse(document.body,{
-        folder: 'svg',
-        ext: '.svg',
-        base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/'
-    })
-
-    //manage LinkBlocks (UPDATE THIS EVERY TIME THERE IS A NEW RELEASE!!!!!)
-    if (document.documentElement.classList.contains("docs-version-current")){
-        document.documentElement.setAttribute("docs-path","dev")
-    }else if (document.documentElement.classList.contains("docs-version-3.5.x")){
-        document.documentElement.setAttribute("docs-path","current")
-    }
-
-    if (localDocsPath != document.documentElement.getAttribute("docs-path")){
-        const linkblocks = Array.from(document.getElementsByClassName("require-url-update"))
-        linkblocks.forEach((el) => {
-            el.setAttribute("href","/docs/"+document.documentElement.getAttribute("docs-path")+"/"+el.getAttribute("url"))
-        })
-
-        //UPDATE WHEN EXTRA DROPDOWN ADDED
-        const versionDropdown = document.querySelector("div.navbar__item.dropdown.dropdown--hoverable.dropdown--right")
-        if (versionDropdown){
-            const activeVersion = versionDropdown.querySelector(".dropdown__link--active")
-            if (activeVersion) versionDropdown.firstElementChild.innerHTML = activeVersion.innerHTML
-        }
-    }
-    //reset localDocsPath
-    localDocsPath = document.documentElement.getAttribute("docs-path")
-},100)
-
-setTimeout(() => {
-    const linkblocks = Array.from(document.getElementsByClassName("require-url-update"))
-    linkblocks.forEach((el) => {
-        el.setAttribute("href","/docs/"+document.documentElement.getAttribute("docs-path")+"/"+el.getAttribute("url"))
-    })
-},1000)

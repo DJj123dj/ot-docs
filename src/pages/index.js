@@ -13,10 +13,10 @@ export default function Home() {
         <img src="/img/logo_docs_dark.png" draggable="false" className='h-72 opacity-90 hidden dark:block max-md:h-32'></img>
         <img src="/img/logo_docs_light.png" draggable="false" className='h-72 opacity-90 dark:hidden max-md:h-32'></img>
         <hr className='w-2/3 bg-neutral-700 h-1 mt-3'></hr>
-        <div className='flex gap-8 mt-1 items-center justify-center max-md:flex-col max-md:gap-4 max-md:mb-4'>
-            <a href='/docs/current/docs/get-started' className='bg-[#f8ba00] text-white text-lg font-bold py-2 px-8 rounded-lg hover:bg-white hover:text-black hover:no-underline'>Get Started!</a>
-            <a href='/docs/current/developer/get-started' className='bg-neutral-700 text-white text-lg font-bold py-2 px-8 rounded-lg hover:bg-white hover:text-black hover:no-underline'>Developer</a>
-            <a href='/docs/current/plugin/get-started' className='bg-neutral-700 text-white text-lg font-bold py-2 px-8 rounded-lg hover:bg-white hover:text-black hover:no-underline'>Plugins</a>
+        <div className='flex gap-6 mt-1 items-center justify-center max-md:flex-col max-md:gap-4 max-md:mb-4'>
+            <a href='/docs/guides/get-started' className='bg-[#f8ba00] text-white text-lg font-bold py-2 px-8 rounded-lg hover:bg-white hover:text-black hover:no-underline'>Get Started!</a>
+            <a href='/docs/plugins/get-started' className='bg-neutral-700 text-white text-lg font-bold py-2 px-8 rounded-lg hover:bg-white hover:text-black hover:no-underline'>Plugin Development</a>
+            <a href='/docs/reference/get-started' className='bg-neutral-700 text-white text-lg font-bold py-2 px-8 rounded-lg hover:bg-white hover:text-black hover:no-underline'>API Reference</a>
             <a href='/blog' className='bg-neutral-700 text-white text-lg font-bold py-2 px-8 rounded-lg hover:bg-white hover:text-black hover:no-underline'>Blog</a>
         </div>
         <p className='my-2 text-lg font-bold'>OR</p>

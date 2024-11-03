@@ -1,0 +1,184 @@
+---
+title: general.json
+description: The general config from Open Ticket. It includes the most important variables like bot status, token & colors.
+sidebar_position: 1
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, reference, config, api, plugins]
+sidebar_class_name: otdocs-badge-page otdocs-meta-cyan-object
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider} from "@site/src/components/openticket.jsx"
+
+# general.json <M color="cyan">object</M>
+The `general.json` is the primary config in Open Ticket v4. It contains general configuration for the bot and ticket system.
+
+#### Examples
+- bot token
+- bot status
+- customisation and colors
+- permissions
+- ticket system configuration
+
+## Info
+<Divider></Divider>
+### `"_INFO"."support"` <M color="blue">string</M> \{#info-support}
+**Default Value:** `"https://otdocs.dj-dj.be"`
+
+A link to the Open Ticket documentation.
+
+<Divider></Divider>
+### `"_INFO"."discord"` <M color="blue">string</M> \{#info-discord}
+**Default Value:** `"https://discord.dj-dj.be"`
+
+A link to the DJdj Development discord server.
+
+<Divider></Divider>
+### `"_INFO"."version"` <M color="blue">string</M> \{#info-version}
+**Default Value:** `"open-ticket-v4.x.x"`
+
+The Open Ticket version this config is made for.
+If the version in the config is different from the version that you're using,
+you might get a warning to re-check your config.
+
+**✅ Sometimes there is no difference between versions, but it's recommended to check it.**
+
+<Divider></Divider>
+## Token
+<Divider></Divider>
+### `"token"` <M color="blue">string</M> \{#token}
+**Default Value:** `"your bot token here"`<br></br>
+**Allowed Values:** `A valid Discord token`
+
+Insert your Discord bot token here. It is used as password to communicate with your Discord bot.
+
+:::danger token safety
+**NEVER EVER** share your Discord token! If someone is able to get your token, he/she can control the entire bot!<br></br>
+<C color="red">**DJdj Development will never ask for your bot token!**</C>
+
+#### Possible Concequences:
+- Your server could get nuked/raided!
+- People can get roles they normally don't have access to!
+- All messages can be logged! (even in staff channels)
+- People could get banned!
+- And much more...
+
+#### Protecting your token:
+- Never send a token to someone (DM and server)!
+- Never upload a token to github. Put it in a file that is covered by the `.gitignore` instead!
+- Put the token inside a `.env` file!
+- When you send the `general.json` to someone who wants to help you, make sure the token isn't included in the file!
+:::
+
+<Divider></Divider>
+### `"tokenFromENV"` <M color="red">boolean</M> \{#token-env}
+**Default Value:** `false`
+
+Enable this boolean to read the token from a `.env` file instead of the `"token"` variable.
+When you use this, you can leave the `"token"` variable empty!
+
+```toml title=".env (Example)"
+TOKEN=your-token-here
+```
+
+<Divider></Divider>
+## Global Configuration
+<Divider></Divider>
+### `"mainColor"` <M color="blue">string</M> \{#main-color}
+**Default Value:** `"#f8ba00"` (Open Ticket Yellow)<br></br>
+**Allowed Values:** `A valid hex-color`
+
+The main color of the bot. Used in almost all embeds of the bot.
+Ticket messages and panels use their own custom color except when it isn't defined in the config.
+
+**✅ If you don't know how to get a hex-color, you can use the website [Color Picker](https://htmlcolorcodes.com/color-picker/) for it.**
+
+<Divider></Divider>
+### `"language"` <M color="blue">string</M> \{#language}
+**Default Value:** `"english"`<br></br>
+**Allowed Values:** `Check language list`
+
+The language used in the bot. Almost 99% of all embeds, buttons and dropdowns in Open Ticket are translated.
+**You can only select a language that is available in the list below.**
+
+**✅ If your language doesn't exist yet, feel free to contribute and add your language to the bot.**
+
+<LinkBlock url="/docs/reference/languages" emoji="🇬🇧" mode="emoji" name="Available Languages" description="Click here to view a list of all the available languages in Open Ticket!"></LinkBlock>
+
+<Divider></Divider>
+### `"prefix"` <M color="blue">string</M> \{#prefix}
+**Default Value:** `"!ticket "` (With space at the end)<br></br>
+
+The prefix for all the text commands in the bot (when enabled).
+- **✅ (Example 1)** If you have a prefix `!ticket `, the close command will be `!ticket close`
+- **✅ (Example 2)** If you have a prefix `!test`, the delete command will be `!testdelete`
+
+<Divider></Divider>
+### `"serverId"` <M color="blue">string</M> \{#server-id}
+**Default Value:** `"discord server id"` (Invalid)<br></br>
+**Allowed Values:** `Any valid discord server id`
+
+In this variable, you need to put the id of the server that the bot will operate in.
+It will be used for slash command creation and the database.
+
+**✅ Open Ticket is made for <C color="red">one server at a time</C>. It's impossible to use the bot in multiple servers at the same time.**
+
+<Divider></Divider>
+### `"globalAdmins"` <M color="pink">array</M> \{#global-admins}
+**Default Value:** `["discord role id"]` (Invalid)<br></br>
+**Allowed Values:** `List of valid discord role ids`
+
+In this variable, you're able to put role id's from the server that have global admin permissions in the bot.
+Global admins are able to control the ticket bot in every channel and use every command of the bot.
+
+:::note Global Admin Permissions
+- ✅ Use all commands in all channels
+- ✅ View every ticket
+- ✅ Manage every ticket
+- ✅ Spawn panels
+- ✅ Blacklist users
+- ✅ Clear tickets
+- ✅ And more...
+:::
+
+**✅ There are also <C color="red">Ticket Admins</C> available for roles that shouldn't have all these permissions.**
+
+<Divider></Divider>
+## Commands
+<Divider></Divider>
+### `"slashCommands"` <M color="red">boolean</M> \{#slash-commands}
+**Default Value:** `true` (Enabled)<br></br>
+
+Enable slash commands in the bot. (Recommended)
+
+**✅ When you disable slash commands, they will all be removed from the bot.**
+
+<Divider></Divider>
+### `"textCommands"` <M color="red">boolean</M> \{#slash-commands}
+**Default Value:** `true` (Enabled)<br></br>
+
+Enable text commands in the bot. This allows you to use commands using the [**`"prefix"`**](#prefix).
+
+**✅ Make sure you've enabled the `MESSAGE_CONTENT` privileged gateaway intent in the discord dev panel.**
+
+<Divider></Divider>
+## Status
+<Divider></Divider>
+
+## Ticket System
+## Discord Logs
+## Global Ticket Limits
+## Permissions
+## Messages
+
+
+## TEMP
+### `"name-of-variable"` <M color="blue">string</M> \{#info-version}
+**Default Value:** `"The default value!"`<br></br>
+**Allowed Values:** `"The allowed values!"`<br></br>
+**Choices:** `Available Choices :)`
+
+Description of property
+
+**✅ Quick solution/statement.**
+<Divider></Divider>

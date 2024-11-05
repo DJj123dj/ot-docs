@@ -164,8 +164,102 @@ Enable text commands in the bot. This allows you to use commands using the [**`"
 <Divider></Divider>
 ## Status
 <Divider></Divider>
+### `"status"."enabled"` <M color="red">boolean</M> \{#status-enabled}
+**Default Value:** `true` (Enabled)<br></br>
 
+Enable the bot status. This will set the status of the bot using the variables [**`"type"`**](#status-type), [**`"text"`**](#status-text) and [**`"status"`**](#status-status).
+
+**✅ There is a plugin <C color="red">OT Better Status</C> available for using variables and rotating the status. [Visit Github](https://odplugins.dj-dj.be/tree/main/open-ticket/ot-better-status)**
+
+<Divider></Divider>
+### `"status"."type"` <M color="blue">string</M> \{#status-type}
+**Default Value:** `"listening OR watching OR playing OR custom"` (Choose one)<br></br>
+**Allowed Values:** `"listening"`, `"watching"`, `"playing"` or `"custom"`
+
+The prefix for the status. This will be shown in front of the text.
+Using custom you can set a status without prefix.
+
+**✅ `"streaming"` is not available yet.**
+
+<Divider></Divider>
+### `"status"."text"` <M color="blue">string</M> \{#status-text}
+**Default Value:** `"/help"`<br></br>
+
+The text for the status. This will be shown after the prefix (when not custom).
+
+**✅ Don't make it too long or it will be truncated by Discord. (Max: `±30 characters`)**
+
+<Divider></Divider>
+### `"status"."status"` <M color="blue">string</M> \{#status-status}
+**Default Value:** `"online OR invisible OR idle OR dnd"` (Choose one)<br></br>
+**Allowed Values:** `"online"`, `"invisible"`, `"idle"` or `"dnd"`
+
+The status symbol of the bot. Use it to make your bot hidden, idle or something else.
+- <C color="red">**🔴 Do Not Disturb:**</C> `dnd`
+- <C color="orange">**🟠 Idle:**</C> `idle`
+- <C color="green">**🟢 Online:**</C> `online`
+- <C color="gray">**⚫️ Invisible:**</C> `invisible`
+
+**✅ Use `invisible` if you want the bot to stay hidden between offline members.**
+
+<Divider></Divider>
 ## Ticket System
+<Divider></Divider>
+### `"system"."removeParticipantsOnClose"` <M color="red">boolean</M> \{#system-remove-participants-on-close}
+**Default Value:** `false` (Disabled)<br></br>
+
+When enabled, all participants (creator + extra participants) are removed from the ticket. They should be added back to the ticket when it is reopened.
+
+**✅ Global & ticket admins are not affected by this rule.**
+
+<Divider></Divider>
+### `"system"."replyOnTicketCreation"` <M color="red">boolean</M> \{#system-reply-on-ticket-creation}
+**Default Value:** `true` (Enabled)<br></br>
+
+When enabled, the bot will send an ephemeral message to the user that created a ticket.
+
+<ScaleImage src="/img/docs-v4/creation-reply-message.png" size="40%"></ScaleImage>
+
+**✅ When using the `/ticket` command, this message will always be created. It is not affected by this rule.**
+
+<Divider></Divider>
+### `"system"."replyOnReactionRole"` <M color="red">boolean</M> \{#system-reply-on-reaction-role}
+**Default Value:** `true` (Enabled)<br></br>
+
+When enabled, the bot will send an ephemeral message to the user when he/she updates here roles via the built-in reaction roles.
+
+<ScaleImage src="/img/docs-v4/reaction-role-add.png" size="40%"></ScaleImage>
+
+**✅ The bot will show which roles have been added and which ones have been removed.**
+
+<Divider></Divider>
+### `"system"."useTranslatedConfigChecker"` <M color="red">boolean</M> \{#system-use-translated-config-checker}
+**Default Value:** `true` (Enabled)<br></br>
+
+Enable this variable to translate the config checker in the console. This could be helpful if you don't understand the error which is caused by the config.
+
+<ScaleImage src="/img/docs-v4/config-checker.png" size="60%"></ScaleImage>
+
+**✅ This report in the console will be translated.**
+
+<Divider></Divider>
+
+{/*"system":{
+    "preferSlashOverText":true,
+    "sendErrorOnUnknownCommand":true,
+    "questionFieldsInCodeBlock":true,
+    "disableVerifyBars":false,
+    "useRedErrorEmbeds":true,
+    "emojiStyle":"before (OR after OR double OR disabled)",
+
+    "enableTicketClaimButtons":true,
+    "enableTicketCloseButtons":true,
+    "enableTicketPinButtons":true,
+    "enableTicketDeleteButtons":true,
+    "enableTicketActionWithReason":true,
+    "enableDeleteWithoutTranscript":true,*/}
+
+
 ## Discord Logs
 ## Global Ticket Limits
 ## Permissions

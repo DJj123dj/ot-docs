@@ -1,0 +1,67 @@
+---
+title: questions.json
+description: The question config from Open Ticket. Here you can create and configure modals/questions to be used in tickets.
+sidebar_position: 2
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, reference, config, api, plugins]
+sidebar_class_name: otdocs-badge-page otdocs-meta-pink-array
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider} from "@site/src/components/openticket.jsx"
+
+# questions.json <M color="pink">array</M>
+DESCRIPTION
+
+# Table Of Contents
+- **[Info](#info)**
+- **[Token](#info)**
+
+## Info
+<Divider></Divider>
+
+ABC
+
+<Divider></Divider>
+## Token
+<Divider></Divider>
+### `"token"` <M color="blue">string</M> \{#token}
+**Default Value:** `"your bot token here"`<br></br>
+**Allowed Values:** `A valid Discord token`
+
+TEST LOREM IPSUM
+
+<Divider></Divider>
+
+# Example File
+All variables above have been made acording to this config for Open Ticket `v4.0.0`. This configuration might change in future versions!
+```json title="questions.json"
+[
+    {
+        "id":"example-question-1",
+        "name":"Example Question 1",
+        "type":"short",
+        
+        "required":true,
+        "placeholder":"Insert your short answer here!",
+        "length":{
+            "enabled":false,
+            "min":0,
+            "max":1000
+        }
+    },
+    {
+        "id":"example-question-2",
+        "name":"Example Question 2",
+        "type":"paragraph",
+        
+        "required":false,
+        "placeholder":"Insert your long answer here!",
+        "length":{
+            "enabled":false,
+            "min":0,
+            "max":1000
+        }
+    }
+]
+```

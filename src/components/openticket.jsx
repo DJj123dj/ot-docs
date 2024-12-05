@@ -13,7 +13,7 @@ export function M(params){
     }else if (params.color == "green"){
         var color = "#35c43a"
     }else if (params.color == "cyan"){
-        var color = "#3dd5e0"
+        var color = "#39b4bd"
     }else if (params.color == "blue"){
         var color = "#3d84e0"
     }else if (params.color == "purple"){

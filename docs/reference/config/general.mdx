@@ -11,14 +11,26 @@ sidebar_class_name: otdocs-badge-page otdocs-meta-cyan-object
 import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider} from "@site/src/components/openticket.jsx"
 
 # general.json <M color="cyan">object</M>
-The `general.json` is the primary config in Open Ticket v4. It contains general configuration for the bot and ticket system.
+The `general.json` file serves as the main configuration for Open Ticket.
+This file contains essential settings that define the bot's global behavior, appearance, and functionality across your server.
 
-#### Examples
-- bot token
-- bot status
-- customisation and colors
-- permissions
-- ticket system configuration
+With `general.json`, you can fine-tune many aspects of your ticket system. Here are some examples:
+- **Client configuration:** (token, status, server, ...)
+- **Appearance:** (main color, visible buttons, enabled commands, ...)
+- **Ticket System:** (features, permissions, extra's, ...)
+- **Global Limits:** Set global limits for ticket creation.
+
+# Table Of Contents
+- **[Info](#info)**
+- **[Token](#info)**
+- **[Global Configuration](#global-configuration)**
+- **[Commands](#commands)**
+- **[Status](#status)**
+- **[Ticket System](#ticket-system)**
+- **[Discord Logs](#discord-logs)**
+- **[Global Ticket Limits](#global-ticket-limits)**
+- **[Permissions](#permissions)**
+- **[Messages](#messages)**
 
 ## Info
 <Divider></Divider>
@@ -58,14 +70,14 @@ Insert your Discord bot token here. It is used as password to communicate with y
 
 #### Possible Concequences:
 - Your server could get nuked/raided!
-- People can get roles they normally don't have access to!
-- All messages can be logged! (even in staff channels)
-- People could get banned!
+- Users can get roles they normally don't have access to!
+- All messages can be logged! (also in staff channels)
+- Users will be mass-banned!
 - And much more...
 
 #### Protecting your token:
 - Never send a token to someone (DM and server)!
-- Never upload a token to github. Put it in a file that is covered by the `.gitignore` instead!
+- Never upload a token to github. Put it inside a file which is covered by the `.gitignore` instead!
 - Put the token inside a `.env` file!
 - When you send the `general.json` to someone who wants to help you, make sure the token isn't included in the file!
 :::
@@ -243,36 +255,339 @@ Enable this variable to translate the config checker in the console. This could 
 **✅ This report in the console will be translated.**
 
 <Divider></Divider>
+### `"system"."preferSlashOverText"` <M color="red">boolean</M> \{#system-prefer-slash-over-text}
+**Default Value:** `true` (Enabled)<br></br>
 
-{/*"system":{
-    "preferSlashOverText":true,
-    "sendErrorOnUnknownCommand":true,
-    "questionFieldsInCodeBlock":true,
-    "disableVerifyBars":false,
-    "useRedErrorEmbeds":true,
-    "emojiStyle":"before (OR after OR double OR disabled)",
+When enabled, the bot will prefer slash commands over traditional text commands in the help menu and related commands.
 
-    "enableTicketClaimButtons":true,
-    "enableTicketCloseButtons":true,
-    "enableTicketPinButtons":true,
-    "enableTicketDeleteButtons":true,
-    "enableTicketActionWithReason":true,
-    "enableDeleteWithoutTranscript":true,*/}
+**✅ This won't disable slash or text commands. It's only made for displaying purposes.**
 
-
-## Discord Logs
-## Global Ticket Limits
-## Permissions
-## Messages
-
-
-## TEMP
-### `"name-of-variable"` <M color="blue">string</M> \{#info-version}
-**Default Value:** `"The default value!"`<br></br>
-**Allowed Values:** `"The allowed values!"`<br></br>
-**Choices:** `Available Choices :)`
-
-Description of property
-
-**✅ Quick solution/statement.**
 <Divider></Divider>
+### `"system"."sendErrorOnUnknownCommand"` <M color="red">boolean</M> \{#system-send-error-on-unknown-command}
+**Default Value:** `true` (Enabled)<br></br>
+
+If enabled, the bot will respond with an error message when users enter the prefix without an unknown command.
+This can help guide users to the correct commands.
+
+<ScaleImage src="/img/docs-v4/unknown-command.png" size="40%"></ScaleImage>
+
+**✅ Users will be notified of invalid commands.**
+
+<Divider></Divider>
+### `"system"."questionFieldsInCodeBlock"` <M color="red">boolean</M> \{#system-question-fields-in-code-block}
+**Default Value:** `true` (Enabled)<br></br>
+
+When enabled, the bot will format question fields in code blocks for better readability in the ticket message.
+
+<ScaleImage src="/img/docs-v4/ticket-message-questions.png" size="40%"></ScaleImage>
+
+**✅ Improves the clarity of question response fields.**
+
+<Divider></Divider>
+### `"system"."disableVerifyBars"` <M color="red">boolean</M> \{#system-disable-verify-bars}
+**Default Value:** `false` (Disabled)<br></br>
+
+Enable this to disable the verify bars in the ticket system. Verify bars are the (❌,✅) buttons you see when clicking on an action.
+
+<ScaleImage src="/img/docs-v4/verifybar.png" size="40%"></ScaleImage>
+
+**✅ When disabling this, you're also unable to choose a reason when using the button.**
+
+<Divider></Divider>
+### `"system"."useRedErrorEmbeds"` <M color="red">boolean</M> \{#system-use-red-error-embeds}
+**Default Value:** `true` (Enabled)<br></br>
+
+Enable this to display error message embeds with a red color instead of the default color, making errors more noticeable to users.
+
+**✅ Red embeds improve the visibility of error messages.**
+
+<Divider></Divider>
+### `"system"."emojiStyle"` <M color="blue">string</M> \{#system-emoji-style}
+**Default Value:** `"before"`<br></br>
+**Allowed Values:** `"before"`, `"after"`, `"double"` or `"disabled"`
+
+This variable determines where emojis appear in message titles, embed titles, subtitles & more.
+
+|Value               |Embed Title                     |
+|--------------------|--------------------------------|
+|`before` (default)  |**✅  Example Embed Title**     |
+|`after`             |**Example Embed Title ✅**      |
+|`double`            |**✅ Example Embed Title ✅**    |
+|`disabled`          |**Example Embed Title**         |
+
+**✅ Customize emoji placement to suit your server’s style.**
+
+<Divider></Divider>
+### `"system"."enableTicketClaimButtons"` <M color="red">boolean</M> \{#system-enable-ticket-claim-buttons}
+**Default Value:** `true` (Enabled)<br></br>
+
+When enabled, claim & unclaim buttons will appear on tickets, allowing team members to claim responsibility for a ticket.
+
+**✅ This does not affect the `/claim` & `/unclaim` commands!**
+
+<Divider></Divider>
+
+### `"system"."enableTicketCloseButtons"` <M color="red">boolean</M> \{#system-enable-ticket-close-buttons}
+**Default Value:** `true` (Enabled)<br></br>
+
+When enabled, close & reopen buttons will appear on tickets, allowing quick closure without commands.
+
+**✅ This does not affect the `/close` & `/reopen` commands!**
+
+<Divider></Divider>
+### `"system"."enableTicketPinButtons"` <M color="red">boolean</M> \{#system-enable-ticket-pin-buttons}
+**Default Value:** `true` (Enabled)<br></br>
+
+When enabled, pin & unpin buttons will appear on tickets, allowing team members to pin important messages in a ticket channel.
+
+**✅ This does not affect the `/pin` & `/unpin` commands!**
+
+<Divider></Divider>
+### `"system"."enableTicketDeleteButtons"` <M color="red">boolean</M> \{#system-enable-ticket-delete-buttons}
+**Default Value:** `true` (Enabled)<br></br>
+
+When enabled, a delete button will appear on tickets, delete tickets quickly.
+
+**✅ This does not affect the `/delete` command!**
+
+<Divider></Divider>
+### `"system"."enableTicketActionWithReason"` <M color="red">boolean</M> \{#system-enable-ticket-action-with-reason}
+**Default Value:** `true` (Enabled)<br></br>
+
+When enabled, you're able to give a reason for a specific ticket action.
+
+:::note supported actions
+These are the supported actions which are compatible with reasons:
+- Claim & Unclaim
+- Pin & Unpin
+- Close & Reopen
+- Delete
+- Add, Remove & Blacklist (User)
+- Move & Rename
+- Autoclose & Autodelete
+:::
+
+**✅ The given reasons will also show up in the logs.**
+
+<Divider></Divider>
+### `"system"."enableDeleteWithoutTranscript"` <M color="red">boolean</M> \{#system-enable-delete-without-transcript}
+**Default Value:** `true` (Enabled)<br></br>
+
+Enable this to allow tickets to be deleted without generating a transcript. Use with caution, as it removes any record of the ticket.
+
+**✅ Ideal for tickets with sensitive information that shouldn't be recorded.**
+
+<Divider></Divider>
+## Discord Logs
+<Divider></Divider>
+### `"system"."logs"."enabled"` <M color="red">boolean</M> \{#system-logs-enabled}
+**Default Value:** `false` (Disabled)<br></br>
+
+Enable this to activate logging for bot events and actions. Logs will be sent to the specified channel.
+
+<ScaleImage src="/img/docs-v4/logs-discord.png" size="50%"></ScaleImage>
+
+**✅ Almost all actions in the bot are logged to this channel.**
+
+<Divider></Divider>
+### `"system"."logs"."channel"` <M color="blue">string</M> \{#system-logs-channel}
+**Default Value:** `"discord channel id"`<br></br>
+**Allowed Values:** `Any valid discord text channel id`
+
+The Discord channel where logs will be sent. This must be a valid channel ID.
+
+**✅ Ensure the bot has the necessary permissions to send messages in the specified channel.**
+
+<Divider></Divider>
+## Global Ticket Limits
+<Divider></Divider>
+### `"system"."limits"."enabled"` <M color="red">boolean</M> \{#system-limits-enabled}
+**Default Value:** `true` (Enabled)<br></br>
+
+Enable this to restrict the number of tickets that can be open simultaneously. Use this to prevent overloading the ticket system.
+
+**✅ It counts all existing tickets, including `closed` ones.**
+
+<Divider></Divider>
+### `"system"."limits"."globalMaximum"` <M color="green">number</M> \{#system-limits-global-maximum}
+**Default Value:** `50`<br></br>
+
+The maximum number of tickets that can be open globally across the bot.
+
+**✅ Recommended to keep under `50` for Discord max amount of channels per category.**
+
+<Divider></Divider>
+### `"system"."limits"."userMaximum"` <M color="green">number</M> \{#system-limits-user-maximum}
+**Default Value:** `3`<br></br>
+
+The maximum number of tickets a single user can have open at any given time.
+
+**✅ Helps ensure individual users don't open excessive tickets.**
+
+<Divider></Divider>
+## Permissions
+<Divider></Divider>
+### `"system"."permissions"` <M color="blue">string</M> \{#system-permissions}
+**Allowed Values:** `"everyone"`, `"admin"`, `"none"` or `Any valid discord role id`
+
+This property determines the access levels for various bot commands and actions.
+Use this to customize permissions for different roles or IDs.
+
+**Available options are:**
+- `"everyone"`: Allow for everyone.
+- `"admin"`: Allow for `global admins` and `ticket admins`.
+- `"<role id>"`: Allow for a specific discord role ID.
+- `"none"`: Don't allow usage for everyone. <C color="red">**This will also remove the slash command & help menu command.**</C>
+
+| **Command/Action** | **Default Value** | **Description** |
+|---------------------|-------------------|-----------------|
+| `help`             | `everyone`       | Access to the help command. |
+| `panel`            | `admin`          | Access to the control panel. |
+| `ticket`           | `none`           | Permission to create tickets. |
+| `close`            | `everyone`       | Permission to close tickets. |
+| `delete`           | `admin`          | Permission to delete tickets. |
+| `reopen`           | `everyone`       | Permission to reopen tickets. |
+| `claim`            | `admin`          | Permission to claim tickets. |
+| `unclaim`          | `admin`          | Permission to unclaim tickets. |
+| `pin`              | `admin`          | Permission to pin messages in tickets. |
+| `unpin`            | `admin`          | Permission to unpin messages in tickets. |
+| `move`             | `admin`          | Permission to move tickets to a different category. |
+| `rename`           | `admin`          | Permission to rename tickets. |
+| `add`              | `admin`          | Permission to add users to tickets. |
+| `remove`           | `admin`          | Permission to remove users from tickets. |
+| `blacklist`        | `admin`          | Permission to blacklist users from opening tickets. |
+| `stats`            | `everyone`       | Access to view stats. |
+| `clear`            | `admin`          | Permission to purge multiple tickets. |
+| `autoclose`        | `admin`          | Permission to configure auto-closing of tickets. |
+| `autodelete`       | `admin`          | Permission to configure auto-deletion of tickets. |
+
+**✅ Customize each permission to suit your server's requirements.**
+
+<Divider></Divider>
+## Messages
+<Divider></Divider>
+### `"system"."messages"` <M color="cyan">object</M> \{#system-messages}
+**Default Value:** `{"dm":false, "logs":true}`<br></br>
+
+This property controls whether specific actions and commands are logged in the server and/or sent as a DM to the ticket creator.
+The configuration allows you to enable or disable notifications for each action.
+
+| **Action/Command**    | **Default (DM)** | **Default (Logs)** | **Description**                               |
+|-----------------------|------------------|--------------------|-----------------------------------------------|
+| `creation`            | `false`          | `true`             | Notification when a ticket is created.       |
+| `closing`             | `false`          | `true`             | Notification when a ticket is closed.        |
+| `deleting`            | `false`          | `true`             | Notification when a ticket is deleted.       |
+| `reopening`           | `false`          | `true`             | Notification when a ticket is reopened.      |
+| `claiming`            | `false`          | `true`             | Notification when a ticket is claimed.       |
+| `pinning`             | `false`          | `true`             | Notification when a ticket is pinned.        |
+| `adding`              | `false`          | `true`             | Notification when a user is added to a ticket.|
+| `removing`            | `false`          | `true`             | Notification when a user is removed from a ticket.|
+| `renaming`            | `false`          | `true`             | Notification when a ticket is renamed.       |
+| `moving`              | `false`          | `true`             | Notification when a ticket is moved.         |
+| `blacklisting`        | `false`          | `true`             | Notification when a user is blacklisted.     |
+| `roleAdding`          | `false`          | `true`             | Notification when a role is given to a user. |
+| `roleRemoving`        | `false`          | `true`             | Notification when a role is removed from a user.|
+
+**✅ Customize these options to control how and where users are notified about ticket actions.**
+
+<Divider></Divider>
+
+# Example File
+All variables above have been made acording to this config for Open Ticket `v4.0.0`. This configuration might change in future versions!
+```json title="general.json"
+{
+    "_INFO":{
+        "support":"https://otdocs.dj-dj.be",
+        "discord":"https://discord.dj-dj.be",
+        "version":"open-ticket-v4.0.0"
+    },
+    
+    "token":"your bot token here! Or leave empty when you use tokenFromENV",
+    "tokenFromENV":false,
+
+    "mainColor":"#f8ba00",
+    "language":"english",
+    "prefix":"!ticket ",
+    "serverId":"discord server id",
+    "globalAdmins":["discord role id"],
+
+    "slashCommands":true,
+    "textCommands":true,
+
+    "status":{
+        "enabled":true,
+        "type":"listening OR watching OR playing OR custom",
+        "text":"/help",
+        "status":"online OR invisible OR idle OR dnd"
+    },
+
+    "system":{
+        "removeParticipantsOnClose":false,
+        "replyOnTicketCreation":true,
+        "replyOnReactionRole":true,
+        "useTranslatedConfigChecker":true,
+        "preferSlashOverText":true,
+        "sendErrorOnUnknownCommand":true,
+        "questionFieldsInCodeBlock":true,
+        "disableVerifyBars":false,
+        "useRedErrorEmbeds":true,
+        "emojiStyle":"before (OR after OR double OR disabled)",
+
+        "enableTicketClaimButtons":true,
+        "enableTicketCloseButtons":true,
+        "enableTicketPinButtons":true,
+        "enableTicketDeleteButtons":true,
+        "enableTicketActionWithReason":true,
+        "enableDeleteWithoutTranscript":true,
+
+        "logs":{
+            "enabled":false,
+            "channel":"discord channel id"
+        },
+        
+        "limits":{
+            "enabled":true,
+            "globalMaximum":50,
+            "userMaximum":3
+        },
+
+        "permissions":{
+            "help":"everyone (OR admin OR none OR role id)",
+            "panel":"admin (OR everyone OR none OR role id)",
+            "ticket":"none (OR admin OR everyone OR role id)",
+            "close":"everyone (OR admin OR none OR role id)",
+            "delete":"admin (OR everyone OR none OR role id)",
+            "reopen":"everyone (OR admin OR none OR role id)",
+            "claim":"admin (OR everyone OR none OR role id)",
+            "unclaim":"admin (OR everyone OR none OR role id)",
+            "pin":"admin (OR everyone OR none OR role id)",
+            "unpin":"admin (OR everyone OR none OR role id)",
+            "move":"admin (OR everyone OR none OR role id)",
+            "rename":"admin (OR everyone OR none OR role id)",
+            "add":"admin (OR everyone OR none OR role id)",
+            "remove":"admin (OR everyone OR none OR role id)",
+            "blacklist":"admin (OR everyone OR none OR role id)",
+            "stats":"everyone (OR admin OR none OR role id)",
+            "clear":"admin (OR everyone OR none OR role id)",
+            "autoclose":"admin (OR everyone OR none OR role id)",
+            "autodelete":"admin (OR everyone OR none OR role id)"
+        },
+
+        "messages":{
+            "creation":{"dm":false, "logs":true},
+            "closing":{"dm":false, "logs":true},
+            "deleting":{"dm":false, "logs":true},
+            "reopening":{"dm":false, "logs":true},
+            "claiming":{"dm":false, "logs":true},
+            "pinning":{"dm":false, "logs":true},
+            "adding":{"dm":false, "logs":true},
+            "removing":{"dm":false, "logs":true},
+            "renaming":{"dm":false, "logs":true},
+            "moving":{"dm":false, "logs":true},
+            "blacklisting":{"dm":false, "logs":true},
+            "roleAdding":{"dm":false, "logs":true},
+            "roleRemoving":{"dm":false, "logs":true}
+        }
+    }
+}
+```

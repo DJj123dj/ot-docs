@@ -12,12 +12,16 @@ import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/comp
 # Contributing
 On this page, we will explain how to contribute to this documentation.
 This documentation is created using [docusaurus](https://docusaurus.io), a static-site generator built with react & mdx!
-<C color="blue">**You don't need to know anything about React to contribute, only Mdown & a little bit of HTML is required!**</C>
 
+<C color="blue">**You don't need to know anything about React to contribute, only Markdown & a little bit of HTML is required!**</C>
+<br></br>
+<br></br>
+
+# Repository
 The repository of this documentation is hosted on github:
 <LinkBlock mode="image" image="/img/logo/github.png" name="Github: DJj123dj/ot-docs" description="The official Open Ticket documentation!" isdoc="false" url="https://www.github.com/djj123dj/ot-docs"></LinkBlock>
 
-You can create a pull request to contribute to the documentation, but be aware that it may be rejected because of the rules! **All the rules & tips can be found in this page!**
+We would really appreciate contributions to the documentation via a pull request or fork! **All tips & tricks can be found in this page!**
 
 # Structure
 The documentation is structured into different parts. <C color="red">**The only parts that contributors should edit are the following ones:**</C>
@@ -31,18 +35,17 @@ Here you can find even more info about the different parts:
 
 |Name           |Path                |Notes                                                                                                                                                           |
 |---------------|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|User Docs      |`./docs/docs/`      |The main/general documentation. It's for normal users, please explain everything as clearly as possible!                                                        |
-|Developer Docs |`./docs/developer/` |The developer documentation. This is for developers only, you can write a little bit more technical in here!                                                    |
-|API Reference  |`./docs/api/`       |The API reference for plugins. Try to use as little text as possible & put links to definitions if possible!                                                    |
-|Plugin List    |`./docs/plugin/`    |The plugin list. Here you can discover plugins! <C color="orange">**Contributors are only allowed to add plugins to the `other` category!**</C> |
-|Blog           |`./blog/`           |The official blog. <C color="green">**You are allowed to create your own articles, but please ask it before doing so!**</C>                     |
-|Custom Pages   |`./src/pages/`      |Custom pages. These include "this page", the home page & some other ones. **Don't edit anything here except if it's really needed!**                            |
+|Guides         |`./docs/guides/`    |The main documentation and guides. It contains many guides for setting up and using Open Ticket. |
+|Plugins        |`./docs/plugins/`   |The developer documentation and guides. This will contain all guides about creating Open Ticket plugins and contributing to the bot. |
+|API Reference  |`./docs/reference/` |The API reference. This contains all commands, config variables, classes, types and more! Everything is structured and organized here! |
+|Blog           |`./blog/`           |The official blog. <C color="green">**If you want to create your own articles, you'll first need to create an "author" with your name!**</C> |
+|Custom Pages   |`./src/pages/`      |Custom pages. It includes this page and the home page. **Please don't edit it without valid reason or contribution.** |
 
 # Sidebar, Titles & Page Structure
-Try to follow the style of the other pages when it comes to naming & styling.
-**For Example:** only add an emoji if pages in the same category have an emoji!
+Try to follow the style of the other pages when it comes to naming & styling.<br></br>
+**Example:** Only use an emoji in the page-name when others in the same category also have it.
 
-**Don't use heading level `1`, `4`, `5` & `6` in pages.** This is because they don't show up in the table of contents & they are most of the time too large or too small!
+**Don't use heading level `1`, `5` & `6`.** They are too large/small most of the time and don't show up in the table of contents.
 Here is an example of how a page should look like:
 
 ```js title="example.mdx"
@@ -52,8 +55,11 @@ description: The Page Description
 keywords: [keyword_a, keyword_b, keyword_c] //page keywords (SEO)
 sidebar_position: 1 //(optional) position in sidebar
 ---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
 //import custom components
-import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal} from "@site/src/components/openticket.jsx"
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider} from "@site/src/components/openticket.jsx"
 
 //short description of what this page is about
 Lorem Ipsum
@@ -86,7 +92,7 @@ Some extra content here
 Some extra content here
 ```
 
-# Mdown & Styling
+# Markdown & Styling
 There is a lot of styling available, here we will list some examples!
 If you want to use one of these examples, check this page out in the github repository!
 
@@ -100,10 +106,10 @@ There are also a lot of colors. They can be created using the `<C color="...">` 
 
 <FlexHorizontal mode="left">
 
-|C                                            |Usage (as text)                                    |
-|-------------------------------------------------|---------------------------------------------------|
-|<C color="red">**red**</C>       |✅ Use this on very important text!                |
-|<C color="orange">**orange**</C> |✅ Use this on less important text!                |
+|C                                |Usage (as text)                                    |
+|---------------------------------|---------------------------------------------------|
+|<C color="red">**red**</C>       |✅ Use this for very important text!               |
+|<C color="orange">**orange**</C> |✅ Use this for important text!                    |
 |<C color="yellow">**yellow**</C> |❌ Don't use this! It looks a lot like hyperlinks! |
 |<C color="green">**green**</C>   |✅ Use this for tips & tricks!                     |
 |<C color="cyan">**cyan**</C>     |⚠️ This color doesn't have a use case yet!          |
@@ -111,22 +117,22 @@ There are also a lot of colors. They can be created using the `<C color="...">` 
 |<C color="purple">**purple**</C> |⚠️ This color doesn't have a use case yet!          |
 |<C color="pink">**pink**</C>     |⚠️ This color doesn't have a use case yet!          |
 |<C color="black">**black**</C>   |❌ Don't use this! It is invisible on most pages!  |
-|<C color="gray">**gray**</C>     |✅ Use this for small details that nobody needs!   |
+|<C color="gray">**gray**</C>     |✅ Use this for smaller details!                   |
 |<C color="brown">**brown**</C>   |⚠️ This color doesn't have a use case yet!          |
 
-|C                                            |Usage (as label)                                     |
-|-------------------------------------------------|-----------------------------------------------------|
-|<M color="red">**red**</M>       |✅ Used for `api.json` & API `types`                 |
-|<M color="orange">**orange**</M> |✅ Used for API `class/object properties`            |
+|C                                |Usage (as label)                                     |
+|---------------------------------|-----------------------------------------------------|
+|<M color="red">**red**</M>       |✅ Used for API `booleans`                           |
+|<M color="orange">**orange**</M> |✅ Used for API `functions`                          |
 |<M color="yellow">**yellow**</M> |✅ Used for API `enums`                              |
-|<M color="green">**green**</M>   |✅ Used for `transcriptconfig.json` & API `functions`|
-|<M color="cyan">**cyan**</M>     |✅ Used for API `globals`                            |
-|<M color="blue">**blue**</M>     |✅ Used for `config.json` & API `classes`            |
-|<M color="purple">**purple**</M> |✅ Used for API `events`                             |
-|<M color="pink">**pink**</M>     |✅ Used for API `parameters`                         |
+|<M color="green">**green**</M>   |✅ Used for API `numbers`                            |
+|<M color="cyan">**cyan**</M>     |✅ Used for API `objects`                            |
+|<M color="blue">**blue**</M>     |✅ Used for API `strings`                            |
+|<M color="purple">**purple**</M> |✅ Used for API `classes`                            |
+|<M color="pink">**pink**</M>     |✅ Used for API `arrays`                             |
+|<M color="gray">**gray**</M>     |✅ Used for API `interfaces`                         |
+|<M color="brown">**brown**</M>   |✅ Used for API `types`                              |
 |<M color="black">**black**</M>   |⚠️ This color doesn't have a use case yet!            |
-|<M color="gray">**gray**</M>     |⚠️ This color doesn't have a use case yet!            |
-|<M color="brown">**brown**</M>   |⚠️ This color doesn't have a use case yet!            |
 
 </FlexHorizontal>
 
@@ -256,7 +262,7 @@ REMOVED:
 ```
 
 #### Admonitions
-Admonitions are special notes that deserve extra attention! You can put any other Mdown inside of them (so you can see them as a sort of container)
+Admonitions are special notes that deserve extra attention! You can put any other Markdown inside of them (so you can see them as a sort of container)
 
 :::tip your custom title here
 This is the `tip` admonition! Use it for giving tips to users!
@@ -275,9 +281,10 @@ This is the `note` admonition! This admonition is rarely used! (An alternative f
 :::
 
 # Content & Readability
-- ✅ All text on the wiki needs to be in **English**.
-- ✅ Don't make the page to short, but also don't make it to long.
-- ✅ Use Admonitions **only when really needed**! Most of the time, you can also just use colored text!
+- ✅ All text in the docs needs to be in **English**.
+- ✅ Include enough details to fill the page.
+- ✅ Split large pages up in multiple smaller ones.
+- ✅ Use Admonitions **only when needed**! Most of the time, you can also just use colored text!
 - ✅ Check your text for grammatical errors before uploading!
 - ✅ When you write an article in the blog, make sure it's linked to your name!
 

@@ -77,7 +77,7 @@ function otdocsHandleBadges(){
         }else if (color == "green"){
             return "#35c43a"
         }else if (color == "cyan"){
-            return "#3dd5e0"
+            return "#39b4bd"
         }else if (color == "blue"){
             return "#3d84e0"
         }else if (color == "purple"){

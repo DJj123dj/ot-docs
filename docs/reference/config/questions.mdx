@@ -11,28 +11,96 @@ sidebar_class_name: otdocs-badge-page otdocs-meta-pink-array
 import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider} from "@site/src/components/openticket.jsx"
 
 # questions.json <M color="pink">array</M>
-DESCRIPTION
+The `questions.json` file allows you to define customizable questions that will be asked when you create a ticket.
+You are able to create an <C color="red">**unlimited amount**</C> of questions by just copy-pasting an existing one!
+The questions will be shown in a modal before ticket creation.
+
+:::info usage
+To use a question, the `"id"`'s of all the questions you want need to be inserted in the [`"questions"`](./options.mdx#ticket-questions) variable in the `options.json ` config. [Click for more info!](./options.mdx#ticket-questions)
+:::
+:::tip how to create multiple questions?
+To create multiple questions, you need to **copy <C color="red">everything between and including the brackets</C> (`{...}`) of a question**.
+Then you need to **<C color="red">paste it after the last question</C> (`{...}`) and make sure that they are seperated by a comma.**
+:::
+
+If you're **unable to configure the questions correctly**, please join our Discord server!
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Join our discord server!" description="DJdj Development"></LinkBlock>
 
 # Table Of Contents
-- **[Info](#info)**
-- **[Token](#info)**
-
-## Info
-<Divider></Divider>
-
-ABC
+- **[Properties](#properties)**
 
 <Divider></Divider>
-## Token
+## Properties
+These properties are applicable to all question types and define the general structure of a question.
 <Divider></Divider>
-### `"token"` <M color="blue">string</M> \{#token}
-**Default Value:** `"your bot token here"`<br></br>
-**Allowed Values:** `A valid Discord token`
+### `"id"` <M color="blue">string</M> \{#question-id}
+**Default Value:** `"example-question"` <br></br>
 
-TEST LOREM IPSUM
+A unique identifier for the question, used for referencing in the `options.json` configuration.<br></br>
+> The only allowed characters are: `A-Z`, `a-z`, `0-9`, `_` & `-`!
+
+**✅ It must be unique across all questions.**
 
 <Divider></Divider>
+### `"name"` <M color="blue">string</M> \{#question-name}
+**Default Value:** `"Example Question"` <br></br>
 
+The label of the question, visible in the Discord modal.
+
+**✅ Maximum length of 45 characters.**
+
+<Divider></Divider>
+### `"type"` <M color="blue">string</M> \{#question-type}
+**Default Value:** `/`<br></br>
+**Allowed Values:** `"short"` or `"paragraph"`
+
+The type of question input in the modal.  
+- `"short"`: Single-line input for short responses.  
+- `"paragraph"`: Multi-line input for detailed responses.
+
+**✅ Choose based on the amount of text expected.**
+
+<Divider></Divider>
+### `"required"` <M color="red">boolean</M> \{#question-required}
+**Default Value:** `true` (Enabled)<br></br>
+
+Indicates whether the question must be answered to proceed.
+
+**✅ Use `false` for optional questions.**
+
+<Divider></Divider>
+### `"placeholder"` <M color="blue">string</M> \{#question-placeholder}
+**Default Value:** `""` (Optional)<br></br>
+
+Placeholder text displayed in the input field, providing guidance to the user.
+
+**✅ Keep it short and relevant.**
+
+<Divider></Divider>
+### `"length"."enabled"` <M color="red">boolean</M> \{#question-length-enabled}
+**Default Value:** `false`<br></br>
+
+Enables or disables length validation for the user’s input.
+
+**✅ Set to `true` to enforce length limits.**
+
+<Divider></Divider>
+### `"length"."min"` <M color="green">number</M> \{#question-length-min}
+**Default Value:** `0`<br></br>
+
+The minimum number of characters required in the response.
+
+**✅ TIP: Users don't like a min-length requirement.**
+
+<Divider></Divider>
+### `"length"."max"` <M color="green">number</M> \{#question-length-max}
+**Default Value:** `1000`<br></br>
+
+The maximum number of characters allowed in the response.
+
+**✅ Keep within reasonable limits to ensure clarity.**
+
+<Divider></Divider>
 # Example File
 All variables above have been made acording to this config for Open Ticket `v4.0.0`. This configuration might change in future versions!
 ```json title="questions.json"

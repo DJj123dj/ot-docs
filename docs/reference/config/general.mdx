@@ -32,7 +32,9 @@ With `general.json`, you can fine-tune many aspects of your ticket system. Here 
 - **[Permissions](#permissions)**
 - **[Messages](#messages)**
 
+<Divider></Divider>
 ## Info
+These properties are only to give you some info. They don't serve a real purpose!
 <Divider></Divider>
 ### `"_INFO"."support"` <M color="blue">string</M> \{#info-support}
 **Default Value:** `"https://otdocs.dj-dj.be"`
@@ -57,6 +59,7 @@ you might get a warning to re-check your config.
 
 <Divider></Divider>
 ## Token
+Configure your discord bot token here.
 <Divider></Divider>
 ### `"token"` <M color="blue">string</M> \{#token}
 **Default Value:** `"your bot token here"`<br></br>
@@ -95,6 +98,7 @@ TOKEN=your-token-here
 
 <Divider></Divider>
 ## Global Configuration
+This is the main configuration of the bot. Think about the color of embeds, prefix and a few other things.
 <Divider></Divider>
 ### `"mainColor"` <M color="blue">string</M> \{#main-color}
 **Default Value:** `"#f8ba00"` (Open Ticket Yellow)<br></br>
@@ -157,6 +161,7 @@ Global admins are able to control the ticket bot in every channel and use every 
 
 <Divider></Divider>
 ## Commands
+Choose which type of commands you want to use in your server.
 <Divider></Divider>
 ### `"slashCommands"` <M color="red">boolean</M> \{#slash-commands}
 **Default Value:** `true` (Enabled)<br></br>
@@ -175,6 +180,7 @@ Enable text commands in the bot. This allows you to use commands using the [**`"
 
 <Divider></Divider>
 ## Status
+Set the status of the bot.
 <Divider></Divider>
 ### `"status"."enabled"` <M color="red">boolean</M> \{#status-enabled}
 **Default Value:** `true` (Enabled)<br></br>
@@ -216,6 +222,7 @@ The status symbol of the bot. Use it to make your bot hidden, idle or something 
 
 <Divider></Divider>
 ## Ticket System
+Here you can configure everything related to the ticket system.
 <Divider></Divider>
 ### `"system"."removeParticipantsOnClose"` <M color="red">boolean</M> \{#system-remove-participants-on-close}
 **Default Value:** `false` (Disabled)<br></br>
@@ -379,6 +386,7 @@ Enable this to allow tickets to be deleted without generating a transcript. Use 
 
 <Divider></Divider>
 ## Discord Logs
+Configure Discord logs for the bot.
 <Divider></Divider>
 ### `"system"."logs"."enabled"` <M color="red">boolean</M> \{#system-logs-enabled}
 **Default Value:** `false` (Disabled)<br></br>
@@ -400,6 +408,7 @@ The Discord channel where logs will be sent. This must be a valid channel ID.
 
 <Divider></Divider>
 ## Global Ticket Limits
+Global ticket limits are limits you can configure which will apply to each ticket option.
 <Divider></Divider>
 ### `"system"."limits"."enabled"` <M color="red">boolean</M> \{#system-limits-enabled}
 **Default Value:** `true` (Enabled)<br></br>
@@ -426,6 +435,7 @@ The maximum number of tickets a single user can have open at any given time.
 
 <Divider></Divider>
 ## Permissions
+Configure permissions for individual commands.
 <Divider></Divider>
 ### `"system"."permissions"` <M color="blue">string</M> \{#system-permissions}
 **Allowed Values:** `"everyone"`, `"admin"`, `"none"` or `Any valid discord role id`
@@ -465,6 +475,7 @@ Use this to customize permissions for different roles or IDs.
 
 <Divider></Divider>
 ## Messages
+Configure logs and DM messages for individual actions.
 <Divider></Divider>
 ### `"system"."messages"` <M color="cyan">object</M> \{#system-messages}
 **Default Value:** `{"dm":false, "logs":true}`<br></br>
@@ -491,7 +502,6 @@ The configuration allows you to enable or disable notifications for each action.
 **✅ Customize these options to control how and where users are notified about ticket actions.**
 
 <Divider></Divider>
-
 # Example File
 All variables above have been made acording to this config for Open Ticket `v4.0.0`. This configuration might change in future versions!
 ```json title="general.json"

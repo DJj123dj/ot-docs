@@ -11,27 +11,350 @@ sidebar_class_name: otdocs-badge-page otdocs-meta-pink-array
 import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider} from "@site/src/components/openticket.jsx"
 
 # options.json <M color="pink">array</M>
-DESCRIPTION
+The `options.json` file allows you to define customizable tickets, websites and reaction roles. You can compare an option with a button or dropdown value.
+You are able to create an <C color="red">**unlimited amount**</C> of options by just copy-pasting an existing one!
+The options can be added to a panel in the `panels.json` config.
+
+:::info usage
+To use a option, the `"id"`'s of all the options you want need to be inserted in the [`"options"`](./panels.mdx#panel-options) variable in the `panels.json ` config. [Click for more info!](./panels.mdx#panel-options)
+:::
+:::tip how to create multiple options?
+To create multiple options, you need to **copy <C color="red">everything between and including the brackets</C> (`{...}`) of an option**.
+Then you need to **<C color="red">paste it after the last option</C> (`{...}`) and make sure that they are seperated by a comma.**
+:::
+
+If you're **unable to configure the options correctly**, please join our Discord server!
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Join our discord server!" description="DJdj Development"></LinkBlock>
+
 
 # Table Of Contents
-- **[Info](#info)**
-- **[Token](#info)**
-
-## Info
-<Divider></Divider>
-
-
-### ticket questions \{#ticket-questions}
-ABC
+- **[Global Properties](#global-properties)**
+- **[Ticket Properties](#ticket-properties)**
+- **[Website Properties](#website-properties)**
+- **[Reaction Role Properties](#reaction-role-properties)**
 
 <Divider></Divider>
-## Token
+## Global Properties
 <Divider></Divider>
-### `"token"` <M color="blue">string</M> \{#token}
-**Default Value:** `"your bot token here"`<br></br>
-**Allowed Values:** `A valid Discord token`
+### `"id"` <M color="blue">string</M> \{#option-id}
+**Default Value:** `"example-ticket"` <br></br>
 
-TEST LOREM IPSUM
+A unique identifier for the option, used for referencing in the `panels.json` configuration.<br></br>
+> The only allowed characters are: `A-Z`, `a-z`, `0-9`, `_` & `-`!
+
+**✅ It must be unique across all options.**
+
+<Divider></Divider>
+### `"name"` <M color="blue">string</M> \{#option-name}
+**Default Value:** `"Question"` <br></br>
+
+The name of this option (ticket, website, reaction role), it will be visible in discord embeds.
+
+**✅ Maximum length of 45 characters.**
+
+<Divider></Divider>
+### `"description"` <M color="blue">string</M> \{#option-description}
+**Default Value:** `""` (Empty) <br></br>
+
+A description of this (ticket, website, reaction role), this is displayed in the **panel embed** or dropdown for ticket creation.
+
+**✅ This can be left empty if not needed.**
+
+<Divider></Divider>
+### `"type"` <M color="blue">string</M> \{#option-type}
+**Default Value:** `""` (Empty) <br></br>
+**Allowed Values:** `"ticket"`, `"website"` or `"role"` <br></br>
+
+The `option` type. This type determines the type of this option. In Open Ticket, the available options are: `ticket`, `website` and `role`.
+Each of those options will make the button do a different thing in the panel. The defaul (and most used) option is the `ticket` type.
+
+**✅ All variables below this property are specific for the selected type.**
+
+<Divider></Divider>
+### `"button"` <M color="cyan">object</M> \{#option-button}
+**Default Value:** `/` <br></br>
+
+The layout for the button/dropdown of this option. It will be displayed in the panel.
+Insert custom discord emoji's in the following syntax: `<:emoji-name:12345678910>`.
+
+- **`"emoji"`:** <M color="blue">string</M> - The emoji of used in the dropdown or button.
+- **`"label"`:** <M color="blue">string</M> - The button label. It can have a maximum of 80 characters.
+- **`"color"`:** <M color="blue">string</M> - The button color of this option. (`"gray"`, `"red"`, `"green"`, or `"blue"`)
+
+**✅ One of the two (`"emoji"` or `"label"`) is allowed to be empty when needed!**
+
+<Divider></Divider>
+## Ticket Properties
+<Divider></Divider>
+### `"ticketAdmins"` <M color="pink">array</M> \{#ticket-ticketadmins}
+**Default Value:** `[]` (Empty) <br></br>
+**Allowed Values:** `Any valid discord role id`<br></br>
+
+Role id's from the server that have ticket admin permissions for this specific ticket type.
+Ticket admins are able to control the ticket bot only in ticket channels with this ticket type. They are also limited to a few commands.
+
+:::note Ticket Admin Permissions
+- ✅ Use commands in their channels
+- ✅ View their tickets
+- ❌ View every ticket
+- ❌ Manage every ticket
+- ❌ Spawn panels
+- ❌ Blacklist users
+- ❌ Clear tickets
+:::
+
+**✅ Roles that are already assigned in the `"globalAdmins"` don't need to be added to this list again.**
+
+<Divider></Divider>
+### `"readonlyAdmins"` <M color="pink">array</M> \{#ticket-readonlyadmins}
+**Default Value:** `[]` (Empty) <br></br>
+**Allowed Values:** `Any valid discord role id`<br></br>
+
+Same as the above **[`"ticketAdmins"`](#ticket-ticketadmins)**, but with <C color="red">**read only access**</C>!
+
+:::note Readonly Ticket Admin Permissions
+- ✅ Use buttons in their channels
+- ✅ View their tickets
+- ❌ Write in their tickets
+- 📌 All other **Ticket Admin** permissions
+:::
+
+**✅ Use this for interns or team members that are only required to view and manage this ticket type.**
+
+<Divider></Divider>
+### `"allowCreationByBlacklistedUsers"` <M color="red">boolean</M> \{#ticket-allow-blacklisted}
+**Default Value:** `false` (Disabled) <br></br>
+
+Indicates whether users who are blacklisted can create tickets of this type.
+
+**✅ Set to `true` to allow blacklisted users to create tickets.**
+
+<Divider></Divider>
+### `"questions"` <M color="pink">array</M> \{#ticket-questions}
+**Default Value:** `[]` (Empty) <br></br>
+**Allowed Values:** `Any valid question id` <br></br>
+
+An array of question IDs (found in **[`questions.json`](./questions.mdx)**) that will be shown in a modal when this ticket type is created.
+
+<ScaleImage src="/img/docs-v4/question-modal.png" size="40%"></ScaleImage>
+
+**✅ You can add a maximum of 5 questions per ticket type.**
+
+<Divider></Divider>
+### `"channel"` <M color="cyan">object</M> \{#ticket-channel}
+**Default Value:** `/` <br></br>
+
+Configuration for the channel settings related to this ticket type.
+
+- **`prefix`**: <M color="blue">string</M> - The prefix for the channel name. (e.g. `question-` in `#question-DJj123dj`)
+- **`suffix`**: <M color="blue">string</M> - The suffix for the channel name. Please choose from the list below.
+- **`category`**: <M color="blue">string</M> - The category id for this ticket channel. (Optional)
+- **`closedCategory`**: <M color="blue">string</M> - The category id to use when this ticket gets closed. (Optional)
+- **`backupCategory`**: <M color="blue">string</M> - The category id to use when the original category is full. (Optional)
+- **`claimedCategory`**: <M color="pink">array</M> - Assign the ticket to a different category based on who claimes it. (Optional)
+- **`description`**: <M color="blue">string</M> - The topic of the ticket channel. Can be used for more details. (Optional)
+
+> #### Available Suffixes:
+> |Type                  |Description                                               |Example                                                |Length     |
+> |----------------------|----------------------------------------------------------|-------------------------------------------------------|-----------|
+> |**`user-name`**       |The name of the creator.                                  |`DJj123dj` in `#question-DJj123dj`                     |Dynamic    |
+> |**`user-id`**         |The id of the creator.                                    |`779742674932072469` in `#question-779742674932072469` |Dynamic    |
+> |**`random-number`**   |A random number between `0000` and `9999`.                |`1234` in `#question-1234`                             |Always `4` |
+> |**`random-hex`**      |A random hex between `0000` and `ffff`.                   |`f8ba` in `#question-f8ba`                             |Always `4` |
+> |**`counter-dynamic`** |A counter without fixed length which goes on forever.     |`16` in `#question-16`                                 |Dynamic    |
+> |**`counter-fixed`**   |A counter between `0000` and `9999` with a fixed length.  |`0016` in `#question-0016`                             |Always `4` |
+
+# ‼️‼️  FINISHED UNTIL HERE ‼️‼️
+
+<Divider></Divider>
+### `"dmMessage.enabled"` <M color="red">boolean</M> \{#ticket-dm-message-enabled}
+**Default Value:** `false` <br></br>
+
+Indicates if the DM message is enabled for users upon ticket creation.
+
+**✅ Enable this to keep users informed through direct messages!**
+
+<Divider></Divider>
+### `"dmMessage.text"` <M color="blue">string</M> \{#ticket-dm-message-text}
+**Default Value:** `"Thanks for creating a ticket in our server! (or leave empty)"` <br></br>
+
+The text content of the DM message sent to users.
+
+**✅ Personalize this message to enhance user engagement!**
+
+<Divider></Divider>
+### `"dmMessage.embed"` <M color="blue">object</M> \{#ticket-dm-message-embed}
+**Default Value:** `{ "enabled": false, "title": "Embed Title! (or leave empty)", "description": "Description (or leave empty)", "customColor": "#f8ab00 (or leave empty)", "image": "https://www.example.com/image.png (or leave empty)", "thumbnail": "https://www.example.com/image.png (or leave empty)", "fields": [{"name": "field name", "value": "field value", "inline": false }], "timestamp": false }` <br></br>
+
+Configuration for an embedded message in the DM sent to users.
+
+- **`enabled`**: <M color="red">boolean</M> - Indicates if the embed feature is enabled for the DM.
+- **`title`**: <M color="blue">string</M> - The title of the embedded message.
+- **`description`**: <M color="blue">string</M> - The description of the embedded message.
+- **`customColor`**: <M color="blue">string</M> - The color of the embed, specified in hex format.
+- **`image`**: <M color="blue">string</M> - A URL to an image displayed in the embed.
+- **`thumbnail`**: <M color="blue">string</M> - A URL to a thumbnail image displayed in the embed.
+- **`fields`**: <M color="blue">array</M> - An array of objects specifying fields in the embed.
+- **`timestamp`**: <M color="red">boolean</M> - Indicates if a timestamp should be included in the embed.
+
+**✅ Use embeds to make your messages visually appealing and informative!**
+
+
+<Divider></Divider>
+### `"ticketMessage.enabled"` <M color="red">boolean</M> \{#ticket-ticket-message-enabled}
+**Default Value:** `true` <br></br>
+
+Indicates if the ticket message is enabled in the ticket channel.
+
+**✅ Keep this enabled to provide users with immediate feedback!**
+
+<Divider></Divider>
+### `"ticketMessage.text"` <M color="blue">string</M> \{#ticket-ticket-message-text}
+**Default Value:** `""` <br></br>
+
+The text content of the ticket message sent in the ticket channel.
+
+**✅ This can be left empty if you prefer to use only embeds!**
+
+<Divider></Divider>
+### `"ticketMessage.embed"` <M color="blue">object</M> \{#ticket-ticket-message-embed}
+**Default Value:** `{ "enabled": true, "title": "Question Ticket", "description": "Thanks for creating a 'Question' ticket in our server!\nOur support team will help you soon!", "customColor": "#f8ab00 (or leave empty)", "image": "https://www.example.com/image.png (or leave empty)", "thumbnail": "https://www.example.com/image.png (or leave empty)", "fields": [{"name": "field name", "value": "field value", "inline": false}], "timestamp": false }` <br></br>
+
+Configuration for an embedded message in the ticket channel.
+
+- **`enabled`**: <M color="red">boolean</M> - Indicates if the embed feature is enabled for the ticket message.
+- **`title`**: <M color="blue">string</M> - The title of the embedded message.
+- **`description`**: <M color="blue">string</M> - The description of the embedded message.
+- **`customColor`**: <M color="blue">string</M> - The color of the embed, specified in hex format.
+- **`image`**: <M color="blue">string</M> - A URL to an image displayed in the embed.
+- **`thumbnail`**: <M color="blue">string</M> - A URL to a thumbnail image displayed in the embed.
+- **`fields`**: <M color="blue">array</M> - An array of objects specifying fields in the embed.
+- **`timestamp`**: <M color="red">boolean</M> - Indicates if a timestamp should be included in the embed.
+
+**✅ Use embeds to enhance the clarity and aesthetics of your ticket messages!**
+
+<Divider></Divider>
+### `"ticketMessage.ping"` <M color="blue">object</M> \{#ticket-ticket-message-ping}
+**Default Value:** `{ "@here": true, "@everyone": false, "custom": ["discord role id"] }` <br></br>
+
+Configuration for pinging roles or users in the ticket message.
+
+- **`@here`**: <M color="red">boolean</M> - Indicates if the `@here` mention should be used.
+- **`@everyone`**: <M color="red">boolean</M> - Indicates if the `@everyone` mention should be used.
+- **`custom`**: <M color="blue">array</M> - An array of Discord role IDs to mention in the ticket message.
+
+**✅ Use pings judiciously to ensure important notifications reach the right audience!**
+
+### `"autoclose.enableInactiveHours"` <M color="red">boolean </M> \{#ticket-autoclose-enable-inactive-hours}
+**Default Value:** `false` <br></br>
+
+Indicates if the inactivity timer for automatic closing of tickets is enabled.
+
+**✅ Enable this to automatically manage inactive tickets!**
+
+<Divider></Divider>
+### `"autoclose.inactiveHours"` <M color="green">number</M> \{#ticket-autoclose-inactive-hours}
+**Default Value:** `24` <br></br>
+
+The number of hours before a ticket is automatically closed due to inactivity.
+
+**✅ Set this to a reasonable time frame based on your server's activity!**
+
+<Divider></Divider>
+### `"autoclose.enableUser  Leave"` <M color="red">boolean</M> \{#ticket-autoclose-enable-user-leave}
+**Default Value:** `true` <br></br>
+
+Indicates if the ticket should close when the user leaves the server.
+
+**✅ Consider the user experience when deciding to enable this feature!**
+
+<Divider></Divider>
+### `"autoclose.disableOnClaim"` <M color="red">boolean</M> \{#ticket-autoclose-disable-on-claim}
+**Default Value:** `false` <br></br>
+
+Indicates if the inactivity timer should be disabled when the ticket is claimed.
+
+**✅ This can help keep tickets open for support once claimed!**
+
+<Divider></Divider>
+### `"autodelete.enableInactiveDays"` <M color="red">boolean</M> \{#ticket-autodelete-enable-inactive-days}
+**Default Value:** `false` <br></br>
+
+Indicates if the inactivity timer for deletion is enabled.
+
+**✅ Use this to automatically clean up old tickets!**
+
+<Divider></Divider>
+### `"autodelete.inactiveDays"` <M color="green">number</M> \{#ticket-autodelete-inactive-days}
+**Default Value:** `7` <br></br>
+
+The number of days before a ticket is automatically deleted due to inactivity.
+
+**✅ Set this to ensure tickets are removed after a reasonable period!**
+
+<Divider></Divider>
+### `"autodelete.enableUser  Leave"` <M color="red">boolean</M> \{#ticket-autodelete-enable-user-eave}
+**Default Value:** `true` <br></br>
+
+Indicates if the ticket should be deleted when the user leaves the server.
+
+**✅ This helps maintain a clean ticket system!**
+
+<Divider></Divider>
+### `"autodelete.disableOnClaim"` <M color="red">boolean</M> \{#ticket-autodelete-disable-on-claim}
+**Default Value:** `false` <br></br>
+
+Indicates if the deletion timer should be disabled when the ticket is claimed.
+
+** **✅ Keep this disabled to allow support to manage claimed tickets effectively!**
+
+<Divider></Divider>
+### `"cooldown.enabled"` <M color="red">boolean</M> \{#ticket-cooldown-enabled}
+**Default Value:** `false` <br></br>
+
+Indicates if the cooldown feature is enabled for ticket creation.
+
+**✅ Helps to prevent users from spamming ticket requests!**
+
+<Divider></Divider>
+### `"cooldown.cooldownMinutes"` <M color="green">number</M> \{#ticket-cooldown-minutes}
+**Default Value:** `10` <br></br>
+
+The number of minutes a user must wait before creating another ticket.
+
+**✅ Adjust this based on your server's needs!**
+
+<Divider></Divider>
+### `"limits.enabled"` <M color="red">boolean</M> \{#ticket-limits-enabled}
+**Default Value:** `false` <br></br>
+
+Indicates if the limits feature is enabled for ticket creation.
+
+**✅ Use this to manage ticket volume effectively!**
+
+<Divider></Divider>
+### `"limits.globalMaximum"` <M color="green">number</M> \{#ticket-limits-global-maximum}
+**Default Value:** `20` <br></br>
+
+The maximum number of tickets allowed globally across all users.
+
+**✅ Set this to control the overall ticket load on your server!**
+
+<Divider></Divider>
+### `"limits.userMaximum"` <M color="green">number</M> \{#ticket-limits-user-maximum}
+**Default Value:** `3` <br></br>
+
+The maximum number of tickets a single user can create.
+
+**✅ Helps to ensure fair access to ticket creation for all users!** 
+
+<Divider></Divider>
+## Website Properties
+<Divider></Divider>
+
+<Divider></Divider>
+## Reaction Role Properties
+<Divider></Divider>
 
 <Divider></Divider>
 

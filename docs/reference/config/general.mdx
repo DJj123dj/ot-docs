@@ -36,26 +36,21 @@ With `general.json`, you can fine-tune many aspects of your ticket system. Here 
 ## Info
 These properties are only to give you some info. They don't serve a real purpose!
 <Divider></Divider>
-### `"_INFO"."support"` <M color="blue">string</M> \{#info-support}
-**Default Value:** `"https://otdocs.dj-dj.be"`
+### `"_INFO"` <M color="cyan">object</M> \{#info}
+**Default Value:** `/`
 
-A link to the Open Ticket documentation.
+This object contains metadata for the config. This includes urls to our support server and the Open Ticket version this config is made for.
 
-<Divider></Divider>
-### `"_INFO"."discord"` <M color="blue">string</M> \{#info-discord}
-**Default Value:** `"https://discord.dj-dj.be"`
+- **`"support"`:** <M color="blue">string</M> - A link to the Open Ticket documentation.
+- **`"discord"`:** <M color="blue">string</M> - A link to the DJdj Development discord server.
+- **`"version"`:** <M color="blue">string</M> - The Open Ticket version this config is made for.
 
-A link to the DJdj Development discord server.
-
-<Divider></Divider>
-### `"_INFO"."version"` <M color="blue">string</M> \{#info-version}
-**Default Value:** `"open-ticket-v4.x.x"`
-
-The Open Ticket version this config is made for.
+:::warning version mismatch
 If the version in the config is different from the version that you're using,
 you might get a warning to re-check your config.
+:::
 
-**✅ Sometimes there is no difference between versions, but it's recommended to check it.**
+**✅ Join [our discord server](https://discord.dj-dj.be) when you need help setting up the bot!**
 
 <Divider></Divider>
 ## Token
@@ -182,43 +177,23 @@ Enable text commands in the bot. This allows you to use commands using the [**`"
 ## Status
 Set the status of the bot.
 <Divider></Divider>
-### `"status"."enabled"` <M color="red">boolean</M> \{#status-enabled}
-**Default Value:** `true` (Enabled)<br></br>
+### `"status"` <M color="cyan">object</M> \{#status}
+**Default Value:** `/`<br></br>
 
-Enable the bot status. This will set the status of the bot using the variables [**`"type"`**](#status-type), [**`"text"`**](#status-text) and [**`"status"`**](#status-status).
+Set status of the bot. When enabled, you can configure and customise it to your preference. 
 
-**✅ There is a plugin <C color="red">OT Better Status</C> available for using variables and rotating the status. [Visit Github](https://odplugins.dj-dj.be/tree/main/open-ticket/ot-better-status)**
+- **`"enabled"`:** <M color="red">boolean</M> - Enable a custom bot status.
+- **`"type"`:** <M color="blue">string</M> - The status type. (`"listening"`, `"watching"`, `"playing"` or `"custom"`)
+- **`"text"`:** <M color="blue">string</M> - The text that will be shown after the `"type"`. (recommended: `<30 characters`)
+- **`"status"`:** <M color="blue">string</M> - The status of the bot. Check the list below for the available types.
 
-<Divider></Divider>
-### `"status"."type"` <M color="blue">string</M> \{#status-type}
-**Default Value:** `"listening OR watching OR playing OR custom"` (Choose one)<br></br>
-**Allowed Values:** `"listening"`, `"watching"`, `"playing"` or `"custom"`
+> #### Status Options:
+> - <C color="red">**🔴 Do Not Disturb:**</C> `dnd`
+> - <C color="orange">**🟠 Idle:**</C> `idle`
+> - <C color="green">**🟢 Online:**</C> `online`
+> - <C color="gray">**⚫️ Invisible:**</C> `invisible`
 
-The prefix for the status. This will be shown in front of the text.
-Using custom you can set a status without prefix.
-
-**✅ `"streaming"` is not available yet.**
-
-<Divider></Divider>
-### `"status"."text"` <M color="blue">string</M> \{#status-text}
-**Default Value:** `"/help"`<br></br>
-
-The text for the status. This will be shown after the prefix (when not custom).
-
-**✅ Don't make it too long or it will be truncated by Discord. (Max: `±30 characters`)**
-
-<Divider></Divider>
-### `"status"."status"` <M color="blue">string</M> \{#status-status}
-**Default Value:** `"online OR invisible OR idle OR dnd"` (Choose one)<br></br>
-**Allowed Values:** `"online"`, `"invisible"`, `"idle"` or `"dnd"`
-
-The status symbol of the bot. Use it to make your bot hidden, idle or something else.
-- <C color="red">**🔴 Do Not Disturb:**</C> `dnd`
-- <C color="orange">**🟠 Idle:**</C> `idle`
-- <C color="green">**🟢 Online:**</C> `online`
-- <C color="gray">**⚫️ Invisible:**</C> `invisible`
-
-**✅ Use `invisible` if you want the bot to stay hidden between offline members.**
+**✅ Use the plugin [OT Better Status](https://github.com/DJj123dj/open-discord-plugins/tree/main/open-ticket/ot-better-status/) for a rotating status or variables inside the status!**
 
 <Divider></Divider>
 ## Ticket System
@@ -388,21 +363,16 @@ Enable this to allow tickets to be deleted without generating a transcript. Use 
 ## Discord Logs
 Configure Discord logs for the bot.
 <Divider></Divider>
-### `"system"."logs"."enabled"` <M color="red">boolean</M> \{#system-logs-enabled}
-**Default Value:** `false` (Disabled)<br></br>
+### `"system"."logs"` <M color="cyan">object</M> \{#system-logs}
+**Default Value:** `/`<br></br>
 
-Enable this to activate logging for bot events and actions. Logs will be sent to the specified channel.
+Log almost all bot events and actions to a specific discord channel.<br></br>
+Individual logs-per-command can be configured in the **[`"permissions"`](#permissions)** property.
+
+- **`"enabled"`:** <M color="red">boolean</M> - Enable logging.
+- **`"channel"`:** <M color="blue">string</M> - The Discord channel where logs will be sent. (valid channel ID) 
 
 <ScaleImage src="/img/docs-v4/logs-discord.png" size="50%"></ScaleImage>
-
-**✅ Almost all actions in the bot are logged to this channel.**
-
-<Divider></Divider>
-### `"system"."logs"."channel"` <M color="blue">string</M> \{#system-logs-channel}
-**Default Value:** `"discord channel id"`<br></br>
-**Allowed Values:** `Any valid discord text channel id`
-
-The Discord channel where logs will be sent. This must be a valid channel ID.
 
 **✅ Ensure the bot has the necessary permissions to send messages in the specified channel.**
 
@@ -410,34 +380,24 @@ The Discord channel where logs will be sent. This must be a valid channel ID.
 ## Global Ticket Limits
 Global ticket limits are limits you can configure which will apply to each ticket option.
 <Divider></Divider>
-### `"system"."limits"."enabled"` <M color="red">boolean</M> \{#system-limits-enabled}
-**Default Value:** `true` (Enabled)<br></br>
+### `"system"."limits"` <M color="cyan">object</M> \{#system-limits}
+**Default Value:** `/`<br></br>
 
-Enable this to restrict the number of tickets that can be open simultaneously. Use this to prevent overloading the ticket system.
+Enable this to restrict the number of tickets that can be opened simultaneously. This is great to prevent overloading the ticket system.
+Individual limits per option can also be configured in the **[`options.json`](./options.mdx)** config.
 
-**✅ It counts all existing tickets, including `closed` ones.**
+- **`"enabled"`:** <M color="red">boolean</M> - Enable global ticket limits.
+- **`"globalMaximum"`:** <M color="green">number</M> - The maximum number of tickets that can be open globally across the bot.
+- **`"userMaximum"`:** <M color="green">number</M> - The maximum number of tickets a single user can have open at any given time.
 
-<Divider></Divider>
-### `"system"."limits"."globalMaximum"` <M color="green">number</M> \{#system-limits-global-maximum}
-**Default Value:** `50`<br></br>
-
-The maximum number of tickets that can be open globally across the bot.
-
-**✅ Recommended to keep under `50` for Discord max amount of channels per category.**
-
-<Divider></Divider>
-### `"system"."limits"."userMaximum"` <M color="green">number</M> \{#system-limits-user-maximum}
-**Default Value:** `3`<br></br>
-
-The maximum number of tickets a single user can have open at any given time.
-
-**✅ Helps ensure individual users don't open excessive tickets.**
+**✅ This will apply for all existing tickets, including `closed` ones.**
 
 <Divider></Divider>
 ## Permissions
 Configure permissions for individual commands.
 <Divider></Divider>
-### `"system"."permissions"` <M color="blue">string</M> \{#system-permissions}
+### `"system"."permissions"` <M color="cyan">object</M> \{#system-permissions}
+**Default Value:** `/`<br></br>
 **Allowed Values:** `"everyone"`, `"admin"`, `"none"` or `Any valid discord role id`
 
 This property determines the access levels for various bot commands and actions.

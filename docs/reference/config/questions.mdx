@@ -77,28 +77,17 @@ Placeholder text displayed in the input field, providing guidance to the user.
 **✅ Keep it short and relevant.**
 
 <Divider></Divider>
-### `"length"."enabled"` <M color="red">boolean</M> \{#question-length-enabled}
-**Default Value:** `false`<br></br>
+### `"length"` <M color="cyan">object</M> \{#question-length}
+**Default Value:** `/`<br></br>
 
-Enables or disables length validation for the user’s input.
+Length validation for questions will limit the user input length.
+Try to only use this only when needed. Many people hate this feature when used incorrectly.
 
-**✅ Set to `true` to enforce length limits.**
+- **`"enabled"`:** <M color="red">boolean</M> - Enable length validation for questions.
+- **`"min"`:** <M color="green">number</M> - The minimum number of characters required in the response.
+- **`"max"`:** <M color="green">number</M> - The maximum number of characters allowed in the response.
 
-<Divider></Divider>
-### `"length"."min"` <M color="green">number</M> \{#question-length-min}
-**Default Value:** `0`<br></br>
-
-The minimum number of characters required in the response.
-
-**✅ TIP: Users don't like a min-length requirement.**
-
-<Divider></Divider>
-### `"length"."max"` <M color="green">number</M> \{#question-length-max}
-**Default Value:** `1000`<br></br>
-
-The maximum number of characters allowed in the response.
-
-**✅ Keep within reasonable limits to ensure clarity.**
+**✅ Keep it within reasonable limits to ensure clarity.**
 
 <Divider></Divider>
 # Example File

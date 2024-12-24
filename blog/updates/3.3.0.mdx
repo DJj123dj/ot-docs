@@ -1,0 +1,45 @@
+---
+slug: update-v3.3.0
+title: Update v3.3.0
+authors: [djj123dj]
+tags: [update,v3.3]
+date: 2023-03-19T18:00
+---
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider} from "@site/src/components/openticket.jsx"
+
+## Ticket Claiming & Autoclose Update
+Added a new ticket claiming system with the commands `/claim` and `/unclaim`.
+The autoclose system will handle inactive tickets from now on.
+Many changes in the backend, the ability to load your token from the ENV, more flags & so much more!
+
+### <C color="green">Added:</C>
+- :tada: ticket claiming
+- :tada: automatically close tickets when inactive (autoclose)
+- load your token from the ENV (`.env`)
+- liveStatus system + `--localstatus` & `--noerrorupload` flags
+- added Polish translation
+- added Turkish translation
+
+### <C color="yellow">Improved:</C>
+- changed variable names in `config.json`
+- slash commands are now enabled by default
+- text transcripts don't say empty message when there are embeds
+- dropdowns now have option descriptions
+- added parameters to list when no parameter is given in `/change` & `/message`
+- dynamicDB v2 has more options now!
+- changed `"Choose a category"` to `"Choose a ticket"` in the messages
+
+### <C color="orange">Fixed:</C>
+- `/change` doesn't remove the creator from the ticket anymore
+- other commands work again after `/change`
+- dropdowns sometimes only had 4 options
+- members can't delete a ticket anymore
+- checker.js now also works for icons from buttons
+- checker.js now detects if the options array is missing
+- added `deferReply` for better answer rate
+
+### <C color="red">Removed:</C>
+- removed translation duplicates
+- removed old code & duplicates of the same embeds
+
+{/* truncate */}

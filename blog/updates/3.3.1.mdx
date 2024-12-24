@@ -1,0 +1,33 @@
+---
+slug: update-v3.3.1
+title: Update v3.3.1
+authors: [djj123dj]
+tags: [update,v3.3]
+date: 2023-03-23T18:00
+---
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider} from "@site/src/components/openticket.jsx"
+
+## Bug Fixes & QoL Update
+A small bugfix update with some quality-of-life features!
+
+### <C color="green">Added:</C>
+- Slovenian translation
+
+### <C color="yellow">Improved:</C>
+- errors in autoclose now have a better error handler
+- corrupt database items now get deleted automatically
+
+### <C color="orange">Fixed:</C>
+- team members would disappear when re-opening a ticket
+- fixed crash when some embeds couldn't generate for html transcripts
+- fixed crash when creating a html transcript & the user already left the server
+- claim buttons don't crash anymore
+- you couldn't use dropdowns due to a typo
+- users without the staff role could claim a ticket
+- time delay from autoclose is now 2min instead of 2sec
+- fixed autoclose crash when a channel wasn't found
+
+### <C color="red">Removed:</C>
+*nothing*
+
+{/* truncate */}

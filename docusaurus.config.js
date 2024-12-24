@@ -71,9 +71,9 @@ const config = {
                 },
                 {
                     type: 'docSidebar',
-                    sidebarId: 'pluginSidebar',
+                    sidebarId: 'frameworkSidebar',
                     position: 'left',
-                    label: 'Plugins',
+                    label: 'Framework',
                 },
                 {
                     type: 'docSidebar',
@@ -85,6 +85,11 @@ const config = {
                     to: '/blog',
                     label: 'Blog',
                     position: 'left'
+                },
+                {
+                    href: 'https://odplugins.dj-dj.be/tree/main/open-ticket',
+                    position: 'right',
+                    label:"🧩 Plugins"
                 },
                 {
                     href: 'https://github.com/sponsors/DJj123dj',

@@ -15,7 +15,7 @@ export default function Home() {
         <hr className='w-2/3 bg-neutral-700 h-1 mt-3'></hr>
         <div className='flex gap-6 mt-1 items-center justify-center max-md:flex-col max-md:gap-4 max-md:mb-4'>
             <a href='/docs/guides/get-started' className='bg-[#f8ba00] text-white text-lg font-bold py-2 px-8 rounded-lg hover:bg-white hover:text-black hover:no-underline'>Get Started!</a>
-            <a href='/docs/plugins/get-started' className='bg-neutral-700 text-white text-lg font-bold py-2 px-8 rounded-lg hover:bg-white hover:text-black hover:no-underline'>Plugin Development</a>
+            <a href='/docs/framework/get-started' className='bg-neutral-700 text-white text-lg font-bold py-2 px-8 rounded-lg hover:bg-white hover:text-black hover:no-underline'>Plugin Development</a>
             <a href='/docs/reference/get-started' className='bg-neutral-700 text-white text-lg font-bold py-2 px-8 rounded-lg hover:bg-white hover:text-black hover:no-underline'>API Reference</a>
             <a href='/blog' className='bg-neutral-700 text-white text-lg font-bold py-2 px-8 rounded-lg hover:bg-white hover:text-black hover:no-underline'>Blog</a>
         </div>

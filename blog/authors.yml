@@ -1,5 +1,12 @@
 djj123dj:
   name: DJj123dj
-  title: Main Developer Open Ticket
-  url: https://github.com/DJj123dj
+  description: Hi there! I'm a student developer who is fascinated by everything about programming! I mostly create Open Source projects! You can always contact me on Discord!
+  page:
+    permalink: /DJj123dj
+  title: Open Ticket Main Developer
   image_url: https://github.com/DJj123dj.png
+  socials:
+    github: DJj123dj
+    x: DJj123dj
+    stackoverflow: 16635041
+    website: https://www.dj-dj.be

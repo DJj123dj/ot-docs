@@ -37,8 +37,10 @@ const config = {
             blog: {
                 showReadingTime: true,
                 editUrl:'https://github.com/DJj123dj/ot-docs/blob/main',
-                blogTitle:"News & Updates",
+                blogTitle:"Blog",
                 blogDescription:"Here, you will find news & updates from Open Ticket!",
+                blogSidebarTitle:"All posts",
+                blogSidebarCount:"ALL",
             },
             theme: {
                 customCss: require.resolve('./src/css/custom.css'),

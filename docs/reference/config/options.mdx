@@ -26,7 +26,6 @@ Then you need to **<C color="red">paste it after the last option</C> (`{...}`) a
 If you're **unable to configure the options correctly**, please join our Discord server!
 <LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Join our discord server!" description="DJdj Development"></LinkBlock>
 
-
 # Table Of Contents
 - **[Global Properties](#global-properties)**
 - **[Ticket Properties](#ticket-properties)**
@@ -75,13 +74,20 @@ Each of those options will make the button do a different thing in the panel. Th
 **Default Value:** `/` <br></br>
 
 The layout for the button/dropdown of this option. It will be displayed in the panel.
-Insert custom discord emoji's in the following syntax: `<:emoji-name:12345678910>`.
+
+:::tip custom emoji's
+Insert custom discord emoji's using the following syntax: `<:emoji-name:12345678910>`.
+
+You can get this by sending an emoji with a `\` (backslash) in front of it in discord.
+:::
 
 - **`"emoji"`:** <M color="blue">string</M> - The emoji of used in the dropdown or button.
 - **`"label"`:** <M color="blue">string</M> - The button label. It can have a maximum of 80 characters.
 - **`"color"`:** <M color="blue">string</M> - The button color of this option. (`"gray"`, `"red"`, `"green"`, or `"blue"`)
 
-**✅ One of the two (`"emoji"` or `"label"`) is allowed to be empty when needed!**
+<ScaleImage src="/img/docs-v4/panel-buttons.png" size="40%"></ScaleImage>
+
+**✅ You are allowed to leave `"emoji"` or `"label"` empty, but one of them always needs to be present!**
 
 <Divider></Divider>
 ## Ticket Properties
@@ -164,189 +170,122 @@ Configuration for the channel settings related to this ticket type.
 > |**`counter-dynamic`** |A counter without fixed length which goes on forever.     |`16` in `#question-16`                                 |Dynamic    |
 > |**`counter-fixed`**   |A counter between `0000` and `9999` with a fixed length.  |`0016` in `#question-0016`                             |Always `4` |
 
-# ‼️‼️  FINISHED UNTIL HERE ‼️‼️
+<Divider></Divider>
+### `"dmMessage"` <M color="cyan">object</M> \{#ticket-dm-message}
+**Default Value:** `/` <br></br>
+
+Send a DM message to the creator of the ticket when he/she opens a ticket. You can fully customise it to your preferences!
+It will also include a button that will take you to the ticket.
+
+- **`enabled`**: <M color="red">boolean</M> - Enable sending a DM message to the ticket creator.
+- **`text`**: <M color="blue">string</M> - The message contents to be sent. **(Empty for embed only)**
+- **`embed`**: <M color="cyan">object</M> - The message embed to be sent.
+    - **`enabled`**: <M color="red">boolean</M> - Enable the embed in the DM message.
+    - **`title`**: <M color="blue">string</M> - The title of the embed.
+    - **`description`**: <M color="blue">string</M> - The description of the embed.
+    - **`customColor`**: <M color="blue">string</M> - The hex color of the embed. **(Empty to use global bot color)**
+    - **`image`**: <M color="blue">string</M> - A URL to an image displayed in the embed.
+    - **`thumbnail`**: <M color="blue">string</M> - A URL to a thumbnail image displayed in the embed.
+    - **`fields`**: <M color="pink">array</M> - An array of objects specifying fields in the embed.
+        - **`name`**: <M color="blue">string</M> - The name/title of this field.
+        - **`value`**: <M color="blue">string</M> - The contents of this field.
+        - **`inline`**: <M color="red">boolean</M> - Enable to allow this field to be inline/horizontally aligned.
+    - **`timestamp`**: <M color="red">boolean</M> - Indicates if a timestamp should be included in the embed.
+
+<ScaleImage src="/img/docs-v4/dm-message.png" size="50%"></ScaleImage>
+
+**✅ Send a DM message to the creator of the ticket to give instructions or extra information!**
 
 <Divider></Divider>
-### `"dmMessage.enabled"` <M color="red">boolean</M> \{#ticket-dm-message-enabled}
-**Default Value:** `false` <br></br>
+### `"ticketMessage"` <M color="cyan">object</M> \{#ticket-ticket-message}
+**Default Value:** `/` <br></br>
 
-Indicates if the DM message is enabled for users upon ticket creation.
+Send a message at the start of the ticket channel. This message will also contain a button row with quick ticket actions like closing, deleting & claiming.
 
-**✅ Enable this to keep users informed through direct messages!**
+- **`enabled`**: <M color="red">boolean</M> - Enable sending a ticket message to the channel.
+- **`text`**: <M color="blue">string</M> - The message contents to be sent. **(Empty for embed only)**
+- **`embed`**: <M color="cyan">object</M> - The message embed to be sent.
+    - **`enabled`**: <M color="red">boolean</M> - Enable the embed in the ticket message.
+    - **`title`**: <M color="blue">string</M> - The title of the embed.
+    - **`description`**: <M color="blue">string</M> - The description of the embed.
+    - **`customColor`**: <M color="blue">string</M> - The hex color of the embed. **(Empty to use global bot color)**
+    - **`image`**: <M color="blue">string</M> - A URL to an image displayed in the embed.
+    - **`thumbnail`**: <M color="blue">string</M> - A URL to a thumbnail image displayed in the embed.
+    - **`fields`**: <M color="pink">array</M> - An array of objects specifying fields in the embed. **<C color="red">(Hidden when questions are used)</C>**
+        - **`name`**: <M color="blue">string</M> - The name/title of this field.
+        - **`value`**: <M color="blue">string</M> - The contents of this field.
+        - **`inline`**: <M color="red">boolean</M> - Enable to allow this field to be inline/horizontally aligned.
+    - **`timestamp`**: <M color="red">boolean</M> - Indicates if a timestamp should be included in the embed.
+- **`ping`**: <M color="cyan">object</M> - Configuration of mentions for this ticket message.
+    - **`@here`**: <M color="red">boolean</M> - Indicates if the `@here` mention should be used.
+    - **`@everyone`**: <M color="red">boolean</M> - Indicates if the `@everyone` mention should be used.
+    - **`custom`**: <M color="pink">array</M> - An array of discord role IDs to mention. (Or leave it empty)
 
-<Divider></Divider>
-### `"dmMessage.text"` <M color="blue">string</M> \{#ticket-dm-message-text}
-**Default Value:** `"Thanks for creating a ticket in our server! (or leave empty)"` <br></br>
+<ScaleImage src="/img/docs-v4/ticket-message.png" size="50%"></ScaleImage>
 
-The text content of the DM message sent to users.
-
-**✅ Personalize this message to enhance user engagement!**
-
-<Divider></Divider>
-### `"dmMessage.embed"` <M color="blue">object</M> \{#ticket-dm-message-embed}
-**Default Value:** `{ "enabled": false, "title": "Embed Title! (or leave empty)", "description": "Description (or leave empty)", "customColor": "#f8ab00 (or leave empty)", "image": "https://www.example.com/image.png (or leave empty)", "thumbnail": "https://www.example.com/image.png (or leave empty)", "fields": [{"name": "field name", "value": "field value", "inline": false }], "timestamp": false }` <br></br>
-
-Configuration for an embedded message in the DM sent to users.
-
-- **`enabled`**: <M color="red">boolean</M> - Indicates if the embed feature is enabled for the DM.
-- **`title`**: <M color="blue">string</M> - The title of the embedded message.
-- **`description`**: <M color="blue">string</M> - The description of the embedded message.
-- **`customColor`**: <M color="blue">string</M> - The color of the embed, specified in hex format.
-- **`image`**: <M color="blue">string</M> - A URL to an image displayed in the embed.
-- **`thumbnail`**: <M color="blue">string</M> - A URL to a thumbnail image displayed in the embed.
-- **`fields`**: <M color="blue">array</M> - An array of objects specifying fields in the embed.
-- **`timestamp`**: <M color="red">boolean</M> - Indicates if a timestamp should be included in the embed.
-
-**✅ Use embeds to make your messages visually appealing and informative!**
-
+**✅ The ticket message is used to display information, question answers and as shortcut for many ticket actions!**
 
 <Divider></Divider>
-### `"ticketMessage.enabled"` <M color="red">boolean</M> \{#ticket-ticket-message-enabled}
-**Default Value:** `true` <br></br>
+### `"autoclose"` <M color="cyan">object</M> \{#ticket-autoclose}
+**Default Value:** `/` <br></br>
 
-Indicates if the ticket message is enabled in the ticket channel.
+The autoclose system will help you organise and remind you of inactive tickets.
+It will also clean up tickets where the creator has left the server.
 
-**✅ Keep this enabled to provide users with immediate feedback!**
+:::tip
+A recommended duration of the autoclose timer is `48 hours`.
+:::
 
-<Divider></Divider>
-### `"ticketMessage.text"` <M color="blue">string</M> \{#ticket-ticket-message-text}
-**Default Value:** `""` <br></br>
+- **`enableInactiveHours`**: <M color="red">boolean</M> - Close the ticket when it's inactive for the given duration.
+- **`inactiveHours`**: <M color="green">number</M> - The inactivity duration in hours.
+- **`enableUserLeave`**: <M color="red">boolean</M> - Close the ticket when the creator leaves the discord server.
+- **`disableOnClaim`**: <M color="red">boolean</M> - Disable the autoclose system when the ticket is claimed.
 
-The text content of the ticket message sent in the ticket channel.
-
-**✅ This can be left empty if you prefer to use only embeds!**
-
-<Divider></Divider>
-### `"ticketMessage.embed"` <M color="blue">object</M> \{#ticket-ticket-message-embed}
-**Default Value:** `{ "enabled": true, "title": "Question Ticket", "description": "Thanks for creating a 'Question' ticket in our server!\nOur support team will help you soon!", "customColor": "#f8ab00 (or leave empty)", "image": "https://www.example.com/image.png (or leave empty)", "thumbnail": "https://www.example.com/image.png (or leave empty)", "fields": [{"name": "field name", "value": "field value", "inline": false}], "timestamp": false }` <br></br>
-
-Configuration for an embedded message in the ticket channel.
-
-- **`enabled`**: <M color="red">boolean</M> - Indicates if the embed feature is enabled for the ticket message.
-- **`title`**: <M color="blue">string</M> - The title of the embedded message.
-- **`description`**: <M color="blue">string</M> - The description of the embedded message.
-- **`customColor`**: <M color="blue">string</M> - The color of the embed, specified in hex format.
-- **`image`**: <M color="blue">string</M> - A URL to an image displayed in the embed.
-- **`thumbnail`**: <M color="blue">string</M> - A URL to a thumbnail image displayed in the embed.
-- **`fields`**: <M color="blue">array</M> - An array of objects specifying fields in the embed.
-- **`timestamp`**: <M color="red">boolean</M> - Indicates if a timestamp should be included in the embed.
-
-**✅ Use embeds to enhance the clarity and aesthetics of your ticket messages!**
+**✅ Use this to automatically manage inactive tickets!**
 
 <Divider></Divider>
-### `"ticketMessage.ping"` <M color="blue">object</M> \{#ticket-ticket-message-ping}
-**Default Value:** `{ "@here": true, "@everyone": false, "custom": ["discord role id"] }` <br></br>
+### `"autodelete"` <M color="cyan">object</M> \{#ticket-autodelete}
+**Default Value:** `/` <br></br>
 
-Configuration for pinging roles or users in the ticket message.
+The autodelete system will delete inactive tickets after a certain amount of time.
+It can also clean up tickets where the creator has left the server.
 
-- **`@here`**: <M color="red">boolean</M> - Indicates if the `@here` mention should be used.
-- **`@everyone`**: <M color="red">boolean</M> - Indicates if the `@everyone` mention should be used.
-- **`custom`**: <M color="blue">array</M> - An array of Discord role IDs to mention in the ticket message.
+:::warning
+When autoclose is also enabled, the autodelete timer will <C color="red">**activate after the ticket has been closed!**</C>
+:::
 
-**✅ Use pings judiciously to ensure important notifications reach the right audience!**
+- **`enableInactiveDays`**: <M color="red">boolean</M> - Delete the ticket when it's inactive for the given duration.
+- **`inactiveDays`**: <M color="green">number</M> - The inactivity duration in days.
+- **`enableUserLeave`**: <M color="red">boolean</M> - Delete the ticket when the creator leaves the discord server.
+- **`disableOnClaim`**: <M color="red">boolean</M> - Disable the autodelete system when the ticket is claimed.
 
-### `"autoclose.enableInactiveHours"` <M color="red">boolean </M> \{#ticket-autoclose-enable-inactive-hours}
-**Default Value:** `false` <br></br>
-
-Indicates if the inactivity timer for automatic closing of tickets is enabled.
-
-**✅ Enable this to automatically manage inactive tickets!**
-
-<Divider></Divider>
-### `"autoclose.inactiveHours"` <M color="green">number</M> \{#ticket-autoclose-inactive-hours}
-**Default Value:** `24` <br></br>
-
-The number of hours before a ticket is automatically closed due to inactivity.
-
-**✅ Set this to a reasonable time frame based on your server's activity!**
+**✅ Automatically deleting tickets is risky! Use this system with caution!**
 
 <Divider></Divider>
-### `"autoclose.enableUser  Leave"` <M color="red">boolean</M> \{#ticket-autoclose-enable-user-leave}
-**Default Value:** `true` <br></br>
+### `"cooldown"` <M color="cyan">object</M> \{#ticket-cooldown}
+**Default Value:** `/` <br></br>
 
-Indicates if the ticket should close when the user leaves the server.
+Use this feature to restrict multi-ticket-creation or spamming of tickets by giving each user a cooldown.
 
-**✅ Consider the user experience when deciding to enable this feature!**
+- **`enabled`**: <M color="red">boolean</M> - Enable cooldown on this ticket option.
+- **`cooldownMinutes`**: <M color="green">number</M> - The duration of the cooldown in minutes.
 
-<Divider></Divider>
-### `"autoclose.disableOnClaim"` <M color="red">boolean</M> \{#ticket-autoclose-disable-on-claim}
-**Default Value:** `false` <br></br>
+<ScaleImage src="/img/docs-v4/cooldown.png" size="50%"></ScaleImage>
 
-Indicates if the inactivity timer should be disabled when the ticket is claimed.
-
-**✅ This can help keep tickets open for support once claimed!**
+**✅ This will prevent users from spamming ticket requests!**
 
 <Divider></Divider>
-### `"autodelete.enableInactiveDays"` <M color="red">boolean</M> \{#ticket-autodelete-enable-inactive-days}
-**Default Value:** `false` <br></br>
+### `"limits"` <M color="cyan">object</M> \{#ticket-limits}
+**Default Value:** `/` <br></br>
 
-Indicates if the inactivity timer for deletion is enabled.
+Enable this to restrict the number of tickets that can be opened simultaneously of this option type. This is great to prevent overloading the ticket system.
+Global limits can also be configured in the **[`general.json`](./general.mdx#system-limits)** config.
 
-**✅ Use this to automatically clean up old tickets!**
+- **`"enabled"`:** <M color="red">boolean</M> - Enable option ticket limits.
+- **`"globalMaximum"`:** <M color="green">number</M> - The maximum number of tickets with this option that can be open globally across the bot.
+- **`"userMaximum"`:** <M color="green">number</M> - The maximum number of tickets with this option a single user can have open at any given time.
 
-<Divider></Divider>
-### `"autodelete.inactiveDays"` <M color="green">number</M> \{#ticket-autodelete-inactive-days}
-**Default Value:** `7` <br></br>
-
-The number of days before a ticket is automatically deleted due to inactivity.
-
-**✅ Set this to ensure tickets are removed after a reasonable period!**
-
-<Divider></Divider>
-### `"autodelete.enableUser  Leave"` <M color="red">boolean</M> \{#ticket-autodelete-enable-user-eave}
-**Default Value:** `true` <br></br>
-
-Indicates if the ticket should be deleted when the user leaves the server.
-
-**✅ This helps maintain a clean ticket system!**
-
-<Divider></Divider>
-### `"autodelete.disableOnClaim"` <M color="red">boolean</M> \{#ticket-autodelete-disable-on-claim}
-**Default Value:** `false` <br></br>
-
-Indicates if the deletion timer should be disabled when the ticket is claimed.
-
-** **✅ Keep this disabled to allow support to manage claimed tickets effectively!**
-
-<Divider></Divider>
-### `"cooldown.enabled"` <M color="red">boolean</M> \{#ticket-cooldown-enabled}
-**Default Value:** `false` <br></br>
-
-Indicates if the cooldown feature is enabled for ticket creation.
-
-**✅ Helps to prevent users from spamming ticket requests!**
-
-<Divider></Divider>
-### `"cooldown.cooldownMinutes"` <M color="green">number</M> \{#ticket-cooldown-minutes}
-**Default Value:** `10` <br></br>
-
-The number of minutes a user must wait before creating another ticket.
-
-**✅ Adjust this based on your server's needs!**
-
-<Divider></Divider>
-### `"limits.enabled"` <M color="red">boolean</M> \{#ticket-limits-enabled}
-**Default Value:** `false` <br></br>
-
-Indicates if the limits feature is enabled for ticket creation.
-
-**✅ Use this to manage ticket volume effectively!**
-
-<Divider></Divider>
-### `"limits.globalMaximum"` <M color="green">number</M> \{#ticket-limits-global-maximum}
-**Default Value:** `20` <br></br>
-
-The maximum number of tickets allowed globally across all users.
-
-**✅ Set this to control the overall ticket load on your server!**
-
-<Divider></Divider>
-### `"limits.userMaximum"` <M color="green">number</M> \{#ticket-limits-user-maximum}
-**Default Value:** `3` <br></br>
-
-The maximum number of tickets a single user can create.
-
-**✅ Helps to ensure fair access to ticket creation for all users!** 
+**✅ This will apply for all existing tickets, including `closed` ones.**
 
 <Divider></Divider>
 ## Website Properties

@@ -5,24 +5,31 @@ authors: [djj123dj]
 tags: [update,v3.5]
 date: 2024-04-03T18:00
 ---
-Open Ticket v3.5.4 is a small translation update with some quality-of-life features!
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider} from "@site/src/components/openticket.jsx"
 
-### added:
+## Translation & QoL Update
+A small translation update with some quality-of-life features!
+
+### <C color="green">Added:</C>
 - new Kurdish translation (by `raze.hama`)
 - new Persian translation (by `sasanwm`)
+
+### <C color="yellow">Improved:</C>
 - most embeds now use mentions instead of usernames
 - `closeMode` now also affects reopening
 - all links to the documentation have been updated (for new docs)
 - HTML Transcripts now show display names instead of usernames
+- example config role option has been renamed
 
-### fixed:
+### <C color="orange">Fixed:</C>
 - readme typos
 - increased config checker id length from 20 to 40
-- example config role option has been renamed
 - api log system typo
 - `README.md` copyright date outdated
 - text transcripts wouldn't generate on HTML Transcript ratelimit
 - the bot doesn't throw an error anymore when closing without permission
 
-### removed:
+### <C color="red">Removed:</C>
 - npm cleardata script (outdated)
+
+{/* truncate */}

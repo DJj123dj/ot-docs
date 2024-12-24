@@ -5,20 +5,27 @@ authors: [djj123dj]
 tags: [update,v3.5]
 date: 2023-12-17T18:00
 ---
-Open Ticket v3.5.0 is the statistics update. There are many improvements & one new command (`/stats`)!
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider} from "@site/src/components/openticket.jsx"
 
-### added:
+## The Statistics Update
+Added a new `/stats` command, more HTML Transcript features and many new improvements & bug fixes.
+
+### <C color="green">Added:</C>
 - stats command (global, ticket & user statistics)
+
+### <C color="yellow">Improved:</C>
 - HTML transcripts can now have a custom favicon
 - support for the `CUSTOM` bot status type
 - ticket admins can now also use admin commands in their tickets
+- updated `README.md`, `CONTRIBUTING.md` & `SECURITY.md`
 
-### fixed:
+### <C color="orange">Fixed:</C>
 - axios dependabot alert (updated to `1.6.2`)
 - some emojis didn't display correctly in the HTML transcripts
 - changed HTML transcript & livestatus API endpoints
 - /reopen slash command could crash due to typo
-- updated `README.md`, `CONTRIBUTING.md` & `SECURITY.md`
 
-### removed:
-- /
+### <C color="red">Removed:</C>
+*nothing*
+
+{/* truncate */}

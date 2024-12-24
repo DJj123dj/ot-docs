@@ -1,0 +1,28 @@
+---
+slug: update-v3.5.6
+title: Update v3.5.6
+authors: [djj123dj]
+tags: [update,v3.5]
+date: 2024-05-31T18:00
+---
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider} from "@site/src/components/openticket.jsx"
+
+## Bug Fix & QoL Update
+A small bug fix update with some quality-of-life features!
+
+### <C color="green">Added:</C>
+- new html transcript endpoint
+
+### <C color="yellow">Improved:</C>
+- updated `README.md`
+- html transcript ratelimit renewal (increased to 20/min)
+
+### <C color="orange">Fixed:</C>
+- ticket message being edited instead of the ephemeral message
+- fixed/increased length limit for config checker id's while inside an array
+
+### <C color="red">Removed:</C>
+- the old transcript API endpoint is now deprecated & will be removed over 2 months
+- the old `logo.png` file that has been sitting unused in the source code for over half a year
+
+{/* truncate */}

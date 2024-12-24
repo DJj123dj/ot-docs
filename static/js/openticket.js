@@ -127,26 +127,4 @@ document.addEventListener("DOMContentLoaded",() => {
     setInterval(() => {
         otdocsHandleBadges()
     },100)
-
-    //INTERVAL
-    /*
-    setInterval(() => {
-        const newPageItems = Array.from(document.getElementsByClassName("otdocs-new-page"))
-        const newCategoryItems = Array.from(document.getElementsByClassName("otdocs-new-category"))
-        
-        //render newPageItems
-        newPageItems.forEach((item) => {
-            if (!item.firstElementChild.querySelector("#otdocs-badge")){
-                addPageBadge(item,"#ff4545","NEW!")
-            }
-        })
-    
-        //render newCategoryItems
-        newCategoryItems.forEach((item) => {
-            if (!item.firstElementChild.firstElementChild.querySelector("#otdocs-badge")){
-                addCategoryBadge(item,"#ff4545","NEW!")
-            }
-        })
-    },100)
-    */
 })

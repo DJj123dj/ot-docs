@@ -16,14 +16,14 @@ You are able to create an <C color="red">**unlimited amount**</C> of options by 
 The options can be added to a panel in the `panels.json` config.
 
 :::info usage
-To use a option, the `"id"`'s of all the options you want need to be inserted in the [`"options"`](./panels.mdx#panel-options) variable in the `panels.json ` config. [Click for more info!](./panels.mdx#panel-options)
+To use an option, the `"id"`'s of all the options you want need to be inserted in the [`"options"`](./panels.mdx#panel-options) variable in the `panels.json ` config. [Click for more info!](./panels.mdx#panel-options)
 :::
 :::tip how to create multiple options?
 To create multiple options, you need to **copy <C color="red">everything between and including the brackets</C> (`{...}`) of an option**.
 Then you need to **<C color="red">paste it after the last option</C> (`{...}`) and make sure that they are seperated by a comma.**
 :::
 
-If you're **unable to configure the options correctly**, please join our Discord server!
+If you're **unable to configure the options correctly**, feel free to join our discord server!
 <LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Join our discord server!" description="DJdj Development"></LinkBlock>
 
 # Table Of Contents
@@ -34,6 +34,7 @@ If you're **unable to configure the options correctly**, please join our Discord
 
 <Divider></Divider>
 ## Global Properties
+These properties are required for each option type.
 <Divider></Divider>
 ### `"id"` <M color="blue">string</M> \{#option-id}
 **Default Value:** `"example-ticket"` <br></br>
@@ -91,6 +92,7 @@ You can get this by sending an emoji with a `\` (backslash) in front of it in di
 
 <Divider></Divider>
 ## Ticket Properties
+These properties are only required for the `"ticket"` option type.
 <Divider></Divider>
 ### `"ticketAdmins"` <M color="pink">array</M> \{#ticket-ticketadmins}
 **Default Value:** `[]` (Empty) <br></br>
@@ -289,6 +291,7 @@ Global limits can also be configured in the **[`general.json`](./general.mdx#sys
 
 <Divider></Divider>
 ## Website Properties
+These properties are only required for the `"website"` option type.
 <Divider></Divider>
 ### `"url"` <M color="blue">string</M> \{#website-url}
 **Default Value:** `""` (Empty) <br></br>
@@ -300,6 +303,7 @@ The URL that this button will link to. Use this to point to one of your socials,
 
 <Divider></Divider>
 ## Reaction Role Properties
+These properties are only required for the `"role"` option type.
 <Divider></Divider>
 ### `"roles"` <M color="pink">array</M> \{#role-roles}
 **Default Value:** `[]` (Empty) <br></br>

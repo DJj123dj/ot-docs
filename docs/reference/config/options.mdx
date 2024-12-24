@@ -290,13 +290,62 @@ Global limits can also be configured in the **[`general.json`](./general.mdx#sys
 <Divider></Divider>
 ## Website Properties
 <Divider></Divider>
+### `"url"` <M color="blue">string</M> \{#website-url}
+**Default Value:** `""` (Empty) <br></br>
+**Allowed Values:** `Any valid url` <br></br>
+
+The URL that this button will link to. Use this to point to one of your socials, a website or anything else!
+
+**✅ When the link points to a discord channel, it will redirect you instantly.**
 
 <Divider></Divider>
 ## Reaction Role Properties
 <Divider></Divider>
+### `"roles"` <M color="pink">array</M> \{#role-roles}
+**Default Value:** `[]` (Empty) <br></br>
+**Allowed Values:** `Any valid discord role ID` <br></br>
+
+A list of discord role ID's to add or remove.
+
+**✅ The action that will happen depends on the configured `"mode"`.**
 
 <Divider></Divider>
+### `"mode"` <M color="blue">string</M> \{#role-mode}
+**Default Value:** `"add&remove"` <br></br>
+**Allowed Values:** `"add&remove"`, `"remove"` or `"add"` <br></br>
 
+The mode used for this reaction role button.
+- **`"add&remove"`** - Add roles if not present yet, remove them otherwise. **(Recommended)**
+- **`"add"`** - Only add roles if not present yet.
+- **`"remove"`** - Only remove roles if already present.
+
+**✅ The mode will apply to each individual role selected in `"roles"`.**
+
+<Divider></Divider>
+### `"removeRolesOnAdd"` <M color="pink">array</M> \{#role-remove-on-add}
+**Default Value:** `[]` (Empty) <br></br>
+**Allowed Values:** `Any valid discord role ID` <br></br>
+
+All roles inserted here will be removed from the user when the user clicks on the button.
+
+:::warning requirements
+The roles are only removed when the situation meets the following requirements:
+- The mode is `"add&remove"` or `"add"`.
+- At least **1 role** is added.
+:::
+
+**✅ This is great if you only want the user to have a single role.**
+
+<Divider></Divider>
+### `"addOnMemberJoin"` <M color="red">boolean</M> \{#role-add-on-join}
+**Default Value:** `false` (Disabled) <br></br>
+
+When enabled, these roles will be given to every user that joins the server.
+This will also work when this option isn't added to any panel.
+
+**✅ Use this to give a pre-defined set of roles on join.**
+
+<Divider></Divider>
 # Example File
 All variables above have been made acording to this config for Open Ticket `v4.0.0`. This configuration might change in future versions!
 ```json title="options.json"

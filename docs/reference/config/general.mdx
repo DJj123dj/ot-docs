@@ -20,6 +20,9 @@ With `general.json`, you can fine-tune many aspects of your ticket system. Here 
 - **Ticket System:** (features, permissions, extra's, ...)
 - **Global Limits:** Set global limits for ticket creation.
 
+If you need help with configuring the config, feel free to join our discord server!
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Join our discord server!" description="DJdj Development"></LinkBlock>
+
 # Table Of Contents
 - **[Info](#info)**
 - **[Token](#info)**
@@ -178,7 +181,6 @@ Enable text commands in the bot. This allows you to use commands using the [**`"
 Set the status of the bot.
 <Divider></Divider>
 ### `"status"` <M color="cyan">object</M> \{#status}
-**Default Value:** `/`<br></br>
 
 Set status of the bot. When enabled, you can configure and customise it to your preference. 
 
@@ -364,7 +366,6 @@ Enable this to allow tickets to be deleted without generating a transcript. Use 
 Configure Discord logs for the bot.
 <Divider></Divider>
 ### `"system"."logs"` <M color="cyan">object</M> \{#system-logs}
-**Default Value:** `/`<br></br>
 
 Log almost all bot events and actions to a specific discord channel.<br></br>
 Individual logs-per-command can be configured in the **[`"permissions"`](#permissions)** property.
@@ -381,7 +382,6 @@ Individual logs-per-command can be configured in the **[`"permissions"`](#permis
 Global ticket limits are limits you can configure which will apply to each ticket option.
 <Divider></Divider>
 ### `"system"."limits"` <M color="cyan">object</M> \{#system-limits}
-**Default Value:** `/`<br></br>
 
 Enable this to restrict the number of tickets that can be opened simultaneously. This is great to prevent overloading the ticket system.
 Individual limits per option can also be configured in the **[`options.json`](./options.mdx#ticket-limits)** config.

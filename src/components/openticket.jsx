@@ -143,6 +143,8 @@ export function ScaleImage(params){
         var classes = `max-lg:w-full w-[50%]`
     }else if (size == "40%"){
         var classes = `max-lg:w-full w-[40%]`
+    }else if (size == "33%"){
+        var classes = `max-lg:w-full w-[33%]`
     }else if (size == "30%"){
         var classes = `max-lg:w-full w-[30%]`
     }else if (size == "20%"){
@@ -157,19 +159,22 @@ export function ScaleImage(params){
         var classes = `w-full`
     }
 
-    return (<img src={src} alt={alt} className={classes} style={{height:"100%"}}></img>)
+    return (<div className={classes+" flex flex-col gap-0.5 mb-3"}>
+        <img src={src} alt={alt} className="w-auto max-w-full h-auto max-h-full object-contain rounded max-lg:rounded-md"></img>
+        <span className="w-full text-center text-xs text-neutral-400">{alt}</span>
+    </div>)
 }
 
 export function FlexHorizontal(params){
     /**@type {"center"|"left"|"right"} */
-    const mode = (params.mode == "center" || params.mode == "left" || params.mode == "right") ? params.mode : "center"
+    const mode = (params.mode == "center" || params.mode == "left" || params.mode == "right") ? params.mode : "left"
     
     if (mode == "center"){
-        return (<div className="flex gap-4 w-full justify-center max-lg:flex-col">{params.children}</div>)
+        return (<div className="flex gap-3 w-full justify-center max-lg:flex-col">{params.children}</div>)
     }else if (mode == "left"){
-        return (<div className="flex gap-4 w-full justify-start max-lg:flex-col">{params.children}</div>)
+        return (<div className="flex gap-3 w-full justify-start max-lg:flex-col">{params.children}</div>)
     }else if (mode == "right"){
-        return (<div className="flex gap-4 w-full justify-end max-lg:flex-col">{params.children}</div>)
+        return (<div className="flex gap-3 w-full justify-end max-lg:flex-col">{params.children}</div>)
     }
 }
 

@@ -11,68 +11,233 @@ sidebar_class_name: otdocs-badge-page otdocs-meta-cyan-object
 import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider} from "@site/src/components/openticket.jsx"
 
 # transcripts.json <M color="cyan">object</M>
-DESCRIPTION
+The `transcripts.json` file allows you to configure everything related to transcripts. There are currently 2 types of transcripts available (`text` & `HTML`)!
+You can use these to save your ticket chats when they are deleted. More info about transcripts can be found [here](/docs/guides/system/transcripts.mdx).
+
+<ScaleImage src="/img/docs-v4/transcript-html-v2.png" size="80%" alt="An example of the HTML Transcripts without custom background."></ScaleImage>
+
+:::info HTML Transcripts FAQ
+HTML Transcripts are currently hosted and processed at `https://transcripts.dj-dj.be`.
+
+- <C color="red">**It is IMPOSSIBLE to change with the current version (`v2`)!**</C>
+- <C color="green">**It will be POSSIBLE with the upcoming version (`v3`)!**</C>
+- <C color="blue">**The processing of transcripts will ALWAYS stay on our servers because the compiler is closed-source.**</C>
+
+Custom domains will probably be a paid feature, but it will be very cheap.
+Suggestions are always welcome in our discord server!
+:::
+
+If you need help with configuring the transcripts, feel free to join our discord server!
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Join our discord server!" description="DJdj Development"></LinkBlock>
 
 # Table Of Contents
-- **[Info](#info)**
-- **[Token](#info)**
-
-## Info
-<Divider></Divider>
-
-ABC
+- **[General Settings](#general-settings)**
+- **[Embed Settings](#embed-settings)**
+- **[Text Transcript Style](#text-transcript-style)**
+- **[HTML Transcript Style](#html-transcript-style)**
 
 <Divider></Divider>
-## Token
+## General Settings
+These are the general settings for the transcripts. Here you can configure where transcripts are sent and where not.
 <Divider></Divider>
-### `"token"` <M color="blue">string</M> \{#token}
-**Default Value:** `"your bot token here"`<br></br>
-**Allowed Values:** `A valid Discord token`
+### `"general"` <M color="cyan">object</M> \{#general}
 
-TEST LOREM IPSUM
+Configure where the transcripts are sent. You are able to send it to a channel or the DM's of participants.
+
+- **`"enabled"`:** <M color="red">boolean</M> - Enable the transcript system. <C color="red">**When this is disabled, nothing will work!**</C>
+- **`"enableChannel"`:** <M color="red">boolean</M> - Send transcripts to a designated discord channel.
+- **`"enableCreatorDM"`:** <M color="red">boolean</M> - Send transcripts to the creator of the ticket via DM.
+- **`"enableParticipantDM"`:** <M color="red">boolean</M> - Send transcripts to all participants of the ticket via DM.
+- **`"enableActiveAdminDM"`:** <M color="red">boolean</M> - Send transcripts to admins who actively sent messages in the ticket.
+- **`"enableEveryAdminDM"`:** <M color="red">boolean</M> - Send transcripts to all admins assigned to the ticket, even if they didn't participate.
+- **`"channel"`:** <M color="blue">string</M> - The discord channel ID where the transcript will be sent if `"enableChannel"` is enabled.
+- **`"mode"`:** <M color="blue">string</M> - Set it to `"html"` for HTML Transcripts and `"text"` for text transcripts.
+
+**✅ It's recommended to send transcripts to a channel & the creator of the ticket.**
 
 <Divider></Divider>
+## Embed Settings
+These are additional settings for the embed which contains the transcript file or url.
+<Divider></Divider>
+### `"embedSettings"."customColor"` <M color="blue">string</M> \{#embed-custom-color}
+**Default Value:** `"#f8ba00"` (Open Ticket Yellow)<br></br>
+**Allowed Values:** `A valid hex-color`
 
+The color of the embed which contains the transcript file or URL. Leave it empty to use the default color of the bot.
+
+**✅ If you don't know how to get a hex-color, you can use the website [Color Picker](https://htmlcolorcodes.com/color-picker/) for it.**
+
+<Divider></Divider>
+### `"embedSettings"."listAllParticipants"` <M color="red">boolean</M> \{#embed-list-participants}
+**Default Value:** `false` (Disabled)<br></br>
+
+When enabled, everyone who sent at least 1 message will be listed in the transcript embed.
+
+<Divider></Divider>
+### `"embedSettings"."includeTicketStats"` <M color="red">boolean</M> \{#embed-include-ticket-stats}
+**Default Value:** `false` (Disabled)<br></br>
+
+Enables including ticket statistics (e.g., duration, messages sent) in the transcript embed.
+
+<Divider></Divider>
+## Text Transcript Style
+Configure the style of the text transcripts.
+<Divider></Divider>
+
+# ‼️‼️‼️ FINISHED UNTIL HERE ‼️‼️‼️
+### `"textTranscriptStyle"."layout"` <M color="blue">string</M> \{#texttranscriptstyle-layout}
+**Default Value:** `"simple"`<br></br>
+**Allowed Values:** `"simple"`, `"normal"`, `"detailed"`
+
+Determines the level of detail in text transcripts.
+
+<Divider></Divider>
+### `"textTranscriptStyle"."includeStats"` <M color="red">boolean</M> \{#texttranscriptstyle-includestats}
+**Default Value:** `true`<br></br>
+
+Enables the inclusion of ticket statistics in the text transcript.
+
+<Divider></Divider>
+### `"textTranscriptStyle"."includeIds"` <M color="red">boolean</M> \{#texttranscriptstyle-includeids}
+**Default Value:** `false`<br></br>
+
+Enables including user and message IDs in the text transcript.
+
+<Divider></Divider>
+### `"textTranscriptStyle"."includeEmbeds"` <M color="red">boolean</M> \{#texttranscriptstyle-includeembeds}
+**Default Value:** `true`<br></br>
+
+Enables including embeds in the text transcript.
+
+<Divider></Divider>
+### `"textTranscriptStyle"."includeFiles"` <M color="red">boolean</M> \{#texttranscriptstyle-includefiles}
+**Default Value:** `true`<br></br>
+
+Enables including file attachments in the text transcript.
+
+<Divider></Divider>
+### `"textTranscriptStyle"."includeBotMessages"` <M color="red">boolean</M> \{#texttranscriptstyle-includebotmessages}
+**Default Value:** `true`<br></br>
+
+Enables including bot messages in the text transcript.
+
+<Divider></Divider>
+### `"textTranscriptStyle"."fileMode"` <M color="blue">string</M> \{#texttranscriptstyle-filemode}
+**Default Value:** `"custom"`<br></br>
+**Allowed Values:** `"custom"`, `"channel-name"`, `"channel-id"`, `"user-name"`, `"user-id"`
+
+Determines the naming convention for the transcript file.
+
+<Divider></Divider>
+### `"textTranscriptStyle"."customFileName"` <M color="blue">string</M> \{#texttranscriptstyle-customfilename}
+**Default Value:** `""` (No custom name)<br></br>
+
+A custom file name for the transcript file. Only used if `"fileMode"` is set to `"custom"`.
+
+<Divider></Divider>
+## HTML Transcript Style
+Configure the style of the HTML transcripts.
+<Divider></Divider>
+### `"htmlTranscriptStyle"."background"."enableCustomBackground"` <M color="red">boolean</M> \{#htmltranscriptstyle-background-enablecustombackground}
+**Default Value:** `false`<br></br>
+
+Enables a custom background for HTML transcripts.
+
+<Divider></Divider>
+### `"htmlTranscriptStyle"."background"."backgroundColor"` <M color="blue">string</M> \{#htmltranscriptstyle-background-backgroundcolor}
+**Default Value:** `""` (No custom color)<br></br>
+
+The background color for HTML transcripts.
+
+**✅ Example format: `#f8ba00`**
+
+<Divider></Divider>
+### `"htmlTranscriptStyle"."background"."backgroundImage"` <M color="blue">string</M> \{#htmltranscriptstyle-background-backgroundimage}
+**Default Value:** `""` (No custom image)<br></br>
+
+A URL to a background image for HTML transcripts.
+
+<Divider></Divider>
+### `"htmlTranscriptStyle"."header"."enableCustomHeader"` <M color="red">boolean</M> \{#htmltranscriptstyle-header-enablecustomheader}
+**Default Value:** `false`<br></br>
+
+Enables a custom header for HTML transcripts.
+
+<Divider></Divider>
+### `"htmlTranscriptStyle"."header"."backgroundColor"` <M color="blue">string</M> \{#htmltranscriptstyle-header-backgroundcolor}
+**Default Value:** `"#202225"`<br></br>
+
+The background color of the header in HTML transcripts.
+
+<Divider></Divider>
+### `"htmlTranscriptStyle"."favicon"."enableCustomFavicon"` <M color="red">boolean</M> \{#htmltranscriptstyle-favicon-enablecustomfavicon}
+**Default Value:** `false`<br></br>
+
+Enables a custom favicon for HTML transcripts.
+
+<Divider></Divider>
+### `"htmlTranscriptStyle"."favicon"."imageUrl"` <M color="blue">string</M> \{#htmltranscriptstyle-favicon-imageurl}
+**Default Value:** `"https://transcripts.dj-dj.be/favicon.png"`<br></br>
+
+The URL for the favicon image used in HTML transcripts.
+
+<Divider></Divider>
 # Example File
 All variables above have been made acording to this config for Open Ticket `v4.0.0`. This configuration might change in future versions!
 ```json title="transcripts.json"
-[
-    {
-        "id":"example-embed",
-        "name":"Example Embed",
-        "dropdown":false,
-        "options":["example-ticket","example-website","example-role"],
+{
+    "general":{
+        "enabled":false,
 
-        "text":"",
-        "embed":{
-            "enabled":true,
-            "title":"Tickets:",
-            "description":"Create a ticket by clicking one of the buttons below!",
-            
-            "customColor":"#f8ab00 (or leave empty)",
-            "url":"https://openticket.dj-dj.be (or leave empty)",
+        "enableChannel":false,
+        "enableCreatorDM":false,
+        "enableParticipantDM":false,
+        "enableActiveAdminDM":false,
+        "enableEveryAdminDM":false,
 
-            "image":"https://www.example.com/image.png (or leave empty)",
-            "thumbnail":"https://www.example.com/image.png (or leave empty)",
-            
-            "footer":"Open Ticket v4.0.0 (or leave empty)",
-            "fields":[
-                {"name":"field name","value":"field value","inline":false}
-            ],
-            "timestamp":false
+        "channel":"transcript channel id (or leave empty)",
+        "mode":"html OR text"
+    },
+    "embedSettings":{
+        "customColor":"#f8ab00 (or leave empty)",
+        "listAllParticipants":false,
+        "includeTicketStats":false
+    },
+    "textTranscriptStyle":{
+        "layout":"simple OR normal OR detailed",
+        "includeStats":true,
+        "includeIds":false,
+        "includeEmbeds":true,
+        "includeFiles":true,
+        "includeBotMessages":true,
+
+        "fileMode":"custom OR channel-name OR channel-id OR user-name OR user-id",
+        "customFileName":"this-is-a-transcript (or leave empty)"
+    },
+    "htmlTranscriptStyle":{
+        "background":{
+            "enableCustomBackground":false,
+            "backgroundColor":"#f8ba00 (or leave empty)",
+            "backgroundImage":"https://www.example.com/image.png (or leave empty)"
         },
-        "settings":{
-            "dropdownPlaceholder":"Create a ticket!",
-
-            "enableMaxTicketsWarningInText":false,
-            "enableMaxTicketsWarningInEmbed":true,
-
-            "describeOptionsLayout":"simple OR normal OR detailed",
-            "describeOptionsCustomTitle":"",
-            "describeOptionsInText":false,
-            "describeOptionsInEmbedFields":true,
-            "describeOptionsInEmbedDescription":false
+        "header":{
+            "enableCustomHeader":false,
+            "backgroundColor":"#202225",
+            "decoColor":"#f8ba00",
+            "textColor":"#ffffff"
+        },
+        "stats":{
+            "enableCustomStats":false,
+            "backgroundColor":"#202225",
+            "keyTextColor":"#737373",
+            "valueTextColor":"#ffffff",
+            "hideBackgroundColor":"#40444a",
+            "hideTextColor":"#ffffff"
+        },
+        "favicon":{
+            "enableCustomFavicon":false,
+            "imageUrl":"https://transcripts.dj-dj.be/favicon.png"
         }
     }
-]
+}
 ```

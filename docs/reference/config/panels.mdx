@@ -33,24 +33,173 @@ If you're **unable to configure the panels correctly**, feel free to join our di
 
 <Divider></Divider>
 ## Properties
+These are the general properties for panels. They include the id, name and a few basic settings.
 <Divider></Divider>
+### `"id"` <M color="blue">string</M> \{#panel-id}
+**Default Value:** `"example-panel"` <br></br>
+
+A unique identifier for the panel, used in the `/panel <id>` command.<br></br>
+> The only allowed characters are: `A-Z`, `a-z`, `0-9`, `_` & `-`!
+
+**✅ It must be unique across all panels.**
+
+<Divider></Divider>
+### `"name"` <M color="blue">string</M> \{#panel-name}
+**Default Value:** `"Panel"` <br></br>
+
+The name of this panel, it will be used in the `/panel <id>` command.
+
+**✅ Maximum length of 45 characters.**
+
+<Divider></Divider>
+### `"dropdown"` <M color="red">boolean</M> \{#panel-dropdown}
+**Default Value:** `false` (Disabled)<br></br>
+
+Determines whether the panel uses buttons or a dropdown menu for selecting options.
+
+<FlexHorizontal>
+    <ScaleImage src="/img/docs-v4/panel-with-buttons.png" size="40%" alt="A panel with multiple buttons."></ScaleImage>
+    <ScaleImage src="/img/docs-v4/panel-with-dropdown.png" size="40%" alt="A panel which uses a dropdown."></ScaleImage>
+</FlexHorizontal>
+
+**✅ Use `true` for a dropdown layout.**
+
+<Divider></Divider>
+### `"options"` <M color="pink">array</M> \{#panel-options}
+**Default Value:** `[]` (Empty array)<br></br>
+**Allowed Values:** `Any valid option id` <br></br>
+
+An array of option IDs (found in **[`options.json`](./options.mdx)**) that will be shown when this panel is spawned.
+
+<ScaleImage src="/img/docs-v4/panel-buttons.png" size="40%" alt="This panel contains 3 options. Each with a different type."></ScaleImage>
+
+**✅ You can add a maximum of 25 options per panel.**
 
 <Divider></Divider>
 ## Message Customisation
+These are the panel message customisation settings. Here, you can customise the panel to your preferences.
 <Divider></Divider>
+### `"text"` <M color="blue">string</M> \{#panel-text}
+**Default Value:** `""`<br></br>
+
+The text message contents to be sent in the panel. **(Empty for embed only)**
+
+**✅ Leave empty for no additional text.**
+
+<Divider></Divider>
+### `"embed"` <M color="cyan">object</M> \{#panel-embed}
+**Default Value:** `/`<br></br>
+
+The embed to be sent with the panel. This can also be disabled for a text-only panel.
+
+- **`enabled`**: <M color="red">boolean</M> - Enable the panel embed.
+- **`title`**: <M color="blue">string</M> - The title of the embed.
+- **`description`**: <M color="blue">string</M> - The description of the embed.
+- **`customColor`**: <M color="blue">string</M> - The hex color of the embed. **(Empty to use global bot color)**
+- **`image`**: <M color="blue">string</M> - A URL to an image displayed in the embed.
+- **`thumbnail`**: <M color="blue">string</M> - A URL to a thumbnail image displayed in the embed.
+- **`fields`**: <M color="pink">array</M> - An array of objects specifying fields in the embed.<br></br>**<C color="red">(Hidden when `"describeOptionsInEmbedFields"` is used)</C>**
+    - **`name`**: <M color="blue">string</M> - The name/title of this field.
+    - **`value`**: <M color="blue">string</M> - The contents of this field.
+    - **`inline`**: <M color="red">boolean</M> - Enable to allow this field to be inline/horizontally aligned.
+- **`timestamp`**: <M color="red">boolean</M> - Indicates if a timestamp should be included in the embed.
+
+**✅ You can customise the panel to fit within your server style.**
+
 
 <Divider></Divider>
 ## Additional Settings
+Use the additional settings to customise the panel even more! You can also decide how the options are described in the panel.
 <Divider></Divider>
+### `"settings"."dropdownPlaceholder"` <M color="blue">string</M> \{#panel-settings-dropdown-placeholder}
+**Default Value:** `"Create a ticket!"`<br></br>
 
-### `"token"` <M color="blue">string</M> \{#token}
-**Default Value:** `"your bot token here"`<br></br>
-**Allowed Values:** `A valid Discord token`
+The placeholder text displayed in the dropdown menu.
 
-TEST LOREM IPSUM
+<ScaleImage src="/img/docs-v4/panel-dropdown.png" size="40%" alt="The placeholder is visible when nothing is selected."></ScaleImage>
+
+**✅ Keep it short and clear. (maximum 100 characters)**
 
 <Divider></Divider>
+### `"settings"."enableMaxTicketsWarningInText"` <M color="red">boolean</M> \{#panel-settings-maxtickets-text}
+**Default Value:** `false` (Disabled) <br></br>
 
+Determines whether a warning about the maximum amount of tickets is displayed in the message text content.
+
+<ScaleImage src="/img/docs-v4/panel-text-maxtickets.png" size="40%" alt="The max-tickets warning in the text content of a panel."></ScaleImage>
+
+**✅ The warning will appear below the configured `"text"`.**
+
+<Divider></Divider>
+### `"settings"."enableMaxTicketsWarningInEmbed"` <M color="red">boolean</M> \{#panel-settings-maxtickets-embed}
+**Default Value:** `true` (Enabled) <br></br>
+
+Determines whether a warning about the maximum amount of tickets is displayed in the embed description.
+
+<ScaleImage src="/img/docs-v4/panel-embed-maxtickets.png" size="40%" alt="The max-tickets warning in the embed description of a panel."></ScaleImage>
+
+**✅ The warning will appear below the configured `"description"`.**
+
+<Divider></Divider>
+### `"settings"."describeOptionsLayout"` <M color="blue">string</M> \{#panel-settings-describe-layout}
+**Default Value:** `"simple"`<br></br>
+**Allowed Values:** `"simple"`, `"normal"` or `"detailed"`
+
+Defines the layout complexity for describing options in the panel.
+
+<FlexHorizontal>
+    <ScaleImage src="/img/docs-v4/panel-describe-simple.png" size="33%" alt="A panel with a simple layout."></ScaleImage>
+    <ScaleImage src="/img/docs-v4/panel-describe-normal.png" size="33%" alt="A panel with a normal layout."></ScaleImage>
+    <ScaleImage src="/img/docs-v4/panel-describe-detailed.png" size="33%" alt="A panel with a detailed layout."></ScaleImage>
+</FlexHorizontal>
+
+**✅ This will apply to all `"describeOptionsIn..."` locations.**
+
+<Divider></Divider>
+### `"settings"."describeOptionsCustomTitle"` <M color="blue">string</M> \{#panel-settings-describe-custom-title}
+**Default Value:** `""` (Use Default) <br></br>
+
+Set a custom title for the options description section in the embed or text contents.
+
+<ScaleImage src="/img/docs-v4/panel-describe-title.png" size="40%" alt="The default title shown above the option descriptions."></ScaleImage>
+
+**✅ Leave empty to use the default title.**
+
+<Divider></Divider>
+### `"settings"."describeOptionsInText"` <M color="red">boolean</M> \{#panel-settings-describe-text}
+**Default Value:** `false` (Disabled) <br></br>
+
+Determines whether options descriptions are displayed in the message text contents.
+
+<ScaleImage src="/img/docs-v4/panel-describe-normal.png" size="40%" alt="The options are described in the text contents."></ScaleImage>
+
+**✅ Only recommended if you've disabled the embed in the panel.**
+
+<Divider></Divider>
+### `"settings"."describeOptionsInEmbedFields"` <M color="red">boolean</M> \{#panel-settings-describe-embed-fields}
+**Default Value:** `true` (Enabled) <br></br>
+
+Determines whether options descriptions are displayed in the embed fields.
+
+:::warning field overwrites
+When using this location, the configured `"fields"` will not be displayed in the embed.
+:::
+
+<ScaleImage src="/img/docs-v4/panel-describe-normal-fields.png" size="40%" alt="The options are described in the embed fields."></ScaleImage>
+
+**✅ This will stop the custom title from being rendered.**
+
+<Divider></Divider>
+### `"settings"."describeOptionsInEmbedDescription"` <M color="red">boolean</M> \{#panel-settings-describe-embed-description}
+**Default Value:** `false` (Disabled) <br></br>
+
+Determines whether options descriptions are displayed in the embed description.
+
+<ScaleImage src="/img/docs-v4/panel-describe-normal-embed.png" size="40%" alt="The options are described in the embed description."></ScaleImage>
+
+**✅ This is the recommended location if you want to use a title.**
+
+<Divider></Divider>
 # Example File
 All variables above have been made acording to this config for Open Ticket `v4.0.0`. This configuration might change in future versions!
 ```json title="panels.json"

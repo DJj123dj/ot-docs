@@ -86,7 +86,7 @@ You can get this by sending an emoji with a `\` (backslash) in front of it in di
 - **`"label"`:** <M color="blue">string</M> - The button label. It can have a maximum of 80 characters.
 - **`"color"`:** <M color="blue">string</M> - The button color of this option. (`"gray"`, `"red"`, `"green"`, or `"blue"`)
 
-<ScaleImage src="/img/docs-v4/panel-buttons.png" size="40%"></ScaleImage>
+<ScaleImage src="/img/docs-v4/panel-buttons.png" size="40%" alt="An example of different option buttons."></ScaleImage>
 
 **✅ You are allowed to leave `"emoji"` or `"label"` empty, but one of them always needs to be present!**
 
@@ -144,7 +144,7 @@ Indicates whether users who are blacklisted can create tickets of this type.
 
 An array of question IDs (found in **[`questions.json`](./questions.mdx)**) that will be shown in a modal when this ticket type is created.
 
-<ScaleImage src="/img/docs-v4/question-modal.png" size="40%"></ScaleImage>
+<ScaleImage src="/img/docs-v4/question-modal.png" size="40%" alt="A modal which displays the questions to the user before creating a ticket."></ScaleImage>
 
 **✅ You can add a maximum of 5 questions per ticket type.**
 
@@ -194,7 +194,7 @@ It will also include a button that will take you to the ticket.
         - **`inline`**: <M color="red">boolean</M> - Enable to allow this field to be inline/horizontally aligned.
     - **`timestamp`**: <M color="red">boolean</M> - Indicates if a timestamp should be included in the embed.
 
-<ScaleImage src="/img/docs-v4/dm-message.png" size="50%"></ScaleImage>
+<ScaleImage src="/img/docs-v4/dm-message.png" size="40%" alt="A DM message sent to the creator of the ticket."></ScaleImage>
 
 **✅ Send a DM message to the creator of the ticket to give instructions or extra information!**
 
@@ -223,7 +223,7 @@ Send a message at the start of the ticket channel. This message will also contai
     - **`@everyone`**: <M color="red">boolean</M> - Indicates if the `@everyone` mention should be used.
     - **`custom`**: <M color="pink">array</M> - An array of discord role IDs to mention. (Or leave it empty)
 
-<ScaleImage src="/img/docs-v4/ticket-message.png" size="50%"></ScaleImage>
+<ScaleImage src="/img/docs-v4/ticket-message.png" size="50%" alt="A ticket message sent to the ticket channel."></ScaleImage>
 
 **✅ The ticket message is used to display information, question answers and as shortcut for many ticket actions!**
 
@@ -272,7 +272,7 @@ Use this feature to restrict multi-ticket-creation or spamming of tickets by giv
 - **`enabled`**: <M color="red">boolean</M> - Enable cooldown on this ticket option.
 - **`cooldownMinutes`**: <M color="green">number</M> - The duration of the cooldown in minutes.
 
-<ScaleImage src="/img/docs-v4/cooldown.png" size="50%"></ScaleImage>
+<ScaleImage src="/img/docs-v4/cooldown.png" size="50%" alt="A message that notifies the user that he/she is on cooldown."></ScaleImage>
 
 **✅ This will prevent users from spamming ticket requests!**
 

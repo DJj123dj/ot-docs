@@ -1,0 +1,33 @@
+---
+title: /help
+description: Show the Open Ticket help menu.
+sidebar_position: 1
+keywords: [open-ticket, open ticket, discord ticket bot, discord ticket bot, reference, command]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex} from "@site/src/components/openticket.jsx"
+
+<FlexHorizontal>
+    <ScaleImage src="/img/docs-v4/commands/help-slash.png" alt="/help command with slash commands." size="40%"></ScaleImage>
+    <ScaleImage src="/img/docs-v4/commands/help-text.png" alt="/help command with text commands." size="40%"></ScaleImage>
+</FlexHorizontal>
+
+## Overview
+Using the `/help` command, you can view a list of all the available commands in the Open Ticket bot.
+There is a button to switch between slash & text commands.
+
+- **Default Permissions:** 🟢 Everyone
+- **Usable Locations:** 🟢 Everywhere (DM, server & ticket)
+- **Text Command:** `!ticket help`
+- **Slash Command:** `/help`
+
+## Parameters
+*none*
+
+## Settings
+These are config variables which are related to this command.
+- **[`general.json:"system"."preferSlashOverText"`](../config/general.mdx#system-prefer-slash-over-text) <M color="red">boolean</M>**
+- **[`general.json:"system"."emojiStyle"`](../config/general.mdx#system-emoji-style) <M color="blue">string</M>**
+- **[`general.json:"system"."permissions"."help"`](../config/general.mdx#system-permissions) <M color="blue">string</M>**

@@ -1,0 +1,36 @@
+---
+title: /panel
+description: Spawn a panel.
+sidebar_position: 2
+keywords: [open-ticket, open ticket, discord ticket bot, discord ticket bot, reference, command]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex} from "@site/src/components/openticket.jsx"
+
+<FlexHorizontal>
+    <ScaleImage src="/img/docs-v4/panel-with-buttons.png" alt="/panel command which spawns a button panel." size="40%"></ScaleImage>
+    <ScaleImage src="/img/docs-v4/panel-with-dropdown.png" alt="/panel command which spawns a dropdown panel." size="40%"></ScaleImage>
+</FlexHorizontal>
+
+## Overview
+Using the `/panel` command, you can spawn Open Ticket panels defined in the [`panels.json`](../config/panels.mdx) config.
+There are many kinds of panels and they're highly customisable. More info can be found [here](../config/panels.mdx).
+
+The panel has an `auto-update` feature that allows the panel to be updated automatically when the bot is restarted.
+
+- **Default Permissions:** 🔴 Global Admins
+- **Usable Locations:** 🟠 Server (server & ticket)
+- **Text Command:** `!ticket panel <id> [auto-update]`
+- **Slash Command:** `/panel <id> [auto-update]`
+
+## Parameters
+- **`<id>`:** A valid panel id.
+- **`[auto-update]`:** Enable auto update on this panel. **<C color="green">(Optional)</C>**
+
+## Settings
+These are config variables which are related to this command.
+- **[`panels.json`](../config/panels.mdx) <M color="pink">array</M>**
+- **[`general.json:"system"."emojiStyle"`](../config/general.mdx#system-emoji-style) <M color="blue">string</M>**
+- **[`general.json:"system"."permissions"."panel"`](../config/general.mdx#system-permissions) <M color="blue">string</M>**

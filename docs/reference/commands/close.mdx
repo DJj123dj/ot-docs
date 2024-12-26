@@ -1,0 +1,34 @@
+---
+title: /close
+description: Close a ticket.
+sidebar_position: 4
+keywords: [open-ticket, open ticket, discord ticket bot, discord ticket bot, reference, command]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex} from "@site/src/components/openticket.jsx"
+
+<FlexHorizontal>
+    <ScaleImage src="/img/docs-v4/commands/ticket-close.png" alt="Example of the /close command." size="50%"></ScaleImage>
+</FlexHorizontal>
+
+## Overview
+Using the `/close` command, you can close a ticket. This will make the participants unable to write any new messages.
+They are still able to reopen the ticket and use other buttons.
+The user can also provide an optional reason. This will be shown in the logs.
+
+- **Default Permissions:** 🟢 Everyone
+- **Usable Locations:** 🔴 Ticket Only
+- **Text Command:** `!ticket close [reason]`
+- **Slash Command:** `/close [reason]`
+
+## Parameters
+- **`[reason]`:** A reason for closing the ticket. **<C color="green">(Optional)</C>**
+
+## Settings
+These are config variables which are related to this command.
+- **[`general.json:"system"."removeParticipantsOnClose"`](../config/general.mdx#system-remove-participants-on-close) <M color="red">boolean</M>**
+- **[`general.json:"system"."emojiStyle"`](../config/general.mdx#system-emoji-style) <M color="blue">string</M>**
+- **[`general.json:"system"."permissions"."close"`](../config/general.mdx#system-permissions) <M color="blue">string</M>**
+- **[`general.json:"system"."messages"."closing"`](../config/general.mdx#system-messages) <M color="cyan">object</M>**

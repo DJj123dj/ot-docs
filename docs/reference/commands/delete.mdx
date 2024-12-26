@@ -1,0 +1,36 @@
+---
+title: /delete
+description: Delete a ticket. This will generate a transcript.
+sidebar_position: 6
+keywords: [open-ticket, open ticket, discord ticket bot, discord ticket bot, reference, command]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex} from "@site/src/components/openticket.jsx"
+
+<FlexHorizontal>
+    <ScaleImage src="/img/docs-v4/commands/ticket-delete.png" alt="Example of the /delete command." size="50%"></ScaleImage>
+</FlexHorizontal>
+
+## Overview
+Using the `/delete` command, you can delete a ticket. This will also generate a transcript when it is enabled in the config.
+If configured, the ticket can also be deleted without transcript.
+The user can also provide an optional reason. This will be shown in the logs.
+
+- **Default Permissions:** 🟠 Ticket Admins
+- **Usable Locations:** 🔴 Ticket Only
+- **Text Command:** `!ticket delete [reason]`
+- **Slash Command:** `/delete [reason] [without-transcript]`
+
+## Parameters
+- **`[reason]`:** A reason for deleting the ticket. **<C color="green">(Optional)</C>**
+- **`[without-transcript]`:** Delete without transcript. **<C color="green">(Optional)</C>**
+
+## Settings
+These are config variables which are related to this command.
+- **[`general.json:"system"."enableDeleteWithoutTranscript"`](../config/general.mdx#system-enable-delete-without-transcript) <M color="red">boolean</M>**
+- **[`general.json:"system"."emojiStyle"`](../config/general.mdx#system-emoji-style) <M color="blue">string</M>**
+- **[`general.json:"system"."permissions"."delete"`](../config/general.mdx#system-permissions) <M color="blue">string</M>**
+- **[`general.json:"system"."messages"."deleting"`](../config/general.mdx#system-messages) <M color="cyan">object</M>**
+- **[`transcripts.json`](../config/transcripts.mdx) <M color="cyan">object</M>**

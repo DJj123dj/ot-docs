@@ -181,3 +181,10 @@ export function FlexHorizontal(params){
 export function Divider(params){
     return (<hr className="bg-neutral-700 h-1 rounded-full"></hr>)
 }
+
+export function Hex(params){
+    return (<span>
+        <span className='inline-block max-h-1/2 size-[1.5em] translate-y-[0.5em] mr-1 border-[rgba(0,0,0,0.1)] border-solid border-2 rounded' style={{backgroundColor:params.hex}}></span>
+        <code>{params.hex}</code>
+    </span>)
+}

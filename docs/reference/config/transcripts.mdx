@@ -73,113 +73,144 @@ The color of the embed which contains the transcript file or URL. Leave it empty
 
 When enabled, everyone who sent at least 1 message will be listed in the transcript embed.
 
+**✅ This list won't contain any role mentions from admins.**
+
 <Divider></Divider>
 ### `"embedSettings"."includeTicketStats"` <M color="red">boolean</M> \{#embed-include-ticket-stats}
 **Default Value:** `false` (Disabled)<br></br>
 
 Enables including ticket statistics (e.g., duration, messages sent) in the transcript embed.
 
+**✅ Not all statistics will be shown here. Only the most important ones.**
+
 <Divider></Divider>
 ## Text Transcript Style
 Configure the style of the text transcripts.
 <Divider></Divider>
-
-# ‼️‼️‼️ FINISHED UNTIL HERE ‼️‼️‼️
-### `"textTranscriptStyle"."layout"` <M color="blue">string</M> \{#texttranscriptstyle-layout}
+### `"textTranscriptStyle"."layout"` <M color="blue">string</M> \{#textstyle-layout}
 **Default Value:** `"simple"`<br></br>
 **Allowed Values:** `"simple"`, `"normal"`, `"detailed"`
 
 Determines the level of detail in text transcripts.
 
+- **`"simple"`:** Includes the text content and basic message details.
+- **`"normal"`:** Includes everything from `"simple"` + embed titles & descriptions + attachments.
+- **`"detailed"`:** Includes everything from `"normal"` + full embed details + reactions.
+
+**✅ More details might make it more difficult to read.**
+
 <Divider></Divider>
-### `"textTranscriptStyle"."includeStats"` <M color="red">boolean</M> \{#texttranscriptstyle-includestats}
-**Default Value:** `true`<br></br>
+### `"textTranscriptStyle"."includeStats"` <M color="red">boolean</M> \{#textstyle-include-stats}
+**Default Value:** `true` (Enabled)<br></br>
 
 Enables the inclusion of ticket statistics in the text transcript.
 
-<Divider></Divider>
-### `"textTranscriptStyle"."includeIds"` <M color="red">boolean</M> \{#texttranscriptstyle-includeids}
-**Default Value:** `false`<br></br>
-
-Enables including user and message IDs in the text transcript.
+**✅ This will include all available ticket statistics.**
 
 <Divider></Divider>
-### `"textTranscriptStyle"."includeEmbeds"` <M color="red">boolean</M> \{#texttranscriptstyle-includeembeds}
-**Default Value:** `true`<br></br>
+### `"textTranscriptStyle"."includeIds"` <M color="red">boolean</M> \{#textstyle-include-ids}
+**Default Value:** `false` (Disabled)<br></br>
+
+Enables including user IDs in the text transcript.
+
+**✅ Only enable this when needed. It might make transcripts harder to read.**
+
+<Divider></Divider>
+### `"textTranscriptStyle"."includeEmbeds"` <M color="red">boolean</M> \{#textstyle-include-embeds}
+**Default Value:** `true` (Enabled)<br></br>
 
 Enables including embeds in the text transcript.
 
+**✅ Bots are the only users that can send embeds.**
+
 <Divider></Divider>
-### `"textTranscriptStyle"."includeFiles"` <M color="red">boolean</M> \{#texttranscriptstyle-includefiles}
-**Default Value:** `true`<br></br>
+### `"textTranscriptStyle"."includeFiles"` <M color="red">boolean</M> \{#textstyle-include-files}
+**Default Value:** `true` (Enabled)<br></br>
 
 Enables including file attachments in the text transcript.
 
-<Divider></Divider>
-### `"textTranscriptStyle"."includeBotMessages"` <M color="red">boolean</M> \{#texttranscriptstyle-includebotmessages}
-**Default Value:** `true`<br></br>
-
-Enables including bot messages in the text transcript.
+**✅ This will also include a URL to the attachment. (when using `"normal"` or `"detailed"` layout)**
 
 <Divider></Divider>
-### `"textTranscriptStyle"."fileMode"` <M color="blue">string</M> \{#texttranscriptstyle-filemode}
+### `"textTranscriptStyle"."includeBotMessages"` <M color="red">boolean</M> \{#textstyle-include-bots}
+**Default Value:** `true` (Enabled)<br></br>
+
+Enables including messages from bots/apps in the text transcript.
+
+**✅ Bots might send too much messages which could make the transcript unreadable.**
+
+<Divider></Divider>
+### `"textTranscriptStyle"."fileMode"` <M color="blue">string</M> \{#textstyle-file-mode}
 **Default Value:** `"custom"`<br></br>
 **Allowed Values:** `"custom"`, `"channel-name"`, `"channel-id"`, `"user-name"`, `"user-id"`
 
 Determines the naming convention for the transcript file.
 
+- **`"custom"`:** Use a custom filename set in `"customFileName"`.
+- **`"channel-name"`:** Use the channel name as filename.
+- **`"channel-id"`:** Use the channel id as filename.
+- **`"user-name"`:** Use the creator username as filename.
+- **`"user-id"`:** Use the creator id as filename.
+
+**✅ All files will end with `.txt` as extension.**
+
 <Divider></Divider>
-### `"textTranscriptStyle"."customFileName"` <M color="blue">string</M> \{#texttranscriptstyle-customfilename}
+### `"textTranscriptStyle"."customFileName"` <M color="blue">string</M> \{#textstyle-file-name}
 **Default Value:** `""` (No custom name)<br></br>
 
-A custom file name for the transcript file. Only used if `"fileMode"` is set to `"custom"`.
+A custom file name for the transcript file. Only used if [**`"fileMode"`**](#textstyle-file-mode) is set to `"custom"`.
+
+**✅ The custom file name will have `.txt` as extension.**
 
 <Divider></Divider>
 ## HTML Transcript Style
 Configure the style of the HTML transcripts.
 <Divider></Divider>
-### `"htmlTranscriptStyle"."background"."enableCustomBackground"` <M color="red">boolean</M> \{#htmltranscriptstyle-background-enablecustombackground}
-**Default Value:** `false`<br></br>
+### `"htmlTranscriptStyle"."background"` <M color="cyan">object</M> \{#htmlstyle-background}
 
-Enables a custom background for HTML transcripts.
+Configure a custom background for the HTML Transcripts. When disabled, the default background will be used.
 
-<Divider></Divider>
-### `"htmlTranscriptStyle"."background"."backgroundColor"` <M color="blue">string</M> \{#htmltranscriptstyle-background-backgroundcolor}
-**Default Value:** `""` (No custom color)<br></br>
+- **`"enableCustomBackground"`:** <M color="red">boolean</M> - Enables a custom background for the HTML transcripts.
+- **`"backgroundColor"`:** <M color="blue">string</M> - The background color. **(Default: <Hex hex="#36393e"></Hex>)**
+- **`"backgroundImage"`:** <M color="blue">string</M> - A URL to a background image.
 
-The background color for HTML transcripts.
-
-**✅ Example format: `#f8ba00`**
+**✅ The background image will always overwrite the color.**
 
 <Divider></Divider>
-### `"htmlTranscriptStyle"."background"."backgroundImage"` <M color="blue">string</M> \{#htmltranscriptstyle-background-backgroundimage}
-**Default Value:** `""` (No custom image)<br></br>
+### `"htmlTranscriptStyle"."header"` <M color="cyan">object</M> \{#htmlstyle-header}
 
-A URL to a background image for HTML transcripts.
+Configure a custom header for the HTML Transcripts. When disabled, the default header will be used.
 
-<Divider></Divider>
-### `"htmlTranscriptStyle"."header"."enableCustomHeader"` <M color="red">boolean</M> \{#htmltranscriptstyle-header-enablecustomheader}
-**Default Value:** `false`<br></br>
+- **`"enableCustomHeader"`:** <M color="red">boolean</M> - Enables a custom header for the HTML transcripts.
+- **`"backgroundColor"`:** <M color="blue">string</M> - The background color of the header. **(Default: <Hex hex="#202225"></Hex>)**
+- **`"decoColor"`:** <M color="blue">string</M> - The decoration (horizontal line) color of the header. **(Default: <Hex hex="#f8ba00"></Hex>)**
+- **`"textColor"`:** <M color="blue">string</M> - The text color of the header. **(Default: <Hex hex="#ffffff"></Hex>)**
 
-Enables a custom header for HTML transcripts.
-
-<Divider></Divider>
-### `"htmlTranscriptStyle"."header"."backgroundColor"` <M color="blue">string</M> \{#htmltranscriptstyle-header-backgroundcolor}
-**Default Value:** `"#202225"`<br></br>
-
-The background color of the header in HTML transcripts.
+**✅ The header includes the name of the ticket & bot and is always visible.**
 
 <Divider></Divider>
-### `"htmlTranscriptStyle"."favicon"."enableCustomFavicon"` <M color="red">boolean</M> \{#htmltranscriptstyle-favicon-enablecustomfavicon}
-**Default Value:** `false`<br></br>
+### `"htmlTranscriptStyle"."stats"` <M color="cyan">object</M> \{#htmlstyle-stats}
 
-Enables a custom favicon for HTML transcripts.
+Configure custom stats for the HTML Transcripts. When disabled, the default stats will be used.
+
+- **`"enableCustomStats"`:** <M color="red">boolean</M> - Enables custom stats for the HTML transcripts.
+- **`"backgroundColor"`:** <M color="blue">string</M> - The background color of the stats. **(Default: <Hex hex="#202225"></Hex>)**
+- **`"keyTextColor"`:** <M color="blue">string</M> - The text color of the stats labels. **(Default: <Hex hex="#737373"></Hex>)**
+- **`"valueTextColor"`:** <M color="blue">string</M> - The text color of the stats values. **(Default: <Hex hex="#ffffff"></Hex>)**
+- **`"hideBackgroundColor"`:** <M color="blue">string</M> - The background color of the stats hide button. **(Default: <Hex hex="#40444a"></Hex>)**
+- **`"hideTextColor"`:** <M color="blue">string</M> - The text color of the stats hide button. **(Default: <Hex hex="#ffffff"></Hex>)**
+
+**✅ The stats are visible on the right-side of the screen and can be hidden.**
 
 <Divider></Divider>
-### `"htmlTranscriptStyle"."favicon"."imageUrl"` <M color="blue">string</M> \{#htmltranscriptstyle-favicon-imageurl}
-**Default Value:** `"https://transcripts.dj-dj.be/favicon.png"`<br></br>
+### `"htmlTranscriptStyle"."favicon"` <M color="cyan">object</M> \{#htmlstyle-favicon}
 
-The URL for the favicon image used in HTML transcripts.
+Configure a custom favicon for the HTML Transcripts. When disabled, the default favicon will be used.
+
+- **`"enableCustomFavicon"`:** <M color="red">boolean</M> - Enables custom stats for the HTML transcripts.
+- **`"imageUrl"`:** <M color="blue">string</M> - The URL for the favicon image.
+
+**✅ Using a small image **(32x32)** is recommended for better load time.**
 
 <Divider></Divider>
 # Example File

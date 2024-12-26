@@ -139,65 +139,61 @@ const config = {
                     ],
                 },
                 {
-                    title: 'Developer (TODO)',
+                    title: 'Developer',
                     items: [
                         {
-                            label: 'Get Started (TODO)',
-                            to: '/docs/current/developer/get-started',
+                            label: 'Get Started',
+                            to: '/docs/framework/get-started',
                         },
                         {
-                            label: 'Plugins (TODO)',
-                            to: '/docs/current/docs/system/plugins',
+                            label: 'Plugin Examples',
+                            to: 'https://odplugins.dj-dj.be/tree/main/open-ticket',
                         },
                         {
-                            label: 'API Reference (TODO)',
-                            to: '/docs/current/api/get-started',
-                        },
-                        {
-                            label: 'Plugin List (TODO)',
-                            to: '/docs/current/plugin/list',
-                        },
+                            label: 'API Reference',
+                            to: '/docs/reference/get-started',
+                        }
                     ],
                 },
                 {
-                    title: 'Community (TODO)',
+                    title: 'Community',
                     items: [
                         {
-                            label: 'Discord (TODO)',
+                            label: 'Discord',
                             href: 'https://discord.dj-dj.be',
                         },
                         {
-                            label: 'Website (TODO)',
+                            label: 'Website',
                             href: 'https://www.dj-dj.be',
                         },
                         {
-                            label: 'Twitter (TODO)',
+                            label: 'Twitter',
                             href: 'https://twitter.com/djdjdevelopment',
                         },
                         {
-                            label:"Youtube (TODO)",
+                            label:"Youtube",
                             href:"https://www.youtube.com/@djdjdevelopment"
                         }
                     ],
                 },
                 {
-                    title: 'More (TODO)',
+                    title: 'More',
                     items: [
                         {
-                            label: 'Blog (TODO)',
+                            label: 'Blog',
                             to: '/blog',
                         },
                         {
-                            label: 'Community Plugins (TODO)',
-                            to: '/docs/current/plugin/list',
+                            label: 'Open Ticket Plugins',
+                            to: 'https://odplugins.dj-dj.be/tree/main/open-ticket',
                         },
                         {
-                            label: 'Contributing (TODO)',
+                            label: 'Contributing',
                             href: '/contributing',
                         },
                         {
-                            label: 'Open Ticket 4.0 (TODO)',
-                            href: '/docs/current/docs/openticket-4',
+                            label: 'Translation',
+                            href: 'https://otgithub.dj-dj.be/tree/dev/.github/CONTRIBUTING.md',
                         },
                     ],
                 },

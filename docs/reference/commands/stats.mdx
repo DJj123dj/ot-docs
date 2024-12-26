@@ -1,0 +1,44 @@
+---
+title: /stats
+description: View ticket system statistics.
+sidebar_position: 19
+keywords: [open-ticket, open ticket, discord ticket bot, discord ticket bot, reference, command]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex} from "@site/src/components/openticket.jsx"
+
+<FlexHorizontal>
+    <ScaleImage src="/img/docs-v4/commands/stats-global.png" alt="Example of the /stats global command." size="40%"></ScaleImage>
+    <ScaleImage src="/img/docs-v4/commands/stats-user.png" alt="Example of the /stats user command." size="40%"></ScaleImage>
+</FlexHorizontal>
+<FlexHorizontal>
+    <ScaleImage src="/img/docs-v4/commands/stats-ticket.png" alt="Example of the /stats ticket command." size="40%"></ScaleImage>
+    <ScaleImage src="/img/docs-v4/commands/stats-reset.png" alt="Example of the /stats reset command." size="40%"></ScaleImage>
+</FlexHorizontal>
+
+## Overview
+Using the `/stats` command, you can view ticket, user & global statistics in the bot.
+The stats are also able to be resetted using the `/stats reset` command. Only the server owner can do this.
+- **`global`:** View the global statistics.
+- **`user`:** View the statistics from a user.
+- **`ticket`:** View the statistics from a ticket.
+- **`reset`:** Reset all stats. (With additional reason) <C color="red">**Only the server owner can do this!**</C>
+
+You can use these modes by inserting it as a subcommand.
+
+- **Default Permissions:** 🟢 Everyone
+- **Usable Locations:** 🟠 Server (server & ticket)
+- **Text Command:** `!ticket stats <global|user|ticket|reset> [user|ticket] [reason]`
+- **Slash Command:** `/stats <global|user|ticket|reset> [user|ticket] [reason]`
+
+## Parameters
+- **`<global|user|ticket|reset>`:** Choose what stats to view.
+- **`[user|ticket]`:** The user/ticket to view. **<C color="green">(Only when using `user` or `ticket`)</C>**
+- **`[reason]`:** A reason for resetting the stats. **<C color="green">(Only when using `reset`)</C>**
+
+## Settings
+These are config variables which are related to this command.
+- **[`general.json:"system"."emojiStyle"`](../config/general.mdx#system-emoji-style) <M color="blue">string</M>**
+- **[`general.json:"system"."permissions"."stats"`](../config/general.mdx#system-permissions) <M color="blue">string</M>**

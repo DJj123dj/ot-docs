@@ -1,0 +1,40 @@
+---
+title: /clear
+description: Delete multiple tickets at the same time.
+sidebar_position: 15
+keywords: [open-ticket, open ticket, discord ticket bot, discord ticket bot, reference, command]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex} from "@site/src/components/openticket.jsx"
+
+<FlexHorizontal>
+    <ScaleImage src="/img/docs-v4/commands/ticket-clear.png" alt="Example of the /clear command." size="50%"></ScaleImage>
+</FlexHorizontal>
+
+## Overview
+Using the `/clear` command, you can delete multiple tickets at the same time.
+There is an optional filter available for filtering which tickets are affected.
+
+- **Default Permissions:** 🟠 Ticket Admins
+- **Usable Locations:** 🔴 Ticket Only
+- **Text Command:** `!ticket clear <id> [reason]`
+- **Slash Command:** `/clear <id> [reason]`
+
+## Parameters
+- **`[filter]`:** A filter will affect which tickets are deleted. **<C color="green">(Optional)</C>**
+    - `All` tickets
+    - `Open` tickets only
+    - `Closed` tickets only
+    - `Claimed` tickets only
+    - `Unclaimed` tickets only
+    - `Pinned` tickets only
+    - `Unpinned` tickets only
+    - `Autoclosed` tickets only
+
+## Settings
+These are config variables which are related to this command.
+- **[`general.json:"system"."emojiStyle"`](../config/general.mdx#system-emoji-style) <M color="blue">string</M>**
+- **[`general.json:"system"."permissions"."clear"`](../config/general.mdx#system-permissions) <M color="blue">string</M>**
+- **[`general.json:"system"."messages"."clearing"`](../config/general.mdx#system-messages) <M color="cyan">object</M>**

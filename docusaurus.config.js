@@ -203,7 +203,7 @@ const config = {
         prism: {
             theme: lightCodeTheme,
             darkTheme: darkCodeTheme,
-            additionalLanguages:["json","diff","toml"]
+            additionalLanguages:["json","diff","toml","javascript","typescript"]
         },
         docs:{
             sidebar:{

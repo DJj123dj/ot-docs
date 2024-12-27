@@ -21,7 +21,7 @@ const openticketTheme = {
             }
         },
         {
-            types: ["builtin", "changed", "keyword", "interpolation-punctuation"],
+            types: ["changed", "keyword", "interpolation-punctuation"],
             style: {
                 color: "#3d84e0"
             }
@@ -63,9 +63,15 @@ const openticketTheme = {
             }
         },
         {
-            types: ["function","class-name"],
+            types: ["class-name","builtin"],
             style: {
                 color: "#3dd5e0"
+            }
+        },
+        {
+            types: ["function"],
+            style: {
+                color: "#ded77a"
             }
         },
         {

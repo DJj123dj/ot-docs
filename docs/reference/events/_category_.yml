@@ -1,8 +1,7 @@
 label: 📩 Events
-position: 6
-className: otdocs-badge-category otdocs-meta-red-cool
+position: 5
 link:
   type: generated-index
   title: Events
   slug: category/api-events
-  description: You can listen for certain events. Then, you can do an action based on that event!
+  description: Listen for certain Open Ticket events. This is required for replying to actions or registering classes.

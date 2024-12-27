@@ -188,3 +188,43 @@ export function Hex(params){
         <code>{params.hex}</code>
     </span>)
 }
+
+/**@param {string} data  */
+function getURL(data){
+    if (data == "js:string") return "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"
+    else if (data == "js:number") return "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number"
+    else if (data == "js:boolean") return "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean"
+    else if (data == "js:object") return "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object"
+    else if (data == "js:array") return "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"
+    else if (data == "js:promise") return "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+    else if (data == "js:undefined") return "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"
+    else if (data == "js:date") return "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date"
+    else if (data == "js:function") return "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function"
+    else if (data == "js:map") return "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map"
+    else if (data == "js:nan") return "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN"
+    else if (data == "js:set") return "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set"
+    else if (data == "js:symbol") return "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol"
+
+    else if (data == "js:null") return "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/null"
+    else if (data == "js:void") return "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void"
+
+    else if (data == "js:regex") return "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions"
+    else if (data == "js:buffer") return "https://nodejs.org/api/buffer.html"
+
+    else if (data.startsWith("class:")) return "/docs/reference/classes/"+data.split(":")[1]
+    else if (data.startsWith("type:")) return "/docs/reference/types/"+data.split(":")[1]
+    else if (data.startsWith("interface:")) return "/docs/reference/types/"+data.split(":")[1]
+    else if (data.startsWith("utility:")) return "/docs/reference/utilities/"+data.split(":")[1]
+    else if (data.startsWith("event:")) return "/docs/reference/events/"+data.split(":")[1]
+    else return data
+}
+
+export function ApiUrl(params){
+    const url = getURL(params.url)
+    const target = (url.startsWith("https://")) ? "_blank" : "_self"
+    return (<a href={url} target={target}>{params.label}</a>)
+}
+
+export function ApiBlock(params){
+    return (<span>➜ <code>{params.children}</code></span>)
+}

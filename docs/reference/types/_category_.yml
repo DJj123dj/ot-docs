@@ -1,7 +1,7 @@
 label: 📌 Types
-position: 5
+position: 8
 link:
   type: generated-index
   title: Types
   slug: category/api-types
-  description: Types are templates for objects or variables. They make it easier to communicate!
+  description: All available typescript types in Open Ticket.

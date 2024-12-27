@@ -1,7 +1,7 @@
 label: ⚙️ Config Files
-position: 3
+position: 4
 link:
   type: generated-index
   title: Config Files
   slug: category/api-config
-  description: Here you can find all variables available in the config files from Open Ticket v4.
+  description: Here you can find all available variables in the config files from Open Ticket v4.

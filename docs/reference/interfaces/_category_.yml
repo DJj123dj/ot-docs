@@ -1,0 +1,7 @@
+label: 📂 Interfaces
+position: 7
+link:
+  type: generated-index
+  title: Interfaces
+  slug: category/api-interfaces
+  description: All available typescript interfaces (object templates) in Open Ticket.

@@ -213,7 +213,8 @@ function getURL(data){
 
     else if (data.startsWith("class:")) return "/docs/reference/classes/"+data.split(":")[1]
     else if (data.startsWith("type:")) return "/docs/reference/types/"+data.split(":")[1]
-    else if (data.startsWith("interface:")) return "/docs/reference/types/"+data.split(":")[1]
+    else if (data.startsWith("interface:")) return "/docs/reference/interfaces/"+data.split(":")[1]
+    else if (data.startsWith("enum:")) return "/docs/reference/enums/"+data.split(":")[1]
     else if (data.startsWith("utility:")) return "/docs/reference/utilities/"+data.split(":")[1]
     else if (data.startsWith("event:")) return "/docs/reference/events/"+data.split(":")[1]
     else return data

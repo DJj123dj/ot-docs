@@ -6,12 +6,11 @@
  */
 export function createInterface(data){
     
-    return (`
----
+    return (`---
 title: `+data.name+`
 description: Example interface!
 keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
-sidebar_class_name: otdocs-badge-page otdocs-meta-gray-interface
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
 ---
 <head>
     <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
@@ -47,7 +46,7 @@ Interface description
 
 <FlexHorizontal>
 <div style={{width:"30%"}}>
-    #### Properties \{#overview-properties}
+    #### Properties \\{#overview-properties}
     <ul>
         <li>**[\`prop1\`](#prop-prop1)**</li>
         <li>**[\`prop2\`](#prop-prop2)**</li>
@@ -55,7 +54,7 @@ Interface description
     </ul>
 </div>
 <div style={{width:"30%"}}>
-    #### References \{#overview-references}
+    #### References \\{#overview-references}
     <ul>
         <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
         <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
@@ -64,14 +63,13 @@ Interface description
 </FlexHorizontal>
 
 ## Properties
-### \`prop1\` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODId" label="api.ODId"/></ApiBlock> \{#prop-prop1}
+### \`prop1\` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODId" label="api.ODId"/></ApiBlock> \\{#prop-prop1}
 Example property 1
 
-### \`prop2\` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-prop2}
+### \`prop2\` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \\{#prop-prop2}
 Example property 2
 
-### \`prop3\` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-prop3}
+### \`prop3\` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \\{#prop-prop3}
 Example property 3
-
-    `)
+`)
 }

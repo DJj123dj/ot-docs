@@ -6,7 +6,32 @@ document.addEventListener("DOMContentLoaded",() => {
             ext: '.svg',
             base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/'
         })
-    },100)    
+
+        const expandPaths = [
+            "/docs/category/api-events",
+            "/docs/category/api-classes",
+            "/docs/category/api-interfaces",
+            "/docs/category/api-types",
+            "/docs/category/api-enums",
+            "/docs/category/api-utilities",
+
+            "/docs/reference/events/",
+            "/docs/reference/classes/",
+            "/docs/reference/interfaces/",
+            "/docs/reference/types/",
+            "/docs/reference/enums/",
+            "/docs/reference/utilities/"
+        ]
+
+        if (expandPaths.some((path) => document.location.pathname.startsWith(path))){
+            document.documentElement.style.setProperty("--doc-sidebar-width","350px","important")
+        }else{
+            document.documentElement.style.setProperty("--doc-sidebar-width",null)
+        }
+    },100)
+
+    //handle sidebar width in reference
+    
 })
 
 /** SIDEBAR BADGES:
@@ -14,7 +39,15 @@ document.addEventListener("DOMContentLoaded",() => {
  * - METADATA => otdocs-meta-(color)-(text)
  */
 
+const handleReferenceTextSize = (element,text) => {
+    if (["inter","class"].includes(text)){
+        element.style.fontSize = "10px"
+        element.style.fontWeight = "300"
+    }
+}
+
 const addPageBadge = (element,color,text) => {
+    handleReferenceTextSize(element,text)
     const textElement = element.firstElementChild
     if (textElement.querySelector("span")) return
 
@@ -33,9 +66,9 @@ const addPageBadge = (element,color,text) => {
     spanElement.style.paddingRight = "5px"
 
     spanElement.style.borderRadius = "10px"
-    spanElement.style.marginLeft = "4px"
+    spanElement.style.marginRight = "4px"
 
-    textElement.innerHTML = textElement.innerHTML+spanElement.outerHTML
+    textElement.innerHTML = spanElement.outerHTML+textElement.innerHTML
 }
 
 const addCategoryBadge = (element,color,text) => {

@@ -131,3 +131,5 @@ build/
 package-lock.json
 .DS_Store
 **/.DS_Store
+
+api-generator/export

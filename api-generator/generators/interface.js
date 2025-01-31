@@ -1,5 +1,14 @@
+///<reference path="../structure.d.ts"/>
+
+/**
+ * @param {ODInterfaceStructure} data 
+ * @returns {string}
+ */
+export function createInterface(data){
+    
+    return (`
 ---
-title: ODExampleInterface
+title: `+data.name+`
 description: Example interface!
 keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
 sidebar_class_name: otdocs-badge-page otdocs-meta-gray-interface
@@ -11,18 +20,18 @@ import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,Ap
 import Tabs from "@theme/Tabs"
 import TabItem from "@theme/TabItem"
 
-# ODExampleInterface <M color="gray">interface</M>
+# `+data.name+` <M color="gray">interface</M>
 
 :::danger deprecated
 This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
 
-**Use `SomeOtherInterface` instead!**
+**Use \`SomeOtherInterface\` instead!**
 :::
 
 :::info experimental
 This interface is flagged as experimental and might not be available in all Open Ticket versions.
 
-**Available for Open Ticket `v4.0.0` and above.**
+**Available for Open Ticket \`v4.0.0\` and above.**
 :::
 
 :::warning
@@ -40,9 +49,9 @@ Interface description
 <div style={{width:"30%"}}>
     #### Properties \{#overview-properties}
     <ul>
-        <li>**[`prop1`](#prop-prop1)**</li>
-        <li>**[`prop2`](#prop-prop2)**</li>
-        <li>**[`prop3`](#prop-prop3)**</li>
+        <li>**[\`prop1\`](#prop-prop1)**</li>
+        <li>**[\`prop2\`](#prop-prop2)**</li>
+        <li>**[\`prop3\`](#prop-prop3)**</li>
     </ul>
 </div>
 <div style={{width:"30%"}}>
@@ -55,11 +64,14 @@ Interface description
 </FlexHorizontal>
 
 ## Properties
-### `prop1` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODId" label="api.ODId"/></ApiBlock> \{#prop-prop1}
+### \`prop1\` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODId" label="api.ODId"/></ApiBlock> \{#prop-prop1}
 Example property 1
 
-### `prop2` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-prop2}
+### \`prop2\` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-prop2}
 Example property 2
 
-### `prop3` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-prop3}
+### \`prop3\` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-prop3}
 Example property 3
+
+    `)
+}

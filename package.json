@@ -12,7 +12,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "buildcss": "npx tailwindcss -i ./src/css/custom.css -o ./src/css/output.css --watch"
+    "buildcss": "npx tailwindcss -i ./src/css/custom.css -o ./src/css/output.css --watch",
+    "docs": "node ./api-generator/index.js"
   },
   "dependencies": {
     "@docusaurus/core": "^3.6.3",

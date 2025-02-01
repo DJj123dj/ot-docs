@@ -1,4 +1,5 @@
 ///<reference path="../structure.d.ts"/>
+import * as helpers from "./helpers.js"
 
 /**
  * @param {ODInterfaceStructure} data 
@@ -7,8 +8,8 @@
 export function createInterface(data){
     
     return (`---
-title: `+data.name+`
-description: Example interface!
+title: ${data.name}
+description: "${helpers.parseJSDoc(data.comment,"meta")}"
 keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
 sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
 ---
@@ -19,7 +20,7 @@ import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,Ap
 import Tabs from "@theme/Tabs"
 import TabItem from "@theme/TabItem"
 
-# `+data.name+` <M color="gray">interface</M>
+# ${data.name} <M color="gray">interface</M>
 
 :::danger deprecated
 This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
@@ -42,7 +43,7 @@ This is an example tip for this interface. Explain something here which could he
 :::
 
 ## Overview
-Interface description
+${helpers.parseJSDoc(data.comment,"markdown")}
 
 <FlexHorizontal>
 <div style={{width:"30%"}}>

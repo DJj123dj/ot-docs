@@ -1,10 +1,10 @@
 ///<reference path="structure.d.ts"/>
-const fs = require("fs")
-const nodepath = require("path")
-const { createInterface } = require("./generators/interface")
-const { createClass } = require("./generators/class")
-const { createType } = require("./generators/type")
-const { createEnum } = require("./generators/enum")
+import fs from "fs"
+import nodepath from "path"
+import { createInterface } from "./generators/interface.js"
+import { createClass } from "./generators/class.js"
+import { createType } from "./generators/type.js"
+import { createEnum } from "./generators/enum.js"
 
 //BUILD MARKDOWN
 /**@type {ODValidDeclarationStructure[]} */

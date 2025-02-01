@@ -1,4 +1,5 @@
 ///<reference path="../structure.d.ts"/>
+import * as helpers from "./helpers.js"
 
 /**
  * @param {ODClassStructure} data 
@@ -7,8 +8,8 @@
 export function createClass(data){
     
     return (`---
-title: `+data.name+`
-description: Example class!
+title: ${data.name}
+description: "${helpers.parseJSDoc(data.comment,"meta")}"
 keywords: [open-ticket, open ticket, api reference, discord ticket bot, class]
 sidebar_class_name: otdocs-badge-page otdocs-meta-purple-class
 ---
@@ -19,10 +20,10 @@ import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,Ap
 import Tabs from "@theme/Tabs"
 import TabItem from "@theme/TabItem"
 
-# `+data.name+` <M color="purple">class</M>
+# ${data.name} <M color="purple">class</M>
 
 ## Overview
-Class description
+${helpers.parseJSDoc(data.comment,"markdown")}
 
 <FlexHorizontal>
 <div style={{width:"30%"}}>

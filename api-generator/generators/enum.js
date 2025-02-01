@@ -1,4 +1,5 @@
 ///<reference path="../structure.d.ts"/>
+import * as helpers from "./helpers.js"
 
 /**
  * @param {ODEnumStructure} data 
@@ -7,8 +8,8 @@
 export function createEnum(data){
     
     return (`---
-title: `+data.name+`
-description: Example enum!
+title: ${data.name}
+description: "${helpers.parseJSDoc(data.comment,"meta")}"
 keywords: [open-ticket, open ticket, api reference, discord ticket bot, enum]
 sidebar_class_name: otdocs-badge-page otdocs-meta-yellow-enum
 ---
@@ -19,10 +20,10 @@ import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,Ap
 import Tabs from "@theme/Tabs"
 import TabItem from "@theme/TabItem"
 
-# `+data.name+` <M color="yellow">enum</M>
+# ${data.name} <M color="yellow">enum</M>
 
 ## Overview
-Enum description
+${helpers.parseJSDoc(data.comment,"markdown")}
 
 <FlexHorizontal>
 <div style={{width:"50%"}}>

@@ -50,6 +50,28 @@ ${text}
 :::`)
 }
 
+/**
+ * 
+ * @param {string|null} text 
+ * @param {"meta"|"markdown"} mode 
+ * @returns {string}
+ */
+export function parseJSDoc(text,mode){
+    if (!text) return "(no description)"
+    if (mode == "meta"){
+        //generate description for meta tags
+        const lines = text.replaceAll("\n\n","\n").split("\n")
+        if (lines[0].startsWith("## ")) lines.shift()    
+        return lines.slice(0,2).join(" ").replaceAll('"','\\"')
+
+    }else if (mode == "markdown"){
+        //generate description for markdown
+        const lines = text.split("\n")
+        if (lines[0].startsWith("## ")) lines.shift()    
+        return lines.join("\n")
+    }
+}
+
 /**==== TODO ====
  * - parse JSDoc description (when starting with ## SomeClass `class`)
  * - create...() for all types of properties, enumerables, constructors, methods & more!

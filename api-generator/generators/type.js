@@ -1,4 +1,5 @@
 ///<reference path="../structure.d.ts"/>
+import * as helpers from "./helpers.js"
 
 /**
  * @param {ODTypeStructure} data 
@@ -7,8 +8,8 @@
 export function createType(data){
     
     return (`---
-title: `+data.name+`
-description: Example type!
+title: ${data.name}
+description: "${helpers.parseJSDoc(data.comment,"meta")}"
 keywords: [open-ticket, open ticket, api reference, discord ticket bot, type]
 sidebar_class_name: otdocs-badge-page otdocs-meta-brown-type
 ---
@@ -19,10 +20,10 @@ import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,Ap
 import Tabs from "@theme/Tabs"
 import TabItem from "@theme/TabItem"
 
-# `+data.name+` <M color="brown">type</M>
+# ${data.name} <M color="brown">type</M>
 
 ## Overview
-Type description
+${helpers.parseJSDoc(data.comment,"markdown")}
 
 <FlexHorizontal>
 <div style={{width:"50%"}}>

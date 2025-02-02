@@ -6,7 +6,13 @@ import * as helpers from "./helpers.js"
  * @returns {string}
  */
 export function createClass(data){
-    
+    const properties = data.children.filter((child) => child.type == "property")
+    const methods = data.children.filter((child) => child.type == "method")
+    const constructor = data.children.find((child) => child.type == "constructor") ?? null
+    const methodsAndConstructor = [...methods]
+    if (constructor) methodsAndConstructor.unshift(constructor)
+
+
     return (`---
 title: ${data.name}
 description: "${helpers.parseJSDoc(data.comment,"meta")}"
@@ -29,16 +35,13 @@ ${helpers.parseJSDoc(data.comment,"markdown")}
 <div style={{width:"30%"}}>
     #### Properties \\{#overview-properties}
     <ul>
-        <li>**[\`prop1\`](#prop-prop1)**</li>
-        <li>**[\`prop2\`](#prop-prop2)**</li>
-        <li>**[\`prop3\`](#prop-prop3)**</li>
+        ${properties.map((prop) => helpers.createTableOfContentsItem(prop.name,"prop")).join("\n        ")}
     </ul>
 </div>
 <div style={{width:"30%"}}>
     #### Methods \\{#overview-methods}
     <ul>
-        <li>**[\`constructor()\`](#method-constructor)**</li>
-        <li>**[\`test()\`](#method-test)**</li>
+        ${methodsAndConstructor.map((method) => helpers.createTableOfContentsItem(method.name,"method")).join("\n        ")}
     </ul>
 </div>
 <div style={{width:"30%"}}>
@@ -52,17 +55,9 @@ ${helpers.parseJSDoc(data.comment,"markdown")}
 </FlexHorizontal>
 
 ## Properties
-### \`prop1\` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODId" label="api.ODId"/></ApiBlock> \\{#prop-prop1}
-Example property 1
-
-### <C color="blue">static</C> \`prop2\` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \\{#prop-prop2}
-Example property 2
-
-### <C color="red">inherited</C> \`prop3\` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \\{#prop-prop3}
-Example property 3
-
+${properties.map((prop) => helpers.createPropertySection(prop)).join("\n")}
 ## Methods
-### \`constructor()\` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODExample" label="api.ODExample"/></ApiBlock> \\{#method-constructor}
+#### \`constructor()\` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODExample" label="api.ODExample"/></ApiBlock> \\{#method-constructor}
 Example function 1.
 
 #### Parameters
@@ -70,7 +65,7 @@ Example function 1.
 - **\`param2\`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter 2.
 - **\`param3?\`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/>|<ApiUrl url="js:undefined" label="undefined"/></ApiBlock> - Parameter 3.
 
-### <C color="orange">inherited static</C> \`test()\` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODExample" label="api.ODExample"/></ApiBlock> \\{#method-test}
+#### <C color="orange">inherited static</C> \`test()\` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODExample" label="api.ODExample"/></ApiBlock> \\{#method-test}
 Example function 2.
 
 #### Parameters

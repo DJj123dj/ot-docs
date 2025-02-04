@@ -81,6 +81,26 @@ const config = {
             theme: {
                 customCss: require.resolve('./src/css/custom.css'),
             },
+            pages:{
+                admonitions: {
+                    keywords: [
+                        'info',
+                        'success',
+                        'danger',
+                        'note',
+                        'tip',
+                        'warning',
+                        'important',
+                        'caution',
+                        'security',
+                        'experimental',
+                        'deprecated',
+                        'discord',
+                        'security',
+                        'availability'
+                    ],
+                },
+            }
         }),
         ],
     ],

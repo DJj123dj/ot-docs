@@ -32,7 +32,25 @@ const config = {
             docs: {
                 sidebarPath: require.resolve('./sidebars.js'),
                 editUrl:'https://github.com/DJj123dj/ot-docs/blob/main',
-                includeCurrentVersion:true
+                includeCurrentVersion:true,
+                admonitions: {
+                    keywords: [
+                        'info',
+                        'success',
+                        'danger',
+                        'note',
+                        'tip',
+                        'warning',
+                        'important',
+                        'caution',
+                        'security',
+                        'experimental',
+                        'deprecated',
+                        'discord',
+                        'security',
+                        'availability'
+                    ],
+                },
             },
             blog: {
                 showReadingTime: true,
@@ -41,6 +59,24 @@ const config = {
                 blogDescription:"Here, you will find news & updates from Open Ticket!",
                 blogSidebarTitle:"All posts",
                 blogSidebarCount:"ALL",
+                admonitions: {
+                    keywords: [
+                        'info',
+                        'success',
+                        'danger',
+                        'note',
+                        'tip',
+                        'warning',
+                        'important',
+                        'caution',
+                        'security',
+                        'experimental',
+                        'deprecated',
+                        'discord',
+                        'security',
+                        'availability'
+                    ],
+                },
             },
             theme: {
                 customCss: require.resolve('./src/css/custom.css'),

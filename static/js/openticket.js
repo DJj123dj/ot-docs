@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded",() => {
-    //parse twemoji and set interval for pushstate page loads
     setInterval(() => {
+        //parse twemoji and set interval for pushstate page loads
         twemoji.parse(document.body,{
             folder: 'svg',
             ext: '.svg',
             base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/'
         })
 
+        //handle sidebar width in reference
         const expandPaths = [
             "/docs/category/api-events",
             "/docs/category/api-classes",
@@ -22,16 +23,18 @@ document.addEventListener("DOMContentLoaded",() => {
             "/docs/reference/enums/",
             "/docs/reference/utilities/"
         ]
-
         if (expandPaths.some((path) => document.location.pathname.startsWith(path))){
             document.documentElement.style.setProperty("--doc-sidebar-width","350px","important")
         }else{
             document.documentElement.style.setProperty("--doc-sidebar-width",null)
         }
-    },100)
 
-    //handle sidebar width in reference
-    
+        //change color of detail & summary elements
+        document.querySelectorAll("details").forEach((el) => {
+            el.classList.remove("alert--info")
+            el.classList.add("alert--neutral")
+        })
+    },100)
 })
 
 /** SIDEBAR BADGES:

@@ -465,6 +465,67 @@
   --ifm-color-primary-lightest: #ffd043;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: #40404088 !important;
+  --color-openticket-50: #FEF8E6;
+  --color-openticket-100: #FEF1CC;
+  --color-openticket-150: #FDEAB3;
+  --color-openticket-200: #FCE399;
+  --color-openticket-250: #FCDD80;
+  --color-openticket-300: #FBD666;
+  --color-openticket-350: #FACF4D;
+  --color-openticket-400: #F9C833;
+  --color-openticket-450: #F9C11A;
+  --color-openticket-500: #F8BA00;
+  --color-openticket-550: #DFA700;
+  --color-openticket-600: #C69500;
+  --color-openticket-650: #AE8200;
+  --color-openticket-700: #957000;
+  --color-openticket-750: #7C5D00;
+  --color-openticket-800: #634A00;
+  --color-openticket-850: #4A3800;
+  --color-openticket-900: #322500;
+  --color-openticket-950: #191300;
+}
+
+.alert--neutral {
+  --ifm-alert-background-color: #212121;
+  --ifm-alert-background-color-highlight: #404040;
+  --ifm-alert-foreground-color: #fff;
+  --ifm-alert-border-color: #737373;
+}
+
+.alert--experimental {
+  --ifm-alert-background-color: #0b5244;
+  --ifm-alert-background-color-highlight: #147864;
+  --ifm-alert-foreground-color: #fff;
+  --ifm-alert-border-color: #13d4ad;
+}
+
+.alert--deprecated {
+  --ifm-alert-background-color: #2c420b;
+  --ifm-alert-background-color-highlight: #415e14;
+  --ifm-alert-foreground-color: #fff;
+  --ifm-alert-border-color: #7bc712;
+}
+
+.alert--discord {
+  --ifm-alert-background-color: #212552;
+  --ifm-alert-background-color-highlight: #333869;
+  --ifm-alert-foreground-color: #fff;
+  --ifm-alert-border-color: #5865F2;
+}
+
+.alert--security {
+  --ifm-alert-background-color: #522a0d;
+  --ifm-alert-background-color-highlight: #6b3914;
+  --ifm-alert-foreground-color: #fff;
+  --ifm-alert-border-color: #e3650b;
+}
+
+.alert--availability {
+  --ifm-alert-background-color: #3b1f59;
+  --ifm-alert-background-color-highlight: #482d66;
+  --ifm-alert-foreground-color: #fff;
+  --ifm-alert-border-color: #853ad6;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */

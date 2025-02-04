@@ -1,6 +1,6 @@
 type ODValidDeclarationType = "class"|"interface"|"type"|"variable"|"enum"|"other"
 type ODValidMemberType = "constructor"|"property"|"method"|"enumerable"|"other"
-type ODValidElementType = "unknown"|"primitive"|"array"|"union"|"intersection"|"reference"|"internal"|"external"|"typeParam"|"function"|"literal"|"keyof"|"readonly"|"unique"|"conditional"|"index"|"mapped"|"optional"|"predicate"|"query"|"rest"|"tuple"|"template"
+type ODValidElementType = "unknown"|"primitive"|"array"|"union"|"intersection"|"reference"|"internal"|"external"|"typeParam"|"function"|"object"|"literal"|"keyof"|"readonly"|"unique"|"conditional"|"index"|"mapped"|"optional"|"predicate"|"query"|"rest"|"tuple"|"template"
 
 type ODValidType = ODValidDeclarationType|ODValidMemberType|ODValidElementType
 
@@ -19,7 +19,12 @@ interface ODMemberStructure<Details extends ODValidElementStructure|null> extend
     name:string,
     comment:string|null,
     source:string|null,
-    details:Details
+    details:Details,
+    inherited:boolean,
+    static:boolean,
+    protected:boolean,
+    optional:boolean,
+    readonly:boolean
 }
 
 //DECLARATION STRUCTURES
@@ -74,6 +79,9 @@ interface ODFunctionStructure extends ODStructure<"function"> {
     comment:string|null,
     parameters:{name:string,details:ODValidElementStructure}[],
     returns:ODValidElementStructure
+}
+interface ODObjectStructure extends ODStructure<"object"> {
+    children:(ODPropertyStructure|ODMethodStructure|ODOtherMemberStructure)[]
 }
 interface ODLiteralStructure extends ODStructure<"literal"> {
     name:string
@@ -150,6 +158,7 @@ type ODValidElementStructure = (
     ODExternalStructure|
     ODTypeParamStructure|
     ODFunctionStructure|
+    ODObjectStructure|
     ODLiteralStructure|
     ODKeyOfStructure|
     ODReadonlyStructure|

@@ -89,22 +89,44 @@ export function createTableOfContentsItem(name,prefix){
 /**@param {ODPropertyStructure} prop  */
 export function createPropertySection(prop){
     const markdownData = getMarkdownDetailsFromType(prop.details)
-    return (`#### \`${prop.name}\` <M color="${markdownData.color}">${markdownData.type}</M> ${getMarkdownApiBlock(prop.details)} \\{#prop-${prop.name}}
+    const staticText = prop.static ? `<C color="${markdownData.color}">static</C> ` : ""
+    const optionalText = prop.optional ? `<C color="${markdownData.color}">optional</C> ` : ""
+    const readonlyText = prop.readonly ? `<C color="${markdownData.color}">readonly</C> ` : ""
+    const protectedText = prop.protected ? `<C color="${markdownData.color}">protected</C> ` : ""
+    const inheritedText = prop.inherited ? `<C color="${markdownData.color}">inherited</C> ` : ""
+    const prefixTexts = inheritedText+staticText+readonlyText+optionalText+protectedText
+
+    return (`#### ${prefixTexts}\`${prop.name}\` <M color="${markdownData.color}">${markdownData.type}</M> ${getMarkdownApiBlock(prop.details)} \\{#prop-${prop.name}}
 ${parseJSDoc(prop.comment,"markdown")}
 `)
 }
-/*
 
-### \`prop1\` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODId" label="api.ODId"/></ApiBlock> \\{#prop-prop1}
-Example property 1
+/**
+ * @param {string} name 
+ * @param {ODValidElementStructure} prop  */
+export function createMethodParamSection(name,prop){
+    const markdownData = getMarkdownDetailsFromType(prop)
+    return (`- **\`${name}\`:** <M color="${markdownData.color}">${markdownData.type}</M> ${getMarkdownApiBlock(prop)} - Parameter Description Lorem Ipsum.`)
+}
 
-### <C color="blue">static</C> \`prop2\` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \\{#prop-prop2}
-Example property 2
+/**@param {ODMethodStructure|ODConstructorStructure} prop  */
+export function createMethodSection(prop){
+    const staticText = prop.static ? `<C color="orange">static</C> ` : ""
+    const optionalText = prop.optional ? `<C color="orange">optional</C> ` : ""
+    const readonlyText = prop.readonly ? `<C color="orange">readonly</C> ` : ""
+    const protectedText = prop.protected ? `<C color="orange">protected</C> ` : ""
+    const inheritedText = prop.inherited ? `<C color="orange">inherited</C> ` : ""
+    const prefixTexts = inheritedText+staticText+readonlyText+optionalText+protectedText
 
-### <C color="red">inherited</C> \`prop3\` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \\{#prop-prop3}
-Example property 3
+    return (`#### ${prefixTexts}\`${prop.name}()\` <M color="orange">function</M> ${getMarkdownApiBlock(prop.details.returns)} \\{#method-${prop.name}}
+${parseJSDoc(prop.comment,"markdown")}
 
-*/
+${(prop.details.parameters.length > 0) ? `<details>
+<summary>**View Parameters (${prop.details.parameters.length})**</summary>
+${prop.details.parameters.map((p) => createMethodParamSection(p.name,p.details)).join("\n")}
+</details>` : ""}
+`)
+}
 
 /**
  * @param {"boolean"|"number"|"string"|"object"|"array"|"class"|"function"|"type"|"interface"|"enum"} type 
@@ -158,7 +180,7 @@ export function getMarkdownApiBlock(prop){
  * @param {ODValidElementStructure} prop 
  */
 export function encapsulateNonPrimitives(prop){
-    if (prop.type == "primitive" || prop.type == "internal" || prop.type == "literal" || prop.type == "reference") return getMarkdownApiUrl(prop)
+    if (prop.type == "primitive" || prop.type == "internal" || prop.type == "literal" || prop.type == "reference" || prop.type == "typeParam" || prop.type == "index" || prop.type == "external" || prop.type == "template" || prop.type == "object") return getMarkdownApiUrl(prop)
     else return "("+getMarkdownApiUrl(prop)+")"
 }
 
@@ -209,6 +231,10 @@ export function getMarkdownApiUrl(prop){
         const paramsString = prop.parameters.map((p) => p.name+":"+getMarkdownApiUrl(p.details)).join(", ")
         return `(${paramsString}) => `+getMarkdownApiUrl(prop.returns)
 
+    }else if (prop.type == "object"){
+        const paramsString = prop.children.map((p) => p.name+":"+(p.details ? getMarkdownApiUrl(p.details) : "unknown")).join(", ")
+        return `\\{${paramsString}\\}`
+
     }else if (prop.type == "index"){
         return encapsulateNonPrimitives(prop.object)+"\["+encapsulateNonPrimitives(prop.index)+"\]"
 
@@ -224,7 +250,40 @@ export function getMarkdownApiUrl(prop){
     }else if (prop.type == "typeParam"){
         return prop.name
 
-    }else return "(todo)"
+    }else if (prop.type == "keyof"){
+        return "keyof "+encapsulateNonPrimitives(prop.child)
+
+    }else if (prop.type == "readonly"){
+        return "readonly "+encapsulateNonPrimitives(prop.child)
+
+    }else if (prop.type == "unique"){
+        return "unique "+encapsulateNonPrimitives(prop.child)
+
+    }else if (prop.type == "rest"){
+        return "..."+encapsulateNonPrimitives(prop.child)
+
+    }else if (prop.type == "tuple"){
+        return "["+prop.children.map((ch) => encapsulateNonPrimitives(ch)).join(", ")+"]"
+
+    }else if (prop.type == "optional"){
+        return encapsulateNonPrimitives(prop.child)+"?"
+
+    }else if (prop.type == "conditional"){
+        return encapsulateNonPrimitives(prop.checker)+" extends "+encapsulateNonPrimitives(prop.extends)+" ? "+encapsulateNonPrimitives(prop.trueValue)+" : "+encapsulateNonPrimitives(prop.falseValue)
+
+    }else if (prop.type == "query"){
+        return "typeof "+encapsulateNonPrimitives(prop.target)
+
+    }else if (prop.type == "mapped"){
+        return "["+prop.parameterName+" in "+encapsulateNonPrimitives(prop.parameter)+"]: "+encapsulateNonPrimitives(prop.template)
+
+    }else if (prop.type == "predicate"){
+        return prop.name+" is "+encapsulateNonPrimitives(prop.target)
+
+    }else if (prop.type == "template"){
+        return '"'+prop.head+prop.tails.map((p) => "${"+encapsulateNonPrimitives(p.element)+"}"+p.text).join("")+'"'
+
+    }else return "(OTDOCS:unknown)"
     //TODO TYPE ARGUMENTS!!!
     //TODO TYPE ARGUMENTS!!!
     //TODO TYPE ARGUMENTS!!!

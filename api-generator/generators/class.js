@@ -55,22 +55,14 @@ ${helpers.parseJSDoc(data.comment,"markdown")}
 </FlexHorizontal>
 
 ## Properties
-${properties.map((prop) => helpers.createPropertySection(prop)).join("\n")}
+${(properties.length > 0) ? "<Divider></Divider>" : ""}
+${properties.map((prop) => helpers.createPropertySection(prop)).join("\n<Divider></Divider>\n")}
+${(properties.length > 0) ? "<Divider></Divider>" : ""}
+
 ## Methods
-#### \`constructor()\` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODExample" label="api.ODExample"/></ApiBlock> \\{#method-constructor}
-Example function 1.
-
-#### Parameters
-- **\`param1\`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODValidId" label="api.ODValidId"/></ApiBlock> - Parameter 1.
-- **\`param2\`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter 2.
-- **\`param3?\`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/>|<ApiUrl url="js:undefined" label="undefined"/></ApiBlock> - Parameter 3.
-
-#### <C color="orange">inherited static</C> \`test()\` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODExample" label="api.ODExample"/></ApiBlock> \\{#method-test}
-Example function 2.
-
-#### Parameters
-- **\`param1\`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODValidId" label="api.ODValidId"/></ApiBlock> - Parameter 1.
-- **\`param2\`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter 2.
+${(methodsAndConstructor.length > 0) ? "<Divider></Divider>" : ""}
+${methodsAndConstructor.map((prop) => helpers.createMethodSection(prop)).join("\n<Divider></Divider>\n")}
+${(methodsAndConstructor.length > 0) ? "<Divider></Divider>" : ""}
 
 ## Defaults
 :::info defaults

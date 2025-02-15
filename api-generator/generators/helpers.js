@@ -83,7 +83,7 @@ export function parseJSDoc(text,mode){
  * @returns 
  */
 export function createTableOfContentsItem(name,prefix){
-    return (`<li>**[\`${name}\`](#${prefix}-${name})**</li>`)
+    return (`<li>**[\`${name}\`](#${prefix}-${name.replaceAll(":","-")})**</li>`)
 }
 
 /**@param {ODPropertyStructure} prop  */
@@ -96,8 +96,10 @@ export function createPropertySection(prop){
     const inheritedText = prop.inherited ? `<C color="${markdownData.color}">inherited</C> ` : ""
     const prefixTexts = inheritedText+staticText+readonlyText+optionalText+protectedText
 
-    return (`#### ${prefixTexts}\`${prop.name}\` <M color="${markdownData.color}">${markdownData.type}</M> ${getMarkdownApiBlock(prop.details)} \\{#prop-${prop.name}}
+    return (`#### ${prefixTexts}\`${prop.name}\` <M color="${markdownData.color}">${markdownData.type}</M> ${getMarkdownApiBlock(prop.details)} \\{#prop-${prop.name.replaceAll(":","-")}}
 ${parseJSDoc(prop.comment,"markdown")}
+
+> [**View Source**](${getMarkdownSourceUrl(prop.source)})
 `)
 }
 
@@ -118,14 +120,21 @@ export function createMethodSection(prop){
     const inheritedText = prop.inherited ? `<C color="orange">inherited</C> ` : ""
     const prefixTexts = inheritedText+staticText+readonlyText+optionalText+protectedText
 
-    return (`#### ${prefixTexts}\`${prop.name}()\` <M color="orange">function</M> ${getMarkdownApiBlock(prop.details.returns)} \\{#method-${prop.name}}
+    return (`#### ${prefixTexts}\`${prop.name}()\` <M color="orange">function</M> ${getMarkdownApiBlock(prop.details.returns)} \\{#method-${prop.name.replaceAll(":","-")}}
 ${parseJSDoc(prop.comment,"markdown")}
 
 ${(prop.details.parameters.length > 0) ? `<details>
 <summary>**View Parameters (${prop.details.parameters.length})**</summary>
 ${prop.details.parameters.map((p) => createMethodParamSection(p.name,p.details)).join("\n")}
 </details>` : ""}
+
+> [**View Source**](${getMarkdownSourceUrl(prop.source)})
 `)
+}
+
+/**@param {ODEnumerableStructure} prop  */
+export function createEnumerableSection(prop){
+    return `- **[\`${prop.name}\`](${getMarkdownSourceUrl(prop.source)}):** ${parseJSDoc(prop.comment,"markdown")}`
 }
 
 /**
@@ -288,6 +297,14 @@ export function getMarkdownApiUrl(prop){
     //TODO TYPE ARGUMENTS!!!
     //TODO TYPE ARGUMENTS!!!
     //TODO TYPE ARGUMENTS!!!
+}
+
+/**@param {string|null} source  */
+export function getMarkdownSourceUrl(source){
+    if (!source) return "https://otgithub.dj-dj.be"
+    const splittedSource = source.split(":")
+    const newSource = splittedSource[0]+"#L"+splittedSource[1]
+    return `https://otgithub.dj-dj.be/tree/main/${newSource}`
 }
 
 /**==== TODO ====

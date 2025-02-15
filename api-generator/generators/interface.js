@@ -6,7 +6,9 @@ import * as helpers from "./helpers.js"
  * @returns {string}
  */
 export function createInterface(data){
-    
+    const properties = data.children
+
+
     return (`---
 title: ${data.name}
 description: "${helpers.parseJSDoc(data.comment,"meta")}"
@@ -22,6 +24,11 @@ import TabItem from "@theme/TabItem"
 
 # ${data.name} <M color="gray">interface</M>
 
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
 :::danger deprecated
 This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
 
@@ -41,36 +48,35 @@ This is an example warning for this interface. Explain something here which shou
 :::tip
 This is an example tip for this interface. Explain something here which could help when using this interface!
 :::
+*/}
 
 ## Overview
 ${helpers.parseJSDoc(data.comment,"markdown")}
 
+> [**View Source**](${helpers.getMarkdownSourceUrl(data.source)})
+
 <FlexHorizontal>
-<div style={{width:"30%"}}>
+<div style={{width:"50%"}}>
     #### Properties \\{#overview-properties}
     <ul>
-        <li>**[\`prop1\`](#prop-prop1)**</li>
-        <li>**[\`prop2\`](#prop-prop2)**</li>
-        <li>**[\`prop3\`](#prop-prop3)**</li>
+        ${properties.map((prop) => helpers.createTableOfContentsItem(prop.name,"prop")).join("\n        ")}
     </ul>
 </div>
-<div style={{width:"30%"}}>
+<div style={{width:"50%"}}>
     #### References \\{#overview-references}
     <ul>
+        {/*
+        //TODO
         <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
         <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
     </ul>
 </div>
 </FlexHorizontal>
 
 ## Properties
-### \`prop1\` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODId" label="api.ODId"/></ApiBlock> \\{#prop-prop1}
-Example property 1
-
-### \`prop2\` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \\{#prop-prop2}
-Example property 2
-
-### \`prop3\` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \\{#prop-prop3}
-Example property 3
+${(properties.length > 0) ? "<Divider></Divider>" : ""}
+${properties.map((prop) => helpers.createPropertySection(prop)).join("\n<Divider></Divider>\n")}
+${(properties.length > 0) ? "<Divider></Divider>" : ""}
 `)
 }

@@ -28,8 +28,36 @@ import TabItem from "@theme/TabItem"
 
 # ${data.name} <M color="purple">class</M>
 
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use \`SomeOtherInterface\` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket \`v4.0.0\` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
 ## Overview
 ${helpers.parseJSDoc(data.comment,"markdown")}
+
+> [**View Source**](${helpers.getMarkdownSourceUrl(data.source)})
 
 <FlexHorizontal>
 <div style={{width:"30%"}}>
@@ -65,6 +93,10 @@ ${methodsAndConstructor.map((prop) => helpers.createMethodSection(prop)).join("\
 ${(methodsAndConstructor.length > 0) ? "<Divider></Divider>" : ""}
 
 ## Defaults
+:::warning under construction
+We're still working on this part of the documentation!
+:::
+{/*
 :::info defaults
 Defaults are manager IDs which are autocompleted by typescript. These are available for both built-in & plugin classes.
 - \`ODExample\` has defaults available for the \`ODExampleManager\` (\`ODExampleManagerIds_Default\`).
@@ -85,10 +117,13 @@ These are defaults defined by plugins in the official Open Ticket [**plugin repo
 - <C color="blue">**(OT Example Plugin)**</C> **\`"example-plugin:config"\`:** The \`config.json\` config file.
 - <C color="blue">**(OT Example Plugin)**</C> **\`"example-plugin:config"\`:** The \`config.json\` config file.
 - <C color="blue">**(OT Example Plugin)**</C> **\`"example-plugin:config"\`:** The \`config.json\` config file.
-
+*/}
 
 ## Examples
-
+:::warning under construction
+We're still working on this part of the documentation!
+:::
+{/*
 <Tabs>
     <TabItem value="First Example">
     > Test example 1
@@ -107,5 +142,6 @@ These are defaults defined by plugins in the official Open Ticket [**plugin repo
     > \`\`\`
     </TabItem>
 </Tabs>
+*/}
 `)
 }

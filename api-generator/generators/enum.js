@@ -6,7 +6,7 @@ import * as helpers from "./helpers.js"
  * @returns {string}
  */
 export function createEnum(data){
-    
+    const properties = data.children.filter((p) => p.type == "enumerable")
     return (`---
 title: ${data.name}
 description: "${helpers.parseJSDoc(data.comment,"meta")}"
@@ -25,21 +25,23 @@ import TabItem from "@theme/TabItem"
 ## Overview
 ${helpers.parseJSDoc(data.comment,"markdown")}
 
+> [**View Source**](${helpers.getMarkdownSourceUrl(data.source)})
+
 <FlexHorizontal>
 <div style={{width:"50%"}}>
     #### References \\{#overview-references}
     <ul>
+        {/*
+        //TODO
         <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
         <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
         <li>**<code><ApiUrl url="interface:ODExampleInterface" label="api.ODExampleInterface"/></code> <M color="gray">interface</M>**</li>
+        */}
     </ul>
 </div>
 </FlexHorizontal>
 
 ## Members
-- **\`ExampleMember1\`:** This is example member 1.
-- **\`ExampleMember2\`:** This is example member 2.
-- **\`ExampleMember3\`:** This is example member 3.
-- **\`ExampleMember4\`:** This is example member 4.
+${properties.map((prop) => helpers.createEnumerableSection(prop)).join("\n")}
 `)
 }

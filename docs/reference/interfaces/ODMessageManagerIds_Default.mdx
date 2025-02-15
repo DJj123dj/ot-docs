@@ -1,0 +1,550 @@
+---
+title: ODMessageManagerIds_Default
+description: "This interface is a list of ids available in the `ODMessageManager_Default` class. It's used to generate typescript declarations for this class."
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODMessageManagerIds_Default <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This interface is a list of ids available in the `ODMessageManager_Default` class.
+It's used to generate typescript declarations for this class.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L346)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`opendiscord:add-message`](#prop-opendiscord-add-message)**</li>
+        <li>**[`opendiscord:autoclose-disable`](#prop-opendiscord-autoclose-disable)**</li>
+        <li>**[`opendiscord:autoclose-enable`](#prop-opendiscord-autoclose-enable)**</li>
+        <li>**[`opendiscord:autoclose-message`](#prop-opendiscord-autoclose-message)**</li>
+        <li>**[`opendiscord:autodelete-disable`](#prop-opendiscord-autodelete-disable)**</li>
+        <li>**[`opendiscord:autodelete-enable`](#prop-opendiscord-autodelete-enable)**</li>
+        <li>**[`opendiscord:autodelete-message`](#prop-opendiscord-autodelete-message)**</li>
+        <li>**[`opendiscord:blacklist-add`](#prop-opendiscord-blacklist-add)**</li>
+        <li>**[`opendiscord:blacklist-dm`](#prop-opendiscord-blacklist-dm)**</li>
+        <li>**[`opendiscord:blacklist-get`](#prop-opendiscord-blacklist-get)**</li>
+        <li>**[`opendiscord:blacklist-logs`](#prop-opendiscord-blacklist-logs)**</li>
+        <li>**[`opendiscord:blacklist-remove`](#prop-opendiscord-blacklist-remove)**</li>
+        <li>**[`opendiscord:blacklist-view`](#prop-opendiscord-blacklist-view)**</li>
+        <li>**[`opendiscord:claim-message`](#prop-opendiscord-claim-message)**</li>
+        <li>**[`opendiscord:clear-logs`](#prop-opendiscord-clear-logs)**</li>
+        <li>**[`opendiscord:clear-message`](#prop-opendiscord-clear-message)**</li>
+        <li>**[`opendiscord:clear-verify-message`](#prop-opendiscord-clear-verify-message)**</li>
+        <li>**[`opendiscord:close-message`](#prop-opendiscord-close-message)**</li>
+        <li>**[`opendiscord:delete-message`](#prop-opendiscord-delete-message)**</li>
+        <li>**[`opendiscord:error`](#prop-opendiscord-error)**</li>
+        <li>**[`opendiscord:error-channel-rename`](#prop-opendiscord-error-channel-rename)**</li>
+        <li>**[`opendiscord:error-no-permissions`](#prop-opendiscord-error-no-permissions)**</li>
+        <li>**[`opendiscord:error-no-permissions-blacklisted`](#prop-opendiscord-error-no-permissions-blacklisted)**</li>
+        <li>**[`opendiscord:error-no-permissions-cooldown`](#prop-opendiscord-error-no-permissions-cooldown)**</li>
+        <li>**[`opendiscord:error-no-permissions-limits`](#prop-opendiscord-error-no-permissions-limits)**</li>
+        <li>**[`opendiscord:error-not-in-guild`](#prop-opendiscord-error-not-in-guild)**</li>
+        <li>**[`opendiscord:error-option-invalid`](#prop-opendiscord-error-option-invalid)**</li>
+        <li>**[`opendiscord:error-option-missing`](#prop-opendiscord-error-option-missing)**</li>
+        <li>**[`opendiscord:error-option-unknown`](#prop-opendiscord-error-option-unknown)**</li>
+        <li>**[`opendiscord:error-panel-unknown`](#prop-opendiscord-error-panel-unknown)**</li>
+        <li>**[`opendiscord:error-responder-timeout`](#prop-opendiscord-error-responder-timeout)**</li>
+        <li>**[`opendiscord:error-ticket-busy`](#prop-opendiscord-error-ticket-busy)**</li>
+        <li>**[`opendiscord:error-ticket-deprecated`](#prop-opendiscord-error-ticket-deprecated)**</li>
+        <li>**[`opendiscord:error-ticket-unknown`](#prop-opendiscord-error-ticket-unknown)**</li>
+        <li>**[`opendiscord:error-unknown-command`](#prop-opendiscord-error-unknown-command)**</li>
+        <li>**[`opendiscord:help-menu`](#prop-opendiscord-help-menu)**</li>
+        <li>**[`opendiscord:move-message`](#prop-opendiscord-move-message)**</li>
+        <li>**[`opendiscord:panel`](#prop-opendiscord-panel)**</li>
+        <li>**[`opendiscord:panel-ready`](#prop-opendiscord-panel-ready)**</li>
+        <li>**[`opendiscord:pin-message`](#prop-opendiscord-pin-message)**</li>
+        <li>**[`opendiscord:reaction-role`](#prop-opendiscord-reaction-role)**</li>
+        <li>**[`opendiscord:remove-message`](#prop-opendiscord-remove-message)**</li>
+        <li>**[`opendiscord:rename-message`](#prop-opendiscord-rename-message)**</li>
+        <li>**[`opendiscord:reopen-message`](#prop-opendiscord-reopen-message)**</li>
+        <li>**[`opendiscord:stats-global`](#prop-opendiscord-stats-global)**</li>
+        <li>**[`opendiscord:stats-reset`](#prop-opendiscord-stats-reset)**</li>
+        <li>**[`opendiscord:stats-ticket`](#prop-opendiscord-stats-ticket)**</li>
+        <li>**[`opendiscord:stats-ticket-unknown`](#prop-opendiscord-stats-ticket-unknown)**</li>
+        <li>**[`opendiscord:stats-user`](#prop-opendiscord-stats-user)**</li>
+        <li>**[`opendiscord:ticket-action-dm`](#prop-opendiscord-ticket-action-dm)**</li>
+        <li>**[`opendiscord:ticket-action-logs`](#prop-opendiscord-ticket-action-logs)**</li>
+        <li>**[`opendiscord:ticket-created`](#prop-opendiscord-ticket-created)**</li>
+        <li>**[`opendiscord:ticket-created-dm`](#prop-opendiscord-ticket-created-dm)**</li>
+        <li>**[`opendiscord:ticket-created-logs`](#prop-opendiscord-ticket-created-logs)**</li>
+        <li>**[`opendiscord:ticket-message`](#prop-opendiscord-ticket-message)**</li>
+        <li>**[`opendiscord:transcript-error`](#prop-opendiscord-transcript-error)**</li>
+        <li>**[`opendiscord:transcript-html-progress`](#prop-opendiscord-transcript-html-progress)**</li>
+        <li>**[`opendiscord:transcript-html-ready`](#prop-opendiscord-transcript-html-ready)**</li>
+        <li>**[`opendiscord:transcript-text-ready`](#prop-opendiscord-transcript-text-ready)**</li>
+        <li>**[`opendiscord:unclaim-message`](#prop-opendiscord-unclaim-message)**</li>
+        <li>**[`opendiscord:unpin-message`](#prop-opendiscord-unpin-message)**</li>
+        <li>**[`opendiscord:verifybar-autoclose-message`](#prop-opendiscord-verifybar-autoclose-message)**</li>
+        <li>**[`opendiscord:verifybar-claim-message`](#prop-opendiscord-verifybar-claim-message)**</li>
+        <li>**[`opendiscord:verifybar-close-message`](#prop-opendiscord-verifybar-close-message)**</li>
+        <li>**[`opendiscord:verifybar-pin-message`](#prop-opendiscord-verifybar-pin-message)**</li>
+        <li>**[`opendiscord:verifybar-reopen-message`](#prop-opendiscord-verifybar-reopen-message)**</li>
+        <li>**[`opendiscord:verifybar-ticket-message`](#prop-opendiscord-verifybar-ticket-message)**</li>
+        <li>**[`opendiscord:verifybar-unclaim-message`](#prop-opendiscord-verifybar-unclaim-message)**</li>
+        <li>**[`opendiscord:verifybar-unpin-message`](#prop-opendiscord-verifybar-unpin-message)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### `opendiscord:add-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, data:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:add-message"\}</ApiBlock> \{#prop-opendiscord-add-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L397)
+
+<Divider></Divider>
+#### `opendiscord:autoclose-disable` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/GuildTextBasedChannel:TypeAlias" label="discord.GuildTextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:autoclose-disable"\}</ApiBlock> \{#prop-opendiscord-autoclose-disable}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L423)
+
+<Divider></Divider>
+#### `opendiscord:autoclose-enable` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/GuildTextBasedChannel:TypeAlias" label="discord.GuildTextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, time:<ApiUrl url="js:number" label="number"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:autoclose-enable"\}</ApiBlock> \{#prop-opendiscord-autoclose-enable}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L421)
+
+<Divider></Divider>
+#### `opendiscord:autoclose-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/GuildTextBasedChannel:TypeAlias" label="discord.GuildTextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"other"|"leave"|"timeout", workers:"opendiscord:autoclose-message"\}</ApiBlock> \{#prop-opendiscord-autoclose-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L419)
+
+<Divider></Divider>
+#### `opendiscord:autodelete-disable` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/GuildTextBasedChannel:TypeAlias" label="discord.GuildTextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:autodelete-disable"\}</ApiBlock> \{#prop-opendiscord-autodelete-disable}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L424)
+
+<Divider></Divider>
+#### `opendiscord:autodelete-enable` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/GuildTextBasedChannel:TypeAlias" label="discord.GuildTextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, time:<ApiUrl url="js:number" label="number"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:autodelete-enable"\}</ApiBlock> \{#prop-opendiscord-autodelete-enable}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L422)
+
+<Divider></Divider>
+#### `opendiscord:autodelete-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/GuildTextBasedChannel:TypeAlias" label="discord.GuildTextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"other"|"leave"|"timeout", workers:"opendiscord:autodelete-message"\}</ApiBlock> \{#prop-opendiscord-autodelete-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L420)
+
+<Divider></Divider>
+#### `opendiscord:blacklist-add` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, data:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:blacklist-add"\}</ApiBlock> \{#prop-opendiscord-blacklist-add}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L404)
+
+<Divider></Divider>
+#### `opendiscord:blacklist-dm` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, data:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, mode:"add"|"remove", reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:blacklist-dm"\}</ApiBlock> \{#prop-opendiscord-blacklist-dm}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L406)
+
+<Divider></Divider>
+#### `opendiscord:blacklist-get` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, data:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:blacklist-get"\}</ApiBlock> \{#prop-opendiscord-blacklist-get}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L403)
+
+<Divider></Divider>
+#### `opendiscord:blacklist-logs` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, data:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, mode:"add"|"remove", reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:blacklist-logs"\}</ApiBlock> \{#prop-opendiscord-blacklist-logs}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L407)
+
+<Divider></Divider>
+#### `opendiscord:blacklist-remove` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, data:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:blacklist-remove"\}</ApiBlock> \{#prop-opendiscord-blacklist-remove}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L405)
+
+<Divider></Divider>
+#### `opendiscord:blacklist-view` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:blacklist-view"\}</ApiBlock> \{#prop-opendiscord-blacklist-view}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L402)
+
+<Divider></Divider>
+#### `opendiscord:claim-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash"|"ticket-message"|"unclaim-message", workers:"opendiscord:claim-message"\}</ApiBlock> \{#prop-opendiscord-claim-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L391)
+
+<Divider></Divider>
+#### `opendiscord:clear-logs` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/GuildTextBasedChannel:TypeAlias" label="discord.GuildTextBasedChannel"/>, filter:<ApiUrl url="type:ODTicketClearFilter" label="api.ODTicketClearFilter"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, list:<ApiUrl url="js:string" label="string"/>[], user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:clear-logs"\}</ApiBlock> \{#prop-opendiscord-clear-logs}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L417)
+
+<Divider></Divider>
+#### `opendiscord:clear-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/GuildTextBasedChannel:TypeAlias" label="discord.GuildTextBasedChannel"/>, filter:<ApiUrl url="type:ODTicketClearFilter" label="api.ODTicketClearFilter"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, list:<ApiUrl url="js:string" label="string"/>[], user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:clear-message"\}</ApiBlock> \{#prop-opendiscord-clear-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L416)
+
+<Divider></Divider>
+#### `opendiscord:clear-verify-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/GuildTextBasedChannel:TypeAlias" label="discord.GuildTextBasedChannel"/>, filter:<ApiUrl url="type:ODTicketClearFilter" label="api.ODTicketClearFilter"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, list:<ApiUrl url="js:string" label="string"/>[], user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:clear-verify-message"\}</ApiBlock> \{#prop-opendiscord-clear-verify-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L415)
+
+<Divider></Divider>
+#### `opendiscord:close-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash"|"ticket-message"|"reopen-message"|"autoclose", workers:"opendiscord:close-message"\}</ApiBlock> \{#prop-opendiscord-close-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L388)
+
+<Divider></Divider>
+#### `opendiscord:delete-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"clear"|"slash"|"ticket-message"|"reopen-message"|"close-message"|"autoclose-message"|"autodelete", workers:"opendiscord:delete-message"\}</ApiBlock> \{#prop-opendiscord-delete-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L390)
+
+<Divider></Divider>
+#### `opendiscord:error` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, error:<ApiUrl url="js:string" label="string"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, layout:"simple"|"advanced", user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"button"|"dropdown"|"modal"|"slash", workers:"opendiscord:error"\}</ApiBlock> \{#prop-opendiscord-error}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L356)
+
+<Divider></Divider>
+#### `opendiscord:error-channel-rename` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, newName:<ApiUrl url="js:string" label="string"/>, originalName:<ApiUrl url="js:string" label="string"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"button"|"dropdown"|"modal"|"slash"|"ticket-pin"|"ticket-unpin"|"ticket-rename"|"ticket-move", workers:"opendiscord:error-channel-rename"\}</ApiBlock> \{#prop-opendiscord-error-channel-rename}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L370)
+
+<Divider></Divider>
+#### `opendiscord:error-no-permissions` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, permissions:<ApiUrl url="type:ODPermissionEmbedType" label="api.ODPermissionEmbedType"/>[], user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"button"|"dropdown"|"modal"|"slash", workers:"opendiscord:error-no-permissions"\}</ApiBlock> \{#prop-opendiscord-error-no-permissions}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L360)
+
+<Divider></Divider>
+#### `opendiscord:error-no-permissions-blacklisted` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"button"|"dropdown"|"modal"|"slash", workers:"opendiscord:error-no-permissions-blacklisted"\}</ApiBlock> \{#prop-opendiscord-error-no-permissions-blacklisted}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L362)
+
+<Divider></Divider>
+#### `opendiscord:error-no-permissions-cooldown` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, until:<ApiUrl url="js:date" label="Date"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"button"|"dropdown"|"modal"|"slash", workers:"opendiscord:error-no-permissions-cooldown"\}</ApiBlock> \{#prop-opendiscord-error-no-permissions-cooldown}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L361)
+
+<Divider></Divider>
+#### `opendiscord:error-no-permissions-limits` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, limit:"option"|"global-user"|"global"|"option-user", user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"button"|"dropdown"|"modal"|"slash", workers:"opendiscord:error-no-permissions-limits"\}</ApiBlock> \{#prop-opendiscord-error-no-permissions-limits}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L363)
+
+<Divider></Divider>
+#### `opendiscord:error-not-in-guild` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"button"|"dropdown"|"modal"|"slash", workers:"opendiscord:error-not-in-guild"\}</ApiBlock> \{#prop-opendiscord-error-not-in-guild}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L369)
+
+<Divider></Divider>
+#### `opendiscord:error-option-invalid` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, error:<ApiUrl url="interface:ODTextCommandErrorInvalidOption" label="api.ODTextCommandErrorInvalidOption"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:error-option-invalid"\}</ApiBlock> \{#prop-opendiscord-error-option-invalid}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L358)
+
+<Divider></Divider>
+#### `opendiscord:error-option-missing` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, error:<ApiUrl url="interface:ODTextCommandErrorMissingOption" label="api.ODTextCommandErrorMissingOption"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:error-option-missing"\}</ApiBlock> \{#prop-opendiscord-error-option-missing}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L357)
+
+<Divider></Divider>
+#### `opendiscord:error-option-unknown` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"button"|"dropdown"|"modal"|"slash", workers:"opendiscord:error-option-unknown"\}</ApiBlock> \{#prop-opendiscord-error-option-unknown}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L367)
+
+<Divider></Divider>
+#### `opendiscord:error-panel-unknown` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"button"|"dropdown"|"modal"|"slash", workers:"opendiscord:error-panel-unknown"\}</ApiBlock> \{#prop-opendiscord-error-panel-unknown}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L368)
+
+<Divider></Divider>
+#### `opendiscord:error-responder-timeout` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"button"|"dropdown"|"modal"|"slash", workers:"opendiscord:error-responder-timeout"\}</ApiBlock> \{#prop-opendiscord-error-responder-timeout}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L364)
+
+<Divider></Divider>
+#### `opendiscord:error-ticket-busy` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"button"|"dropdown"|"modal"|"slash", workers:"opendiscord:error-ticket-busy"\}</ApiBlock> \{#prop-opendiscord-error-ticket-busy}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L371)
+
+<Divider></Divider>
+#### `opendiscord:error-ticket-deprecated` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"button"|"dropdown"|"modal"|"slash", workers:"opendiscord:error-ticket-deprecated"\}</ApiBlock> \{#prop-opendiscord-error-ticket-deprecated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L366)
+
+<Divider></Divider>
+#### `opendiscord:error-ticket-unknown` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"button"|"dropdown"|"modal"|"slash", workers:"opendiscord:error-ticket-unknown"\}</ApiBlock> \{#prop-opendiscord-error-ticket-unknown}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L365)
+
+<Divider></Divider>
+#### `opendiscord:error-unknown-command` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, error:<ApiUrl url="interface:ODTextCommandErrorUnknownCommand" label="api.ODTextCommandErrorUnknownCommand"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:error-unknown-command"\}</ApiBlock> \{#prop-opendiscord-error-unknown-command}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L359)
+
+<Divider></Divider>
+#### `opendiscord:help-menu` <M color="brown">type</M> <ApiBlock>\{params:\{mode:"text"|"slash", page:<ApiUrl url="js:number" label="number"/>\}, source:"text"|"other"|"button"|"slash", workers:"opendiscord:help-menu"\}</ApiBlock> \{#prop-opendiscord-help-menu}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L373)
+
+<Divider></Divider>
+#### `opendiscord:move-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, data:<ApiUrl url="class:ODTicketOption" label="api.ODTicketOption"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:move-message"\}</ApiBlock> \{#prop-opendiscord-move-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L396)
+
+<Divider></Divider>
+#### `opendiscord:panel` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, panel:<ApiUrl url="class:ODPanel" label="api.ODPanel"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash"|"auto-update", workers:"opendiscord:panel-layout"|"opendiscord:panel-components"\}</ApiBlock> \{#prop-opendiscord-panel}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L381)
+
+<Divider></Divider>
+#### `opendiscord:panel-ready` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, panel:<ApiUrl url="class:ODPanel" label="api.ODPanel"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:panel-ready"\}</ApiBlock> \{#prop-opendiscord-panel-ready}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L382)
+
+<Divider></Divider>
+#### `opendiscord:pin-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash"|"ticket-message"|"unpin-message", workers:"opendiscord:pin-message"\}</ApiBlock> \{#prop-opendiscord-pin-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L393)
+
+<Divider></Divider>
+#### `opendiscord:reaction-role` <M color="brown">type</M> <ApiBlock>\{params:\{guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, result:<ApiUrl url="interface:ODRoleUpdateResult" label="api.ODRoleUpdateResult"/>[], role:<ApiUrl url="class:ODRole" label="api.ODRole"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"other"|"panel-button", workers:"opendiscord:reaction-role"\}</ApiBlock> \{#prop-opendiscord-reaction-role}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L414)
+
+<Divider></Divider>
+#### `opendiscord:remove-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, data:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:remove-message"\}</ApiBlock> \{#prop-opendiscord-remove-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L398)
+
+<Divider></Divider>
+#### `opendiscord:rename-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, data:<ApiUrl url="js:string" label="string"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:rename-message"\}</ApiBlock> \{#prop-opendiscord-rename-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L395)
+
+<Divider></Divider>
+#### `opendiscord:reopen-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash"|"ticket-message"|"close-message"|"autoclose-message", workers:"opendiscord:reopen-message"\}</ApiBlock> \{#prop-opendiscord-reopen-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L389)
+
+<Divider></Divider>
+#### `opendiscord:stats-global` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:stats-global"\}</ApiBlock> \{#prop-opendiscord-stats-global}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L375)
+
+<Divider></Divider>
+#### `opendiscord:stats-reset` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:stats-reset"\}</ApiBlock> \{#prop-opendiscord-stats-reset}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L378)
+
+<Divider></Divider>
+#### `opendiscord:stats-ticket` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, scopeData:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:stats-ticket"\}</ApiBlock> \{#prop-opendiscord-stats-ticket}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L376)
+
+<Divider></Divider>
+#### `opendiscord:stats-ticket-unknown` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, id:<ApiUrl url="js:string" label="string"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:stats-ticket-unknown"\}</ApiBlock> \{#prop-opendiscord-stats-ticket-unknown}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L379)
+
+<Divider></Divider>
+#### `opendiscord:stats-user` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, scopeData:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash", workers:"opendiscord:stats-user"|"opendiscord:easter-egg"\}</ApiBlock> \{#prop-opendiscord-stats-user}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L377)
+
+<Divider></Divider>
+#### `opendiscord:ticket-action-dm` <M color="brown">type</M> <ApiBlock>\{params:\{additionalData:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>|<ApiUrl url="class:ODTicketOption" label="api.ODTicketOption"/>, channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, mode:"delete"|"close"|"pin"|"unpin"|"add"|"remove"|"reopen"|"claim"|"unclaim"|"rename"|"move", reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"clear"|"slash"|"ticket-message"|"reopen-message"|"close-message"|"autoclose-message"|"unclaim-message"|"claim-message"|"unpin-message"|"pin-message"|"autodelete"|"autoclose"|"delete-message", workers:"opendiscord:ticket-action-dm"\}</ApiBlock> \{#prop-opendiscord-ticket-action-dm}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L399)
+
+<Divider></Divider>
+#### `opendiscord:ticket-action-logs` <M color="brown">type</M> <ApiBlock>\{params:\{additionalData:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>|<ApiUrl url="class:ODTicketOption" label="api.ODTicketOption"/>, channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, mode:"delete"|"close"|"pin"|"unpin"|"add"|"remove"|"reopen"|"claim"|"unclaim"|"rename"|"move", reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"clear"|"slash"|"ticket-message"|"reopen-message"|"close-message"|"autoclose-message"|"unclaim-message"|"claim-message"|"unpin-message"|"pin-message"|"autodelete"|"autoclose"|"delete-message", workers:"opendiscord:ticket-action-logs"\}</ApiBlock> \{#prop-opendiscord-ticket-action-logs}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L400)
+
+<Divider></Divider>
+#### `opendiscord:ticket-created` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash"|"panel-button"|"panel-dropdown", workers:"opendiscord:ticket-created"\}</ApiBlock> \{#prop-opendiscord-ticket-created}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L384)
+
+<Divider></Divider>
+#### `opendiscord:ticket-created-dm` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash"|"panel-button"|"panel-dropdown", workers:"opendiscord:ticket-created-dm"\}</ApiBlock> \{#prop-opendiscord-ticket-created-dm}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L385)
+
+<Divider></Divider>
+#### `opendiscord:ticket-created-logs` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash"|"panel-button"|"panel-dropdown", workers:"opendiscord:ticket-created-logs"\}</ApiBlock> \{#prop-opendiscord-ticket-created-logs}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L386)
+
+<Divider></Divider>
+#### `opendiscord:ticket-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash"|"panel-button"|"panel-dropdown", workers:"opendiscord:ticket-message-layout"|"opendiscord:ticket-message-components"|"opendiscord:ticket-message-disable-components"\}</ApiBlock> \{#prop-opendiscord-ticket-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L387)
+
+<Divider></Divider>
+#### `opendiscord:transcript-error` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/GuildTextBasedChannel:TypeAlias" label="discord.GuildTextBasedChannel"/>, compiler:<ApiUrl url="class:ODTranscriptCompiler" label="api.ODTranscriptCompiler"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"clear"|"slash"|"ticket-message"|"reopen-message"|"close-message"|"autoclose-message"|"autodelete", workers:"opendiscord:transcript-error"\}</ApiBlock> \{#prop-opendiscord-transcript-error}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L412)
+
+<Divider></Divider>
+#### `opendiscord:transcript-html-progress` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/GuildTextBasedChannel:TypeAlias" label="discord.GuildTextBasedChannel"/>, compiler:<ApiUrl url="class:ODTranscriptCompiler" label="api.ODTranscriptCompiler"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, remaining:<ApiUrl url="js:number" label="number"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"other"|"channel", workers:"opendiscord:transcript-html-progress"\}</ApiBlock> \{#prop-opendiscord-transcript-html-progress}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L411)
+
+<Divider></Divider>
+#### `opendiscord:transcript-html-ready` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/GuildTextBasedChannel:TypeAlias" label="discord.GuildTextBasedChannel"/>, compiler:<ApiUrl url="class:ODTranscriptCompiler" label="api.ODTranscriptCompiler"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, result:<ApiUrl url="interface:ODTranscriptCompilerCompileResult" label="api.ODTranscriptCompilerCompileResult"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"other"|"channel"|"creator-dm"|"participant-dm"|"active-admin-dm"|"every-admin-dm", workers:"opendiscord:transcript-html-ready"\}</ApiBlock> \{#prop-opendiscord-transcript-html-ready}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L410)
+
+<Divider></Divider>
+#### `opendiscord:transcript-text-ready` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/GuildTextBasedChannel:TypeAlias" label="discord.GuildTextBasedChannel"/>, compiler:<ApiUrl url="class:ODTranscriptCompiler" label="api.ODTranscriptCompiler"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, result:<ApiUrl url="interface:ODTranscriptCompilerCompileResult" label="api.ODTranscriptCompilerCompileResult"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"other"|"channel"|"creator-dm"|"participant-dm"|"active-admin-dm"|"every-admin-dm", workers:"opendiscord:transcript-text-ready"\}</ApiBlock> \{#prop-opendiscord-transcript-text-ready}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L409)
+
+<Divider></Divider>
+#### `opendiscord:unclaim-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash"|"ticket-message"|"claim-message", workers:"opendiscord:unclaim-message"\}</ApiBlock> \{#prop-opendiscord-unclaim-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L392)
+
+<Divider></Divider>
+#### `opendiscord:unpin-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, reason:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="class:ODTicket" label="api.ODTicket"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>\}, source:"text"|"other"|"slash"|"ticket-message"|"pin-message", workers:"opendiscord:unpin-message"\}</ApiBlock> \{#prop-opendiscord-unpin-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L394)
+
+<Divider></Divider>
+#### `opendiscord:verifybar-autoclose-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, originalMessage:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Message:Class" label="discord.Message"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>, verifybar:<ApiUrl url="class:ODVerifyBar" label="api.ODVerifyBar"/>\}, source:"verifybar", workers:"opendiscord:verifybar-autoclose-message"\}</ApiBlock> \{#prop-opendiscord-verifybar-autoclose-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L354)
+
+<Divider></Divider>
+#### `opendiscord:verifybar-claim-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, originalMessage:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Message:Class" label="discord.Message"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>, verifybar:<ApiUrl url="class:ODVerifyBar" label="api.ODVerifyBar"/>\}, source:"verifybar", workers:"opendiscord:verifybar-claim-message"\}</ApiBlock> \{#prop-opendiscord-verifybar-claim-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L350)
+
+<Divider></Divider>
+#### `opendiscord:verifybar-close-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, originalMessage:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Message:Class" label="discord.Message"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>, verifybar:<ApiUrl url="class:ODVerifyBar" label="api.ODVerifyBar"/>\}, source:"verifybar", workers:"opendiscord:verifybar-close-message"\}</ApiBlock> \{#prop-opendiscord-verifybar-close-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L348)
+
+<Divider></Divider>
+#### `opendiscord:verifybar-pin-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, originalMessage:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Message:Class" label="discord.Message"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>, verifybar:<ApiUrl url="class:ODVerifyBar" label="api.ODVerifyBar"/>\}, source:"verifybar", workers:"opendiscord:verifybar-pin-message"\}</ApiBlock> \{#prop-opendiscord-verifybar-pin-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L352)
+
+<Divider></Divider>
+#### `opendiscord:verifybar-reopen-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, originalMessage:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Message:Class" label="discord.Message"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>, verifybar:<ApiUrl url="class:ODVerifyBar" label="api.ODVerifyBar"/>\}, source:"verifybar", workers:"opendiscord:verifybar-reopen-message"\}</ApiBlock> \{#prop-opendiscord-verifybar-reopen-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L349)
+
+<Divider></Divider>
+#### `opendiscord:verifybar-ticket-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, originalMessage:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Message:Class" label="discord.Message"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>, verifybar:<ApiUrl url="class:ODVerifyBar" label="api.ODVerifyBar"/>\}, source:"verifybar", workers:"opendiscord:verifybar-ticket-message"\}</ApiBlock> \{#prop-opendiscord-verifybar-ticket-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L347)
+
+<Divider></Divider>
+#### `opendiscord:verifybar-unclaim-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, originalMessage:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Message:Class" label="discord.Message"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>, verifybar:<ApiUrl url="class:ODVerifyBar" label="api.ODVerifyBar"/>\}, source:"verifybar", workers:"opendiscord:verifybar-unclaim-message"\}</ApiBlock> \{#prop-opendiscord-verifybar-unclaim-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L351)
+
+<Divider></Divider>
+#### `opendiscord:verifybar-unpin-message` <M color="brown">type</M> <ApiBlock>\{params:\{channel:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextBasedChannel:TypeAlias" label="discord.TextBasedChannel"/>, guild:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>, originalMessage:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Message:Class" label="discord.Message"/>, user:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>, verifybar:<ApiUrl url="class:ODVerifyBar" label="api.ODVerifyBar"/>\}, source:"verifybar", workers:"opendiscord:verifybar-unpin-message"\}</ApiBlock> \{#prop-opendiscord-verifybar-unpin-message}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/builder.ts#L353)
+
+<Divider></Divider>

@@ -1,0 +1,223 @@
+---
+title: ODClientActivityManager
+description: "This is an Open Ticket client activity manager. It's responsible for managing the client status. Here, you can set the activity & status of the bot."
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, class]
+sidebar_class_name: otdocs-badge-page otdocs-meta-purple-class
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODClientActivityManager <M color="purple">class</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This is an Open Ticket client activity manager.
+
+It's responsible for managing the client status. Here, you can set the activity & status of the bot.
+
+It also has a built-in refresh function, so the status will refresh every 10 minutes to keep it visible.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L342)
+
+<FlexHorizontal>
+<div style={{width:"30%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`initiated`](#prop-initiated)**</li>
+        <li>**[`interval`](#prop-interval)**</li>
+        <li>**[`manager`](#prop-manager)**</li>
+        <li>**[`refreshInterval`](#prop-refreshInterval)**</li>
+        <li>**[`status`](#prop-status)**</li>
+        <li>**[`text`](#prop-text)**</li>
+        <li>**[`type`](#prop-type)**</li>
+    </ul>
+</div>
+<div style={{width:"30%"}}>
+    #### Methods \{#overview-methods}
+    <ul>
+        <li>**[`constructor`](#method-constructor)**</li>
+        <li>**[`getStatusType`](#method-getStatusType)**</li>
+        <li>**[`initStatus`](#method-initStatus)**</li>
+        <li>**[`setStatus`](#method-setStatus)**</li>
+    </ul>
+</div>
+<div style={{width:"30%"}}>
+    #### Other \{#overview-other}
+    <ul>
+        <li>**[Open Ticket Defaults](#open-ticket-defaults)**</li>
+        <li>**[Plugin Defaults](#plugin-defaults)**</li>
+        <li>**[Examples](#examples)**</li>
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### `initiated` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-initiated}
+Is the status already initiated?
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L360)
+
+<Divider></Divider>
+#### <C color="brown">optional</C> `interval` <M color="brown">type</M> <ApiBlock>@types/node.Timeout</ApiBlock> \{#prop-interval}
+The timer responsible for refreshing the status. Stop it using `clearInterval(interval)`
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L356)
+
+<Divider></Divider>
+#### `manager` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODClientManager" label="api.ODClientManager"/></ApiBlock> \{#prop-manager}
+Copy of discord.js client
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L347)
+
+<Divider></Divider>
+#### `refreshInterval` <M color="green">number</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-refreshInterval}
+status refresh interval in seconds (5 minutes by default)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L358)
+
+<Divider></Divider>
+#### `status` <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODClientActivityStatus" label="api.ODClientActivityStatus"/></ApiBlock> \{#prop-status}
+The current status status
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L353)
+
+<Divider></Divider>
+#### `text` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-text}
+The current status text
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L351)
+
+<Divider></Divider>
+#### `type` <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODClientActivityType" label="api.ODClientActivityType"/></ApiBlock> \{#prop-type}
+The current status type
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L349)
+
+<Divider></Divider>
+
+## Methods
+<Divider></Divider>
+#### `constructor()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODClientActivityManager" label="api.ODClientActivityManager"/></ApiBlock> \{#method-constructor}
+(no description)
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`debug`:** <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODDebugger" label="api.ODDebugger"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`manager`:** <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODClientManager" label="api.ODClientManager"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L362)
+
+<Divider></Divider>
+#### `getStatusType()` <M color="orange">function</M> <ApiBlock>""|"listening "|"playing "|"watching "</ApiBlock> \{#method-getStatusType}
+Get the status type (for displaying the status)
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L413)
+
+<Divider></Divider>
+#### `initStatus()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#method-initStatus}
+When initiating the status, the bot starts updating the status using `discord.js`. Returns `true` when successfull.
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L376)
+
+<Divider></Divider>
+#### `setStatus()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:void" label="void"/></ApiBlock> \{#method-setStatus}
+Update the status. When already initiated, it can take up to 10min to see the updated status in discord.
+
+<details>
+<summary>**View Parameters (4)**</summary>
+- **`type`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODClientActivityType" label="api.ODClientActivityType"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`text`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`status`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODClientActivityStatus" label="api.ODClientActivityStatus"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`forceUpdate`:** <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L368)
+
+<Divider></Divider>
+
+## Defaults
+:::warning under construction
+We're still working on this part of the documentation!
+:::
+{/*
+:::info defaults
+Defaults are manager IDs which are autocompleted by typescript. These are available for both built-in & plugin classes.
+- `ODExample` has defaults available for the `ODExampleManager` (`ODExampleManagerIds_Default`).
+- You can access them using `openticket.examples.get(id:ODValidId)`.
+:::
+
+### Open Ticket Defaults
+These are defaults defined by Open Ticket itself.
+- **`"openticket:general"`:** The `general.json` config file.
+- **`"openticket:questions"`:** The `questions.json` config file.
+- **`"openticket:options"`:** The `options.json` config file.
+- **`"openticket:panels"`:** The `panels.json` config file.
+- **`"openticket:transcripts"`:** The `transcripts.json` config file.
+
+### Plugin Defaults
+These are defaults defined by plugins in the official Open Ticket [**plugin repository**](https://odplugins.dj-dj.be/tree/main/open-ticket).
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+*/}
+
+## Examples
+:::warning under construction
+We're still working on this part of the documentation!
+:::
+{/*
+<Tabs>
+    <TabItem value="First Example">
+    > Test example 1
+    > ```ts title="example.ts" showLineNumbers
+    > export class ODJsonConfig extends ODConfig {
+    >     //example 1
+    > }
+    > ```
+    </TabItem>
+    <TabItem value="Second Example">
+    > Test example 2
+    > ```ts title="example.ts" showLineNumbers
+    > export class ODJsonConfig extends ODConfig {
+    >     //example 2
+    > }
+    > ```
+    </TabItem>
+</Tabs>
+*/}

@@ -1,0 +1,147 @@
+---
+title: ODUtilities
+description: "(no description)"
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODUtilities <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L64)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`easterEggs`](#prop-easterEggs)**</li>
+        <li>**[`isBeta`](#prop-isBeta)**</li>
+        <li>**[`ODVersionMigration`](#prop-ODVersionMigration)**</li>
+        <li>**[`project`](#prop-project)**</li>
+        <li>**[`asyncReplace`](#prop-asyncReplace)**</li>
+        <li>**[`dateString`](#prop-dateString)**</li>
+        <li>**[`emojiTitle`](#prop-emojiTitle)**</li>
+        <li>**[`moduleInstalled`](#prop-moduleInstalled)**</li>
+        <li>**[`runAsync`](#prop-runAsync)**</li>
+        <li>**[`timedAwait`](#prop-timedAwait)**</li>
+        <li>**[`timer`](#prop-timer)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### `easterEggs` <M color="gray">interface</M> <ApiBlock><ApiUrl url="interface:ODEasterEggs" label="api.ODEasterEggs"/></ApiBlock> \{#prop-easterEggs}
+Object containing data for Open Ticket easter eggs.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L109)
+
+<Divider></Divider>
+#### `isBeta` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-isBeta}
+Check if you're running a beta version of Open Ticket.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L74)
+
+<Divider></Divider>
+#### `ODVersionMigration` <M color="orange">function</M> <ApiBlock>(version:<ApiUrl url="class:ODVersion" label="api.ODVersion"/>, func:() => <ApiUrl url="js:void" label="void"/>|<ApiUrl url="js:promise" label="Promise"/>) => <ApiUrl url="class:ODVersionMigration" label="api.ODVersionMigration"/></ApiBlock> \{#prop-ODVersionMigration}
+This class is used to manage data migration between Open Ticket versions.
+
+It shouldn't be used by plugins because this is an internal API feature!
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L115)
+
+<Divider></Divider>
+#### `project` <M color="brown">type</M> <ApiBlock>"openticket"</ApiBlock> \{#prop-project}
+This is the name of the project you are currently in.
+
+Developers can use this to create a multi-plugin compatible with all bots supporting the `open-discord` framework!
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L70)
+
+<Divider></Divider>
+#### `asyncReplace` <M color="orange">function</M> <ApiBlock>(text:<ApiUrl url="js:string" label="string"/>, regex:<ApiUrl url="js:regex" label="RegExp"/>, func:(value:<ApiUrl url="js:string" label="string"/>, args:any[]) => <ApiUrl url="js:promise" label="Promise"/>) => <ApiUrl url="js:promise" label="Promise"/></ApiBlock> \{#prop-asyncReplace}
+Same as `string.replace(search, value)` but with async compatibility
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L105)
+
+<Divider></Divider>
+#### `dateString` <M color="orange">function</M> <ApiBlock>(date:<ApiUrl url="js:date" label="Date"/>) => <ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-dateString}
+Use this function to create a short date string in the following format: `DD/MM/YYYY HH:MM:SS`
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L101)
+
+<Divider></Divider>
+#### `emojiTitle` <M color="orange">function</M> <ApiBlock>(emoji:<ApiUrl url="js:string" label="string"/>, text:<ApiUrl url="js:string" label="string"/>) => <ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-emojiTitle}
+Use this function to create a title with an emoji before/after the text. The style & divider are set in `opendiscord.defaults`
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L89)
+
+<Divider></Divider>
+#### `moduleInstalled` <M color="orange">function</M> <ApiBlock>(id:<ApiUrl url="js:string" label="string"/>) => <ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-moduleInstalled}
+Use this function to check if an npm package is installed or not!
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L79)
+
+<Divider></Divider>
+#### `runAsync` <M color="orange">function</M> <ApiBlock>(func:() => <ApiUrl url="js:promise" label="Promise"/>) => <ApiUrl url="js:void" label="void"/></ApiBlock> \{#prop-runAsync}
+Use this function to run a snippet of code asyncronous without creating a separate function for it!
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L93)
+
+<Divider></Divider>
+#### `timedAwait` <M color="orange">function</M> <ApiBlock>(promise:ReturnValue, timeout:<ApiUrl url="js:number" label="number"/>, onError:(err:Error) => <ApiUrl url="js:void" label="void"/>) => ReturnValue</ApiBlock> \{#prop-timedAwait}
+Use this function to await a promise but reject after the certain timeout has been reached.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L97)
+
+<Divider></Divider>
+#### `timer` <M color="orange">function</M> <ApiBlock>(ms:<ApiUrl url="js:number" label="number"/>) => <ApiUrl url="js:promise" label="Promise"/></ApiBlock> \{#prop-timer}
+Use this to wait for a certain amount of milliseconds. This only works when using `await`
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L84)
+
+<Divider></Divider>

@@ -1,0 +1,150 @@
+---
+title: ODDropdownData
+description: "This interface contains the data to build a dropdown."
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODDropdownData <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This interface contains the data to build a dropdown.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L283)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`channels`](#prop-channels)**</li>
+        <li>**[`channelTypes`](#prop-channelTypes)**</li>
+        <li>**[`customId`](#prop-customId)**</li>
+        <li>**[`disabled`](#prop-disabled)**</li>
+        <li>**[`maxValues`](#prop-maxValues)**</li>
+        <li>**[`mentionables`](#prop-mentionables)**</li>
+        <li>**[`minValues`](#prop-minValues)**</li>
+        <li>**[`options`](#prop-options)**</li>
+        <li>**[`placeholder`](#prop-placeholder)**</li>
+        <li>**[`roles`](#prop-roles)**</li>
+        <li>**[`type`](#prop-type)**</li>
+        <li>**[`users`](#prop-users)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### `channels` <M color="pink">array</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Channel:TypeAlias" label="discord.Channel"/>[]</ApiBlock> \{#prop-channels}
+The options when the type is "channel"
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L306)
+
+<Divider></Divider>
+#### `channelTypes` <M color="pink">array</M> <ApiBlock>discord-api-types.ChannelType[]</ApiBlock> \{#prop-channelTypes}
+Allowed channel types when the type is "channel"
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L297)
+
+<Divider></Divider>
+#### `customId` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-customId}
+The custom id of this dropdown
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L285)
+
+<Divider></Divider>
+#### `disabled` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-disabled}
+Is this dropdown disabled?
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L295)
+
+<Divider></Divider>
+#### `maxValues` <M color="brown">type</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-maxValues}
+The maximum amount of items to be selected in this dropdown
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L293)
+
+<Divider></Divider>
+#### `mentionables` <M color="pink">array</M> <ApiBlock>(<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Role:Class" label="discord.Role"/>)[]</ApiBlock> \{#prop-mentionables}
+The options when the type is "mentionable"
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L308)
+
+<Divider></Divider>
+#### `minValues` <M color="brown">type</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-minValues}
+The minimum amount of items to be selected in this dropdown
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L291)
+
+<Divider></Divider>
+#### `options` <M color="pink">array</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/SelectMenuComponentOptionData:Interface" label="discord.SelectMenuComponentOptionData"/>[]</ApiBlock> \{#prop-options}
+The options when the type is "string"
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L300)
+
+<Divider></Divider>
+#### `placeholder` <M color="brown">type</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-placeholder}
+The placeholder of this dropdown
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L289)
+
+<Divider></Divider>
+#### `roles` <M color="pink">array</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Role:Class" label="discord.Role"/>[]</ApiBlock> \{#prop-roles}
+The options when the type is "role"
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L304)
+
+<Divider></Divider>
+#### `type` <M color="brown">type</M> <ApiBlock>"string"|"role"|"channel"|"user"|"mentionable"</ApiBlock> \{#prop-type}
+The type of this dropdown
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L287)
+
+<Divider></Divider>
+#### `users` <M color="pink">array</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>[]</ApiBlock> \{#prop-users}
+The options when the type is "user"
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L302)
+
+<Divider></Divider>

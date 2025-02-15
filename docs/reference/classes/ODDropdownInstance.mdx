@@ -1,0 +1,286 @@
+---
+title: ODDropdownInstance
+description: "This is an Open Ticket dropdown instance. It contains all properties & functions to build a dropdown!"
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, class]
+sidebar_class_name: otdocs-badge-page otdocs-meta-purple-class
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODDropdownInstance <M color="purple">class</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This is an Open Ticket dropdown instance.
+
+It contains all properties & functions to build a dropdown!
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L316)
+
+<FlexHorizontal>
+<div style={{width:"30%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`data`](#prop-data)**</li>
+    </ul>
+</div>
+<div style={{width:"30%"}}>
+    #### Methods \{#overview-methods}
+    <ul>
+        <li>**[`constructor`](#method-constructor)**</li>
+        <li>**[`setChannels`](#method-setChannels)**</li>
+        <li>**[`setChannelTypes`](#method-setChannelTypes)**</li>
+        <li>**[`setCustomId`](#method-setCustomId)**</li>
+        <li>**[`setDisabled`](#method-setDisabled)**</li>
+        <li>**[`setMaxValues`](#method-setMaxValues)**</li>
+        <li>**[`setMentionables`](#method-setMentionables)**</li>
+        <li>**[`setMinValues`](#method-setMinValues)**</li>
+        <li>**[`setOptions`](#method-setOptions)**</li>
+        <li>**[`setPlaceholder`](#method-setPlaceholder)**</li>
+        <li>**[`setRoles`](#method-setRoles)**</li>
+        <li>**[`setType`](#method-setType)**</li>
+        <li>**[`setUsers`](#method-setUsers)**</li>
+    </ul>
+</div>
+<div style={{width:"30%"}}>
+    #### Other \{#overview-other}
+    <ul>
+        <li>**[Open Ticket Defaults](#open-ticket-defaults)**</li>
+        <li>**[Plugin Defaults](#plugin-defaults)**</li>
+        <li>**[Examples](#examples)**</li>
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### `data` <M color="gray">interface</M> <ApiBlock><ApiUrl url="interface:ODDropdownData" label="api.ODDropdownData"/></ApiBlock> \{#prop-data}
+The current data of this dropdown
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L318)
+
+<Divider></Divider>
+
+## Methods
+<Divider></Divider>
+#### `constructor()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODDropdownInstance" label="api.ODDropdownInstance"/></ApiBlock> \{#method-constructor}
+(no description)
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be)
+
+<Divider></Divider>
+#### `setChannels()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODDropdownInstance" label="api.ODDropdownInstance"/></ApiBlock> \{#method-setChannels}
+Set the channels of this dropdown (when `type == "channel"`)
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`channels`:** <M color="pink">array</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Channel:TypeAlias" label="discord.Channel"/>[]</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L385)
+
+<Divider></Divider>
+#### `setChannelTypes()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODDropdownInstance" label="api.ODDropdownInstance"/></ApiBlock> \{#method-setChannelTypes}
+Set the channel types of this dropdown
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`channelTypes`:** <M color="pink">array</M> <ApiBlock>discord-api-types.ChannelType[]</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L365)
+
+<Divider></Divider>
+#### `setCustomId()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODDropdownInstance" label="api.ODDropdownInstance"/></ApiBlock> \{#method-setCustomId}
+Set the custom id of this dropdown
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`id`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L335)
+
+<Divider></Divider>
+#### `setDisabled()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODDropdownInstance" label="api.ODDropdownInstance"/></ApiBlock> \{#method-setDisabled}
+Set the disabled of this dropdown
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`disabled`:** <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L360)
+
+<Divider></Divider>
+#### `setMaxValues()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODDropdownInstance" label="api.ODDropdownInstance"/></ApiBlock> \{#method-setMaxValues}
+Set the maximum amount of values ax this dropdown
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`maxValues`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:number" label="number"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L355)
+
+<Divider></Divider>
+#### `setMentionables()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODDropdownInstance" label="api.ODDropdownInstance"/></ApiBlock> \{#method-setMentionables}
+Set the mentionables of this dropdown (when `type == "mentionable"`)
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`mentionables`:** <M color="pink">array</M> <ApiBlock>(<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Role:Class" label="discord.Role"/>)[]</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L390)
+
+<Divider></Divider>
+#### `setMinValues()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODDropdownInstance" label="api.ODDropdownInstance"/></ApiBlock> \{#method-setMinValues}
+Set the minimum amount of values in this dropdown
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`minValues`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:number" label="number"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L350)
+
+<Divider></Divider>
+#### `setOptions()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODDropdownInstance" label="api.ODDropdownInstance"/></ApiBlock> \{#method-setOptions}
+Set the options of this dropdown (when `type == "string"`)
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`options`:** <M color="pink">array</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/SelectMenuComponentOptionData:Interface" label="discord.SelectMenuComponentOptionData"/>[]</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L370)
+
+<Divider></Divider>
+#### `setPlaceholder()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODDropdownInstance" label="api.ODDropdownInstance"/></ApiBlock> \{#method-setPlaceholder}
+Set the placeholder of this dropdown
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`placeholder`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L345)
+
+<Divider></Divider>
+#### `setRoles()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODDropdownInstance" label="api.ODDropdownInstance"/></ApiBlock> \{#method-setRoles}
+Set the roles of this dropdown (when `type == "role"`)
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`roles`:** <M color="pink">array</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Role:Class" label="discord.Role"/>[]</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L380)
+
+<Divider></Divider>
+#### `setType()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODDropdownInstance" label="api.ODDropdownInstance"/></ApiBlock> \{#method-setType}
+Set the type of this dropdown
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`type`:** <M color="brown">type</M> <ApiBlock>"string"|"role"|"channel"|"user"|"mentionable"</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L340)
+
+<Divider></Divider>
+#### `setUsers()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODDropdownInstance" label="api.ODDropdownInstance"/></ApiBlock> \{#method-setUsers}
+Set the users of this dropdown (when `type == "user"`)
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`users`:** <M color="pink">array</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>[]</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L375)
+
+<Divider></Divider>
+
+## Defaults
+:::warning under construction
+We're still working on this part of the documentation!
+:::
+{/*
+:::info defaults
+Defaults are manager IDs which are autocompleted by typescript. These are available for both built-in & plugin classes.
+- `ODExample` has defaults available for the `ODExampleManager` (`ODExampleManagerIds_Default`).
+- You can access them using `openticket.examples.get(id:ODValidId)`.
+:::
+
+### Open Ticket Defaults
+These are defaults defined by Open Ticket itself.
+- **`"openticket:general"`:** The `general.json` config file.
+- **`"openticket:questions"`:** The `questions.json` config file.
+- **`"openticket:options"`:** The `options.json` config file.
+- **`"openticket:panels"`:** The `panels.json` config file.
+- **`"openticket:transcripts"`:** The `transcripts.json` config file.
+
+### Plugin Defaults
+These are defaults defined by plugins in the official Open Ticket [**plugin repository**](https://odplugins.dj-dj.be/tree/main/open-ticket).
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+*/}
+
+## Examples
+:::warning under construction
+We're still working on this part of the documentation!
+:::
+{/*
+<Tabs>
+    <TabItem value="First Example">
+    > Test example 1
+    > ```ts title="example.ts" showLineNumbers
+    > export class ODJsonConfig extends ODConfig {
+    >     //example 1
+    > }
+    > ```
+    </TabItem>
+    <TabItem value="Second Example">
+    > Test example 2
+    > ```ts title="example.ts" showLineNumbers
+    > export class ODJsonConfig extends ODConfig {
+    >     //example 2
+    > }
+    > ```
+    </TabItem>
+</Tabs>
+*/}

@@ -1,0 +1,129 @@
+---
+title: ODTextCommandBuilderNumberOption
+description: "The number option builder for text commands."
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODTextCommandBuilderNumberOption <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+The number option builder for text commands.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L1010)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`allowDecimal`](#prop-allowDecimal)**</li>
+        <li>**[`allowNegative`](#prop-allowNegative)**</li>
+        <li>**[`allowPositive`](#prop-allowPositive)**</li>
+        <li>**[`allowZero`](#prop-allowZero)**</li>
+        <li>**[`max`](#prop-max)**</li>
+        <li>**[`min`](#prop-min)**</li>
+        <li>**[`name`](#prop-name)**</li>
+        <li>**[`required`](#prop-required)**</li>
+        <li>**[`type`](#prop-type)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### <C color="red">optional</C> `allowDecimal` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-allowDecimal}
+Allow a number with decimal
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L1023)
+
+<Divider></Divider>
+#### <C color="red">optional</C> `allowNegative` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-allowNegative}
+Allow the number to be negative
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L1017)
+
+<Divider></Divider>
+#### <C color="red">optional</C> `allowPositive` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-allowPositive}
+Allow the number to be positive
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L1019)
+
+<Divider></Divider>
+#### <C color="red">optional</C> `allowZero` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-allowZero}
+Allow the number to be zero
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L1021)
+
+<Divider></Divider>
+#### <C color="green">optional</C> `max` <M color="green">number</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-max}
+The number can't be higher than this value
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L1013)
+
+<Divider></Divider>
+#### <C color="green">optional</C> `min` <M color="green">number</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-min}
+The number can't be lower than this value
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L1015)
+
+<Divider></Divider>
+#### <C color="blue">inherited</C> `name` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-name}
+The name of this option
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L983)
+
+<Divider></Divider>
+#### <C color="red">inherited</C> <C color="red">optional</C> `required` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-required}
+Is this option required? (optional options can only exist at the end of the command!)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L987)
+
+<Divider></Divider>
+#### `type` <M color="brown">type</M> <ApiBlock>"number"</ApiBlock> \{#prop-type}
+The type of this option
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L1011)
+
+<Divider></Divider>

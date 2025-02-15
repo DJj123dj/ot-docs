@@ -1,0 +1,192 @@
+---
+title: ODCheckerNumberStructureOptions
+description: "This interface has the options for `ODCheckerNumberStructure`!"
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODCheckerNumberStructureOptions <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This interface has the options for `ODCheckerNumberStructure`!
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L551)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`choices`](#prop-choices)**</li>
+        <li>**[`contains`](#prop-contains)**</li>
+        <li>**[`custom`](#prop-custom)**</li>
+        <li>**[`docs`](#prop-docs)**</li>
+        <li>**[`endsWith`](#prop-endsWith)**</li>
+        <li>**[`floatAllowed`](#prop-floatAllowed)**</li>
+        <li>**[`is`](#prop-is)**</li>
+        <li>**[`length`](#prop-length)**</li>
+        <li>**[`max`](#prop-max)**</li>
+        <li>**[`maxLength`](#prop-maxLength)**</li>
+        <li>**[`min`](#prop-min)**</li>
+        <li>**[`minLength`](#prop-minLength)**</li>
+        <li>**[`negativeAllowed`](#prop-negativeAllowed)**</li>
+        <li>**[`offset`](#prop-offset)**</li>
+        <li>**[`positiveAllowed`](#prop-positiveAllowed)**</li>
+        <li>**[`startsWith`](#prop-startsWith)**</li>
+        <li>**[`step`](#prop-step)**</li>
+        <li>**[`zeroAllowed`](#prop-zeroAllowed)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### <C color="pink">optional</C> `choices` <M color="pink">array</M> <ApiBlock><ApiUrl url="js:number" label="number"/>[]</ApiBlock> \{#prop-choices}
+You need to choose between ...
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L575)
+
+<Divider></Divider>
+#### <C color="blue">optional</C> `contains` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-contains}
+This number needs to contain ...
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L573)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> <C color="orange">optional</C> `custom` <M color="orange">function</M> <ApiBlock>(checker:<ApiUrl url="class:ODChecker" label="api.ODChecker"/>, value:<ApiUrl url="type:ODValidJsonType" label="api.ODValidJsonType"/>, locationTrace:<ApiUrl url="type:ODCheckerLocationTrace" label="api.ODCheckerLocationTrace"/>, locationId:<ApiUrl url="class:ODId" label="api.ODId"/>, locationDocs:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>) => <ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-custom}
+Add a custom checker function. Returns `true` when valid.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L387)
+
+<Divider></Divider>
+#### <C color="blue">inherited</C> <C color="blue">optional</C> `docs` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-docs}
+Set the url to the documentation of this variable.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L389)
+
+<Divider></Divider>
+#### <C color="blue">optional</C> `endsWith` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-endsWith}
+This number needs to end with ...
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L571)
+
+<Divider></Divider>
+#### <C color="red">optional</C> `floatAllowed` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-floatAllowed}
+Are numbers with a decimal value allowed?
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L577)
+
+<Divider></Divider>
+#### <C color="green">optional</C> `is` <M color="green">number</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-is}
+This number is required to match the value
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L563)
+
+<Divider></Divider>
+#### <C color="green">optional</C> `length` <M color="green">number</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-length}
+Set the required length of this number
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L557)
+
+<Divider></Divider>
+#### <C color="green">optional</C> `max` <M color="green">number</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-max}
+The maximum value of this number
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L561)
+
+<Divider></Divider>
+#### <C color="green">optional</C> `maxLength` <M color="green">number</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-maxLength}
+The maximum length of this number
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L555)
+
+<Divider></Divider>
+#### <C color="green">optional</C> `min` <M color="green">number</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-min}
+The minimum value of this number
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L559)
+
+<Divider></Divider>
+#### <C color="green">optional</C> `minLength` <M color="green">number</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-minLength}
+The minimum length of this number
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L553)
+
+<Divider></Divider>
+#### <C color="red">optional</C> `negativeAllowed` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-negativeAllowed}
+Are negative numbers allowed (without zero)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L579)
+
+<Divider></Divider>
+#### <C color="green">optional</C> `offset` <M color="green">number</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-offset}
+The offset for the step function.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L567)
+
+<Divider></Divider>
+#### <C color="red">optional</C> `positiveAllowed` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-positiveAllowed}
+Are positive numers allowed (without zero)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L581)
+
+<Divider></Divider>
+#### <C color="blue">optional</C> `startsWith` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-startsWith}
+This number needs to start with ...
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L569)
+
+<Divider></Divider>
+#### <C color="green">optional</C> `step` <M color="green">number</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-step}
+Only allow a multiple of ... starting at `this.offset` or 0
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L565)
+
+<Divider></Divider>
+#### <C color="red">optional</C> `zeroAllowed` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-zeroAllowed}
+Is zero allowed?
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L583)
+
+<Divider></Divider>

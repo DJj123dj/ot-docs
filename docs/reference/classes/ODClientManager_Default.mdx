@@ -1,0 +1,416 @@
+---
+title: ODClientManager_Default
+description: "This is a special class that adds type definitions & typescript to the ODClientManager class. It doesn't add any extra features!"
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, class]
+sidebar_class_name: otdocs-badge-page otdocs-meta-purple-class
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODClientManager_Default <M color="purple">class</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This is a special class that adds type definitions & typescript to the ODClientManager class.
+It doesn't add any extra features!
+
+This default class is made for the global variable `opendiscord.client`!
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/client.ts#L13)
+
+<FlexHorizontal>
+<div style={{width:"30%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`activity`](#prop-activity)**</li>
+        <li>**[`client`](#prop-client)**</li>
+        <li>**[`initiated`](#prop-initiated)**</li>
+        <li>**[`intents`](#prop-intents)**</li>
+        <li>**[`loggedIn`](#prop-loggedIn)**</li>
+        <li>**[`mainServer`](#prop-mainServer)**</li>
+        <li>**[`partials`](#prop-partials)**</li>
+        <li>**[`permissions`](#prop-permissions)**</li>
+        <li>**[`privileges`](#prop-privileges)**</li>
+        <li>**[`ready`](#prop-ready)**</li>
+        <li>**[`readyListener`](#prop-readyListener)**</li>
+        <li>**[`rest`](#prop-rest)**</li>
+        <li>**[`slashCommands`](#prop-slashCommands)**</li>
+        <li>**[`textCommands`](#prop-textCommands)**</li>
+    </ul>
+</div>
+<div style={{width:"30%"}}>
+    #### Methods \{#overview-methods}
+    <ul>
+        <li>**[`constructor`](#method-constructor)**</li>
+        <li>**[`checkBotInGuild`](#method-checkBotInGuild)**</li>
+        <li>**[`checkGuildPerms`](#method-checkGuildPerms)**</li>
+        <li>**[`fetchChannel`](#method-fetchChannel)**</li>
+        <li>**[`fetchGuild`](#method-fetchGuild)**</li>
+        <li>**[`fetchGuildCategoryChannel`](#method-fetchGuildCategoryChannel)**</li>
+        <li>**[`fetchGuildChannel`](#method-fetchGuildChannel)**</li>
+        <li>**[`fetchGuildChannelMessage`](#method-fetchGuildChannelMessage)**</li>
+        <li>**[`fetchGuildMember`](#method-fetchGuildMember)**</li>
+        <li>**[`fetchGuildRole`](#method-fetchGuildRole)**</li>
+        <li>**[`fetchGuildTextChannel`](#method-fetchGuildTextChannel)**</li>
+        <li>**[`fetchUser`](#method-fetchUser)**</li>
+        <li>**[`getGuilds`](#method-getGuilds)**</li>
+        <li>**[`initClient`](#method-initClient)**</li>
+        <li>**[`login`](#method-login)**</li>
+        <li>**[`sendUserDm`](#method-sendUserDm)**</li>
+    </ul>
+</div>
+<div style={{width:"30%"}}>
+    #### Other \{#overview-other}
+    <ul>
+        <li>**[Open Ticket Defaults](#open-ticket-defaults)**</li>
+        <li>**[Plugin Defaults](#plugin-defaults)**</li>
+        <li>**[Examples](#examples)**</li>
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### <C color="purple">inherited</C> `activity` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODClientActivityManager" label="api.ODClientActivityManager"/></ApiBlock> \{#prop-activity}
+The status manager is responsible for setting the bot status.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L74)
+
+<Divider></Divider>
+#### <C color="brown">inherited</C> `client` <M color="brown">type</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Client:Class" label="discord.Client"/></ApiBlock> \{#prop-client}
+The discord.js `discord.Client`. Only use it when initiated!
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L59)
+
+<Divider></Divider>
+#### <C color="red">inherited</C> `initiated` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-initiated}
+Is the bot initiated?
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L63)
+
+<Divider></Divider>
+#### <C color="pink">inherited</C> `intents` <M color="pink">array</M> <ApiBlock><ApiUrl url="type:ODClientIntents" label="api.ODClientIntents"/>[]</ApiBlock> \{#prop-intents}
+List of required bot intents. Add intents to this list using the `onClientLoad` event.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L40)
+
+<Divider></Divider>
+#### <C color="red">inherited</C> `loggedIn` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-loggedIn}
+Is the bot logged in?
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L65)
+
+<Divider></Divider>
+#### <C color="brown">inherited</C> `mainServer` <M color="brown">type</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/></ApiBlock> \{#prop-mainServer}
+The main server of the bot. Provided by serverId in the config
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L70)
+
+<Divider></Divider>
+#### <C color="pink">inherited</C> `partials` <M color="pink">array</M> <ApiBlock><ApiUrl url="type:ODClientPartials" label="api.ODClientPartials"/>[]</ApiBlock> \{#prop-partials}
+List of required bot partials. Add intents to this list using the `onClientLoad` event. **❌ Only use when neccessery!**
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L44)
+
+<Divider></Divider>
+#### <C color="pink">inherited</C> `permissions` <M color="pink">array</M> <ApiBlock><ApiUrl url="type:ODClientPermissions" label="api.ODClientPermissions"/>[]</ApiBlock> \{#prop-permissions}
+List of required bot permissions. Add permissions to this list using the `onClientLoad` event.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L46)
+
+<Divider></Divider>
+#### <C color="pink">inherited</C> `privileges` <M color="pink">array</M> <ApiBlock><ApiUrl url="type:ODClientPriviligedIntents" label="api.ODClientPriviligedIntents"/>[]</ApiBlock> \{#prop-privileges}
+List of required bot privileged intents. Add intents to this list using the `onClientLoad` event.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L42)
+
+<Divider></Divider>
+#### <C color="red">inherited</C> `ready` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-ready}
+Is the bot ready?
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L67)
+
+<Divider></Divider>
+#### <C color="brown">inherited</C> `readyListener` <M color="brown">type</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|(() => <ApiUrl url="js:promise" label="Promise"/>)</ApiBlock> \{#prop-readyListener}
+(❌ DO NOD OVERWRITE ❌) Internal Open Ticket function to continue the startup when the client is ready!
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L72)
+
+<Divider></Divider>
+#### <C color="brown">inherited</C> `rest` <M color="brown">type</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/rest/main/REST:Class" label="discord.REST"/></ApiBlock> \{#prop-rest}
+The discord.js REST client. Used for stuff that discord.js can't handle :)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L61)
+
+<Divider></Divider>
+#### `slashCommands` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODSlashCommandManager_Default" label="api.ODSlashCommandManager_Default"/></ApiBlock> \{#prop-slashCommands}
+The slash command manager is responsible for all slash commands & their events inside the bot.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/client.ts#L14)
+
+<Divider></Divider>
+#### `textCommands` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODTextCommandManager_Default" label="api.ODTextCommandManager_Default"/></ApiBlock> \{#prop-textCommands}
+The text command manager is responsible for all text commands & their events inside the bot.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/client.ts#L15)
+
+<Divider></Divider>
+
+## Methods
+<Divider></Divider>
+#### `constructor()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODClientManager_Default" label="api.ODClientManager_Default"/></ApiBlock> \{#method-constructor}
+(no description)
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`debug`:** <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODDebugger" label="api.ODDebugger"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L80)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `checkBotInGuild()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#method-checkBotInGuild}
+Check if the bot is in a specific guild
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`guild`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L124)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `checkGuildPerms()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#method-checkGuildPerms}
+Check if a specific guild has all required permissions (or `Administrator`)
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`guild`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L128)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `fetchChannel()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:promise" label="Promise"/></ApiBlock> \{#method-fetchChannel}
+A simplified shortcut to get a `discord.Channel` :)
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`id`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L192)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `fetchGuild()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:promise" label="Promise"/></ApiBlock> \{#method-fetchGuild}
+A simplified shortcut to get a `discord.Guild` :)
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`id`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L181)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `fetchGuildCategoryChannel()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:promise" label="Promise"/></ApiBlock> \{#method-fetchGuildCategoryChannel}
+A simplified shortcut to get a `discord.CategoryChannel` :)
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`guildId`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="js:string" label="string"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`id`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L232)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `fetchGuildChannel()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:promise" label="Promise"/></ApiBlock> \{#method-fetchGuildChannel}
+A simplified shortcut to get a `discord.GuildBasedChannel` :)
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`guildId`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="js:string" label="string"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`id`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L203)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `fetchGuildChannelMessage()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:promise" label="Promise"/></ApiBlock> \{#method-fetchGuildChannelMessage}
+A simplified shortcut to get a `discord.Message` :)
+
+<details>
+<summary>**View Parameters (3)**</summary>
+- **`guildId`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="js:string" label="string"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`channelId`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="js:string" label="string"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextChannel:Class" label="discord.TextChannel"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`id`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L275)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `fetchGuildMember()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:promise" label="Promise"/></ApiBlock> \{#method-fetchGuildMember}
+A simplified shortcut to get a `discord.GuildMember` :)
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`guildId`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="js:string" label="string"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`id`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L247)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `fetchGuildRole()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:promise" label="Promise"/></ApiBlock> \{#method-fetchGuildRole}
+A simplified shortcut to get a `discord.Role` :)
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`guildId`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="js:string" label="string"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`id`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L261)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `fetchGuildTextChannel()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:promise" label="Promise"/></ApiBlock> \{#method-fetchGuildTextChannel}
+A simplified shortcut to get a `discord.TextChannel` :)
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`guildId`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="js:string" label="string"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`id`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L217)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `fetchUser()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:promise" label="Promise"/></ApiBlock> \{#method-fetchUser}
+A simplified shortcut to get a `discord.User` :)
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`id`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L170)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `getGuilds()` <M color="orange">function</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Guild:Class" label="discord.Guild"/>[]</ApiBlock> \{#method-getGuilds}
+Get all servers the bot is part of.
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L117)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `initClient()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:void" label="void"/></ApiBlock> \{#method-initClient}
+Initiate the `client` variable & add the intents & partials to the bot.
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L88)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `login()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:promise" label="Promise"/></ApiBlock> \{#method-login}
+Log-in with a discord auth token.
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L139)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `sendUserDm()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:promise" label="Promise"/></ApiBlock> \{#method-sendUserDm}
+A simplified shortcut to send a DM to a user :)
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`user`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="js:string" label="string"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`message`:** <M color="gray">interface</M> <ApiBlock><ApiUrl url="interface:ODMessageBuildResult" label="api.ODMessageBuildResult"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L295)
+
+<Divider></Divider>
+
+## Defaults
+:::warning under construction
+We're still working on this part of the documentation!
+:::
+{/*
+:::info defaults
+Defaults are manager IDs which are autocompleted by typescript. These are available for both built-in & plugin classes.
+- `ODExample` has defaults available for the `ODExampleManager` (`ODExampleManagerIds_Default`).
+- You can access them using `openticket.examples.get(id:ODValidId)`.
+:::
+
+### Open Ticket Defaults
+These are defaults defined by Open Ticket itself.
+- **`"openticket:general"`:** The `general.json` config file.
+- **`"openticket:questions"`:** The `questions.json` config file.
+- **`"openticket:options"`:** The `options.json` config file.
+- **`"openticket:panels"`:** The `panels.json` config file.
+- **`"openticket:transcripts"`:** The `transcripts.json` config file.
+
+### Plugin Defaults
+These are defaults defined by plugins in the official Open Ticket [**plugin repository**](https://odplugins.dj-dj.be/tree/main/open-ticket).
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+*/}
+
+## Examples
+:::warning under construction
+We're still working on this part of the documentation!
+:::
+{/*
+<Tabs>
+    <TabItem value="First Example">
+    > Test example 1
+    > ```ts title="example.ts" showLineNumbers
+    > export class ODJsonConfig extends ODConfig {
+    >     //example 1
+    > }
+    > ```
+    </TabItem>
+    <TabItem value="Second Example">
+    > Test example 2
+    > ```ts title="example.ts" showLineNumbers
+    > export class ODJsonConfig extends ODConfig {
+    >     //example 2
+    > }
+    > ```
+    </TabItem>
+</Tabs>
+*/}

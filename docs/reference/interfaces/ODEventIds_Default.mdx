@@ -1,0 +1,1369 @@
+---
+title: ODEventIds_Default
+description: "This interface is a list of ids available in the `ODEvent_Default` class. It's used to generate typescript declarations for this class."
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODEventIds_Default <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This interface is a list of ids available in the `ODEvent_Default` class.
+It's used to generate typescript declarations for this class.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L50)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`afterActionsLoaded`](#prop-afterActionsLoaded)**</li>
+        <li>**[`afterBlacklistLoaded`](#prop-afterBlacklistLoaded)**</li>
+        <li>**[`afterButtonBuildersLoaded`](#prop-afterButtonBuildersLoaded)**</li>
+        <li>**[`afterButtonRespondersLoaded`](#prop-afterButtonRespondersLoaded)**</li>
+        <li>**[`afterCheckerFunctionsLoaded`](#prop-afterCheckerFunctionsLoaded)**</li>
+        <li>**[`afterCheckersExecuted`](#prop-afterCheckersExecuted)**</li>
+        <li>**[`afterCheckersLoaded`](#prop-afterCheckersLoaded)**</li>
+        <li>**[`afterCheckersRendered`](#prop-afterCheckersRendered)**</li>
+        <li>**[`afterCheckerTranslationsLoaded`](#prop-afterCheckerTranslationsLoaded)**</li>
+        <li>**[`afterClientActivityInitiated`](#prop-afterClientActivityInitiated)**</li>
+        <li>**[`afterClientActivityLoaded`](#prop-afterClientActivityLoaded)**</li>
+        <li>**[`afterClientInitiated`](#prop-afterClientInitiated)**</li>
+        <li>**[`afterClientLoaded`](#prop-afterClientLoaded)**</li>
+        <li>**[`afterClientReady`](#prop-afterClientReady)**</li>
+        <li>**[`afterCodeExecuted`](#prop-afterCodeExecuted)**</li>
+        <li>**[`afterCodeLoaded`](#prop-afterCodeLoaded)**</li>
+        <li>**[`afterCommandRespondersLoaded`](#prop-afterCommandRespondersLoaded)**</li>
+        <li>**[`afterConfigsInitiated`](#prop-afterConfigsInitiated)**</li>
+        <li>**[`afterConfigsLoaded`](#prop-afterConfigsLoaded)**</li>
+        <li>**[`afterCooldownsInitiated`](#prop-afterCooldownsInitiated)**</li>
+        <li>**[`afterCooldownsLoaded`](#prop-afterCooldownsLoaded)**</li>
+        <li>**[`afterDatabasesInitiated`](#prop-afterDatabasesInitiated)**</li>
+        <li>**[`afterDatabasesLoaded`](#prop-afterDatabasesLoaded)**</li>
+        <li>**[`afterDropdownBuildersLoaded`](#prop-afterDropdownBuildersLoaded)**</li>
+        <li>**[`afterDropdownRespondersLoaded`](#prop-afterDropdownRespondersLoaded)**</li>
+        <li>**[`afterEmbedBuildersLoaded`](#prop-afterEmbedBuildersLoaded)**</li>
+        <li>**[`afterErrorHandling`](#prop-afterErrorHandling)**</li>
+        <li>**[`afterFileBuildersLoaded`](#prop-afterFileBuildersLoaded)**</li>
+        <li>**[`afterFlagsInitiated`](#prop-afterFlagsInitiated)**</li>
+        <li>**[`afterFlagsLoaded`](#prop-afterFlagsLoaded)**</li>
+        <li>**[`afterHelpMenuCategoriesLoaded`](#prop-afterHelpMenuCategoriesLoaded)**</li>
+        <li>**[`afterHelpMenuComponentsLoaded`](#prop-afterHelpMenuComponentsLoaded)**</li>
+        <li>**[`afterLanguagesInitiated`](#prop-afterLanguagesInitiated)**</li>
+        <li>**[`afterLanguagesLoaded`](#prop-afterLanguagesLoaded)**</li>
+        <li>**[`afterLanguagesSelected`](#prop-afterLanguagesSelected)**</li>
+        <li>**[`afterLiveStatusSourcesLoaded`](#prop-afterLiveStatusSourcesLoaded)**</li>
+        <li>**[`afterMessageBuildersLoaded`](#prop-afterMessageBuildersLoaded)**</li>
+        <li>**[`afterModalBuildersLoaded`](#prop-afterModalBuildersLoaded)**</li>
+        <li>**[`afterModalRespondersLoaded`](#prop-afterModalRespondersLoaded)**</li>
+        <li>**[`afterOptionsLoaded`](#prop-afterOptionsLoaded)**</li>
+        <li>**[`afterPanelsLoaded`](#prop-afterPanelsLoaded)**</li>
+        <li>**[`afterPanelSpawned`](#prop-afterPanelSpawned)**</li>
+        <li>**[`afterPermissionsLoaded`](#prop-afterPermissionsLoaded)**</li>
+        <li>**[`afterPluginBeforeBuilderLoaded`](#prop-afterPluginBeforeBuilderLoaded)**</li>
+        <li>**[`afterPluginBeforeClientLoaded`](#prop-afterPluginBeforeClientLoaded)**</li>
+        <li>**[`afterPluginBeforeCodeLoaded`](#prop-afterPluginBeforeCodeLoaded)**</li>
+        <li>**[`afterPluginBeforeFinalizationLoaded`](#prop-afterPluginBeforeFinalizationLoaded)**</li>
+        <li>**[`afterPluginBeforeManagerLoaded`](#prop-afterPluginBeforeManagerLoaded)**</li>
+        <li>**[`afterPluginBeforeResponderLoaded`](#prop-afterPluginBeforeResponderLoaded)**</li>
+        <li>**[`afterPluginClassesLoaded`](#prop-afterPluginClassesLoaded)**</li>
+        <li>**[`afterPluginsLoaded`](#prop-afterPluginsLoaded)**</li>
+        <li>**[`afterPostsInitiated`](#prop-afterPostsInitiated)**</li>
+        <li>**[`afterPostsLoaded`](#prop-afterPostsLoaded)**</li>
+        <li>**[`afterProgressBarRenderersLoaded`](#prop-afterProgressBarRenderersLoaded)**</li>
+        <li>**[`afterProgressBarsLoaded`](#prop-afterProgressBarsLoaded)**</li>
+        <li>**[`afterQuestionsLoaded`](#prop-afterQuestionsLoaded)**</li>
+        <li>**[`afterRolesLoaded`](#prop-afterRolesLoaded)**</li>
+        <li>**[`afterRolesUpdated`](#prop-afterRolesUpdated)**</li>
+        <li>**[`afterSessionsLoaded`](#prop-afterSessionsLoaded)**</li>
+        <li>**[`afterSlashCommandsLoaded`](#prop-afterSlashCommandsLoaded)**</li>
+        <li>**[`afterSlashCommandsRegistered`](#prop-afterSlashCommandsRegistered)**</li>
+        <li>**[`afterStartScreensLoaded`](#prop-afterStartScreensLoaded)**</li>
+        <li>**[`afterStartScreensRendered`](#prop-afterStartScreensRendered)**</li>
+        <li>**[`afterStatScopesLoaded`](#prop-afterStatScopesLoaded)**</li>
+        <li>**[`afterStatsInitiated`](#prop-afterStatsInitiated)**</li>
+        <li>**[`afterStatsLoaded`](#prop-afterStatsLoaded)**</li>
+        <li>**[`afterTextCommandsLoaded`](#prop-afterTextCommandsLoaded)**</li>
+        <li>**[`afterTicketChannelCreated`](#prop-afterTicketChannelCreated)**</li>
+        <li>**[`afterTicketChannelDeleted`](#prop-afterTicketChannelDeleted)**</li>
+        <li>**[`afterTicketClaimed`](#prop-afterTicketClaimed)**</li>
+        <li>**[`afterTicketClosed`](#prop-afterTicketClosed)**</li>
+        <li>**[`afterTicketCreated`](#prop-afterTicketCreated)**</li>
+        <li>**[`afterTicketDeleted`](#prop-afterTicketDeleted)**</li>
+        <li>**[`afterTicketMainMessageCreated`](#prop-afterTicketMainMessageCreated)**</li>
+        <li>**[`afterTicketMoved`](#prop-afterTicketMoved)**</li>
+        <li>**[`afterTicketPermissionsCreated`](#prop-afterTicketPermissionsCreated)**</li>
+        <li>**[`afterTicketPinned`](#prop-afterTicketPinned)**</li>
+        <li>**[`afterTicketRenamed`](#prop-afterTicketRenamed)**</li>
+        <li>**[`afterTicketReopened`](#prop-afterTicketReopened)**</li>
+        <li>**[`afterTicketsCleared`](#prop-afterTicketsCleared)**</li>
+        <li>**[`afterTicketsLoaded`](#prop-afterTicketsLoaded)**</li>
+        <li>**[`afterTicketUnclaimed`](#prop-afterTicketUnclaimed)**</li>
+        <li>**[`afterTicketUnpinned`](#prop-afterTicketUnpinned)**</li>
+        <li>**[`afterTicketUserAdded`](#prop-afterTicketUserAdded)**</li>
+        <li>**[`afterTicketUserRemoved`](#prop-afterTicketUserRemoved)**</li>
+        <li>**[`afterTranscriptCompiled`](#prop-afterTranscriptCompiled)**</li>
+        <li>**[`afterTranscriptCompilersLoaded`](#prop-afterTranscriptCompilersLoaded)**</li>
+        <li>**[`afterTranscriptCreated`](#prop-afterTranscriptCreated)**</li>
+        <li>**[`afterTranscriptHistoryLoaded`](#prop-afterTranscriptHistoryLoaded)**</li>
+        <li>**[`afterTranscriptInitiated`](#prop-afterTranscriptInitiated)**</li>
+        <li>**[`afterTranscriptReady`](#prop-afterTranscriptReady)**</li>
+        <li>**[`afterVerifyBarsLoaded`](#prop-afterVerifyBarsLoaded)**</li>
+        <li>**[`beforeReadyForUsage`](#prop-beforeReadyForUsage)**</li>
+        <li>**[`onActionLoad`](#prop-onActionLoad)**</li>
+        <li>**[`onBlacklistLoad`](#prop-onBlacklistLoad)**</li>
+        <li>**[`onButtonBuilderLoad`](#prop-onButtonBuilderLoad)**</li>
+        <li>**[`onButtonResponderLoad`](#prop-onButtonResponderLoad)**</li>
+        <li>**[`onCheckerExecute`](#prop-onCheckerExecute)**</li>
+        <li>**[`onCheckerFunctionLoad`](#prop-onCheckerFunctionLoad)**</li>
+        <li>**[`onCheckerLoad`](#prop-onCheckerLoad)**</li>
+        <li>**[`onCheckerQuit`](#prop-onCheckerQuit)**</li>
+        <li>**[`onCheckerRender`](#prop-onCheckerRender)**</li>
+        <li>**[`onCheckerTranslationLoad`](#prop-onCheckerTranslationLoad)**</li>
+        <li>**[`onClientActivityInit`](#prop-onClientActivityInit)**</li>
+        <li>**[`onClientActivityLoad`](#prop-onClientActivityLoad)**</li>
+        <li>**[`onClientInit`](#prop-onClientInit)**</li>
+        <li>**[`onClientLoad`](#prop-onClientLoad)**</li>
+        <li>**[`onClientReady`](#prop-onClientReady)**</li>
+        <li>**[`onCodeExecute`](#prop-onCodeExecute)**</li>
+        <li>**[`onCodeLoad`](#prop-onCodeLoad)**</li>
+        <li>**[`onCommandResponderLoad`](#prop-onCommandResponderLoad)**</li>
+        <li>**[`onConfigInit`](#prop-onConfigInit)**</li>
+        <li>**[`onConfigLoad`](#prop-onConfigLoad)**</li>
+        <li>**[`onCooldownInit`](#prop-onCooldownInit)**</li>
+        <li>**[`onCooldownLoad`](#prop-onCooldownLoad)**</li>
+        <li>**[`onDatabaseInit`](#prop-onDatabaseInit)**</li>
+        <li>**[`onDatabaseLoad`](#prop-onDatabaseLoad)**</li>
+        <li>**[`onDropdownBuilderLoad`](#prop-onDropdownBuilderLoad)**</li>
+        <li>**[`onDropdownResponderLoad`](#prop-onDropdownResponderLoad)**</li>
+        <li>**[`onEmbedBuilderLoad`](#prop-onEmbedBuilderLoad)**</li>
+        <li>**[`onErrorHandling`](#prop-onErrorHandling)**</li>
+        <li>**[`onFileBuilderLoad`](#prop-onFileBuilderLoad)**</li>
+        <li>**[`onFlagInit`](#prop-onFlagInit)**</li>
+        <li>**[`onFlagLoad`](#prop-onFlagLoad)**</li>
+        <li>**[`onHelpMenuCategoryLoad`](#prop-onHelpMenuCategoryLoad)**</li>
+        <li>**[`onHelpMenuComponentLoad`](#prop-onHelpMenuComponentLoad)**</li>
+        <li>**[`onLanguageInit`](#prop-onLanguageInit)**</li>
+        <li>**[`onLanguageLoad`](#prop-onLanguageLoad)**</li>
+        <li>**[`onLanguageSelect`](#prop-onLanguageSelect)**</li>
+        <li>**[`onLiveStatusSourceLoad`](#prop-onLiveStatusSourceLoad)**</li>
+        <li>**[`onMessageBuilderLoad`](#prop-onMessageBuilderLoad)**</li>
+        <li>**[`onModalBuilderLoad`](#prop-onModalBuilderLoad)**</li>
+        <li>**[`onModalResponderLoad`](#prop-onModalResponderLoad)**</li>
+        <li>**[`onOptionLoad`](#prop-onOptionLoad)**</li>
+        <li>**[`onPanelLoad`](#prop-onPanelLoad)**</li>
+        <li>**[`onPanelSpawn`](#prop-onPanelSpawn)**</li>
+        <li>**[`onPermissionLoad`](#prop-onPermissionLoad)**</li>
+        <li>**[`onPluginBeforeBuilderLoad`](#prop-onPluginBeforeBuilderLoad)**</li>
+        <li>**[`onPluginBeforeClientLoad`](#prop-onPluginBeforeClientLoad)**</li>
+        <li>**[`onPluginBeforeCodeLoad`](#prop-onPluginBeforeCodeLoad)**</li>
+        <li>**[`onPluginBeforeFinalizationLoad`](#prop-onPluginBeforeFinalizationLoad)**</li>
+        <li>**[`onPluginBeforeManagerLoad`](#prop-onPluginBeforeManagerLoad)**</li>
+        <li>**[`onPluginBeforeResponderLoad`](#prop-onPluginBeforeResponderLoad)**</li>
+        <li>**[`onPluginClassLoad`](#prop-onPluginClassLoad)**</li>
+        <li>**[`onPostInit`](#prop-onPostInit)**</li>
+        <li>**[`onPostLoad`](#prop-onPostLoad)**</li>
+        <li>**[`onProgressBarLoad`](#prop-onProgressBarLoad)**</li>
+        <li>**[`onProgressBarRendererLoad`](#prop-onProgressBarRendererLoad)**</li>
+        <li>**[`onQuestionLoad`](#prop-onQuestionLoad)**</li>
+        <li>**[`onReadyForUsage`](#prop-onReadyForUsage)**</li>
+        <li>**[`onRoleLoad`](#prop-onRoleLoad)**</li>
+        <li>**[`onRoleUpdate`](#prop-onRoleUpdate)**</li>
+        <li>**[`onSessionLoad`](#prop-onSessionLoad)**</li>
+        <li>**[`onSlashCommandLoad`](#prop-onSlashCommandLoad)**</li>
+        <li>**[`onSlashCommandRegister`](#prop-onSlashCommandRegister)**</li>
+        <li>**[`onStartScreenLoad`](#prop-onStartScreenLoad)**</li>
+        <li>**[`onStartScreenRender`](#prop-onStartScreenRender)**</li>
+        <li>**[`onStatInit`](#prop-onStatInit)**</li>
+        <li>**[`onStatLoad`](#prop-onStatLoad)**</li>
+        <li>**[`onStatScopeLoad`](#prop-onStatScopeLoad)**</li>
+        <li>**[`onTextCommandLoad`](#prop-onTextCommandLoad)**</li>
+        <li>**[`onTicketChannelCreation`](#prop-onTicketChannelCreation)**</li>
+        <li>**[`onTicketChannelDeletion`](#prop-onTicketChannelDeletion)**</li>
+        <li>**[`onTicketClaim`](#prop-onTicketClaim)**</li>
+        <li>**[`onTicketClose`](#prop-onTicketClose)**</li>
+        <li>**[`onTicketCreate`](#prop-onTicketCreate)**</li>
+        <li>**[`onTicketDelete`](#prop-onTicketDelete)**</li>
+        <li>**[`onTicketLoad`](#prop-onTicketLoad)**</li>
+        <li>**[`onTicketMainMessageCreated`](#prop-onTicketMainMessageCreated)**</li>
+        <li>**[`onTicketMove`](#prop-onTicketMove)**</li>
+        <li>**[`onTicketPermissionsCreated`](#prop-onTicketPermissionsCreated)**</li>
+        <li>**[`onTicketPin`](#prop-onTicketPin)**</li>
+        <li>**[`onTicketRename`](#prop-onTicketRename)**</li>
+        <li>**[`onTicketReopen`](#prop-onTicketReopen)**</li>
+        <li>**[`onTicketsClear`](#prop-onTicketsClear)**</li>
+        <li>**[`onTicketUnclaim`](#prop-onTicketUnclaim)**</li>
+        <li>**[`onTicketUnpin`](#prop-onTicketUnpin)**</li>
+        <li>**[`onTicketUserAdd`](#prop-onTicketUserAdd)**</li>
+        <li>**[`onTicketUserRemove`](#prop-onTicketUserRemove)**</li>
+        <li>**[`onTranscriptCompile`](#prop-onTranscriptCompile)**</li>
+        <li>**[`onTranscriptCompilerLoad`](#prop-onTranscriptCompilerLoad)**</li>
+        <li>**[`onTranscriptCreate`](#prop-onTranscriptCreate)**</li>
+        <li>**[`onTranscriptHistoryLoad`](#prop-onTranscriptHistoryLoad)**</li>
+        <li>**[`onTranscriptInit`](#prop-onTranscriptInit)**</li>
+        <li>**[`onTranscriptReady`](#prop-onTranscriptReady)**</li>
+        <li>**[`onVerifyBarLoad`](#prop-onVerifyBarLoad)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### `afterActionsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterActionsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L259)
+
+<Divider></Divider>
+#### `afterBlacklistLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterBlacklistLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L203)
+
+<Divider></Divider>
+#### `afterButtonBuildersLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterButtonBuildersLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L227)
+
+<Divider></Divider>
+#### `afterButtonRespondersLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterButtonRespondersLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L247)
+
+<Divider></Divider>
+#### `afterCheckerFunctionsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterCheckerFunctionsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L100)
+
+<Divider></Divider>
+#### `afterCheckersExecuted` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterCheckersExecuted}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L102)
+
+<Divider></Divider>
+#### `afterCheckersLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterCheckersLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L98)
+
+<Divider></Divider>
+#### `afterCheckersRendered` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterCheckersRendered}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L106)
+
+<Divider></Divider>
+#### `afterCheckerTranslationsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterCheckerTranslationsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L104)
+
+<Divider></Divider>
+#### `afterClientActivityInitiated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterClientActivityInitiated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L123)
+
+<Divider></Divider>
+#### `afterClientActivityLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterClientActivityLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L121)
+
+<Divider></Divider>
+#### `afterClientInitiated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterClientInitiated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L117)
+
+<Divider></Divider>
+#### `afterClientLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterClientLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L115)
+
+<Divider></Divider>
+#### `afterClientReady` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterClientReady}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L119)
+
+<Divider></Divider>
+#### `afterCodeExecuted` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterCodeExecuted}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L303)
+
+<Divider></Divider>
+#### `afterCodeLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterCodeLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L301)
+
+<Divider></Divider>
+#### `afterCommandRespondersLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterCommandRespondersLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L245)
+
+<Divider></Divider>
+#### `afterConfigsInitiated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterConfigsInitiated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L76)
+
+<Divider></Divider>
+#### `afterConfigsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterConfigsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L74)
+
+<Divider></Divider>
+#### `afterCooldownsInitiated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterCooldownsInitiated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L279)
+
+<Divider></Divider>
+#### `afterCooldownsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterCooldownsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L277)
+
+<Divider></Divider>
+#### `afterDatabasesInitiated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterDatabasesInitiated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L82)
+
+<Divider></Divider>
+#### `afterDatabasesLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterDatabasesLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L80)
+
+<Divider></Divider>
+#### `afterDropdownBuildersLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterDropdownBuildersLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L229)
+
+<Divider></Divider>
+#### `afterDropdownRespondersLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterDropdownRespondersLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L249)
+
+<Divider></Divider>
+#### `afterEmbedBuildersLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterEmbedBuildersLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L233)
+
+<Divider></Divider>
+#### `afterErrorHandling` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterErrorHandling}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L53)
+
+<Divider></Divider>
+#### `afterFileBuildersLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterFileBuildersLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L231)
+
+<Divider></Divider>
+#### `afterFlagsInitiated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterFlagsInitiated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L64)
+
+<Divider></Divider>
+#### `afterFlagsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterFlagsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L62)
+
+<Divider></Divider>
+#### `afterHelpMenuCategoriesLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterHelpMenuCategoriesLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L283)
+
+<Divider></Divider>
+#### `afterHelpMenuComponentsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterHelpMenuComponentsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L285)
+
+<Divider></Divider>
+#### `afterLanguagesInitiated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterLanguagesInitiated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L88)
+
+<Divider></Divider>
+#### `afterLanguagesLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterLanguagesLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L86)
+
+<Divider></Divider>
+#### `afterLanguagesSelected` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterLanguagesSelected}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L90)
+
+<Divider></Divider>
+#### `afterLiveStatusSourcesLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterLiveStatusSourcesLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L307)
+
+<Divider></Divider>
+#### `afterMessageBuildersLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterMessageBuildersLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L235)
+
+<Divider></Divider>
+#### `afterModalBuildersLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterModalBuildersLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L237)
+
+<Divider></Divider>
+#### `afterModalRespondersLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterModalRespondersLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L251)
+
+<Divider></Divider>
+#### `afterOptionsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterOptionsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L145)
+
+<Divider></Divider>
+#### `afterPanelsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterPanelsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L149)
+
+<Divider></Divider>
+#### `afterPanelSpawned` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterPanelSpawned}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L151)
+
+<Divider></Divider>
+#### `afterPermissionsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterPermissionsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L267)
+
+<Divider></Divider>
+#### `afterPluginBeforeBuilderLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterPluginBeforeBuilderLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L223)
+
+<Divider></Divider>
+#### `afterPluginBeforeClientLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterPluginBeforeClientLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L111)
+
+<Divider></Divider>
+#### `afterPluginBeforeCodeLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterPluginBeforeCodeLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L297)
+
+<Divider></Divider>
+#### `afterPluginBeforeFinalizationLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterPluginBeforeFinalizationLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L255)
+
+<Divider></Divider>
+#### `afterPluginBeforeManagerLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterPluginBeforeManagerLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L137)
+
+<Divider></Divider>
+#### `afterPluginBeforeResponderLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterPluginBeforeResponderLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L241)
+
+<Divider></Divider>
+#### `afterPluginClassesLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterPluginClassesLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L58)
+
+<Divider></Divider>
+#### `afterPluginsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterPluginsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L56)
+
+<Divider></Divider>
+#### `afterPostsInitiated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterPostsInitiated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L273)
+
+<Divider></Divider>
+#### `afterPostsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterPostsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L271)
+
+<Divider></Divider>
+#### `afterProgressBarRenderersLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterProgressBarRenderersLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L68)
+
+<Divider></Divider>
+#### `afterProgressBarsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterProgressBarsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L70)
+
+<Divider></Divider>
+#### `afterQuestionsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterQuestionsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L141)
+
+<Divider></Divider>
+#### `afterRolesLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterRolesLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L197)
+
+<Divider></Divider>
+#### `afterRolesUpdated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterRolesUpdated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L199)
+
+<Divider></Divider>
+#### `afterSessionsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterSessionsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L94)
+
+<Divider></Divider>
+#### `afterSlashCommandsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterSlashCommandsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L127)
+
+<Divider></Divider>
+#### `afterSlashCommandsRegistered` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterSlashCommandsRegistered}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L129)
+
+<Divider></Divider>
+#### `afterStartScreensLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterStartScreensLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L311)
+
+<Divider></Divider>
+#### `afterStartScreensRendered` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterStartScreensRendered}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L313)
+
+<Divider></Divider>
+#### `afterStatScopesLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterStatScopesLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L289)
+
+<Divider></Divider>
+#### `afterStatsInitiated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterStatsInitiated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L293)
+
+<Divider></Divider>
+#### `afterStatsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterStatsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L291)
+
+<Divider></Divider>
+#### `afterTextCommandsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTextCommandsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L133)
+
+<Divider></Divider>
+#### `afterTicketChannelCreated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketChannelCreated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L159)
+
+<Divider></Divider>
+#### `afterTicketChannelDeleted` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketChannelDeleted}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L161)
+
+<Divider></Divider>
+#### `afterTicketClaimed` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketClaimed}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L179)
+
+<Divider></Divider>
+#### `afterTicketClosed` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketClosed}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L171)
+
+<Divider></Divider>
+#### `afterTicketCreated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketCreated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L169)
+
+<Divider></Divider>
+#### `afterTicketDeleted` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketDeleted}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L175)
+
+<Divider></Divider>
+#### `afterTicketMainMessageCreated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketMainMessageCreated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L165)
+
+<Divider></Divider>
+#### `afterTicketMoved` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketMoved}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L177)
+
+<Divider></Divider>
+#### `afterTicketPermissionsCreated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketPermissionsCreated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L163)
+
+<Divider></Divider>
+#### `afterTicketPinned` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketPinned}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L183)
+
+<Divider></Divider>
+#### `afterTicketRenamed` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketRenamed}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L191)
+
+<Divider></Divider>
+#### `afterTicketReopened` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketReopened}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L173)
+
+<Divider></Divider>
+#### `afterTicketsCleared` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketsCleared}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L193)
+
+<Divider></Divider>
+#### `afterTicketsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L155)
+
+<Divider></Divider>
+#### `afterTicketUnclaimed` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketUnclaimed}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L181)
+
+<Divider></Divider>
+#### `afterTicketUnpinned` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketUnpinned}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L185)
+
+<Divider></Divider>
+#### `afterTicketUserAdded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketUserAdded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L187)
+
+<Divider></Divider>
+#### `afterTicketUserRemoved` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTicketUserRemoved}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L189)
+
+<Divider></Divider>
+#### `afterTranscriptCompiled` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTranscriptCompiled}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L217)
+
+<Divider></Divider>
+#### `afterTranscriptCompilersLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTranscriptCompilersLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L207)
+
+<Divider></Divider>
+#### `afterTranscriptCreated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTranscriptCreated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L213)
+
+<Divider></Divider>
+#### `afterTranscriptHistoryLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTranscriptHistoryLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L209)
+
+<Divider></Divider>
+#### `afterTranscriptInitiated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTranscriptInitiated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L215)
+
+<Divider></Divider>
+#### `afterTranscriptReady` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterTranscriptReady}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L219)
+
+<Divider></Divider>
+#### `afterVerifyBarsLoaded` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-afterVerifyBarsLoaded}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L263)
+
+<Divider></Divider>
+#### `beforeReadyForUsage` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-beforeReadyForUsage}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L316)
+
+<Divider></Divider>
+#### `onActionLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onActionLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L258)
+
+<Divider></Divider>
+#### `onBlacklistLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onBlacklistLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L202)
+
+<Divider></Divider>
+#### `onButtonBuilderLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onButtonBuilderLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L226)
+
+<Divider></Divider>
+#### `onButtonResponderLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onButtonResponderLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L246)
+
+<Divider></Divider>
+#### `onCheckerExecute` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onCheckerExecute}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L101)
+
+<Divider></Divider>
+#### `onCheckerFunctionLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onCheckerFunctionLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L99)
+
+<Divider></Divider>
+#### `onCheckerLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onCheckerLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L97)
+
+<Divider></Divider>
+#### `onCheckerQuit` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onCheckerQuit}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L107)
+
+<Divider></Divider>
+#### `onCheckerRender` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onCheckerRender}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L105)
+
+<Divider></Divider>
+#### `onCheckerTranslationLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onCheckerTranslationLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L103)
+
+<Divider></Divider>
+#### `onClientActivityInit` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onClientActivityInit}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L122)
+
+<Divider></Divider>
+#### `onClientActivityLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onClientActivityLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L120)
+
+<Divider></Divider>
+#### `onClientInit` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onClientInit}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L116)
+
+<Divider></Divider>
+#### `onClientLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onClientLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L114)
+
+<Divider></Divider>
+#### `onClientReady` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onClientReady}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L118)
+
+<Divider></Divider>
+#### `onCodeExecute` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onCodeExecute}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L302)
+
+<Divider></Divider>
+#### `onCodeLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onCodeLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L300)
+
+<Divider></Divider>
+#### `onCommandResponderLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onCommandResponderLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L244)
+
+<Divider></Divider>
+#### `onConfigInit` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onConfigInit}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L75)
+
+<Divider></Divider>
+#### `onConfigLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onConfigLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L73)
+
+<Divider></Divider>
+#### `onCooldownInit` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onCooldownInit}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L278)
+
+<Divider></Divider>
+#### `onCooldownLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onCooldownLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L276)
+
+<Divider></Divider>
+#### `onDatabaseInit` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onDatabaseInit}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L81)
+
+<Divider></Divider>
+#### `onDatabaseLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onDatabaseLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L79)
+
+<Divider></Divider>
+#### `onDropdownBuilderLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onDropdownBuilderLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L228)
+
+<Divider></Divider>
+#### `onDropdownResponderLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onDropdownResponderLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L248)
+
+<Divider></Divider>
+#### `onEmbedBuilderLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onEmbedBuilderLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L232)
+
+<Divider></Divider>
+#### `onErrorHandling` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onErrorHandling}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L52)
+
+<Divider></Divider>
+#### `onFileBuilderLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onFileBuilderLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L230)
+
+<Divider></Divider>
+#### `onFlagInit` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onFlagInit}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L63)
+
+<Divider></Divider>
+#### `onFlagLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onFlagLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L61)
+
+<Divider></Divider>
+#### `onHelpMenuCategoryLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onHelpMenuCategoryLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L282)
+
+<Divider></Divider>
+#### `onHelpMenuComponentLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onHelpMenuComponentLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L284)
+
+<Divider></Divider>
+#### `onLanguageInit` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onLanguageInit}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L87)
+
+<Divider></Divider>
+#### `onLanguageLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onLanguageLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L85)
+
+<Divider></Divider>
+#### `onLanguageSelect` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onLanguageSelect}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L89)
+
+<Divider></Divider>
+#### `onLiveStatusSourceLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onLiveStatusSourceLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L306)
+
+<Divider></Divider>
+#### `onMessageBuilderLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onMessageBuilderLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L234)
+
+<Divider></Divider>
+#### `onModalBuilderLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onModalBuilderLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L236)
+
+<Divider></Divider>
+#### `onModalResponderLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onModalResponderLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L250)
+
+<Divider></Divider>
+#### `onOptionLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onOptionLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L144)
+
+<Divider></Divider>
+#### `onPanelLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onPanelLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L148)
+
+<Divider></Divider>
+#### `onPanelSpawn` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onPanelSpawn}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L150)
+
+<Divider></Divider>
+#### `onPermissionLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onPermissionLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L266)
+
+<Divider></Divider>
+#### `onPluginBeforeBuilderLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onPluginBeforeBuilderLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L222)
+
+<Divider></Divider>
+#### `onPluginBeforeClientLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onPluginBeforeClientLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L110)
+
+<Divider></Divider>
+#### `onPluginBeforeCodeLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onPluginBeforeCodeLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L296)
+
+<Divider></Divider>
+#### `onPluginBeforeFinalizationLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onPluginBeforeFinalizationLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L254)
+
+<Divider></Divider>
+#### `onPluginBeforeManagerLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onPluginBeforeManagerLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L136)
+
+<Divider></Divider>
+#### `onPluginBeforeResponderLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onPluginBeforeResponderLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L240)
+
+<Divider></Divider>
+#### `onPluginClassLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onPluginClassLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L57)
+
+<Divider></Divider>
+#### `onPostInit` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onPostInit}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L272)
+
+<Divider></Divider>
+#### `onPostLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onPostLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L270)
+
+<Divider></Divider>
+#### `onProgressBarLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onProgressBarLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L69)
+
+<Divider></Divider>
+#### `onProgressBarRendererLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onProgressBarRendererLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L67)
+
+<Divider></Divider>
+#### `onQuestionLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onQuestionLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L140)
+
+<Divider></Divider>
+#### `onReadyForUsage` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onReadyForUsage}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L317)
+
+<Divider></Divider>
+#### `onRoleLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onRoleLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L196)
+
+<Divider></Divider>
+#### `onRoleUpdate` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onRoleUpdate}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L198)
+
+<Divider></Divider>
+#### `onSessionLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onSessionLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L93)
+
+<Divider></Divider>
+#### `onSlashCommandLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onSlashCommandLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L126)
+
+<Divider></Divider>
+#### `onSlashCommandRegister` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onSlashCommandRegister}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L128)
+
+<Divider></Divider>
+#### `onStartScreenLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onStartScreenLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L310)
+
+<Divider></Divider>
+#### `onStartScreenRender` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onStartScreenRender}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L312)
+
+<Divider></Divider>
+#### `onStatInit` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onStatInit}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L292)
+
+<Divider></Divider>
+#### `onStatLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onStatLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L290)
+
+<Divider></Divider>
+#### `onStatScopeLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onStatScopeLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L288)
+
+<Divider></Divider>
+#### `onTextCommandLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTextCommandLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L132)
+
+<Divider></Divider>
+#### `onTicketChannelCreation` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketChannelCreation}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L158)
+
+<Divider></Divider>
+#### `onTicketChannelDeletion` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketChannelDeletion}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L160)
+
+<Divider></Divider>
+#### `onTicketClaim` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketClaim}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L178)
+
+<Divider></Divider>
+#### `onTicketClose` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketClose}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L170)
+
+<Divider></Divider>
+#### `onTicketCreate` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketCreate}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L168)
+
+<Divider></Divider>
+#### `onTicketDelete` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketDelete}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L174)
+
+<Divider></Divider>
+#### `onTicketLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L154)
+
+<Divider></Divider>
+#### `onTicketMainMessageCreated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketMainMessageCreated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L164)
+
+<Divider></Divider>
+#### `onTicketMove` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketMove}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L176)
+
+<Divider></Divider>
+#### `onTicketPermissionsCreated` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketPermissionsCreated}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L162)
+
+<Divider></Divider>
+#### `onTicketPin` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketPin}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L182)
+
+<Divider></Divider>
+#### `onTicketRename` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketRename}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L190)
+
+<Divider></Divider>
+#### `onTicketReopen` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketReopen}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L172)
+
+<Divider></Divider>
+#### `onTicketsClear` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketsClear}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L192)
+
+<Divider></Divider>
+#### `onTicketUnclaim` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketUnclaim}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L180)
+
+<Divider></Divider>
+#### `onTicketUnpin` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketUnpin}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L184)
+
+<Divider></Divider>
+#### `onTicketUserAdd` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketUserAdd}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L186)
+
+<Divider></Divider>
+#### `onTicketUserRemove` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTicketUserRemove}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L188)
+
+<Divider></Divider>
+#### `onTranscriptCompile` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTranscriptCompile}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L216)
+
+<Divider></Divider>
+#### `onTranscriptCompilerLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTranscriptCompilerLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L206)
+
+<Divider></Divider>
+#### `onTranscriptCreate` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTranscriptCreate}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L212)
+
+<Divider></Divider>
+#### `onTranscriptHistoryLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTranscriptHistoryLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L208)
+
+<Divider></Divider>
+#### `onTranscriptInit` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTranscriptInit}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L214)
+
+<Divider></Divider>
+#### `onTranscriptReady` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onTranscriptReady}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L218)
+
+<Divider></Divider>
+#### `onVerifyBarLoad` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODEvent_Default" label="api.ODEvent_Default"/></ApiBlock> \{#prop-onVerifyBarLoad}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/event.ts#L262)
+
+<Divider></Divider>

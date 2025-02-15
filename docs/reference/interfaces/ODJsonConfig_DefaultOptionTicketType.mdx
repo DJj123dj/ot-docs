@@ -1,0 +1,178 @@
+---
+title: ODJsonConfig_DefaultOptionTicketType
+description: "This interface is an object which has all ticket properties for options in the `options.json` config!"
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODJsonConfig_DefaultOptionTicketType <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This interface is an object which has all ticket properties for options in the `options.json` config!
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L297)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`allowCreationByBlacklistedUsers`](#prop-allowCreationByBlacklistedUsers)**</li>
+        <li>**[`autoclose`](#prop-autoclose)**</li>
+        <li>**[`autodelete`](#prop-autodelete)**</li>
+        <li>**[`button`](#prop-button)**</li>
+        <li>**[`channel`](#prop-channel)**</li>
+        <li>**[`cooldown`](#prop-cooldown)**</li>
+        <li>**[`description`](#prop-description)**</li>
+        <li>**[`dmMessage`](#prop-dmMessage)**</li>
+        <li>**[`id`](#prop-id)**</li>
+        <li>**[`limits`](#prop-limits)**</li>
+        <li>**[`name`](#prop-name)**</li>
+        <li>**[`questions`](#prop-questions)**</li>
+        <li>**[`readonlyAdmins`](#prop-readonlyAdmins)**</li>
+        <li>**[`ticketAdmins`](#prop-ticketAdmins)**</li>
+        <li>**[`ticketMessage`](#prop-ticketMessage)**</li>
+        <li>**[`type`](#prop-type)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### `allowCreationByBlacklistedUsers` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-allowCreationByBlacklistedUsers}
+When enabled, blacklisted users can still create this ticket type. (used for appeals, etc)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L305)
+
+<Divider></Divider>
+#### `autoclose` <M color="brown">type</M> <ApiBlock>\{disableOnClaim:<ApiUrl url="js:boolean" label="boolean"/>, enableInactiveHours:<ApiUrl url="js:boolean" label="boolean"/>, enableUserLeave:<ApiUrl url="js:boolean" label="boolean"/>, inactiveHours:<ApiUrl url="js:number" label="number"/>\}</ApiBlock> \{#prop-autoclose}
+All settings related to autoclosing this ticket type.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L351)
+
+<Divider></Divider>
+#### `autodelete` <M color="brown">type</M> <ApiBlock>\{disableOnClaim:<ApiUrl url="js:boolean" label="boolean"/>, enableInactiveDays:<ApiUrl url="js:boolean" label="boolean"/>, enableUserLeave:<ApiUrl url="js:boolean" label="boolean"/>, inactiveDays:<ApiUrl url="js:number" label="number"/>\}</ApiBlock> \{#prop-autodelete}
+All settings related to autodeleting this ticket type.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L362)
+
+<Divider></Divider>
+#### `button` <M color="gray">interface</M> <ApiBlock><ApiUrl url="interface:ODJsonConfig_DefaultOptionButtonSettingsType" label="api.ODJsonConfig_DefaultOptionButtonSettingsType"/></ApiBlock> \{#prop-button}
+All settings related to the button for the 3 option types.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L299)
+
+<Divider></Divider>
+#### `channel` <M color="brown">type</M> <ApiBlock>\{backupCategory:<ApiUrl url="js:string" label="string"/>, category:<ApiUrl url="js:string" label="string"/>, claimedCategory:\{category:<ApiUrl url="js:string" label="string"/>, user:<ApiUrl url="js:string" label="string"/>\}[], closedCategory:<ApiUrl url="js:string" label="string"/>, description:<ApiUrl url="js:string" label="string"/>, prefix:<ApiUrl url="js:string" label="string"/>, suffix:"user-name"|"user-id"|"random-number"|"random-hex"|"counter-dynamic"|"counter-fixed"\}</ApiBlock> \{#prop-channel}
+All settings related to the ticket channel itself.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L309)
+
+<Divider></Divider>
+#### `cooldown` <M color="brown">type</M> <ApiBlock>\{cooldownMinutes:<ApiUrl url="js:number" label="number"/>, enabled:<ApiUrl url="js:boolean" label="boolean"/>\}</ApiBlock> \{#prop-cooldown}
+All settings related to the cooldown of this ticket type
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L373)
+
+<Divider></Divider>
+#### <C color="blue">inherited</C> `description` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-description}
+The description of this option.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L229)
+
+<Divider></Divider>
+#### `dmMessage` <M color="brown">type</M> <ApiBlock>\{embed:<ApiUrl url="interface:ODJsonConfig_DefaultOptionEmbedSettingsType" label="api.ODJsonConfig_DefaultOptionEmbedSettingsType"/>, enabled:<ApiUrl url="js:boolean" label="boolean"/>, text:<ApiUrl url="js:string" label="string"/>\}</ApiBlock> \{#prop-dmMessage}
+All settings related to the message sent in DM to the creator when the ticket is created.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L331)
+
+<Divider></Divider>
+#### <C color="blue">inherited</C> `id` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-id}
+The id of this option.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L225)
+
+<Divider></Divider>
+#### `limits` <M color="brown">type</M> <ApiBlock>\{enabled:<ApiUrl url="js:boolean" label="boolean"/>, globalMaximum:<ApiUrl url="js:number" label="number"/>, userMaximum:<ApiUrl url="js:number" label="number"/>\}</ApiBlock> \{#prop-limits}
+All settings related to the limits of this ticket type
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L380)
+
+<Divider></Divider>
+#### <C color="blue">inherited</C> `name` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-name}
+The name of this option.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L227)
+
+<Divider></Divider>
+#### `questions` <M color="pink">array</M> <ApiBlock><ApiUrl url="js:string" label="string"/>[]</ApiBlock> \{#prop-questions}
+A list of valid question ids from the `questions.json` config.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L307)
+
+<Divider></Divider>
+#### `readonlyAdmins` <M color="pink">array</M> <ApiBlock><ApiUrl url="js:string" label="string"/>[]</ApiBlock> \{#prop-readonlyAdmins}
+A list of discord role ids which are able to access this ticket type but can't write in the chat.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L303)
+
+<Divider></Divider>
+#### `ticketAdmins` <M color="pink">array</M> <ApiBlock><ApiUrl url="js:string" label="string"/>[]</ApiBlock> \{#prop-ticketAdmins}
+A list of discord role ids which are able to access this ticket type & use commands.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L301)
+
+<Divider></Divider>
+#### `ticketMessage` <M color="brown">type</M> <ApiBlock>\{embed:<ApiUrl url="interface:ODJsonConfig_DefaultOptionEmbedSettingsType" label="api.ODJsonConfig_DefaultOptionEmbedSettingsType"/>, enabled:<ApiUrl url="js:boolean" label="boolean"/>, ping:<ApiUrl url="interface:ODJsonConfig_DefaultOptionPingSettingsType" label="api.ODJsonConfig_DefaultOptionPingSettingsType"/>, text:<ApiUrl url="js:string" label="string"/>\}</ApiBlock> \{#prop-ticketMessage}
+All settings related to the message sent in the ticket channel when the ticket is created.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L340)
+
+<Divider></Divider>
+#### `type` <M color="brown">type</M> <ApiBlock>"ticket"</ApiBlock> \{#prop-type}
+The type of this option. This type also determines the other option-specific variables.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L298)
+
+<Divider></Divider>

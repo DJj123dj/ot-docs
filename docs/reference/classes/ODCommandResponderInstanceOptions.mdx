@@ -1,0 +1,265 @@
+---
+title: ODCommandResponderInstanceOptions
+description: "This is an Open Ticket command responder instance options manager. This class will manage all options & subcommands from slash & text commands."
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, class]
+sidebar_class_name: otdocs-badge-page otdocs-meta-purple-class
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODCommandResponderInstanceOptions <M color="purple">class</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This is an Open Ticket command responder instance options manager.
+
+This class will manage all options & subcommands from slash & text commands.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/responder.ts#L132)
+
+<FlexHorizontal>
+<div style={{width:"30%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        
+    </ul>
+</div>
+<div style={{width:"30%"}}>
+    #### Methods \{#overview-methods}
+    <ul>
+        <li>**[`constructor`](#method-constructor)**</li>
+        <li>**[`getBoolean`](#method-getBoolean)**</li>
+        <li>**[`getChannel`](#method-getChannel)**</li>
+        <li>**[`getGuildMember`](#method-getGuildMember)**</li>
+        <li>**[`getMentionable`](#method-getMentionable)**</li>
+        <li>**[`getNumber`](#method-getNumber)**</li>
+        <li>**[`getRole`](#method-getRole)**</li>
+        <li>**[`getString`](#method-getString)**</li>
+        <li>**[`getSubCommand`](#method-getSubCommand)**</li>
+        <li>**[`getSubGroup`](#method-getSubGroup)**</li>
+        <li>**[`getUser`](#method-getUser)**</li>
+    </ul>
+</div>
+<div style={{width:"30%"}}>
+    #### Other \{#overview-other}
+    <ul>
+        <li>**[Open Ticket Defaults](#open-ticket-defaults)**</li>
+        <li>**[Plugin Defaults](#plugin-defaults)**</li>
+        <li>**[Examples](#examples)**</li>
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+
+
+
+
+## Methods
+<Divider></Divider>
+#### `constructor()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODCommandResponderInstanceOptions" label="api.ODCommandResponderInstanceOptions"/></ApiBlock> \{#method-constructor}
+(no description)
+
+<details>
+<summary>**View Parameters (3)**</summary>
+- **`interaction`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/ChatInputCommandInteraction:Class" label="discord.ChatInputCommandInteraction"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Message:Class" label="discord.Message"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`cmd`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="class:ODSlashCommand" label="api.ODSlashCommand"/>|<ApiUrl url="class:ODTextCommand" label="api.ODTextCommand"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`options`:** <M color="pink">array</M> <ApiBlock><ApiUrl url="type:ODTextCommandInteractionOption" label="api.ODTextCommandInteractionOption"/>[]</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/responder.ts#L140)
+
+<Divider></Divider>
+#### `getBoolean()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#method-getBoolean}
+Get a boolean option.
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`name`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`required`:** <M color="brown">type</M> <ApiBlock>true</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/responder.ts#L165)
+
+<Divider></Divider>
+#### `getChannel()` <M color="orange">function</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/CategoryChannel:Class" label="discord.CategoryChannel"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/NewsChannel:Class" label="discord.NewsChannel"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/StageChannel:Class" label="discord.StageChannel"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/TextChannel:Class" label="discord.TextChannel"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/VoiceChannel:Class" label="discord.VoiceChannel"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/ForumChannel:Class" label="discord.ForumChannel"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/MediaChannel:Class" label="discord.MediaChannel"/></ApiBlock> \{#method-getChannel}
+Get a channel option.
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`name`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`required`:** <M color="brown">type</M> <ApiBlock>true</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/responder.ts#L201)
+
+<Divider></Divider>
+#### `getGuildMember()` <M color="orange">function</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/GuildMember:Class" label="discord.GuildMember"/></ApiBlock> \{#method-getGuildMember}
+Get a guild member option.
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`name`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`required`:** <M color="brown">type</M> <ApiBlock>true</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/responder.ts#L255)
+
+<Divider></Divider>
+#### `getMentionable()` <M color="orange">function</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Role:Class" label="discord.Role"/>|<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/GuildMember:Class" label="discord.GuildMember"/></ApiBlock> \{#method-getMentionable}
+Get a mentionable option.
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`name`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`required`:** <M color="brown">type</M> <ApiBlock>true</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/responder.ts#L275)
+
+<Divider></Divider>
+#### `getNumber()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#method-getNumber}
+Get a number option.
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`name`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`required`:** <M color="brown">type</M> <ApiBlock>true</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/responder.ts#L183)
+
+<Divider></Divider>
+#### `getRole()` <M color="orange">function</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/Role:Class" label="discord.Role"/></ApiBlock> \{#method-getRole}
+Get a role option.
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`name`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`required`:** <M color="brown">type</M> <ApiBlock>true</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/responder.ts#L219)
+
+<Divider></Divider>
+#### `getString()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#method-getString}
+Get a string option.
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`name`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`required`:** <M color="brown">type</M> <ApiBlock>true</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/responder.ts#L147)
+
+<Divider></Divider>
+#### `getSubCommand()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/></ApiBlock> \{#method-getSubCommand}
+Get a subcommand.
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/responder.ts#L310)
+
+<Divider></Divider>
+#### `getSubGroup()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/></ApiBlock> \{#method-getSubGroup}
+Get a subgroup.
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/responder.ts#L293)
+
+<Divider></Divider>
+#### `getUser()` <M color="orange">function</M> <ApiBlock><ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/User:Class" label="discord.User"/></ApiBlock> \{#method-getUser}
+Get a user option.
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`name`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`required`:** <M color="brown">type</M> <ApiBlock>true</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/responder.ts#L237)
+
+<Divider></Divider>
+
+## Defaults
+:::warning under construction
+We're still working on this part of the documentation!
+:::
+{/*
+:::info defaults
+Defaults are manager IDs which are autocompleted by typescript. These are available for both built-in & plugin classes.
+- `ODExample` has defaults available for the `ODExampleManager` (`ODExampleManagerIds_Default`).
+- You can access them using `openticket.examples.get(id:ODValidId)`.
+:::
+
+### Open Ticket Defaults
+These are defaults defined by Open Ticket itself.
+- **`"openticket:general"`:** The `general.json` config file.
+- **`"openticket:questions"`:** The `questions.json` config file.
+- **`"openticket:options"`:** The `options.json` config file.
+- **`"openticket:panels"`:** The `panels.json` config file.
+- **`"openticket:transcripts"`:** The `transcripts.json` config file.
+
+### Plugin Defaults
+These are defaults defined by plugins in the official Open Ticket [**plugin repository**](https://odplugins.dj-dj.be/tree/main/open-ticket).
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+*/}
+
+## Examples
+:::warning under construction
+We're still working on this part of the documentation!
+:::
+{/*
+<Tabs>
+    <TabItem value="First Example">
+    > Test example 1
+    > ```ts title="example.ts" showLineNumbers
+    > export class ODJsonConfig extends ODConfig {
+    >     //example 1
+    > }
+    > ```
+    </TabItem>
+    <TabItem value="Second Example">
+    > Test example 2
+    > ```ts title="example.ts" showLineNumbers
+    > export class ODJsonConfig extends ODConfig {
+    >     //example 2
+    > }
+    > ```
+    </TabItem>
+</Tabs>
+*/}

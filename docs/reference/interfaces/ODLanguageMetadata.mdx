@@ -1,0 +1,101 @@
+---
+title: ODLanguageMetadata
+description: "This interface contains all metadata available in the language files."
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODLanguageMetadata <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This interface contains all metadata available in the language files.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L12)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`automated`](#prop-automated)**</li>
+        <li>**[`language`](#prop-language)**</li>
+        <li>**[`lastedited`](#prop-lastedited)**</li>
+        <li>**[`otversion`](#prop-otversion)**</li>
+        <li>**[`translators`](#prop-translators)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### `automated` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-automated}
+When `true`, the translator made use of some sort of automation while creating the translation. (e.g. ChatGPT, Google Translate, DeepL, ...)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L22)
+
+<Divider></Divider>
+#### `language` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-language}
+The name of the language in english (with capital letter).
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L16)
+
+<Divider></Divider>
+#### `lastedited` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-lastedited}
+The last date that this translation has been modified (format: DD/MM/YYYY)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L20)
+
+<Divider></Divider>
+#### `otversion` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-otversion}
+The version of Open Ticket this translation is made for.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L14)
+
+<Divider></Divider>
+#### `translators` <M color="pink">array</M> <ApiBlock><ApiUrl url="js:string" label="string"/>[]</ApiBlock> \{#prop-translators}
+A list of translators (discord/github username) who've contributed to this language.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L18)
+
+<Divider></Divider>

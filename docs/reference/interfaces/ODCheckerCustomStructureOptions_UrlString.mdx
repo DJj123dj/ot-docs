@@ -1,0 +1,101 @@
+---
+title: ODCheckerCustomStructureOptions_UrlString
+description: "This interface has the options for `ODCheckerCustomStructure_UrlString`!"
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODCheckerCustomStructureOptions_UrlString <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This interface has the options for `ODCheckerCustomStructure_UrlString`!
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L1213)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`allowedExtensions`](#prop-allowedExtensions)**</li>
+        <li>**[`allowedHostnames`](#prop-allowedHostnames)**</li>
+        <li>**[`allowedPaths`](#prop-allowedPaths)**</li>
+        <li>**[`allowHttp`](#prop-allowHttp)**</li>
+        <li>**[`regex`](#prop-regex)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### <C color="pink">optional</C> `allowedExtensions` <M color="pink">array</M> <ApiBlock><ApiUrl url="js:string" label="string"/>[]</ApiBlock> \{#prop-allowedExtensions}
+Allowed extentions (string) => will match the end of the url (`.png`,`.svg`,...)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L1219)
+
+<Divider></Divider>
+#### <C color="pink">optional</C> `allowedHostnames` <M color="pink">array</M> <ApiBlock>(<ApiUrl url="js:string" label="string"/>|<ApiUrl url="js:regex" label="RegExp"/>)[]</ApiBlock> \{#prop-allowedHostnames}
+Allowed hostnames (string or regex) => will match domain + subdomain
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L1217)
+
+<Divider></Divider>
+#### <C color="pink">optional</C> `allowedPaths` <M color="pink">array</M> <ApiBlock>(<ApiUrl url="js:string" label="string"/>|<ApiUrl url="js:regex" label="RegExp"/>)[]</ApiBlock> \{#prop-allowedPaths}
+Allowed paths (string or regex) => will match path + extension (not domain + subdomain)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L1221)
+
+<Divider></Divider>
+#### <C color="red">optional</C> `allowHttp` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-allowHttp}
+Allow urls with `http://` instead of `https://`
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L1215)
+
+<Divider></Divider>
+#### <C color="brown">optional</C> `regex` <M color="brown">type</M> <ApiBlock><ApiUrl url="js:regex" label="RegExp"/></ApiBlock> \{#prop-regex}
+A regex that will be executed on the entire url (including search params, protcol, domain, ...)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L1223)
+
+<Divider></Divider>

@@ -1,0 +1,627 @@
+---
+title: ODDefaults
+description: "This type is a list of all defaults available in the `ODDefaultsManager` class. It's used to generate typescript declarations for this class."
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODDefaults <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This type is a list of all defaults available in the `ODDefaultsManager` class.
+It's used to generate typescript declarations for this class.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L9)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`actionsLoading`](#prop-actionsLoading)**</li>
+        <li>**[`allowDumpCommand`](#prop-allowDumpCommand)**</li>
+        <li>**[`allowSlashCommandRemoval`](#prop-allowSlashCommandRemoval)**</li>
+        <li>**[`autocloseCheckInterval`](#prop-autocloseCheckInterval)**</li>
+        <li>**[`autodeleteCheckInterval`](#prop-autodeleteCheckInterval)**</li>
+        <li>**[`backupLanguage`](#prop-backupLanguage)**</li>
+        <li>**[`blacklistLoading`](#prop-blacklistLoading)**</li>
+        <li>**[`buttonBuildersLoading`](#prop-buttonBuildersLoading)**</li>
+        <li>**[`buttonRespondersLoading`](#prop-buttonRespondersLoading)**</li>
+        <li>**[`checkerExecution`](#prop-checkerExecution)**</li>
+        <li>**[`checkerFunctionLoading`](#prop-checkerFunctionLoading)**</li>
+        <li>**[`checkerLoading`](#prop-checkerLoading)**</li>
+        <li>**[`checkerQuit`](#prop-checkerQuit)**</li>
+        <li>**[`checkerRenderEmpty`](#prop-checkerRenderEmpty)**</li>
+        <li>**[`checkerRendering`](#prop-checkerRendering)**</li>
+        <li>**[`checkerTranslationLoading`](#prop-checkerTranslationLoading)**</li>
+        <li>**[`clientActivityInitiating`](#prop-clientActivityInitiating)**</li>
+        <li>**[`clientActivityLoading`](#prop-clientActivityLoading)**</li>
+        <li>**[`clientInitiating`](#prop-clientInitiating)**</li>
+        <li>**[`clientLoading`](#prop-clientLoading)**</li>
+        <li>**[`clientMultiGuildWarning`](#prop-clientMultiGuildWarning)**</li>
+        <li>**[`clientReady`](#prop-clientReady)**</li>
+        <li>**[`codeExecution`](#prop-codeExecution)**</li>
+        <li>**[`codeLoading`](#prop-codeLoading)**</li>
+        <li>**[`commandRespondersLoading`](#prop-commandRespondersLoading)**</li>
+        <li>**[`configInitiating`](#prop-configInitiating)**</li>
+        <li>**[`configLoading`](#prop-configLoading)**</li>
+        <li>**[`cooldownsInitiating`](#prop-cooldownsInitiating)**</li>
+        <li>**[`cooldownsLoading`](#prop-cooldownsLoading)**</li>
+        <li>**[`crashOnError`](#prop-crashOnError)**</li>
+        <li>**[`databaseInitiating`](#prop-databaseInitiating)**</li>
+        <li>**[`databaseLoading`](#prop-databaseLoading)**</li>
+        <li>**[`debugLoading`](#prop-debugLoading)**</li>
+        <li>**[`dropdownBuildersLoading`](#prop-dropdownBuildersLoading)**</li>
+        <li>**[`dropdownRespondersLoading`](#prop-dropdownRespondersLoading)**</li>
+        <li>**[`embedBuildersLoading`](#prop-embedBuildersLoading)**</li>
+        <li>**[`emojiTitleDivider`](#prop-emojiTitleDivider)**</li>
+        <li>**[`emojiTitleStyle`](#prop-emojiTitleStyle)**</li>
+        <li>**[`emojiTitleStyleLoading`](#prop-emojiTitleStyleLoading)**</li>
+        <li>**[`errorHandling`](#prop-errorHandling)**</li>
+        <li>**[`fileBuildersLoading`](#prop-fileBuildersLoading)**</li>
+        <li>**[`flagInitiating`](#prop-flagInitiating)**</li>
+        <li>**[`flagLoading`](#prop-flagLoading)**</li>
+        <li>**[`forceSlashCommandRegistration`](#prop-forceSlashCommandRegistration)**</li>
+        <li>**[`helpMenuCategoryLoading`](#prop-helpMenuCategoryLoading)**</li>
+        <li>**[`helpMenuComponentLoading`](#prop-helpMenuComponentLoading)**</li>
+        <li>**[`languageInitiating`](#prop-languageInitiating)**</li>
+        <li>**[`languageList`](#prop-languageList)**</li>
+        <li>**[`languageLoading`](#prop-languageLoading)**</li>
+        <li>**[`languageSelection`](#prop-languageSelection)**</li>
+        <li>**[`liveStatusLoading`](#prop-liveStatusLoading)**</li>
+        <li>**[`messageBuildersLoading`](#prop-messageBuildersLoading)**</li>
+        <li>**[`modalBuildersLoading`](#prop-modalBuildersLoading)**</li>
+        <li>**[`modalRespondersLoading`](#prop-modalRespondersLoading)**</li>
+        <li>**[`optionLoading`](#prop-optionLoading)**</li>
+        <li>**[`panelLoading`](#prop-panelLoading)**</li>
+        <li>**[`permissionsLoading`](#prop-permissionsLoading)**</li>
+        <li>**[`pluginClassLoading`](#prop-pluginClassLoading)**</li>
+        <li>**[`pluginLoading`](#prop-pluginLoading)**</li>
+        <li>**[`postsInitiating`](#prop-postsInitiating)**</li>
+        <li>**[`postsLoading`](#prop-postsLoading)**</li>
+        <li>**[`progressBarLoading`](#prop-progressBarLoading)**</li>
+        <li>**[`progressBarRendererLoading`](#prop-progressBarRendererLoading)**</li>
+        <li>**[`questionLoading`](#prop-questionLoading)**</li>
+        <li>**[`responderTimeoutMs`](#prop-responderTimeoutMs)**</li>
+        <li>**[`roleLoading`](#prop-roleLoading)**</li>
+        <li>**[`sessionLoading`](#prop-sessionLoading)**</li>
+        <li>**[`slashCommandLoading`](#prop-slashCommandLoading)**</li>
+        <li>**[`slashCommandRegistering`](#prop-slashCommandRegistering)**</li>
+        <li>**[`softPluginLoading`](#prop-softPluginLoading)**</li>
+        <li>**[`startScreenLoading`](#prop-startScreenLoading)**</li>
+        <li>**[`startScreenRendering`](#prop-startScreenRendering)**</li>
+        <li>**[`statInitiating`](#prop-statInitiating)**</li>
+        <li>**[`statLoading`](#prop-statLoading)**</li>
+        <li>**[`statScopesLoading`](#prop-statScopesLoading)**</li>
+        <li>**[`textCommandLoading`](#prop-textCommandLoading)**</li>
+        <li>**[`ticketLoading`](#prop-ticketLoading)**</li>
+        <li>**[`transcriptCompilerLoading`](#prop-transcriptCompilerLoading)**</li>
+        <li>**[`transcriptHistoryLoading`](#prop-transcriptHistoryLoading)**</li>
+        <li>**[`verifyBarsLoading`](#prop-verifyBarsLoading)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### `actionsLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-actionsLoading}
+Load the default Open Ticket actions.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L137)
+
+<Divider></Divider>
+#### `allowDumpCommand` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-allowDumpCommand}
+When enabled, you're able to use the "!OPENTICKET:dump" command to send the OT debug file. This is only possible when you're the owner of the bot.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L17)
+
+<Divider></Divider>
+#### `allowSlashCommandRemoval` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-allowSlashCommandRemoval}
+When enabled, the bot is allowed to unregister all slash commands which aren't used in Open Ticket. Disable this if you don't want to use the Open Ticket `ODSlashCommand` classes.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L91)
+
+<Divider></Divider>
+#### `autocloseCheckInterval` <M color="green">number</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-autocloseCheckInterval}
+The interval in milliseconds that are between autoclose timeout checkers.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L182)
+
+<Divider></Divider>
+#### `autodeleteCheckInterval` <M color="green">number</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-autodeleteCheckInterval}
+The interval in milliseconds that are between autodelete timeout checkers.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L184)
+
+<Divider></Divider>
+#### `backupLanguage` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-backupLanguage}
+Set the backup language when the primary language is missing a property.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L52)
+
+<Divider></Divider>
+#### `blacklistLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-blacklistLoading}
+Load the default Open Ticket blacklist (from `database/users.json`)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L106)
+
+<Divider></Divider>
+#### `buttonBuildersLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-buttonBuildersLoading}
+Load the default Open Ticket button builders.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L113)
+
+<Divider></Divider>
+#### `buttonRespondersLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-buttonRespondersLoading}
+Load the default Open Ticket button responders.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L128)
+
+<Divider></Divider>
+#### `checkerExecution` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-checkerExecution}
+Enable the default execution of the config checkers.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L61)
+
+<Divider></Divider>
+#### `checkerFunctionLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-checkerFunctionLoading}
+Load the default Open Ticket config checker functions.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L59)
+
+<Divider></Divider>
+#### `checkerLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-checkerLoading}
+Load the default Open Ticket config checker.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L57)
+
+<Divider></Divider>
+#### `checkerQuit` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-checkerQuit}
+Enable the default quit action when there is an error in the config checker.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L67)
+
+<Divider></Divider>
+#### `checkerRenderEmpty` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-checkerRenderEmpty}
+Render the checker even when there are no errors & warnings.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L69)
+
+<Divider></Divider>
+#### `checkerRendering` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-checkerRendering}
+Enable the default rendering of the config checkers.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L65)
+
+<Divider></Divider>
+#### `checkerTranslationLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-checkerTranslationLoading}
+Load the default Open Ticket config checker translations.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L63)
+
+<Divider></Divider>
+#### `clientActivityInitiating` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-clientActivityInitiating}
+Load the default Open Ticket client activity initialization (& status refresh).
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L82)
+
+<Divider></Divider>
+#### `clientActivityLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-clientActivityLoading}
+Load the default Open Ticket client activity (from `config/general.json`).
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L80)
+
+<Divider></Divider>
+#### `clientInitiating` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-clientInitiating}
+Load the default Open Ticket client initialization.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L74)
+
+<Divider></Divider>
+#### `clientLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-clientLoading}
+Load the default Open Ticket client configuration.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L72)
+
+<Divider></Divider>
+#### `clientMultiGuildWarning` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-clientMultiGuildWarning}
+Create a warning when the bot is present in multiple guilds.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L78)
+
+<Divider></Divider>
+#### `clientReady` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-clientReady}
+Load the default Open Ticket client ready actions (status, commands, permissions, ...).
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L76)
+
+<Divider></Divider>
+#### `codeExecution` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-codeExecution}
+Execute the default Open Ticket code/functions.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L166)
+
+<Divider></Divider>
+#### `codeLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-codeLoading}
+Load the default Open Ticket code/functions.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L164)
+
+<Divider></Divider>
+#### `commandRespondersLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-commandRespondersLoading}
+Load the default Open Ticket command responders.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L126)
+
+<Divider></Divider>
+#### `configInitiating` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-configInitiating}
+Enable the default initializer for Open Ticket config.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L37)
+
+<Divider></Divider>
+#### `configLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-configLoading}
+Load the default Open Ticket configs.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L35)
+
+<Divider></Divider>
+#### `cooldownsInitiating` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-cooldownsInitiating}
+Initiate the default Open Ticket cooldowns.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L150)
+
+<Divider></Divider>
+#### `cooldownsLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-cooldownsLoading}
+Load the default Open Ticket cooldowns.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L148)
+
+<Divider></Divider>
+#### `crashOnError` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-crashOnError}
+Crash when there is an unknown bot error.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L13)
+
+<Divider></Divider>
+#### `databaseInitiating` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-databaseInitiating}
+Enable the default initializer for Open Ticket database.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L41)
+
+<Divider></Divider>
+#### `databaseLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-databaseLoading}
+Load the default Open Ticket databases.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L39)
+
+<Divider></Divider>
+#### `debugLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-debugLoading}
+Enable the system responsible for the `--debug` flag.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L15)
+
+<Divider></Divider>
+#### `dropdownBuildersLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-dropdownBuildersLoading}
+Load the default Open Ticket dropdown builders.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L115)
+
+<Divider></Divider>
+#### `dropdownRespondersLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-dropdownRespondersLoading}
+Load the default Open Ticket dropdown responders.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L130)
+
+<Divider></Divider>
+#### `embedBuildersLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-embedBuildersLoading}
+Load the default Open Ticket embed builders.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L119)
+
+<Divider></Divider>
+#### `emojiTitleDivider` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-emojiTitleDivider}
+The emoji divider to use in embed & message titles using `utilities.emoijTitle()`
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L180)
+
+<Divider></Divider>
+#### `emojiTitleStyle` <M color="brown">type</M> <ApiBlock>"disabled"|"before"|"after"|"double"</ApiBlock> \{#prop-emojiTitleStyle}
+The emoji style to use in embed & message titles using `utilities.emoijTitle()`
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L178)
+
+<Divider></Divider>
+#### `emojiTitleStyleLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-emojiTitleStyleLoading}
+Load the emoji style from the Open Ticket general config.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L176)
+
+<Divider></Divider>
+#### `errorHandling` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-errorHandling}
+Enable the default error handling system.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L11)
+
+<Divider></Divider>
+#### `fileBuildersLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-fileBuildersLoading}
+Load the default Open Ticket file builders.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L117)
+
+<Divider></Divider>
+#### `flagInitiating` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-flagInitiating}
+Enable the default initializer for Open Ticket flags.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L29)
+
+<Divider></Divider>
+#### `flagLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-flagLoading}
+Load the default Open Ticket flags.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L27)
+
+<Divider></Divider>
+#### `forceSlashCommandRegistration` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-forceSlashCommandRegistration}
+When enabled, the bot is forced to re-register all slash commands in the server. This can be used in case of a auto-update malfunction.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L89)
+
+<Divider></Divider>
+#### `helpMenuCategoryLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-helpMenuCategoryLoading}
+Load the default Open Ticket help menu categories.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L152)
+
+<Divider></Divider>
+#### `helpMenuComponentLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-helpMenuComponentLoading}
+Load the default Open Ticket help menu components.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L154)
+
+<Divider></Divider>
+#### `languageInitiating` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-languageInitiating}
+Enable the default initializer for Open Ticket languages.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L48)
+
+<Divider></Divider>
+#### `languageList` <M color="pink">array</M> <ApiBlock><ApiUrl url="js:string" label="string"/>[]</ApiBlock> \{#prop-languageList}
+**[NOT FOR PLUGIN TRANSLATIONS]** The full list of available languages (used in the default config checker).
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L54)
+
+<Divider></Divider>
+#### `languageLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-languageLoading}
+Load the default Open Ticket languages.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L46)
+
+<Divider></Divider>
+#### `languageSelection` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-languageSelection}
+Enable selecting the current language from `config/general.json`.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L50)
+
+<Divider></Divider>
+#### `liveStatusLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-liveStatusLoading}
+Load the default Open Ticket livestatus.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L169)
+
+<Divider></Divider>
+#### `messageBuildersLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-messageBuildersLoading}
+Load the default Open Ticket message builders.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L121)
+
+<Divider></Divider>
+#### `modalBuildersLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-modalBuildersLoading}
+Load the default Open Ticket modal builders.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L123)
+
+<Divider></Divider>
+#### `modalRespondersLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-modalRespondersLoading}
+Load the default Open Ticket modal responders.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L132)
+
+<Divider></Divider>
+#### `optionLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-optionLoading}
+Load the default Open Ticket options (from `config/options.json`)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L98)
+
+<Divider></Divider>
+#### `panelLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-panelLoading}
+Load the default Open Ticket panels (from `config/panels.json`)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L100)
+
+<Divider></Divider>
+#### `permissionsLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-permissionsLoading}
+Load the default Open Ticket permissions.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L142)
+
+<Divider></Divider>
+#### `pluginClassLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-pluginClassLoading}
+Load the default Open Ticket plugin classes.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L24)
+
+<Divider></Divider>
+#### `pluginLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-pluginLoading}
+Enable loading all Open Ticket plugins, sadly enough is only useful for the system :)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L19)
+
+<Divider></Divider>
+#### `postsInitiating` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-postsInitiating}
+Initiate the default Open Ticket posts.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L146)
+
+<Divider></Divider>
+#### `postsLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-postsLoading}
+Load the default Open Ticket posts.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L144)
+
+<Divider></Divider>
+#### `progressBarLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-progressBarLoading}
+Load the default Open Ticket progress bars.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L33)
+
+<Divider></Divider>
+#### `progressBarRendererLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-progressBarRendererLoading}
+Load the default Open Ticket progress bar renderers.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L31)
+
+<Divider></Divider>
+#### `questionLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-questionLoading}
+Load the default Open Ticket questions (from `config/questions.json`)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L96)
+
+<Divider></Divider>
+#### `responderTimeoutMs` <M color="green">number</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-responderTimeoutMs}
+Set the time (in ms) before Open Ticket sends an error message when no reply is sent in a responder.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L134)
+
+<Divider></Divider>
+#### `roleLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-roleLoading}
+Load the default Open Ticket reaction roles (from `config/options.json`)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L104)
+
+<Divider></Divider>
+#### `sessionLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-sessionLoading}
+Load the default Open Ticket sessions.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L43)
+
+<Divider></Divider>
+#### `slashCommandLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-slashCommandLoading}
+Load the default Open Ticket slash commands.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L85)
+
+<Divider></Divider>
+#### `slashCommandRegistering` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-slashCommandRegistering}
+Load the default Open Ticket slash command registerer (register slash cmds in discord).
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L87)
+
+<Divider></Divider>
+#### `softPluginLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-softPluginLoading}
+Don't crash the bot when a plugin crashes!
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L21)
+
+<Divider></Divider>
+#### `startScreenLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-startScreenLoading}
+Load the default Open Ticket startscreen.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L171)
+
+<Divider></Divider>
+#### `startScreenRendering` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-startScreenRendering}
+Render the default Open Ticket startscreen.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L173)
+
+<Divider></Divider>
+#### `statInitiating` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-statInitiating}
+Initiate the default Open Ticket stats.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L161)
+
+<Divider></Divider>
+#### `statLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-statLoading}
+Load the default Open Ticket stats.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L159)
+
+<Divider></Divider>
+#### `statScopesLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-statScopesLoading}
+Load the default Open Ticket stat scopes.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L157)
+
+<Divider></Divider>
+#### `textCommandLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-textCommandLoading}
+Load the default Open Ticket text commands.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L93)
+
+<Divider></Divider>
+#### `ticketLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-ticketLoading}
+Load the default Open Ticket tickets (from `database/tickets.json`)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L102)
+
+<Divider></Divider>
+#### `transcriptCompilerLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-transcriptCompilerLoading}
+Load the default Open Ticket transcript compilers.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L108)
+
+<Divider></Divider>
+#### `transcriptHistoryLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-transcriptHistoryLoading}
+Load the default Open Ticket transcript history (from `database/transcripts.json`)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L110)
+
+<Divider></Divider>
+#### `verifyBarsLoading` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-verifyBarsLoading}
+Load the default Open Ticket verify bars.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/defaults.ts#L140)
+
+<Divider></Divider>

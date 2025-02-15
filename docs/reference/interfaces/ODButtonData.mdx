@@ -1,0 +1,115 @@
+---
+title: ODButtonData
+description: "This interface contains the data to build a button."
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODButtonData <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This interface contains the data to build a button.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L132)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`color`](#prop-color)**</li>
+        <li>**[`customId`](#prop-customId)**</li>
+        <li>**[`disabled`](#prop-disabled)**</li>
+        <li>**[`emoji`](#prop-emoji)**</li>
+        <li>**[`label`](#prop-label)**</li>
+        <li>**[`mode`](#prop-mode)**</li>
+        <li>**[`url`](#prop-url)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### `color` <M color="brown">type</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="type:ODValidButtonColor" label="api.ODValidButtonColor"/></ApiBlock> \{#prop-color}
+The button color
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L140)
+
+<Divider></Divider>
+#### `customId` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-customId}
+The custom id of this button
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L134)
+
+<Divider></Divider>
+#### `disabled` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-disabled}
+Is the button disabled?
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L146)
+
+<Divider></Divider>
+#### `emoji` <M color="brown">type</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-emoji}
+The button emoji
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L144)
+
+<Divider></Divider>
+#### `label` <M color="brown">type</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-label}
+The button label
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L142)
+
+<Divider></Divider>
+#### `mode` <M color="brown">type</M> <ApiBlock>"button"|"url"</ApiBlock> \{#prop-mode}
+The mode of this button
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L136)
+
+<Divider></Divider>
+#### `url` <M color="brown">type</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-url}
+The url for when the mode is set to "url"
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/builder.ts#L138)
+
+<Divider></Divider>

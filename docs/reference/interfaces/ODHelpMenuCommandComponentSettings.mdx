@@ -1,0 +1,108 @@
+---
+title: ODHelpMenuCommandComponentSettings
+description: "This interface contains the settings for the `ODHelpMenuCommandComponent`."
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODHelpMenuCommandComponentSettings <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This interface contains the settings for the `ODHelpMenuCommandComponent`.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/helpmenu.ts#L56)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`slashDescription`](#prop-slashDescription)**</li>
+        <li>**[`slashName`](#prop-slashName)**</li>
+        <li>**[`slashOptions`](#prop-slashOptions)**</li>
+        <li>**[`textDescription`](#prop-textDescription)**</li>
+        <li>**[`textName`](#prop-textName)**</li>
+        <li>**[`textOptions`](#prop-textOptions)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### <C color="blue">optional</C> `slashDescription` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-slashDescription}
+The description for the slash command.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/helpmenu.ts#L68)
+
+<Divider></Divider>
+#### <C color="blue">optional</C> `slashName` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-slashName}
+The name of this slash command.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/helpmenu.ts#L60)
+
+<Divider></Divider>
+#### <C color="pink">optional</C> `slashOptions` <M color="pink">array</M> <ApiBlock><ApiUrl url="interface:ODHelpMenuCommandComponentOption" label="api.ODHelpMenuCommandComponentOption"/>[]</ApiBlock> \{#prop-slashOptions}
+Options available in the slash command.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/helpmenu.ts#L64)
+
+<Divider></Divider>
+#### <C color="blue">optional</C> `textDescription` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-textDescription}
+The description for the text command.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/helpmenu.ts#L66)
+
+<Divider></Divider>
+#### <C color="blue">optional</C> `textName` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-textName}
+The name of this text command.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/helpmenu.ts#L58)
+
+<Divider></Divider>
+#### <C color="pink">optional</C> `textOptions` <M color="pink">array</M> <ApiBlock><ApiUrl url="interface:ODHelpMenuCommandComponentOption" label="api.ODHelpMenuCommandComponentOption"/>[]</ApiBlock> \{#prop-textOptions}
+Options available in the text command.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/helpmenu.ts#L62)
+
+<Divider></Divider>

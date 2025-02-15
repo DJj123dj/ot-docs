@@ -1,0 +1,115 @@
+---
+title: ODJsonConfig_DefaultPanelType
+description: "This interface is an object which has all properties for panels in the `panels.json` config!"
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODJsonConfig_DefaultPanelType <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This interface is an object which has all properties for panels in the `panels.json` config!
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L467)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`dropdown`](#prop-dropdown)**</li>
+        <li>**[`embed`](#prop-embed)**</li>
+        <li>**[`id`](#prop-id)**</li>
+        <li>**[`name`](#prop-name)**</li>
+        <li>**[`options`](#prop-options)**</li>
+        <li>**[`settings`](#prop-settings)**</li>
+        <li>**[`text`](#prop-text)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### `dropdown` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-dropdown}
+When enabled, the panel uses a dropdown instead of buttons.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L473)
+
+<Divider></Divider>
+#### `embed` <M color="gray">interface</M> <ApiBlock><ApiUrl url="interface:ODJsonConfig_DefaultPanelEmbedSettingsType" label="api.ODJsonConfig_DefaultPanelEmbedSettingsType"/></ApiBlock> \{#prop-embed}
+The embed of this panel.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L480)
+
+<Divider></Divider>
+#### `id` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-id}
+The id of this panel.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L469)
+
+<Divider></Divider>
+#### `name` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-name}
+The name of this panel.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L471)
+
+<Divider></Divider>
+#### `options` <M color="pink">array</M> <ApiBlock><ApiUrl url="js:string" label="string"/>[]</ApiBlock> \{#prop-options}
+A list of valid options ids from the `options.json` config.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L475)
+
+<Divider></Divider>
+#### `settings` <M color="brown">type</M> <ApiBlock>\{describeOptionsCustomTitle:<ApiUrl url="js:string" label="string"/>, describeOptionsInEmbedDescription:<ApiUrl url="js:boolean" label="boolean"/>, describeOptionsInEmbedFields:<ApiUrl url="js:boolean" label="boolean"/>, describeOptionsInText:<ApiUrl url="js:boolean" label="boolean"/>, describeOptionsLayout:"normal"|"simple"|"detailed", dropdownPlaceholder:<ApiUrl url="js:string" label="string"/>, enableMaxTicketsWarningInEmbed:<ApiUrl url="js:boolean" label="boolean"/>, enableMaxTicketsWarningInText:<ApiUrl url="js:boolean" label="boolean"/>\}</ApiBlock> \{#prop-settings}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L481)
+
+<Divider></Divider>
+#### `text` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-text}
+The raw text contents of this panel. (empty for embed only)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L478)
+
+<Divider></Divider>

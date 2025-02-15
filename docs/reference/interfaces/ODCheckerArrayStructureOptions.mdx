@@ -1,0 +1,136 @@
+---
+title: ODCheckerArrayStructureOptions
+description: "This interface has the options for `ODCheckerArrayStructure`!"
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODCheckerArrayStructureOptions <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This interface has the options for `ODCheckerArrayStructure`!
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L700)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`allowDoubles`](#prop-allowDoubles)**</li>
+        <li>**[`allowedTypes`](#prop-allowedTypes)**</li>
+        <li>**[`custom`](#prop-custom)**</li>
+        <li>**[`disableEmpty`](#prop-disableEmpty)**</li>
+        <li>**[`docs`](#prop-docs)**</li>
+        <li>**[`emptyRequired`](#prop-emptyRequired)**</li>
+        <li>**[`length`](#prop-length)**</li>
+        <li>**[`maxLength`](#prop-maxLength)**</li>
+        <li>**[`minLength`](#prop-minLength)**</li>
+        <li>**[`propertyChecker`](#prop-propertyChecker)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### <C color="red">optional</C> `allowDoubles` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-allowDoubles}
+Allow double values (only for `string`, `number` & `boolean`)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L714)
+
+<Divider></Divider>
+#### <C color="pink">optional</C> `allowedTypes` <M color="pink">array</M> <ApiBlock>("string"|"number"|"boolean"|"object"|"other"|"null"|"array")[]</ApiBlock> \{#prop-allowedTypes}
+Only allow these types in the array (for multi-type propertyCheckers)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L716)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> <C color="orange">optional</C> `custom` <M color="orange">function</M> <ApiBlock>(checker:<ApiUrl url="class:ODChecker" label="api.ODChecker"/>, value:<ApiUrl url="type:ODValidJsonType" label="api.ODValidJsonType"/>, locationTrace:<ApiUrl url="type:ODCheckerLocationTrace" label="api.ODCheckerLocationTrace"/>, locationId:<ApiUrl url="class:ODId" label="api.ODId"/>, locationDocs:<ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/>) => <ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-custom}
+Add a custom checker function. Returns `true` when valid.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L387)
+
+<Divider></Divider>
+#### <C color="red">optional</C> `disableEmpty` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-disableEmpty}
+Don't allow this array to be empty
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L704)
+
+<Divider></Divider>
+#### <C color="blue">inherited</C> <C color="blue">optional</C> `docs` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-docs}
+Set the url to the documentation of this variable.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L389)
+
+<Divider></Divider>
+#### <C color="red">optional</C> `emptyRequired` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-emptyRequired}
+This array is required to be empty
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L706)
+
+<Divider></Divider>
+#### <C color="green">optional</C> `length` <M color="green">number</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-length}
+The length of the array needs to be the same as this value
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L712)
+
+<Divider></Divider>
+#### <C color="green">optional</C> `maxLength` <M color="green">number</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-maxLength}
+The maximum length of this array
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L710)
+
+<Divider></Divider>
+#### <C color="green">optional</C> `minLength` <M color="green">number</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#prop-minLength}
+The minimum length of this array
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L708)
+
+<Divider></Divider>
+#### <C color="purple">optional</C> `propertyChecker` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODCheckerStructure" label="api.ODCheckerStructure"/></ApiBlock> \{#prop-propertyChecker}
+The checker for all the properties in this array
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L702)
+
+<Divider></Divider>

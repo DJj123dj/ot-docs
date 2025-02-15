@@ -1,0 +1,115 @@
+---
+title: ODTextCommandBuilder
+description: "The builder for text commands. Here you can add options to the command."
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODTextCommandBuilder <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+The builder for text commands. Here you can add options to the command.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L1091)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`allowBots`](#prop-allowBots)**</li>
+        <li>**[`allowedGuildIds`](#prop-allowedGuildIds)**</li>
+        <li>**[`dmPermission`](#prop-dmPermission)**</li>
+        <li>**[`guildPermission`](#prop-guildPermission)**</li>
+        <li>**[`name`](#prop-name)**</li>
+        <li>**[`options`](#prop-options)**</li>
+        <li>**[`prefix`](#prop-prefix)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### <C color="red">optional</C> `allowBots` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-allowBots}
+Are bots allowed to execute this command?
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L1103)
+
+<Divider></Divider>
+#### <C color="pink">optional</C> `allowedGuildIds` <M color="pink">array</M> <ApiBlock><ApiUrl url="js:string" label="string"/>[]</ApiBlock> \{#prop-allowedGuildIds}
+When specified, only allow this command to be executed in the following guilds
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L1101)
+
+<Divider></Divider>
+#### <C color="red">optional</C> `dmPermission` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-dmPermission}
+Is this command allowed in dm?
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L1097)
+
+<Divider></Divider>
+#### <C color="red">optional</C> `guildPermission` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-guildPermission}
+Is this command allowed in guilds?
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L1099)
+
+<Divider></Divider>
+#### `name` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-name}
+The name of this command (can include spaces for subcommands)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L1095)
+
+<Divider></Divider>
+#### <C color="pink">optional</C> `options` <M color="pink">array</M> <ApiBlock><ApiUrl url="type:ODTextCommandBuilderOption" label="api.ODTextCommandBuilderOption"/>[]</ApiBlock> \{#prop-options}
+The options for this text command (like slash commands)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L1105)
+
+<Divider></Divider>
+#### `prefix` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-prefix}
+The prefix of this command
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/client.ts#L1093)
+
+<Divider></Divider>

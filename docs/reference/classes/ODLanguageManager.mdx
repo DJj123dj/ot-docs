@@ -1,0 +1,442 @@
+---
+title: ODLanguageManager
+description: "This is an Open Ticket language manager. It manages all languages in the bot and manages translation for you!"
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, class]
+sidebar_class_name: otdocs-badge-page otdocs-meta-purple-class
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODLanguageManager <M color="purple">class</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This is an Open Ticket language manager.
+
+It manages all languages in the bot and manages translation for you!
+Get a translation via the `getTranslation()` or `getTranslationWithParams()` methods.
+
+Add new languages using the `ODlanguage` class in your plugin!
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L33)
+
+<FlexHorizontal>
+<div style={{width:"30%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`backup`](#prop-backup)**</li>
+        <li>**[`current`](#prop-current)**</li>
+        <li>**[`redirects`](#prop-redirects)**</li>
+    </ul>
+</div>
+<div style={{width:"30%"}}>
+    #### Methods \{#overview-methods}
+    <ul>
+        <li>**[`constructor`](#method-constructor)**</li>
+        <li>**[`_change`](#method-_change)**</li>
+        <li>**[`add`](#method-add)**</li>
+        <li>**[`changed`](#method-changed)**</li>
+        <li>**[`exists`](#method-exists)**</li>
+        <li>**[`get`](#method-get)**</li>
+        <li>**[`getAll`](#method-getAll)**</li>
+        <li>**[`getBackupLanguage`](#method-getBackupLanguage)**</li>
+        <li>**[`getCurrentLanguage`](#method-getCurrentLanguage)**</li>
+        <li>**[`getCurrentLanguageId`](#method-getCurrentLanguageId)**</li>
+        <li>**[`getFiltered`](#method-getFiltered)**</li>
+        <li>**[`getIds`](#method-getIds)**</li>
+        <li>**[`getLanguageMetadata`](#method-getLanguageMetadata)**</li>
+        <li>**[`getLength`](#method-getLength)**</li>
+        <li>**[`getRegex`](#method-getRegex)**</li>
+        <li>**[`getTranslation`](#method-getTranslation)**</li>
+        <li>**[`getTranslationWithParams`](#method-getTranslationWithParams)**</li>
+        <li>**[`init`](#method-init)**</li>
+        <li>**[`loopAll`](#method-loopAll)**</li>
+        <li>**[`onAdd`](#method-onAdd)**</li>
+        <li>**[`onChange`](#method-onChange)**</li>
+        <li>**[`onRemove`](#method-onRemove)**</li>
+        <li>**[`remove`](#method-remove)**</li>
+        <li>**[`setBackupLanguage`](#method-setBackupLanguage)**</li>
+        <li>**[`setCurrentLanguage`](#method-setCurrentLanguage)**</li>
+        <li>**[`useDebug`](#method-useDebug)**</li>
+    </ul>
+</div>
+<div style={{width:"30%"}}>
+    #### Other \{#overview-other}
+    <ul>
+        <li>**[Open Ticket Defaults](#open-ticket-defaults)**</li>
+        <li>**[Plugin Defaults](#plugin-defaults)**</li>
+        <li>**[Examples](#examples)**</li>
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### `backup` <M color="brown">type</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="class:ODLanguage" label="api.ODLanguage"/></ApiBlock> \{#prop-backup}
+The currently selected backup language. (used when translation missing in current language)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L37)
+
+<Divider></Divider>
+#### `current` <M color="brown">type</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="class:ODLanguage" label="api.ODLanguage"/></ApiBlock> \{#prop-current}
+The currently selected language.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L35)
+
+<Divider></Divider>
+#### <C color="purple">inherited</C> `redirects` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODManagerRedirectHelper" label="api.ODManagerRedirectHelper"/></ApiBlock> \{#prop-redirects}
+Handle all redirects in this `ODManager`
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L213)
+
+<Divider></Divider>
+
+## Methods
+<Divider></Divider>
+#### `constructor()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODLanguageManager" label="api.ODLanguageManager"/></ApiBlock> \{#method-constructor}
+(no description)
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`debug`:** <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODDebugger" label="api.ODDebugger"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`presets`:** <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L41)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> <C color="orange">protected</C> `_change()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:void" label="void"/></ApiBlock> \{#method-_change}
+Trigger an `onChange()` event in the parent `ODManager` of this class.
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L108)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `add()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#method-add}
+Add data to the manager. The id will be fetched from the data class! You can optionally select to overwrite existing data!
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`data`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="class:ODLanguage" label="api.ODLanguage"/>|(<ApiUrl url="class:ODLanguage" label="api.ODLanguage"/>[])</ApiBlock> - Parameter Description Lorem Ipsum.
+- **`overwrite`:** <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L222)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `changed()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:void" label="void"/></ApiBlock> \{#method-changed}
+**(❌ SYSTEM ONLY!!)** Set the callback executed when a value inside this class changes.
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`callback`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|(() => <ApiUrl url="js:void" label="void"/>)</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L119)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `exists()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#method-exists}
+Check if data that matches the `ODId` exists. Returns a boolean.
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`id`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODValidId" label="api.ODValidId"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L345)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `get()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="class:ODLanguage" label="api.ODLanguage"/></ApiBlock> \{#method-get}
+Get data that matches the `ODId`. Returns the found data.
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`id`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODValidId" label="api.ODValidId"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L297)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `getAll()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODLanguage" label="api.ODLanguage"/>[]</ApiBlock> \{#method-getAll}
+Get all data inside this manager
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L359)
+
+<Divider></Divider>
+#### `getBackupLanguage()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="class:ODLanguage" label="api.ODLanguage"/></ApiBlock> \{#method-getBackupLanguage}
+Get the backup language (same as `this.backup`)
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L74)
+
+<Divider></Divider>
+#### `getCurrentLanguage()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="class:ODLanguage" label="api.ODLanguage"/></ApiBlock> \{#method-getCurrentLanguage}
+Get the current language (same as `this.current`)
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L60)
+
+<Divider></Divider>
+#### `getCurrentLanguageId()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#method-getCurrentLanguageId}
+Get the ID (string) of the current language. (Not backup language)
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L83)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `getFiltered()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODLanguage" label="api.ODLanguage"/>[]</ApiBlock> \{#method-getFiltered}
+Get all data that matches inside the filter function
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`predicate`:** <M color="orange">function</M> <ApiBlock>(value:<ApiUrl url="class:ODLanguage" label="api.ODLanguage"/>, index:<ApiUrl url="js:number" label="number"/>, array:<ApiUrl url="class:ODLanguage" label="api.ODLanguage"/>[]) => unknown</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L363)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `getIds()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODId" label="api.ODId"/>[]</ApiBlock> \{#method-getIds}
+Get a list of all the ids inside this manager
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L375)
+
+<Divider></Divider>
+#### `getLanguageMetadata()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="interface:ODLanguageMetadata" label="api.ODLanguageMetadata"/></ApiBlock> \{#method-getLanguageMetadata}
+Get the metadata of the current/backup language.
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`frombackup`:** <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L78)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `getLength()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:number" label="number"/></ApiBlock> \{#method-getLength}
+Get the length of the data inside this manager
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L371)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `getRegex()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODLanguage" label="api.ODLanguage"/>[]</ApiBlock> \{#method-getRegex}
+Get all data that matches the regex
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`regex`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="js:regex" label="RegExp"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L367)
+
+<Divider></Divider>
+#### `getTranslation()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/></ApiBlock> \{#method-getTranslation}
+Get a translation string by JSON location. (e.g. `"checker.system.typeError"`)
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`id`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L87)
+
+<Divider></Divider>
+#### `getTranslationWithParams()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="js:string" label="string"/></ApiBlock> \{#method-getTranslationWithParams}
+Get a backup translation string by JSON location and replace `{0}`,`{1}`,`{2}`,... with the provided parameters.
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`id`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`params`:** <M color="pink">array</M> <ApiBlock><ApiUrl url="js:string" label="string"/>[]</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L123)
+
+<Divider></Divider>
+#### `init()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:promise" label="Promise"/></ApiBlock> \{#method-init}
+Init all language files.
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L135)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `loopAll()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:promise" label="Promise"/></ApiBlock> \{#method-loopAll}
+Run an iterator over all data in this manager. This method also supports async-await behaviour!
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`cb`:** <M color="orange">function</M> <ApiBlock>(data:<ApiUrl url="class:ODLanguage" label="api.ODLanguage"/>, id:<ApiUrl url="class:ODId" label="api.ODId"/>) => <ApiUrl url="type:ODPromiseVoid" label="api.ODPromiseVoid"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L379)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `onAdd()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:void" label="void"/></ApiBlock> \{#method-onAdd}
+Listen for when data is added to this manager.
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`callback`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODManagerAddCallback" label="api.ODManagerAddCallback"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L390)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `onChange()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:void" label="void"/></ApiBlock> \{#method-onChange}
+Listen for when data is changed in this manager.
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`callback`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODManagerCallback" label="api.ODManagerCallback"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L394)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `onRemove()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:void" label="void"/></ApiBlock> \{#method-onRemove}
+Listen for when data is removed from this manager.
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`callback`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODManagerCallback" label="api.ODManagerCallback"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L398)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `remove()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|<ApiUrl url="class:ODLanguage" label="api.ODLanguage"/></ApiBlock> \{#method-remove}
+Remove data that matches the `ODId`. Returns the removed data.
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`id`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODValidId" label="api.ODValidId"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L311)
+
+<Divider></Divider>
+#### `setBackupLanguage()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:void" label="void"/></ApiBlock> \{#method-setBackupLanguage}
+Set the backup language by providing the ID of a language which is registered in this manager.
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`id`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODValidId" label="api.ODValidId"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L64)
+
+<Divider></Divider>
+#### `setCurrentLanguage()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:void" label="void"/></ApiBlock> \{#method-setCurrentLanguage}
+Set the current language by providing the ID of a language which is registered in this manager.
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`id`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODValidId" label="api.ODValidId"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/language.ts#L50)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `useDebug()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:void" label="void"/></ApiBlock> \{#method-useDebug}
+Use the Open Ticket debugger in this manager for logs
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`debug`:** <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODDebugger" label="api.ODDebugger"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`debugname`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L385)
+
+<Divider></Divider>
+
+## Defaults
+:::warning under construction
+We're still working on this part of the documentation!
+:::
+{/*
+:::info defaults
+Defaults are manager IDs which are autocompleted by typescript. These are available for both built-in & plugin classes.
+- `ODExample` has defaults available for the `ODExampleManager` (`ODExampleManagerIds_Default`).
+- You can access them using `openticket.examples.get(id:ODValidId)`.
+:::
+
+### Open Ticket Defaults
+These are defaults defined by Open Ticket itself.
+- **`"openticket:general"`:** The `general.json` config file.
+- **`"openticket:questions"`:** The `questions.json` config file.
+- **`"openticket:options"`:** The `options.json` config file.
+- **`"openticket:panels"`:** The `panels.json` config file.
+- **`"openticket:transcripts"`:** The `transcripts.json` config file.
+
+### Plugin Defaults
+These are defaults defined by plugins in the official Open Ticket [**plugin repository**](https://odplugins.dj-dj.be/tree/main/open-ticket).
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+*/}
+
+## Examples
+:::warning under construction
+We're still working on this part of the documentation!
+:::
+{/*
+<Tabs>
+    <TabItem value="First Example">
+    > Test example 1
+    > ```ts title="example.ts" showLineNumbers
+    > export class ODJsonConfig extends ODConfig {
+    >     //example 1
+    > }
+    > ```
+    </TabItem>
+    <TabItem value="Second Example">
+    > Test example 2
+    > ```ts title="example.ts" showLineNumbers
+    > export class ODJsonConfig extends ODConfig {
+    >     //example 2
+    > }
+    > ```
+    </TabItem>
+</Tabs>
+*/}

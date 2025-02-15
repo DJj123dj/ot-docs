@@ -1,0 +1,319 @@
+---
+title: ODTicketOptionIds
+description: "This interface is a list of ids available in the `ODTicketOption` class. It's used to generate typescript declarations for this class."
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODTicketOptionIds <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This interface is a list of ids available in the `ODTicketOption` class.
+It's used to generate typescript declarations for this class.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L140)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`opendiscord:admins`](#prop-opendiscord-admins)**</li>
+        <li>**[`opendiscord:admins-readonly`](#prop-opendiscord-admins-readonly)**</li>
+        <li>**[`opendiscord:allow-blacklisted-users`](#prop-opendiscord-allow-blacklisted-users)**</li>
+        <li>**[`opendiscord:autoclose-disable-claim`](#prop-opendiscord-autoclose-disable-claim)**</li>
+        <li>**[`opendiscord:autoclose-enable-hours`](#prop-opendiscord-autoclose-enable-hours)**</li>
+        <li>**[`opendiscord:autoclose-enable-leave`](#prop-opendiscord-autoclose-enable-leave)**</li>
+        <li>**[`opendiscord:autoclose-hours`](#prop-opendiscord-autoclose-hours)**</li>
+        <li>**[`opendiscord:autodelete-days`](#prop-opendiscord-autodelete-days)**</li>
+        <li>**[`opendiscord:autodelete-disable-claim`](#prop-opendiscord-autodelete-disable-claim)**</li>
+        <li>**[`opendiscord:autodelete-enable-days`](#prop-opendiscord-autodelete-enable-days)**</li>
+        <li>**[`opendiscord:autodelete-enable-leave`](#prop-opendiscord-autodelete-enable-leave)**</li>
+        <li>**[`opendiscord:button-color`](#prop-opendiscord-button-color)**</li>
+        <li>**[`opendiscord:button-emoji`](#prop-opendiscord-button-emoji)**</li>
+        <li>**[`opendiscord:button-label`](#prop-opendiscord-button-label)**</li>
+        <li>**[`opendiscord:channel-categories-claimed`](#prop-opendiscord-channel-categories-claimed)**</li>
+        <li>**[`opendiscord:channel-category`](#prop-opendiscord-channel-category)**</li>
+        <li>**[`opendiscord:channel-category-backup`](#prop-opendiscord-channel-category-backup)**</li>
+        <li>**[`opendiscord:channel-category-closed`](#prop-opendiscord-channel-category-closed)**</li>
+        <li>**[`opendiscord:channel-description`](#prop-opendiscord-channel-description)**</li>
+        <li>**[`opendiscord:channel-prefix`](#prop-opendiscord-channel-prefix)**</li>
+        <li>**[`opendiscord:channel-suffix`](#prop-opendiscord-channel-suffix)**</li>
+        <li>**[`opendiscord:cooldown-enabled`](#prop-opendiscord-cooldown-enabled)**</li>
+        <li>**[`opendiscord:cooldown-minutes`](#prop-opendiscord-cooldown-minutes)**</li>
+        <li>**[`opendiscord:description`](#prop-opendiscord-description)**</li>
+        <li>**[`opendiscord:dm-message-embed`](#prop-opendiscord-dm-message-embed)**</li>
+        <li>**[`opendiscord:dm-message-enabled`](#prop-opendiscord-dm-message-enabled)**</li>
+        <li>**[`opendiscord:dm-message-text`](#prop-opendiscord-dm-message-text)**</li>
+        <li>**[`opendiscord:limits-enabled`](#prop-opendiscord-limits-enabled)**</li>
+        <li>**[`opendiscord:limits-maximum-global`](#prop-opendiscord-limits-maximum-global)**</li>
+        <li>**[`opendiscord:limits-maximum-user`](#prop-opendiscord-limits-maximum-user)**</li>
+        <li>**[`opendiscord:name`](#prop-opendiscord-name)**</li>
+        <li>**[`opendiscord:questions`](#prop-opendiscord-questions)**</li>
+        <li>**[`opendiscord:ticket-message-embed`](#prop-opendiscord-ticket-message-embed)**</li>
+        <li>**[`opendiscord:ticket-message-enabled`](#prop-opendiscord-ticket-message-enabled)**</li>
+        <li>**[`opendiscord:ticket-message-ping`](#prop-opendiscord-ticket-message-ping)**</li>
+        <li>**[`opendiscord:ticket-message-text`](#prop-opendiscord-ticket-message-text)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### `opendiscord:admins` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-admins}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L148)
+
+<Divider></Divider>
+#### `opendiscord:admins-readonly` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-admins-readonly}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L149)
+
+<Divider></Divider>
+#### `opendiscord:allow-blacklisted-users` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-allow-blacklisted-users}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L150)
+
+<Divider></Divider>
+#### `opendiscord:autoclose-disable-claim` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-autoclose-disable-claim}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L172)
+
+<Divider></Divider>
+#### `opendiscord:autoclose-enable-hours` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-autoclose-enable-hours}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L170)
+
+<Divider></Divider>
+#### `opendiscord:autoclose-enable-leave` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-autoclose-enable-leave}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L171)
+
+<Divider></Divider>
+#### `opendiscord:autoclose-hours` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-autoclose-hours}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L173)
+
+<Divider></Divider>
+#### `opendiscord:autodelete-days` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-autodelete-days}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L178)
+
+<Divider></Divider>
+#### `opendiscord:autodelete-disable-claim` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-autodelete-disable-claim}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L177)
+
+<Divider></Divider>
+#### `opendiscord:autodelete-enable-days` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-autodelete-enable-days}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L175)
+
+<Divider></Divider>
+#### `opendiscord:autodelete-enable-leave` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-autodelete-enable-leave}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L176)
+
+<Divider></Divider>
+#### `opendiscord:button-color` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-button-color}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L146)
+
+<Divider></Divider>
+#### `opendiscord:button-emoji` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-button-emoji}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L144)
+
+<Divider></Divider>
+#### `opendiscord:button-label` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-button-label}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L145)
+
+<Divider></Divider>
+#### `opendiscord:channel-categories-claimed` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-channel-categories-claimed}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L158)
+
+<Divider></Divider>
+#### `opendiscord:channel-category` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-channel-category}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L155)
+
+<Divider></Divider>
+#### `opendiscord:channel-category-backup` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-channel-category-backup}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L157)
+
+<Divider></Divider>
+#### `opendiscord:channel-category-closed` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-channel-category-closed}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L156)
+
+<Divider></Divider>
+#### `opendiscord:channel-description` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-channel-description}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L159)
+
+<Divider></Divider>
+#### `opendiscord:channel-prefix` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-channel-prefix}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L153)
+
+<Divider></Divider>
+#### `opendiscord:channel-suffix` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-channel-suffix}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L154)
+
+<Divider></Divider>
+#### `opendiscord:cooldown-enabled` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-cooldown-enabled}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L180)
+
+<Divider></Divider>
+#### `opendiscord:cooldown-minutes` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-cooldown-minutes}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L181)
+
+<Divider></Divider>
+#### `opendiscord:description` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-description}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L142)
+
+<Divider></Divider>
+#### `opendiscord:dm-message-embed` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-dm-message-embed}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L163)
+
+<Divider></Divider>
+#### `opendiscord:dm-message-enabled` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-dm-message-enabled}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L161)
+
+<Divider></Divider>
+#### `opendiscord:dm-message-text` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-dm-message-text}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L162)
+
+<Divider></Divider>
+#### `opendiscord:limits-enabled` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-limits-enabled}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L183)
+
+<Divider></Divider>
+#### `opendiscord:limits-maximum-global` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-limits-maximum-global}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L184)
+
+<Divider></Divider>
+#### `opendiscord:limits-maximum-user` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-limits-maximum-user}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L185)
+
+<Divider></Divider>
+#### `opendiscord:name` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-name}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L141)
+
+<Divider></Divider>
+#### `opendiscord:questions` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-questions}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L151)
+
+<Divider></Divider>
+#### `opendiscord:ticket-message-embed` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-ticket-message-embed}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L167)
+
+<Divider></Divider>
+#### `opendiscord:ticket-message-enabled` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-ticket-message-enabled}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L165)
+
+<Divider></Divider>
+#### `opendiscord:ticket-message-ping` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-ticket-message-ping}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L168)
+
+<Divider></Divider>
+#### `opendiscord:ticket-message-text` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODOptionData" label="api.ODOptionData"/></ApiBlock> \{#prop-opendiscord-ticket-message-text}
+(no description)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/openticket/option.ts#L166)
+
+<Divider></Divider>

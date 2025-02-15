@@ -132,9 +132,4 @@ package-lock.json
 .DS_Store
 **/.DS_Store
 
-# TEMPORARY
 api-generator/export
-docs/reference/classes/*.mdx
-docs/reference/enums/*.mdx
-docs/reference/interfaces/*.mdx
-docs/reference/types/*.mdx

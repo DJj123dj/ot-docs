@@ -1,0 +1,108 @@
+---
+title: ODJsonConfig_DefaultShortQuestionType
+description: "This interface is an object which has all properties for short questions in the `questions.json` config!"
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODJsonConfig_DefaultShortQuestionType <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This interface is an object which has all properties for short questions in the `questions.json` config!
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L516)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`id`](#prop-id)**</li>
+        <li>**[`length`](#prop-length)**</li>
+        <li>**[`name`](#prop-name)**</li>
+        <li>**[`placeholder`](#prop-placeholder)**</li>
+        <li>**[`required`](#prop-required)**</li>
+        <li>**[`type`](#prop-type)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### `id` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-id}
+The id of this question.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L518)
+
+<Divider></Divider>
+#### `length` <M color="brown">type</M> <ApiBlock>\{enabled:<ApiUrl url="js:boolean" label="boolean"/>, max:<ApiUrl url="js:number" label="number"/>, min:<ApiUrl url="js:number" label="number"/>\}</ApiBlock> \{#prop-length}
+Settings related to the length of the input.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L529)
+
+<Divider></Divider>
+#### `name` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-name}
+The name of this question.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L520)
+
+<Divider></Divider>
+#### `placeholder` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-placeholder}
+A placeholder for the question.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L527)
+
+<Divider></Divider>
+#### `required` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-required}
+Is this question required?
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L525)
+
+<Divider></Divider>
+#### `type` <M color="brown">type</M> <ApiBlock>"short"</ApiBlock> \{#prop-type}
+The type of this question.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L522)
+
+<Divider></Divider>

@@ -1,0 +1,41 @@
+---
+title: ODPermissionLevel
+description: "All available permission types/levels. But as `enum` instead of `type`. Used to calculate the level."
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, enum]
+sidebar_class_name: otdocs-badge-page otdocs-meta-yellow-enum
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODPermissionLevel <M color="yellow">enum</M>
+
+## Overview
+All available permission types/levels. But as `enum` instead of `type`. Used to calculate the level.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/permission.ts#L35)
+
+<FlexHorizontal>
+<div style={{width:"50%"}}>
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        <li>**<code><ApiUrl url="interface:ODExampleInterface" label="api.ODExampleInterface"/></code> <M color="gray">interface</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Members
+- **[`admin`](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/permission.ts#L43):** Admin. Higher than a moderator. (Used for global-admins)
+- **[`developer`](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/permission.ts#L47):** Bot owner or all users from dev team. (Able to use all commands including `/stats reset`)
+- **[`member`](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/permission.ts#L37):** A normal member. (Default for everyone)
+- **[`moderator`](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/permission.ts#L41):** Moderator. Higher than the support team. (Unused)
+- **[`owner`](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/permission.ts#L45):** Server owner. (Able to use all commands including `/stats reset`)
+- **[`support`](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/permission.ts#L39):** Support team. Higher than a normal member. (Used for ticket-admins)

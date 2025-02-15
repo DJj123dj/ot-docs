@@ -1,0 +1,245 @@
+---
+title: ODConsoleWarningMessage
+description: "This is an Open Ticket console warning message. It is the same as a normal `ODConsoleMessage`, but it has a predefined prefix & color scheme for the \"WARNING\" messages!"
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, class]
+sidebar_class_name: otdocs-badge-page otdocs-meta-purple-class
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODConsoleWarningMessage <M color="purple">class</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+This is an Open Ticket console warning message.
+
+It is the same as a normal `ODConsoleMessage`, but it has a predefined prefix & color scheme for the "WARNING" messages!
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/console.ts#L168)
+
+<FlexHorizontal>
+<div style={{width:"30%"}}>
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`color`](#prop-color)**</li>
+        <li>**[`message`](#prop-message)**</li>
+        <li>**[`params`](#prop-params)**</li>
+        <li>**[`prefix`](#prop-prefix)**</li>
+    </ul>
+</div>
+<div style={{width:"30%"}}>
+    #### Methods \{#overview-methods}
+    <ul>
+        <li>**[`constructor`](#method-constructor)**</li>
+        <li>**[`createParamsString`](#method-createParamsString)**</li>
+        <li>**[`render`](#method-render)**</li>
+        <li>**[`setColor`](#method-setColor)**</li>
+        <li>**[`setMessage`](#method-setMessage)**</li>
+        <li>**[`setParams`](#method-setParams)**</li>
+        <li>**[`setPrefix`](#method-setPrefix)**</li>
+        <li>**[`toDebugString`](#method-toDebugString)**</li>
+    </ul>
+</div>
+<div style={{width:"30%"}}>
+    #### Other \{#overview-other}
+    <ul>
+        <li>**[Open Ticket Defaults](#open-ticket-defaults)**</li>
+        <li>**[Plugin Defaults](#plugin-defaults)**</li>
+        <li>**[Examples](#examples)**</li>
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### <C color="brown">inherited</C> `color` <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODValidConsoleColor" label="api.ODValidConsoleColor"/></ApiBlock> \{#prop-color}
+The color of the prefix of this message
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/console.ts#L41)
+
+<Divider></Divider>
+#### <C color="blue">inherited</C> `message` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-message}
+The main message sent in the console
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/console.ts#L35)
+
+<Divider></Divider>
+#### <C color="pink">inherited</C> `params` <M color="pink">array</M> <ApiBlock><ApiUrl url="interface:ODConsoleMessageParam" label="api.ODConsoleMessageParam"/>[]</ApiBlock> \{#prop-params}
+An array of all the parameters in this message
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/console.ts#L37)
+
+<Divider></Divider>
+#### <C color="blue">inherited</C> `prefix` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-prefix}
+The prefix of this message (!uppercase recommended!)
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/console.ts#L39)
+
+<Divider></Divider>
+
+## Methods
+<Divider></Divider>
+#### `constructor()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODConsoleWarningMessage" label="api.ODConsoleWarningMessage"/></ApiBlock> \{#method-constructor}
+(no description)
+
+<details>
+<summary>**View Parameters (2)**</summary>
+- **`message`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`params`:** <M color="pink">array</M> <ApiBlock><ApiUrl url="interface:ODConsoleMessageParam" label="api.ODConsoleMessageParam"/>[]</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/console.ts#L169)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `createParamsString()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#method-createParamsString}
+Render the parameters of this message in a specific color.
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`color`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODValidConsoleColor" label="api.ODValidConsoleColor"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/console.ts#L80)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `render()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#method-render}
+Render this message to the console using `console.log`! Returns `false` when something went wrong.
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/console.ts#L55)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `setColor()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODConsoleWarningMessage" label="api.ODConsoleWarningMessage"/></ApiBlock> \{#method-setColor}
+Set the prefix color
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`color`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODValidConsoleColor" label="api.ODValidConsoleColor"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/console.ts#L109)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `setMessage()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODConsoleWarningMessage" label="api.ODConsoleWarningMessage"/></ApiBlock> \{#method-setMessage}
+Set the message
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`message`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/console.ts#L94)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `setParams()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODConsoleWarningMessage" label="api.ODConsoleWarningMessage"/></ApiBlock> \{#method-setParams}
+Set the params
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`params`:** <M color="pink">array</M> <ApiBlock><ApiUrl url="interface:ODConsoleMessageParam" label="api.ODConsoleMessageParam"/>[]</ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/console.ts#L99)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `setPrefix()` <M color="orange">function</M> <ApiBlock><ApiUrl url="class:ODConsoleWarningMessage" label="api.ODConsoleWarningMessage"/></ApiBlock> \{#method-setPrefix}
+Set the prefix
+
+<details>
+<summary>**View Parameters (1)**</summary>
+- **`prefix`:** <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> - Parameter Description Lorem Ipsum.
+</details>
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/console.ts#L104)
+
+<Divider></Divider>
+#### <C color="orange">inherited</C> `toDebugString()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#method-toDebugString}
+Create a more-detailed, non-colored version of this message to store it in the `otdebug.txt` file!
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/console.ts#L69)
+
+<Divider></Divider>
+
+## Defaults
+:::warning under construction
+We're still working on this part of the documentation!
+:::
+{/*
+:::info defaults
+Defaults are manager IDs which are autocompleted by typescript. These are available for both built-in & plugin classes.
+- `ODExample` has defaults available for the `ODExampleManager` (`ODExampleManagerIds_Default`).
+- You can access them using `openticket.examples.get(id:ODValidId)`.
+:::
+
+### Open Ticket Defaults
+These are defaults defined by Open Ticket itself.
+- **`"openticket:general"`:** The `general.json` config file.
+- **`"openticket:questions"`:** The `questions.json` config file.
+- **`"openticket:options"`:** The `options.json` config file.
+- **`"openticket:panels"`:** The `panels.json` config file.
+- **`"openticket:transcripts"`:** The `transcripts.json` config file.
+
+### Plugin Defaults
+These are defaults defined by plugins in the official Open Ticket [**plugin repository**](https://odplugins.dj-dj.be/tree/main/open-ticket).
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+- <C color="blue">**(OT Example Plugin)**</C> **`"example-plugin:config"`:** The `config.json` config file.
+*/}
+
+## Examples
+:::warning under construction
+We're still working on this part of the documentation!
+:::
+{/*
+<Tabs>
+    <TabItem value="First Example">
+    > Test example 1
+    > ```ts title="example.ts" showLineNumbers
+    > export class ODJsonConfig extends ODConfig {
+    >     //example 1
+    > }
+    > ```
+    </TabItem>
+    <TabItem value="Second Example">
+    > Test example 2
+    > ```ts title="example.ts" showLineNumbers
+    > export class ODJsonConfig extends ODConfig {
+    >     //example 2
+    > }
+    > ```
+    </TabItem>
+</Tabs>
+*/}

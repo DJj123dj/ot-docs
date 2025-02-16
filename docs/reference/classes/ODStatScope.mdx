@@ -7,7 +7,7 @@ sidebar_class_name: otdocs-badge-page otdocs-meta-purple-class
 <head>
     <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
 </head>
-import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
 import Tabs from "@theme/Tabs"
 import TabItem from "@theme/TabItem"
 
@@ -50,7 +50,7 @@ The built-in Open Ticket scopes are: `global`, `user`, `ticket`
 > [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/stat.ts#L107)
 
 <FlexHorizontal>
-<div style={{width:"30%"}}>
+<div style={{width:"30%"}} className="otdocs-flex-mobile-width">
     #### Properties \{#overview-properties}
     <ul>
         <li>**[`database`](#prop-database)**</li>
@@ -60,7 +60,7 @@ The built-in Open Ticket scopes are: `global`, `user`, `ticket`
         <li>**[`redirects`](#prop-redirects)**</li>
     </ul>
 </div>
-<div style={{width:"30%"}}>
+<div style={{width:"30%"}} className="otdocs-flex-mobile-width">
     #### Methods \{#overview-methods}
     <ul>
         <li>**[`constructor`](#method-constructor)**</li>
@@ -88,7 +88,7 @@ The built-in Open Ticket scopes are: `global`, `user`, `ticket`
         <li>**[`useDebug`](#method-useDebug)**</li>
     </ul>
 </div>
-<div style={{width:"30%"}}>
+<div style={{width:"30%"}} className="otdocs-flex-mobile-width">
     #### Other \{#overview-other}
     <ul>
         <li>**[Open Ticket Defaults](#open-ticket-defaults)**</li>

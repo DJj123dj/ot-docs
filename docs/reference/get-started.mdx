@@ -7,21 +7,86 @@ keywords: [open-ticket, open ticket, api reference, discord ticket bot, referenc
 <head>
     <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
 </head>
-import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
 
-:::danger incomplete documentation
-This part of the documentation is not finished yet! **There are still a lot of parts missing!**
-If you want to contribute, feel free to check the **[contributor page](/contributing)**
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+Welcome to the Open Ticket **API Reference**! This part of the documentation provides in-depth information on the various config variables, commands, classes, types, interfaces, events and utilities available in Open Ticket.
+
+Most references are targeted towards users who want to develop plugins for Open Ticket. An in-depth guide for this can be found [here](/docs/framework/get-started.mdx).
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+    <StyledTitle title="API Reference" description="Configs, Commands, Classes, Types & more!"></StyledTitle>
+</div>
+</FlexHorizontal>
+
+:::availability version compatibility
+This **API Reference** is for Open Ticket `v4.0.0`.  
+- Older and newer versions may include changes, additions, or deprecated features.
 :::
 
-### Available Types
-- <M color="red">boolean</M>
-- <M color="green">number</M>
-- <M color="blue">string</M>
-- <M color="cyan">object</M>
-- <M color="pink">array</M>
-- <M color="purple">class</M>
-- <M color="orange">function</M>
-- <M color="brown">type</M>
-- <M color="gray">interface</M>
-- <M color="yellow">enum</M>
+<Divider></Divider>
+## 📌 Table Of Contents
+The API Reference consists of several categories to help you navigate the bot’s functionality efficiently:
+- [**Languages:**](./languages.mdx) A list of all available languages.
+- [**Commands:**](/docs/category/api-commands/) Detailed documentation on every available command.
+- [**Config:**](/docs/category/api-config/) Information on all JSON configuration files.
+- [**Events:**](/docs/category/api-events/) Documentation for every Open Ticket event.
+- [**Classes:**](/docs/category/api-classes/) Descriptions of API classes and their usage.
+- [**Interfaces:**](/docs/category/api-interfaces/) Interfaces available for advanced customizations.
+- [**Types:**](/docs/category/api-types/) Type aliases used in the API.
+- [**Enums:**](/docs/category/api-enums/) Various enumerations for options and settings.
+- [**Utilities:**](/docs/category/api-utilities/) Helpful utility functions for promise handling, date formatting, and more.
+
+<Divider></Divider>
+## 🚀 Getting Started
+To get started, familiarize yourself with the **Config** and **Commands** sections first. These are the core functionalities for setting up and managing Open Ticket in your Discord server.
+
+### 🔧 Configuration
+You can configure Open Ticket using the 5 JSON files available in `./config/`. **Learn more:**
+<LinkBlock mode="emoji" emoji="⚙️" url="/docs/reference/config/general" isdoc="true" name="general.json (General Config)" description="Configure the bot, status, permissions & client related variables."/>
+<LinkBlock mode="emoji" emoji="❔" url="/docs/reference/config/questions" isdoc="true" name="questions.json (Questions Config)" description="Configure modal questions for ticket options."/>
+<LinkBlock mode="emoji" emoji="🔘" url="/docs/reference/config/options" isdoc="true" name="options.json (Options Config)" description="Configure ticket, website & reaction role options or buttons which can be used in a panel."/>
+<LinkBlock mode="emoji" emoji="🎛️" url="/docs/reference/config/panels" isdoc="true" name="panels.json (Panels Config)" description="Configure panels or embeds which can be spawned in Discord using /panel."/>
+<LinkBlock mode="emoji" emoji="📄" url="/docs/reference/config/transcripts" isdoc="true" name="transcripts.json (Transcript Config)" description="Configure everything related to ticket transcripts. Both HTML & text are available!"/>
+
+### 🖥️ Commands
+Open Ticket provides a variety of commands to manage tickets. **Learn more:**
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+- [**/help**](./commands/help.mdx) - Show the Open Ticket help menu.
+- [**/panel**](./commands/panel.mdx) - Spawn a panel.
+- [**/ticket**](./commands/ticket.mdx) - Create a ticket.
+- [**/close**](./commands/close.mdx) - Close a ticket.
+- [**/reopen**](./commands/reopen.mdx) - Reopen a ticket.
+- [**/delete**](./commands/delete.mdx) - Delete a ticket. This will generate a transcript.
+- [**/claim**](./commands/claim.mdx) - Claim a ticket.
+- [**/unclaim**](./commands/unclaim.mdx) - Unclaim a ticket.
+- [**/pin**](./commands/pin.mdx) - Pin a ticket.
+- [**/unpin**](./commands/unpin.mdx) - Unpin a ticket.
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+- [**/add**](./commands/add.mdx) - Add a user to a ticket.
+- [**/remove**](./commands/remove.mdx) - Remove a user from a ticket.
+- [**/rename**](./commands/rename.mdx) - Rename the ticket channel name.
+- [**/move**](./commands/move.mdx) - Move the ticket to a different option type.
+- [**/clear**](./commands/clear.mdx) - Delete multiple tickets at the same time.
+- [**/autoclose**](./commands/autoclose.mdx) - Manage the autoclose system.
+- [**/autodelete**](./commands/autodelete.mdx) - Manage the autodelete system.
+- [**/blacklist**](./commands/blacklist.mdx) - Manage blacklisted users.
+- [**/stats**](./commands/stats.mdx) - View ticket system statistics.
+</div>
+</FlexHorizontal>
+
+<Divider></Divider>
+## 📚 More Resources
+Need more help? Explore additional resources below:
+
+<LinkBlock mode="emoji" emoji="📝" isdoc="true" url="/docs/framework/get-started.mdx" name="Developing Plugins" description="An in-depth guide about developing Open Ticket plugins."></LinkBlock>
+<LinkBlock mode="emoji" emoji="📖" isdoc="true" url="/docs/guides/get-started.mdx" name="Full Documentation" description="Explore the complete Open Ticket documentation." />
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Discord Server" description="DJdj Development"></LinkBlock>
+
+
+<FlexHorizontal>
+  <LinkBlock title="💬 Community Support" description="Join the Discord community for help and discussions." href="https://discord.gg/yourserver" />
+</FlexHorizontal>

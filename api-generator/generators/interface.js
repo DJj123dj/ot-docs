@@ -56,13 +56,13 @@ ${helpers.parseJSDoc(data.comment,"markdown")}
 > [**View Source**](${helpers.getMarkdownSourceUrl(data.source)})
 
 <FlexHorizontal>
-<div style={{width:"50%"}}>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
     #### Properties \\{#overview-properties}
     <ul>
         ${properties.map((prop) => helpers.createTableOfContentsItem(prop.name,"prop")).join("\n        ")}
     </ul>
 </div>
-<div style={{width:"50%"}}>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
     #### References \\{#overview-references}
     <ul>
         {/*

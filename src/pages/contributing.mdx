@@ -7,7 +7,7 @@ keywords: [contributing, open-source, documentation]
 <head>
     <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
 </head>
-import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
 
 # Contributing
 On this page, we will explain how to contribute to this documentation.
@@ -59,7 +59,7 @@ sidebar_position: 1 //(optional) position in sidebar
     <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
 </head>
 //import custom components
-import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
 
 //short description of what this page is about
 Lorem Ipsum
@@ -139,7 +139,7 @@ There are also a lot of colors. They can be created using the `<C color="...">` 
 When displaying large amounts of data, you can use lists & tables like these:
 
 <FlexHorizontal mode="left">
-    <div style={{width:"25%"}}>
+    <div style={{width:"25%"}} className="otdocs-flex-mobile-width">
     #### Normal List
     - Data A
         - Data A.1
@@ -152,7 +152,7 @@ When displaying large amounts of data, you can use lists & tables like these:
         - Data C.2
     </div>
 
-    <div style={{width:"25%"}}>
+    <div style={{width:"25%"}} className="otdocs-flex-mobile-width">
     #### Numbered List
     1. Data A
         1. Data A.1
@@ -165,7 +165,7 @@ When displaying large amounts of data, you can use lists & tables like these:
         2. Data C.2
     </div>
 
-    <div style={{width:"25%"}}>
+    <div style={{width:"25%"}} className="otdocs-flex-mobile-width">
     #### Mixed List
     1. Data A
         - Data A.1
@@ -178,7 +178,7 @@ When displaying large amounts of data, you can use lists & tables like these:
         - Data C.2
     </div>
 
-    <div style={{width:"25%"}}>
+    <div style={{width:"25%"}} className="otdocs-flex-mobile-width">
     #### Checkbox List
     - [x] Data A
         - [x] Data A.1
@@ -294,6 +294,18 @@ Use this for urgent security warnings/notes that deserve attention!
 :::availability
 Use this for a upcoming features which are planned to be added to the bot!
 :::
+
+#### API Reference Types
+- <M color="red">boolean</M> or <M color="red">event</M>
+- <M color="green">number</M> or <M color="green">utility</M>
+- <M color="blue">string</M>
+- <M color="cyan">object</M>
+- <M color="pink">array</M>
+- <M color="purple">class</M>
+- <M color="orange">function</M>
+- <M color="brown">type</M>
+- <M color="gray">interface</M>
+- <M color="yellow">enum</M>
 
 # Content & Readability
 - ✅ All text in the docs needs to be in **English**.

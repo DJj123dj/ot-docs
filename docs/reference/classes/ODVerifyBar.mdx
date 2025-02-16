@@ -7,7 +7,7 @@ sidebar_class_name: otdocs-badge-page otdocs-meta-purple-class
 <head>
     <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
 </head>
-import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
 import Tabs from "@theme/Tabs"
 import TabItem from "@theme/TabItem"
 
@@ -49,7 +49,7 @@ It doesn't contain the code which activates or spawns the verifybars!
 > [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/verifybar.ts#L18)
 
 <FlexHorizontal>
-<div style={{width:"30%"}}>
+<div style={{width:"30%"}} className="otdocs-flex-mobile-width">
     #### Properties \{#overview-properties}
     <ul>
         <li>**[`enabled`](#prop-enabled)**</li>
@@ -59,7 +59,7 @@ It doesn't contain the code which activates or spawns the verifybars!
         <li>**[`success`](#prop-success)**</li>
     </ul>
 </div>
-<div style={{width:"30%"}}>
+<div style={{width:"30%"}} className="otdocs-flex-mobile-width">
     #### Methods \{#overview-methods}
     <ul>
         <li>**[`constructor`](#method-constructor)**</li>
@@ -68,7 +68,7 @@ It doesn't contain the code which activates or spawns the verifybars!
         <li>**[`changed`](#method-changed)**</li>
     </ul>
 </div>
-<div style={{width:"30%"}}>
+<div style={{width:"30%"}} className="otdocs-flex-mobile-width">
     #### Other \{#overview-other}
     <ul>
         <li>**[Open Ticket Defaults](#open-ticket-defaults)**</li>

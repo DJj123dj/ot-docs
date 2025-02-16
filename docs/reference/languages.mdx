@@ -7,7 +7,7 @@ keywords: [open-ticket, open ticket, api reference, discord ticket bot, referenc
 <head>
     <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
 </head>
-import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock} from "@site/src/components/openticket.jsx"
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
 
 ## How to use?
 You can use a language by configuring the [**`"language"`** property](./config/general.mdx#language) in the `general.json` config.
@@ -18,7 +18,7 @@ If you want to add a language that doesn't exist yet or you want to translate th
 you can edit the `./languages/custom.json` file and use `"custom"` as value in the config.
 
 ## Language List
-This list was last updated on `6 December, 2024`!
+This list was last updated on `16 February, 2025`!
 
 |Config Value              |Language              |Maintainer (discord name) |Status                       |
 |--------------------------|----------------------|--------------------------|-----------------------------|
@@ -39,19 +39,21 @@ This list was last updated on `6 December, 2024`!
 |`"turkish"`               |🇹🇷 Turkish            |palestinian               |🟢 Up To Date                |
 |`"french"`                |🇫🇷 French             |guillee.3                 |🟢 Up To Date                |
 |`"arabic"`                |🇦🇪 Arabic             |palestinian               |🟢 Up To Date                |
+|`"hindi"`                 |🇮🇳 Hindi              |an_developer              |🟢 Up To Date                |
+|`"lithuanian"`            |🇱🇹 Lithuanian         |tsgindrius                |🟢 Up To Date                |
+|`"polish"`                |🇵🇱 Polish             |danoglez                  |🟢 Up To Date                |
 |`"estonian"`              |🇪🇪 Estonian           |iamnotmega                |🔵 Up To Date (ChatGPT)      |
 |`"finnish"`               |🇫🇮 Finnish            |iamnotmega                |🔵 Up To Date (ChatGPT)      |
-|`"russian"`               |🇷🇺 Russian            |apexo & ander             |🟠 Unavailable (v4 Beta)     |
-|`"polish"`                |🇵🇱 Polish             |mkevas                    |🟠 Unavailable (v4 Beta)     |
-|`"norwegian"`             |🇳🇴 Norwegian          |noonenook                 |🟠 Unavailable (v4 Beta)     |
-|`"kurdish"`               |❓ Kurdish            |raze.hama                 |🟠 Unavailable (v4 Beta)     |
-|`"persian"`               |❓ Persian            |sasanwm                   |🟠 Unavailable (v4 Beta)     |
-|`"latvian"`               |🇱🇻 Latvian            |ronalds1398               |🟠 Unavailable (v4 Beta)     |
-|`"japanese"`              |🇯🇵 Japanese           |iamnotmega                |🟠 Unavailable (v4 Beta)     |
-|`"korean"`                |🇰🇷 Korean             |iamnotmega                |🟠 Unavailable (v4 Beta)     |
-|`"simplifiedchinese"`     |🇨🇳 Simplified Chinese |iamnotmega                |🟠 Unavailable (v4 Beta)     |
-|`"traditionalchinese"`    |🇨🇳 Traditional Chinese|iamnotmega                |🟠 Unavailable (v4 Beta)     |
-|`"swedish"`               |🇸🇪 Swedish            |iamnotmega                |🟠 Unavailable (v4 Beta)     |
-|`"vietnamese"`            |🇻🇳 Vietnamese         |iamnotmega                |🟠 Unavailable (v4 Beta)     |
-|`"slovenian"`             |🇸🇮 Slovenian          |n1kkec                    |🔴 Outdated                  |
-|`"greek"`                 |🇬🇷 Greek              |stefanos                  |🔴 Outdated                  |
+|`"russian"`               |🇷🇺 Russian            |/                         |🔴 Missing                   |
+|`"norwegian"`             |🇳🇴 Norwegian          |/                         |🔴 Missing                   |
+|`"latvian"`               |🇱🇻 Latvian            |/                         |🔴 Missing                   |
+|`"japanese"`              |🇯🇵 Japanese           |/                         |🔴 Missing                   |
+|`"korean"`                |🇰🇷 Korean             |/                         |🔴 Missing                   |
+|`"simplifiedchinese"`     |🇨🇳 Simplified Chinese |/                         |🔴 Missing                   |
+|`"traditionalchinese"`    |🇨🇳 Traditional Chinese|/                         |🔴 Missing                   |
+|`"swedish"`               |🇸🇪 Swedish            |/                         |🔴 Missing                   |
+|`"vietnamese"`            |🇻🇳 Vietnamese         |/                         |🔴 Missing                   |
+|`"slovenian"`             |🇸🇮 Slovenian          |/                         |🔴 Missing                   |
+|`"greek"`                 |🇬🇷 Greek              |/                         |🔴 Missing                   |
+|`"kurdish"`               |❓ Kurdish            |/                         |🔴 Missing                   |
+|`"persian"`               |❓ Persian            |/                         |🔴 Missing                   |

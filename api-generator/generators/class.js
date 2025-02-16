@@ -60,19 +60,19 @@ ${helpers.parseJSDoc(data.comment,"markdown")}
 > [**View Source**](${helpers.getMarkdownSourceUrl(data.source)})
 
 <FlexHorizontal>
-<div style={{width:"30%"}}>
+<div style={{width:"30%"}} className="otdocs-flex-mobile-width">
     #### Properties \\{#overview-properties}
     <ul>
         ${properties.map((prop) => helpers.createTableOfContentsItem(prop.name,"prop")).join("\n        ")}
     </ul>
 </div>
-<div style={{width:"30%"}}>
+<div style={{width:"30%"}} className="otdocs-flex-mobile-width">
     #### Methods \\{#overview-methods}
     <ul>
         ${methodsAndConstructor.map((method) => helpers.createTableOfContentsItem(method.name,"method")).join("\n        ")}
     </ul>
 </div>
-<div style={{width:"30%"}}>
+<div style={{width:"30%"}} className="otdocs-flex-mobile-width">
     #### Other \\{#overview-other}
     <ul>
         <li>**[Open Ticket Defaults](#open-ticket-defaults)**</li>

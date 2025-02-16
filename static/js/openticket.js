@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded",() => {
  */
 
 const handleReferenceTextSize = (element,text) => {
-    if (["inter","class","type","enum","util","event"].includes(text)){
+    if (["inter","class","type","enum","utility","event"].includes(text)){
         element.style.fontSize = "10px"
         element.style.fontWeight = "300"
     }

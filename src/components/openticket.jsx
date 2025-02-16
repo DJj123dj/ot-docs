@@ -229,3 +229,11 @@ export function ApiUrl(params){
 export function ApiBlock(params){
     return (<span>➜ <code>{params.children}</code></span>)
 }
+
+export function StyledTitle(params){
+    return (<div className='otdocs-grid-background w-full h-56 rounded-xl border-neutral-800 border-2 border-solid flex flex-col items-center justify-center mb-5'>
+        <img className='w-1/2 mb-5 max-xl:w-2/3 max-lg:w-1/3 min-w-60' src='/img/logo_main.png'></img>
+        <p className='text-openticket-500 text-center font-bold text-5xl mb-0 max-xl:text-4xl'>{params.title}</p>
+        <p className='text-[#838383] text-center font-medium text-base max-xl:text-sm'>{params.description}</p>
+    </div>)
+}

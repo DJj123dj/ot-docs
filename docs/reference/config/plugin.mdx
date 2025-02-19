@@ -1,0 +1,170 @@
+---
+title: plugin.json
+description: The plugin config from Open Ticket. It includes the most important variables like bot status, token & colors.
+sidebar_position: 6
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, reference, config, api, plugins]
+sidebar_class_name: otdocs-badge-page otdocs-meta-cyan-object
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
+
+# plugin.json <M color="cyan">object</M>
+:::warning plugin development
+This article is not related to the default Open Ticket functionality but to [**Plugin Development**](/docs/framework/00-get-started.mdx)!<br></br>
+You will use this config when creating and using plugins. [(Read More)](/docs/framework/00-get-started.mdx)
+:::
+
+The `plugin.json` file serves as the configuration file for Open Ticket plugins.
+This file contains essential settings for a plugin and how it should behave or appear in the console.
+
+With `plugin.json`, you can define many aspects of your plugin. Here are some examples:
+- **Identification:** Define the id, name and description of your plugin.
+- **Appearance:** Add additional tags, urls, authors, and descriptions.
+- **Versioning & Priority:** Set the version of your plugin and choose the loading priority.
+- **Events:** Define global events for other plugins to use.
+- **Dependencies:** Notify the bot about required dependencies and incompatible plugins.
+
+If you need help with configuring the config, feel free to join our discord server!
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Join our discord server!" description="DJdj Development"></LinkBlock>
+
+# TODO TODO TODO TODO :x: :x: :x:
+
+# Table Of Contents
+- **[Info](#info)**
+- **[Token](#info)**
+- **[Global Configuration](#global-configuration)**
+
+<Divider></Divider>
+## Info
+These properties are only to give you some info. They don't serve a real purpose!
+<Divider></Divider>
+### `"_INFO"` <M color="cyan">object</M> \{#info}
+**Default Value:** `/`
+
+This object contains metadata for the config. This includes urls to our support server and the Open Ticket version this config is made for.
+
+- **`"support"`:** <M color="blue">string</M> - A link to the Open Ticket documentation.
+- **`"discord"`:** <M color="blue">string</M> - A link to the DJdj Development discord server.
+- **`"version"`:** <M color="blue">string</M> - The Open Ticket version this config is made for.
+
+:::warning version mismatch
+If the version in the config is different from the version that you're using,
+you might get a warning to re-check your config.
+:::
+
+**✅ Join [our discord server](https://discord.dj-dj.be) when you need help setting up the bot!**
+
+<Divider></Divider>
+## Token
+Configure your discord bot token here.
+<Divider></Divider>
+### `"token"` <M color="blue">string</M> \{#token}
+**Default Value:** `"your bot token here"`<br></br>
+**Allowed Values:** `A valid Discord token`
+
+Insert your Discord bot token here. It is used as password to communicate with your Discord bot.
+
+<Divider></Divider>
+### `"tokenFromENV"` <M color="red">boolean</M> \{#token-env}
+**Default Value:** `false`
+
+Enable this boolean to read the token from a `.env` file instead of the `"token"` variable.
+When you use this, you can leave the `"token"` variable empty!
+
+```toml title=".env (Example)"
+TOKEN=your-token-here
+```
+
+<Divider></Divider>
+## Global Configuration
+This is the main configuration of the bot. Think about the color of embeds, prefix and a few other things.
+<Divider></Divider>
+### `"mainColor"` <M color="blue">string</M> \{#main-color}
+**Default Value:** `"#f8ba00"` (Open Ticket Yellow)<br></br>
+**Allowed Values:** `A valid hex-color`
+
+The main color of the bot. Used in almost all embeds of the bot.
+Ticket messages and panels use their own custom color except when it isn't defined in the config.
+
+**✅ If you don't know how to get a hex-color, you can use the website [Color Picker](https://htmlcolorcodes.com/color-picker/) for it.**
+
+<Divider></Divider>
+### `"language"` <M color="blue">string</M> \{#language}
+**Default Value:** `"english"`<br></br>
+**Allowed Values:** `Check language list`
+
+The language used in the bot. Almost 99% of all embeds, buttons and dropdowns in Open Ticket are translated.
+**You can only select a language that is available in the list below.**
+
+**✅ If your language doesn't exist yet, feel free to contribute and add your language to the bot.**
+
+<LinkBlock url="/docs/reference/languages" emoji="🇬🇧" mode="emoji" name="Available Languages" description="Click here to view a list of all the available languages in Open Ticket!"></LinkBlock>
+
+<Divider></Divider>
+### `"prefix"` <M color="blue">string</M> \{#prefix}
+**Default Value:** `"!ticket "` (With space at the end)<br></br>
+
+The prefix for all the text commands in the bot (when enabled).
+- **✅ (Example 1)** If you have a prefix `!ticket `, the close command will be `!ticket close`
+- **✅ (Example 2)** If you have a prefix `!test`, the delete command will be `!testdelete`
+
+<Divider></Divider>
+### `"serverId"` <M color="blue">string</M> \{#server-id}
+**Default Value:** `"discord server id"` (Invalid)<br></br>
+**Allowed Values:** `Any valid discord server id`
+
+In this variable, you need to put the id of the server that the bot will operate in.
+It will be used for slash command creation and the database.
+
+**✅ Open Ticket is made for <C color="red">one server at a time</C>. It's impossible to use the bot in multiple servers at the same time.**
+
+<Divider></Divider>
+### `"globalAdmins"` <M color="pink">array</M> \{#global-admins}
+**Default Value:** `["discord role id"]` (Invalid)<br></br>
+**Allowed Values:** `List of valid discord role ids`
+
+In this variable, you're able to put role id's from the server that have global admin permissions in the bot.
+Global admins are able to control the ticket bot in every channel and use every command of the bot.
+
+:::note Global Admin Permissions
+- ✅ Use all commands in all channels
+- ✅ View every ticket
+- ✅ Manage every ticket
+- ✅ Spawn panels
+- ✅ Blacklist users
+- ✅ Clear tickets
+- ✅ And more...
+:::
+
+**✅ There are also <C color="red">Ticket Admins</C> available for roles that shouldn't have all these permissions.**
+
+<Divider></Divider>
+# Example File
+All variables above have been made acording to this config for Open Ticket `v4.0.0`. This configuration might change in future versions!
+```json title="plugin.json"
+{
+    "name":"Example Plugin",
+    "id":"example-plugin",
+    "version":"1.0.0",
+    "startFile":"index.ts",
+
+    "enabled":false,
+    "priority":0,
+    "events":[],
+
+    "npmDependencies":[],
+    "requiredPlugins":[],
+    "incompatiblePlugins":[],
+
+    "details":{
+        "author":"DJj123dj",
+        "shortDescription":"A simple template for an Open Ticket v4 plugin!",
+        "longDescription":"A simple example of an Open Ticket v4 plugin!",
+        "imageUrl":"",
+        "projectUrl":"",
+        "tags":["template","example","default"]
+    }
+}
+```

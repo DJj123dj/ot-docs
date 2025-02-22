@@ -8,6 +8,8 @@ keywords: [open-ticket, open ticket, developer, plugins, discord ticket bot, fra
 </head>
 import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
 
+# 🏁 Getting Started
+
 <FlexHorizontal>
 <div style={{width:"50%"}} className="otdocs-flex-mobile-width">
 Hi there! Welcome to the Open Ticket **Framework Guide**! This part of the documentation provides in-depth guides about creating plugins based on the Open Discord framework. Using plugins, you can increase the functionality, customise existing features or add your entirely custom-made features!
@@ -28,14 +30,45 @@ It's recommended to have a basic knowledge about [**node.js**](https://nodejs.or
 
 ## 📌 Table Of Contents
 The Framework Guide consists of several categories to help you quickly learn plugin development:
-- [**Languages:**](/docs/reference/languages.mdx) A list of all available languages.
-- [**Commands:**](/docs/category/api-commands/) Detailed documentation on every available command.
-- [**Config:**](/docs/category/api-config/) Information on all JSON configuration files.
-- [**Events:**](/docs/category/api-events/) Documentation for every Open Ticket event.
+- [**Getting Started:**](#start) Basic knowledge about Open Ticket plugins.
+- [**Basic Plugins:**](/docs/category/framework-basic) Learn Open Ticket plugins from the basics.
+- [**Intermediate Plugins:**](/docs/category/framework-intermediate) Create more feature-rich Open Ticket plugins.
+- [**Advanced Plugins:**](/docs/category/framework-advanced) Guides about creating advanced Open Ticket plugins. 
+- [**Expert Plugins:**](/docs/category/framework-expert) Guides about creating complex Open Ticket plugins & related systems.
+- [**Tips & Tricks:**](/docs/category/framework-tips) Tips & Tricks articles for general plugin development.
 
 <Divider></Divider>
-## 🚀 Getting Started
-To get started, familiarize yourself with the **Config** and **Commands** sections first. These are the core functionalities for setting up and managing Open Ticket in your Discord server.
+## 🚀 Getting Started \{#start}
+To get started, familiarize yourself with the built-in [**Config**](/docs/category/api-config) and [**Commands**](/docs/category/api-commands) from Open Ticket first. These are the core functionalities of the bot and you can learn a lot by looking at how they work.
+
+Alright once you've done that, we will start with ***What are Open Ticket plugins exactly?***
+
+### What Are Plugins?
+Plugins allow you to <C color="blue">**extend and customize Open Ticket**</C> without modifying the source code of the bot. You can create new commands, change existing behaviors, store custom data and even integrate external APIs!
+
+#### Why should you use plugins?
+- 🛠 *Modular & Expandable* – Add or remove features without breaking Open Ticket.
+- 🌍 *Community-Friendly* – Share plugins with others or use pre-built ones.
+- 💼 *Improved Workflows* – Improve your workflow by customising Open Ticket to your requirements.
+- 🔗 *Deep Integrations* – Plugins can deeply integrate into the system. This allows them to change *almost* everything!
+
+#### What are some example plugins?
+- 💬 *Reviews* - Create & customise your own review system!
+- 📢 *Feedback* - Collect feedback & create forms for people to answer!
+- 🏷️ *Tags* - Create tags & answer questions automatically using keywords!
+- 📝 *Forms* - Create advanced forms and ask people for additional details!
+- 🔄 *Rotating Status* - Create a rotating bot status & use dynamic variables from the bot!
+- 💾 *SQLite Database* - Use an sqlite database for increased performances!
+- 🎉 *Custom Embeds* - Create your own embeds and use them in your server!
+- ⏰ *Reminders* - Create & manage customisable reminders in your server!
+- 🎨 *Customisation* - Yep, you heard it right! Even more customisation!
+
+:::note plugin repository
+Most of these example plugins already exist in our [Open Discord Plugin Repository](https://odplugins.dj-dj.be).
+
+This is the official location to download Open Ticket plugins.<br></br>All plugins here are scanned for malware and improved to maintain compatibility.
+:::
+
 
 ## What Are Plugins?
 

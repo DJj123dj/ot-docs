@@ -69,18 +69,71 @@ Most of these example plugins already exist in our [Open Discord Plugin Reposito
 This is the official location to download Open Ticket plugins.<br></br>All plugins here are scanned for malware and improved to maintain compatibility.
 :::
 
+### Plugin Terminology
+Before diving into development, it's important to understand a few key concepts of the Open Ticket framework:
 
-## What Are Plugins?
+#### Open Discord
+The **Open Discord** framework is the core API that Open Ticket is built on. It provides almost essential functionalities of the bot. All plugins will also be executed by Open Discord!
 
-Plugins allow you to **extend and customize Open Ticket** without modifying the core bot. You can create new commands, change ticket behavior, store custom data, and even integrate external APIs!
+✅ *You will interact with Open Discord a lot when developing plugins!*
 
-**Why use plugins?**
-- 🛠 **Modular & Expandable** – Add or remove features without breaking Open Ticket.
-- ⚡ **Efficient** – Use built-in APIs to speed up development.
-- 🌍 **Community-Friendly** – Share plugins with others or use pre-built ones.
+#### Open Ticket
+**Open Ticket** is the bot itself, built using the Open Discord framework. All of your plugins will be running within Open Ticket and are able to extend its functionalities.
 
-## Plugin Development Overview
+✅ *Open Ticket can be compared with a **huge ticket-system plugin** for Open Discord!*
 
+#### Workers
+Workers are small functions or callbacks that execute in a priority-based order to perform specific tasks. They can be a part of one of the following categories:
+- **Builders** – Construct messages, embeds, buttons, dropdowns, files or modals.
+- **Responders** – Handle slash/text commands, buttons, dropdowns, modals and other interactions.
+- **Actions** – Specialized workers to perform to execute major operations or handle mass-data in multiple steps without problems.
+
+✅ *Workers allow multiple plugins to modify the same process without conflicts!*
+
+#### Builders
+Builders have workers that construct various elements of the bot’s UI, including:
+- Messages
+- Embeds
+- Buttons
+- Dropdowns (Select Menus)
+- Files (Attachments)
+- Modals
+
+✅ *Builders allow multiple plugins to modify the same element without conflicts!*
+
+#### Responders
+Responders are specialized workers that handle interactions like:
+- Slash/Text Commands
+- Buttons
+- Dropdowns (Select Menus)
+- Modals
+- Autocomplete
+- User & Message Interactions
+
+✅ *Responders allow multiple plugins to listen & react to the same user input without conflicts!*
+
+#### Actions
+Actions are specialized classes that contain **workers** to perform major operations, such as:
+- Opening, closing, claiming & pinning a ticket
+- Creating a transcript
+
+✅ *Actions help in structuring & simplifying complex workflows inside the bot!*
+
+#### Events
+Events allow your plugin to listen for specific occurrences and respond accordingly.
+Unlike workers, events cannot directly modify the default behavior of Open Ticket.
+
+✅ *Events are useful when you want to trigger something new without overriding the existing behavior!*
+
+#### Utilities
+Utilities are globally available helper functions that provide essential operations such as:
+- Formatting messages & emojis
+- Handling timestamps
+- Managing promises, async & timers
+
+✅ *Use utilities to simplify your code and follow best practices!*
+
+### Development Overview
 Creating a plugin involves:
 1. **Setting Up Your Plugin Environment** – Basic structure & configuration.
 2. **Using the Plugin API** – Understanding the available tools & features.
@@ -88,43 +141,18 @@ Creating a plugin involves:
 4. **Storing & Managing Data** – Using databases, variables & custom configurations.
 5. **Testing & Debugging** – Making sure everything works smoothly.
 
-<Divider />
 
-## Plugin Development Categories
+### Your First Plugin
+Let's start developing your first Open Ticket plugin!
+<LinkBlock mode="emoji" emoji="🛠️" url="/docs/framework/basic-plugins/first-plugin" isdoc="true" name="Your First Plugin" description="Setting up a basic Open Ticket plugin."/>
 
-Depending on your experience level, you can explore different plugin topics:
+### Testing Your Plugin
+TODO
 
-<FlexHorizontal>
-  <LinkBlock title="Basic Plugins" emoji="📖" description="Start with the fundamentals of plugin creation." to="/plugins/basic" />
-  <LinkBlock title="Intermediate Plugins" emoji="🛠" description="Learn how to modify Open Ticket & extend its functionality." to="/plugins/intermediate" />
-</FlexHorizontal>
-
-<FlexHorizontal>
-  <LinkBlock title="Advanced Plugins" emoji="⚡" description="Master complex features & custom integrations." to="/plugins/advanced" />
-  <LinkBlock title="Expert Plugins" emoji="🔥" description="Take plugin development to the highest level." to="/plugins/expert" />
-</FlexHorizontal>
-
-<Divider />
-
-## Plugin API & Reference
-
-To fully utilize Open Ticket’s capabilities, check out the **API Reference**:
-
-<ApiBlock to="/api" title="API Reference" description="Explore the available classes, events, utilities & more." />
-
-<ApiBlock to="/api/classes" title="Classes" description="Learn about the built-in classes for plugin development." />
-
-<ApiBlock to="/api/events" title="Events" description="Respond to different actions happening within Open Ticket." />
-
-<Divider />
-
-## Next Steps
-
-Ready to start? Choose your path:
-
-- **First Time Here?** 👉 Check out the <InlineLink to="/plugins/basic">Basic Plugins</InlineLink> guide.
-- **Looking for Examples?** 👉 Explore the <InlineLink to="/plugins/intermediate">Intermediate Plugins</InlineLink> section.
-- **Want to Integrate APIs?** 👉 Jump to the <InlineLink to="/plugins/advanced">Advanced Plugins</InlineLink> section.
-- **Expert in Development?** 👉 Explore the <InlineLink to="/plugins/expert">Expert Plugins</InlineLink> guide.
+## 🎉 Next Steps
+TODO
+- read API Reference
+- read intermediate, advanced & expert
+- tips & tricks
 
 Good luck, and happy coding! 🚀

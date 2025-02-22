@@ -29,116 +29,178 @@ With `plugin.json`, you can define many aspects of your plugin. Here are some ex
 If you need help with configuring the config, feel free to join our discord server!
 <LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Join our discord server!" description="DJdj Development"></LinkBlock>
 
-# TODO TODO TODO TODO :x: :x: :x:
-
 # Table Of Contents
-- **[Info](#info)**
-- **[Token](#info)**
-- **[Global Configuration](#global-configuration)**
+- **[General](#general)**
+- **[Details](#details)**
 
 <Divider></Divider>
-## Info
-These properties are only to give you some info. They don't serve a real purpose!
+## General
+These are the required general properties for your plugins.
 <Divider></Divider>
-### `"_INFO"` <M color="cyan">object</M> \{#info}
-**Default Value:** `/`
+### `"name"` <M color="blue">string</M> \{#general-name}
+**Default Value:** `"Example Plugin"`<br></br>
 
-This object contains metadata for the config. This includes urls to our support server and the Open Ticket version this config is made for.
+The display name of the plugin. This is shown in various locations, including the logs & startup screen.
 
-- **`"support"`:** <M color="blue">string</M> - A link to the Open Ticket documentation.
-- **`"discord"`:** <M color="blue">string</M> - A link to the DJdj Development discord server.
-- **`"version"`:** <M color="blue">string</M> - The Open Ticket version this config is made for.
+**✅ Choose a clear and unique name to avoid conflicts with other plugins.**
 
-:::warning version mismatch
-If the version in the config is different from the version that you're using,
-you might get a warning to re-check your config.
+<Divider></Divider>
+### `"id"` <M color="blue">string</M> \{#general-id}
+**Default Value:** `"example-plugin"`<br></br>
+**Allowed Values:** `A-Z, a-z, 0-9, dash, no spaces`<br></br>
+
+The unique identifier for the plugin. This should be a lowercase, hyphenated string.
+Make sure there are no other plugins with the same id in existence.
+
+:::warning folder name
+The **folder name** of your plugin must be the same as the **specified id**! Your plugin won't load otherwise.
 :::
 
-**✅ Join [our discord server](https://discord.dj-dj.be) when you need help setting up the bot!**
+**✅ The plugin ID must remain the same across updates to ensure compatibility.**
 
 <Divider></Divider>
-## Token
-Configure your discord bot token here.
-<Divider></Divider>
-### `"token"` <M color="blue">string</M> \{#token}
-**Default Value:** `"your bot token here"`<br></br>
-**Allowed Values:** `A valid Discord token`
+### `"version"` <M color="blue">string</M> \{#general-version}
+**Default Value:** `"1.0.0"`<br></br>
 
-Insert your Discord bot token here. It is used as password to communicate with your Discord bot.
+The version of the plugin, following semantic versioning (`major.minor.patch`).
+This version will be used in logs, errors & debug messages of your plugin.
 
-<Divider></Divider>
-### `"tokenFromENV"` <M color="red">boolean</M> \{#token-env}
-**Default Value:** `false`
-
-Enable this boolean to read the token from a `.env` file instead of the `"token"` variable.
-When you use this, you can leave the `"token"` variable empty!
-
-```toml title=".env (Example)"
-TOKEN=your-token-here
-```
-
-<Divider></Divider>
-## Global Configuration
-This is the main configuration of the bot. Think about the color of embeds, prefix and a few other things.
-<Divider></Divider>
-### `"mainColor"` <M color="blue">string</M> \{#main-color}
-**Default Value:** `"#f8ba00"` (Open Ticket Yellow)<br></br>
-**Allowed Values:** `A valid hex-color`
-
-The main color of the bot. Used in almost all embeds of the bot.
-Ticket messages and panels use their own custom color except when it isn't defined in the config.
-
-**✅ If you don't know how to get a hex-color, you can use the website [Color Picker](https://htmlcolorcodes.com/color-picker/) for it.**
-
-<Divider></Divider>
-### `"language"` <M color="blue">string</M> \{#language}
-**Default Value:** `"english"`<br></br>
-**Allowed Values:** `Check language list`
-
-The language used in the bot. Almost 99% of all embeds, buttons and dropdowns in Open Ticket are translated.
-**You can only select a language that is available in the list below.**
-
-**✅ If your language doesn't exist yet, feel free to contribute and add your language to the bot.**
-
-<LinkBlock url="/docs/reference/languages" emoji="🇬🇧" mode="emoji" name="Available Languages" description="Click here to view a list of all the available languages in Open Ticket!"></LinkBlock>
-
-<Divider></Divider>
-### `"prefix"` <M color="blue">string</M> \{#prefix}
-**Default Value:** `"!ticket "` (With space at the end)<br></br>
-
-The prefix for all the text commands in the bot (when enabled).
-- **✅ (Example 1)** If you have a prefix `!ticket `, the close command will be `!ticket close`
-- **✅ (Example 2)** If you have a prefix `!test`, the delete command will be `!testdelete`
-
-<Divider></Divider>
-### `"serverId"` <M color="blue">string</M> \{#server-id}
-**Default Value:** `"discord server id"` (Invalid)<br></br>
-**Allowed Values:** `Any valid discord server id`
-
-In this variable, you need to put the id of the server that the bot will operate in.
-It will be used for slash command creation and the database.
-
-**✅ Open Ticket is made for <C color="red">one server at a time</C>. It's impossible to use the bot in multiple servers at the same time.**
-
-<Divider></Divider>
-### `"globalAdmins"` <M color="pink">array</M> \{#global-admins}
-**Default Value:** `["discord role id"]` (Invalid)<br></br>
-**Allowed Values:** `List of valid discord role ids`
-
-In this variable, you're able to put role id's from the server that have global admin permissions in the bot.
-Global admins are able to control the ticket bot in every channel and use every command of the bot.
-
-:::note Global Admin Permissions
-- ✅ Use all commands in all channels
-- ✅ View every ticket
-- ✅ Manage every ticket
-- ✅ Spawn panels
-- ✅ Blacklist users
-- ✅ Clear tickets
-- ✅ And more...
+:::tip
+Use this feature to detect updates of your plugin and migrate any outdated databases to make sure they stay compatible.
 :::
 
-**✅ There are also <C color="red">Ticket Admins</C> available for roles that shouldn't have all these permissions.**
+**✅ Updating the version helps track changes and resolve compatibility issues.**
+
+<Divider></Divider>
+### `"startFile"` <M color="blue">string</M> \{#general-file}
+**Default Value:** `"index.ts"`<br></br>
+
+The entry file of the plugin that will be executed when the plugin is loaded.
+Both `TypeScript` and `JavaScript` files are accepted.
+
+:::warning compilation path changes
+As a result of the bot compilation process, some paths might change!
+- From `./plugins/<plugin-name>/...`
+- To `./dist/plugins/<plugin-name>/...`
+
+`ODJsonConfig`, `ODJsonDatabase` & `ODJsonLanguage` will handle this change automatically.
+:::
+
+**✅ Ensure this file exists in your plugin folder.**
+
+<Divider></Divider>
+### `"enabled"` <M color="red">boolean</M> \{#general-enabled}
+**Default Value:** `false`<br></br>
+
+Determines whether the plugin is enabled when the bot starts.
+
+**✅ This will not erease any databases or stored information from the plugin.**
+
+<Divider></Divider>
+### `"priority"` <M color="green">number</M> \{#general-priority}
+**Default Value:** `0`<br></br>
+
+Defines the loading order of the plugin. Higher values will be loaded first.
+
+**✅ A higher priority is useful when other plugins depend on your plugin being initialized.**
+
+<Divider></Divider>
+### `"events"` <M color="pink">array</M> \{#general-events}
+**Default Value:** `[]` (Empty Array)<br></br>
+
+A list of event names that the plugin emits. These will be registered in the `opendiscord.events` variable and are available for all plugins on startup.
+
+Make sure your plugin emits events using the [`ODEvent`](/docs/reference/classes/ODEvent.mdx) class.
+
+**✅ Events allow other plugins to react to specific actions happening in your plugin.**
+
+<Divider></Divider>
+### `"npmDependencies"` <M color="pink">array</M> \{#general-npm-dependencies}
+**Default Value:** `[]` (Empty Array)<br></br>
+
+A list of NPM packages that the plugin requires to function.
+
+**✅ Dependencies should still be installed manually and should be kept to a minimum if possible.**
+
+<Divider></Divider>
+### `"requiredPlugins"` <M color="pink">array</M> \{#general-required-plugins}
+**Default Value:** `[]` (Empty Array)<br></br>
+
+A list of other plugins that must be installed for this plugin to work.
+
+**✅ If a required plugin is missing, this plugin will not load.**
+
+<Divider></Divider>
+### `"incompatiblePlugins"` <M color="pink">array</M> \{#general-incompatible-plugins}
+**Default Value:** `[]` (Empty Array)<br></br>
+
+A list of plugins that cannot be used together with this plugin.
+
+**✅ Define incompatible plugins to prevent conflicts and errors in functionality.**
+
+<Divider></Divider>
+## Details
+An object containing metadata about the plugin, such as author, description, and tags.
+Some of these properties will be shown in the console on startup.
+<Divider></Divider>
+### `"details"."author"` <M color="blue">string</M> \{#details-author}
+**Default Value:** `"DJj123dj"`<br></br>
+
+The name of the plugin's creator. It's recommended to use your discord or github username.
+
+**✅ Use a recognizable name so users know who developed the plugin.**
+
+<Divider></Divider>
+### `"details"."shortDescription"` <M color="blue">string</M> \{#details-short-description}
+**Default Value:** `"A simple template for an Open Ticket v4 plugin!"`<br></br>
+
+A brief description of the plugin’s purpose. This will be shown in the console & logs on startup.
+
+**✅ Keep it short but informative to quickly convey the plugin's function.**
+
+<Divider></Divider>
+### `"details"."longDescription"` <M color="blue">string</M> \{#details-long-description}
+**Default Value:** `"A simple example of an Open Ticket v4 plugin!"`<br></br>
+
+A more detailed explanation of what the plugin does. Should also be the first sentence in the `README.md` file of the plugin.
+
+**✅ Use this section to explain the functionalities in more detail.**
+
+<Divider></Divider>
+### `"details"."imageUrl"` <M color="blue">string</M> \{#details-image-url}
+:::experimental unimplemented
+This feature does currently not serve a real purpose but can be used as decoration or metadata.
+:::
+
+**Default Value:** `""` (Empty String)<br></br>
+
+A URL to a marketing image for this plugin.
+
+**✅ Adding an image makes your plugin stand out in the plugin library.**
+
+<Divider></Divider>
+### `"details"."projectUrl"` <M color="blue">string</M> \{#details-project-url}
+:::experimental unimplemented
+This feature does currently not serve a real purpose but can be used as decoration or metadata.
+:::
+
+**Default Value:** `""` (Empty String)<br></br>
+
+A URL to the plugin’s GitHub repository or official website.
+
+**✅ Providing a project URL allows users to find documentation and report issues.**
+
+<Divider></Divider>
+### `"details"."tags"` <M color="pink">array</M> \{#details-tags}
+:::experimental unimplemented
+This feature does currently not serve a real purpose but can be used as decoration or metadata.
+:::
+
+**Default Value:** `["template","example","default"]`<br></br>
+
+An array of tags to categorize the plugin.
+
+**✅ Use relevant tags to improve discoverability in the plugin manager.**
 
 <Divider></Divider>
 # Example File

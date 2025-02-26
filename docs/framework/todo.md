@@ -1,8 +1,8 @@
 ### **1. Basic Plugins**  
 - 🛠️ **Your First Plugin** – Setting up a basic Open Ticket plugin.
-- 📄 **Simple Config File** – How to store and retrieve plugin settings.
+- 📄 **Simple Config File** – How to store, retrieve & check plugin settings.
 - 🔘 **Simple Command** – Adding a basic slash & text command to Open Ticket.
-- 📜 **Responding To Events** – Listening to Open Ticket events in your plugin.
+- 📜 **Responding To Events** – Listening to basic Open Ticket events in your plugin.
 - 📦 **Using The Database** – Storing and retrieving data in your plugin.
 - ✏️ **Message Editing** – Modifying Open Ticket’s built-in messages.
   
@@ -15,6 +15,7 @@
 - 🛑 **Handling Errors & Edge Cases** – Making your plugin more robust.
 - 🎛️ **Simple Button/Dropdown** – Extending message interactivity.
 - 📄 **Advanced Config File** – Storing & retrieving complex plugin data.
+- 📢 **Advanced Event Handling** – How to handle events and their variables in complex scenarios?
 - 🍪 **Dynamic Ticket Metadata** – Storing & retrieving extra information in all tickets.
 
 ---  

@@ -1,0 +1,268 @@
+---
+title: 🛠️ Your First Plugin
+description: Learn how to create your first Open Ticket plugin!
+keywords: [open-ticket, open ticket, developer, plugins, discord ticket bot, framework, guide]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
+
+# 🛠️ Your First Plugin
+
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+Welcome! In this guide, we will walk through the process of creating your first <C color="blue">**Open Ticket plugin**.</C>
+
+By the end of this article, you will have a fully functional plugin that listens for ticket creation events and logs messages to the console.
+You will learn a lot of the basic functionalities of Open Ticket, so be sure to pay attention. Good luck!
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+    <StyledTitle title="Framework Article" description="Basic Plugins - Your First Plugin"></StyledTitle>
+</div>
+</FlexHorizontal>
+
+<Divider></Divider>
+## 📌 Prerequisites
+Before we start, ensure that you have the following:
+
+- **Node.js** installed on your system. [(Download)](https://nodejs.org/)
+- A **code editor**, such as Visual Studio Code. [(Download)](https://code.visualstudio.com/)
+- A basic understanding of **JavaScript/TypeScript** and [**discord.js**](https://discordjs.guide).
+- An existing & working **Open Ticket installation**
+
+:::tip getting started
+If you haven't already done so, it's recommended to read the [**🏁 Getting Started**](/docs/framework/getting-started) guide before starting with this article.  
+:::
+
+<Divider></Divider>
+## 📂 Setting Up the Plugin
+Each Open Ticket plugin must be placed inside the `./plugins/` directory. Let's create a folder for our first plugin:
+
+```sh
+mkdir -p ./plugins/example-plugin
+cd ./plugins/example-plugin
+```
+
+### `plugin.json`
+Now, inside this folder, create a `plugin.json` file. This file contains metadata about the plugin. Please insert the following content:
+
+```json title="plugin.json"
+{
+    "name":"Example Plugin",
+    "id":"example-plugin",
+    "version":"1.0.0",
+    "startFile":"index.ts",
+
+    "enabled":false,
+    "priority":0,
+    "events":[],
+
+    "npmDependencies":[],
+    "requiredPlugins":[],
+    "incompatiblePlugins":[],
+
+    "details":{
+        "author":"DJj123dj",
+        "shortDescription":"A simple template for an Open Ticket v4 plugin!",
+        "longDescription":"A simple example of an Open Ticket v4 plugin!",
+        "imageUrl":"",
+        "projectUrl":"",
+        "tags":["template","example","default"]
+    }
+}
+```
+
+#### 🔍 Understanding `plugin.json`  
+- **`"id"`:** <M color="blue">string</M> - The unique identifier of the plugin. <C color="red">**This must match the folder name!**</C>
+- **`"name"`:** <M color="blue">string</M> - The display name of the plugin.
+- **`"description"`:** <M color="blue">string</M> - A short description of what the plugin does. (Also visible in the logs)
+- **`"version"`:** <M color="blue">string</M> - The version of the plugin.
+- **`"author"`:** <M color="blue">string</M> - Your Discord/Github username.
+- **`"enabled"`:** <M color="red">boolean</M> - If set to `false`, the plugin will be ignored by Open Ticket.
+- [**Explore Additional Properties...**](/docs/reference/config/plugin.mdx)
+
+Now that our plugin is registered, let's create the main script file.
+
+### `index.ts`
+Create a new file called `index.js` inside the `./plugins/example-plugin/` folder. This file will contain our plugin logic. Make sure it already contains the following lines of code:
+```ts showLineNumbers title="index.ts"
+import {api, opendiscord, utilities} from "#opendiscord"
+import * as discord from "discord.js"
+if (utilities.project !== "openticket") throw new api.ODPluginError("This plugin only works in Open Ticket!")
+
+declare module "#opendiscord-types" {
+    //This will be used for autocomplete support while coding
+}
+```
+
+#### 🔍 Understanding `index.ts`
+Let's break down what we’ve added so far:
+
+- **Importing dependencies:**  
+  - **`api` (`#opendiscord`)** - Contains all Open Ticket classes, objects, interfaces, variables, ...
+  - **`opendiscord` (`#opendiscord`)** - This is the Open Ticket bot itself. We will frequently interact with it.
+  - **`utilities` (`#opendiscord`)** Additional utility functions to make coding easier.
+  - **`discord` (`discord.js`)** - Allows us to interact with Discord’s API, such as sending messages or modifying channels.
+- **Ensuring compatibility:**  
+  - The `if (utilities.project !== "openticket")` check prevents the plugin from running in unsupported environments or different bots.
+- **Adding TypeScript autocomplete support:**  
+  - The `declare module "#opendiscord-types"` block allows us to extend Open Ticket's type definitions, making development easier with improved autocomplete suggestions.  
+
+Now that our setup is complete, let's proceed with implementing the rest of the plugin logic. 🚀  
+
+<Divider></Divider>
+## 📝 Writing Code (Step by Step)
+Now that we've set up our plugin directory and `index.ts` file, it's time to write the actual code. Below, we'll go through each section carefully, explaining its purpose and functionality.
+
+### 1️⃣ TypeScript Autocomplete Support (Optional)
+:::info note
+This step is **optional** but highly recommended for smoother development!
+:::
+
+```ts showLineNumbers title="index.ts"
+declare module "#opendiscord-types" {
+    export interface ODPluginManagerIds_Default {
+        "example-plugin": api.ODPlugin
+    }
+    export interface ODConfigManagerIds_Default {
+        "example-plugin:config": api.ODJsonConfig
+    }
+}
+```
+
+#### 🔹 Why declare these types?
+- These **extend Open Ticket’s type system**, providing **autocomplete and type safety** while coding.
+- **`ODPluginManagerIds_Default`** allows our plugin to be recognized under the `"example-plugin"` ID.
+- **`ODConfigManagerIds_Default`** allows our plugin configuration to be recognized under the `"example-plugin:config"` ID.
+---
+
+### 2️⃣ Registering a Custom Configuration
+To store plugin settings, we can register a configuration file.
+
+```ts showLineNumbers title="index.ts"
+opendiscord.events.get("onConfigLoad").listen((configManager) => {
+    configManager.add(new api.ODJsonConfig("example-plugin:config", "config.json", "./plugins/example-plugin/"))
+```
+
+#### 🔹 What happens here?
+- **`onConfigLoad`** is triggered when the bot loads its configurations.
+- **`configManager.add(...)`** registers a new JSON configuration file.
+- **`ODJsonConfig`** is the class responsible for managing & reading the JSON file.
+- **Parameters explained:**
+  - **`"example-plugin:config"`** → The unique **ID** for this config.
+  - **`"config.json"`** → The **filename** of the config.
+  - **`"./plugins/example-plugin/"`** → The **directory** where the file is stored.
+
+:::tip config directory location
+**📌 Why store configs inside `./plugins/example-plugin/` instead of `./config/`?**  
+This keeps all plugin-related files **self-contained**, avoiding clutter in the main config directory.
+:::
+---
+
+### 3️⃣ Accessing Configuration Data
+Ofcourse we also want to read our plugin settings. This can be done by importing the `ODJSonConfig` from `opendiscord.configs`.
+
+```ts showLineNumbers title="index.ts"
+//you can run this code in any event which has triggered after the config has been loaded!
+opendiscord.events.get("someEventYouWantToUseThisConfig").listen(() => {
+    const ourConfig = opendiscord.configs.get("example-plugin:config")
+    opendiscord.log("The example config loaded successfully!", "plugin", [
+        { key: "var-1", value: ourConfig.data.testVariable1 },
+        { key: "var-2", value: ourConfig.data.testVariable2.toString() },
+        { key: "var-3", value: ourConfig.data.testVariable3.toString() }
+    ])
+})
+```
+
+#### 🔹 What does this do?
+- Retrieve our **config file** using `opendiscord.configs.get("example-plugin:config")`.
+- Access the test variables from the config file.
+- Uses **`opendiscord.log(...)`** to print information in the console and logs in a beautiful way.
+
+:::tip tips
+- Logging configuration values helps ensure that everything loads correctly.
+- `opendiscord.configs` works the same as `configManager` when we registered the config file.
+:::
+---
+
+### 4️⃣ Listening for Ticket Events
+Let's try to react when a user creates a ticket. For this, we can use the same event listeners.
+
+```ts showLineNumbers title="index.ts"
+opendiscord.events.get("onTicketCreate").listen((creator) => {
+    opendiscord.log("Ticket is getting created...", "plugin")
+})
+opendiscord.events.get("afterTicketCreated").listen((ticket, creator, channel) => {
+    opendiscord.log("Ticket is ready for usage!", "plugin")
+})
+```
+
+#### 🔹 What happens here?
+- **`onTicketCreate`** is triggered <C color="red">**before a ticket is created**</C> (right after the user clicks the button).
+- **`afterTicketCreated`** is fired <C color="green">**after the ticket has been created**</C> and is assigned to a channel.
+- Logs `"Ticket is getting created..."` & `"Ticket is ready for usage!"` to inform us of the events.
+- You can use the `ticket`, `creator` and `channel` variables to execute your own actions.
+
+<Divider></Divider>
+## ✅ Summary (What Did We Build?)
+- ✅ A plugin with **Ensured compatibility** with Open Ticket.
+- ✅ **TypeScript autocomplete support** for a smoother coding experience.
+- ✅ Registered a **custom configuration file** for our plugin.
+- ✅ **Listened for ticket creation events**:
+  - `onTicketCreate` → Runs **before** the ticket is made.
+  - `afterTicketCreated` → Runs **after** the ticket is created.
+
+This concludes our **first Open Ticket plugin**! 🎉 In the next steps, we’ll explore how to **test and refine** our plugin.
+
+<Divider></Divider>
+## ⚙️ Testing Your Plugin
+To test the plugin, make sure the plugin is enabled in `plugin.json` and restart your Open Ticket bot:
+
+```sh
+npm start
+```
+
+If everything is set up correctly, you should see the following messages in your bot console when a ticket is created:  
+
+```plaintext
+[PLUGIN] Ticket is getting created...
+[PLUGIN] Ticket is ready for usage!
+```
+
+### 🔍 Troubleshooting
+If you don't see these messages, ensure:
+- Your plugin is inside `./plugins/example-plugin/`
+- `plugin.json` has `"enabled":true`
+- There are no syntax errors in `index.ts`
+- The bot has been configured correctly
+- The compilation succeeded
+
+:::tip
+For **more advanced testing**, check out the [Testing Your Plugin](/docs/framework/05-tips-and-tricks/01-testing.mdx) guide.
+:::
+<Divider></Divider>
+
+## 🎉 Congratulations!  
+
+You've successfully built your first Open Ticket plugin! 🚀  
+
+### Next Steps
+<LinkBlock mode="emoji" emoji="📄" url="/docs/reference/basic-plugins/simple-config" isdoc="true" name="Simple Config" description="How to store, retrieve & check plugin settings."/>  
+<LinkBlock mode="emoji" emoji="📄" url="/docs/reference/basic-plugins/simple-command" isdoc="true" name="Simple Command" description="Adding a basic slash & text command to Open Ticket."/>  
+<LinkBlock mode="emoji" emoji="📄" url="/docs/reference/basic-plugins/respond-events" isdoc="true" name="Responding To Events" description="Listening to basic Open Ticket events in your plugin."/>  
+
+### Learn More
+<LinkBlock mode="emoji" emoji="📖" url="/docs/reference/get-started" isdoc="true" name="API Reference" description="Explore the available functions, events, and utilities."/>  
+<LinkBlock mode="emoji" emoji="🔌" url="https://odplugins.dj-dj.be" isdoc="false" name="Plugin Repository" description="Browse existing Open Ticket plugins for ideas and best practices."/>  
+<LinkBlock mode="emoji" emoji="💡" url="/docs/category/framework-tips" isdoc="true" name="Tips & Tricks" description="Helpful tricks to optimize your plugin development."/>  
+
+### Go Further
+<LinkBlock mode="emoji" emoji="📗" url="/docs/category/framework-basic" isdoc="true" name="Basic Plugins" description="Beginner guides for Open Ticket plugin development."/>  
+<LinkBlock mode="emoji" emoji="📘" url="/docs/category/framework-intermediate" isdoc="true" name="Intermediate Plugins" description="Expand your knowledge with more advanced Open Ticket plugins."/>  
+<LinkBlock mode="emoji" emoji="📙" url="/docs/category/framework-advanced" isdoc="true" name="Advanced Plugins" description="Take your plugins to the next level with advanced features."/>  
+<LinkBlock mode="emoji" emoji="📕" url="/docs/category/framework-expert" isdoc="true" name="Expert Plugins" description="Master the Open Ticket framework with expert-level guides."/>  
+
+### Useful Resources
+<LinkBlock mode="emoji" emoji="⚡" url="/docs/framework/tips-and-tricks/best-practices" isdoc="true" name="Best Practices" description="Write better Open Ticket plugins with these best practices."/>  
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Discord Server" description="DJdj Development"></LinkBlock>

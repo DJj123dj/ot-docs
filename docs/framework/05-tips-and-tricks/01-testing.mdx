@@ -1,0 +1,51 @@
+---
+title: ✅ Testing Your Plugin
+description: Best practices for testing and debugging.
+keywords: [open-ticket, open ticket, developer, plugins, discord ticket bot, framework, guide]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
+
+## TODO TODO TODO
+
+#### ✅ Basic Testing Setup  
+
+1. **Ensure Open Ticket is running** – Your bot must be online to load the plugin.  
+2. **Place your plugin in the `/plugins/` directory** – Each plugin should have its own folder inside the `plugins/` directory.  
+3. **Check your `plugin.json` file** – Make sure your plugin ID, version, and dependencies are correctly defined.  
+
+#### 🔄 Enabling & Reloading Plugins  
+
+- To enable your plugin, set `"enabled": true` in `plugin.json`.  
+- Restart Open Ticket, or use the **reload command** to apply changes without restarting the bot.  
+
+```bash
+# Restart Open Ticket
+npm run start  
+
+# OR reload plugins in runtime (if supported)
+/ticket reload-plugins
+```
+
+✅ *The reload command is useful for quick iterations without needing a full restart!*  
+
+#### 📜 Checking for Errors  
+
+If your plugin isn’t working as expected:  
+
+- **Check the bot console** – Any syntax errors or missing dependencies will show up in the logs.  
+- **Enable debug mode** – You can start Open Ticket with debug mode enabled for more detailed logs:  
+
+```bash
+npm run start --debug
+```
+
+- **Check the plugin loader logs** – If your plugin fails to load, Open Ticket will usually provide an error message explaining why.  
+
+#### 🚀 Advanced Testing & Debugging  
+
+For in-depth testing, including live debugging, breakpoints, and performance monitoring, check out the dedicated guide below:  
+
+<LinkBlock mode="emoji" emoji="🔍" url="/docs/framework/advanced-plugins/testing-plugins" isdoc="true" name="Advanced Plugin Testing" description="A complete guide on debugging and testing Open Ticket plugins."/>  

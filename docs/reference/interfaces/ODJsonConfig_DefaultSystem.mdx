@@ -1,0 +1,206 @@
+---
+title: ODJsonConfig_DefaultSystem
+description: "All settings related to the ticket system."
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, interface]
+sidebar_class_name: otdocs-badge-page otdocs-meta-gray-inter
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# ODJsonConfig_DefaultSystem <M color="gray">interface</M>
+
+:::warning under construction
+We are still working the **API Reference**! This page might be incomplete or doesn't contain all details!
+:::
+
+{/*
+:::danger deprecated
+This interface has been flagged as deprecated and will be removed in the next version of Open Ticket.
+
+**Use `SomeOtherInterface` instead!**
+:::
+
+:::info experimental
+This interface is flagged as experimental and might not be available in all Open Ticket versions.
+
+**Available for Open Ticket `v4.0.0` and above.**
+:::
+
+:::warning
+This is an example warning for this interface. Explain something here which should require a lot of attention!
+:::
+
+:::tip
+This is an example tip for this interface. Explain something here which could help when using this interface!
+:::
+*/}
+
+## Overview
+All settings related to the ticket system.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L161)
+
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+    #### Properties \{#overview-properties}
+    <ul>
+        <li>**[`disableVerifyBars`](#prop-disableVerifyBars)**</li>
+        <li>**[`emojiStyle`](#prop-emojiStyle)**</li>
+        <li>**[`enableDeleteWithoutTranscript`](#prop-enableDeleteWithoutTranscript)**</li>
+        <li>**[`enableTicketActionWithReason`](#prop-enableTicketActionWithReason)**</li>
+        <li>**[`enableTicketClaimButtons`](#prop-enableTicketClaimButtons)**</li>
+        <li>**[`enableTicketCloseButtons`](#prop-enableTicketCloseButtons)**</li>
+        <li>**[`enableTicketDeleteButtons`](#prop-enableTicketDeleteButtons)**</li>
+        <li>**[`enableTicketPinButtons`](#prop-enableTicketPinButtons)**</li>
+        <li>**[`limits`](#prop-limits)**</li>
+        <li>**[`logs`](#prop-logs)**</li>
+        <li>**[`messages`](#prop-messages)**</li>
+        <li>**[`permissions`](#prop-permissions)**</li>
+        <li>**[`preferSlashOverText`](#prop-preferSlashOverText)**</li>
+        <li>**[`questionFieldsInCodeBlock`](#prop-questionFieldsInCodeBlock)**</li>
+        <li>**[`removeParticipantsOnClose`](#prop-removeParticipantsOnClose)**</li>
+        <li>**[`replyOnReactionRole`](#prop-replyOnReactionRole)**</li>
+        <li>**[`replyOnTicketCreation`](#prop-replyOnTicketCreation)**</li>
+        <li>**[`sendErrorOnUnknownCommand`](#prop-sendErrorOnUnknownCommand)**</li>
+        <li>**[`useRedErrorEmbeds`](#prop-useRedErrorEmbeds)**</li>
+        <li>**[`useTranslatedConfigChecker`](#prop-useTranslatedConfigChecker)**</li>
+    </ul>
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+    #### References \{#overview-references}
+    <ul>
+        {/*
+        //TODO
+        <li>**<code><ApiUrl url="class:ODId" label="api.ODId"/></code> <M color="purple">class</M>**</li>
+        <li>**<code><ApiUrl url="type:ODExampleType" label="api.ODExampleType"/></code> <M color="brown">type</M>**</li>
+        */}
+    </ul>
+</div>
+</FlexHorizontal>
+
+## Properties
+<Divider></Divider>
+#### `disableVerifyBars` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-disableVerifyBars}
+Disable the (✅❌) buttons and directly run the action.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L177)
+
+<Divider></Divider>
+#### `emojiStyle` <M color="brown">type</M> <ApiBlock>"disabled"|"before"|"after"|"double"</ApiBlock> \{#prop-emojiStyle}
+The emoji style used in the bot. This will affect all embeds, titles & messages in the bot.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L181)
+
+<Divider></Divider>
+#### `enableDeleteWithoutTranscript` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-enableDeleteWithoutTranscript}
+Enable/disable the delete without transcript feature (button & /delete command).
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L194)
+
+<Divider></Divider>
+#### `enableTicketActionWithReason` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-enableTicketActionWithReason}
+Enable/disable the "with reason" button for all actions in the ticket message.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L192)
+
+<Divider></Divider>
+#### `enableTicketClaimButtons` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-enableTicketClaimButtons}
+Enable/disable the ticket claim & unclaim button in the ticket message.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L184)
+
+<Divider></Divider>
+#### `enableTicketCloseButtons` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-enableTicketCloseButtons}
+Enable/disable the ticket close & re-open button in the ticket message.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L186)
+
+<Divider></Divider>
+#### `enableTicketDeleteButtons` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-enableTicketDeleteButtons}
+Enable/disable the ticket delete button in the ticket message.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L190)
+
+<Divider></Divider>
+#### `enableTicketPinButtons` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-enableTicketPinButtons}
+Enable/disable the ticket pin & unpin button in the ticket message.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L188)
+
+<Divider></Divider>
+#### `limits` <M color="gray">interface</M> <ApiBlock><ApiUrl url="interface:ODJsonConfig_DefaultSystemLimits" label="api.ODJsonConfig_DefaultSystemLimits"/></ApiBlock> \{#prop-limits}
+All settings related to global ticket limits.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L200)
+
+<Divider></Divider>
+#### `logs` <M color="gray">interface</M> <ApiBlock><ApiUrl url="interface:ODJsonConfig_DefaultSystemLogs" label="api.ODJsonConfig_DefaultSystemLogs"/></ApiBlock> \{#prop-logs}
+All settings related to the log channel.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L197)
+
+<Divider></Divider>
+#### `messages` <M color="gray">interface</M> <ApiBlock><ApiUrl url="interface:ODJsonConfig_DefaultSystemMessages" label="api.ODJsonConfig_DefaultSystemMessages"/></ApiBlock> \{#prop-messages}
+Configure dm & log messages for all Open Ticket commands & actions.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L206)
+
+<Divider></Divider>
+#### `permissions` <M color="gray">interface</M> <ApiBlock><ApiUrl url="interface:ODJsonConfig_DefaultSystemPermissions" label="api.ODJsonConfig_DefaultSystemPermissions"/></ApiBlock> \{#prop-permissions}
+Configure permissions for all Open Ticket commands & actions.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L203)
+
+<Divider></Divider>
+#### `preferSlashOverText` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-preferSlashOverText}
+Prefer slash-commands over text-commands when displaying them in menu's and messages.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L171)
+
+<Divider></Divider>
+#### `questionFieldsInCodeBlock` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-questionFieldsInCodeBlock}
+Display the question fields (in a ticket message) in code blocks.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L175)
+
+<Divider></Divider>
+#### `removeParticipantsOnClose` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-removeParticipantsOnClose}
+Remove all participants (except admins) from the ticket when it's closed.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L163)
+
+<Divider></Divider>
+#### `replyOnReactionRole` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-replyOnReactionRole}
+Reply with an ephemeral message when reaction roles are changed.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L167)
+
+<Divider></Divider>
+#### `replyOnTicketCreation` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-replyOnTicketCreation}
+Reply with an ephemeral message when a ticket is created.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L165)
+
+<Divider></Divider>
+#### `sendErrorOnUnknownCommand` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-sendErrorOnUnknownCommand}
+Reply with "unknown command" when the prefix is used without a valid command.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L173)
+
+<Divider></Divider>
+#### `useRedErrorEmbeds` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-useRedErrorEmbeds}
+Display error embeds/messages with red instead of the default bot color.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L179)
+
+<Divider></Divider>
+#### `useTranslatedConfigChecker` <M color="red">boolean</M> <ApiBlock><ApiUrl url="js:boolean" label="boolean"/></ApiBlock> \{#prop-useTranslatedConfigChecker}
+Use a translated config checker in the console.
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L169)
+
+<Divider></Divider>

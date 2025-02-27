@@ -58,6 +58,7 @@ It shouldn't be used by plugins because this is an internal API feature!
     <ul>
         <li>**[`constructor`](#method-constructor)**</li>
         <li>**[`migrate`](#method-migrate)**</li>
+        <li>**[`migrateAfterInit`](#method-migrateAfterInit)**</li>
     </ul>
 </div>
 <div style={{width:"30%"}} className="otdocs-flex-mobile-width">
@@ -85,20 +86,29 @@ The version to migrate data to
 (no description)
 
 <details>
-<summary>**View Parameters (2)**</summary>
+<summary>**View Parameters (3)**</summary>
 - **`version`:** <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODVersion" label="api.ODVersion"/></ApiBlock> - Parameter Description Lorem Ipsum.
 - **`func`:** <M color="orange">function</M> <ApiBlock>() => <ApiUrl url="js:void" label="void"/>|<ApiUrl url="js:promise" label="Promise"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`afterInitFunc`:** <M color="orange">function</M> <ApiBlock>() => <ApiUrl url="js:void" label="void"/>|<ApiUrl url="js:promise" label="Promise"/></ApiBlock> - Parameter Description Lorem Ipsum.
 </details>
 
-> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L129)
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L131)
 
 <Divider></Divider>
 #### `migrate()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:promise" label="Promise"/></ApiBlock> \{#method-migrate}
-Run this version migration as a plugin. Returns `false` when someting goes wrong.
+Run this version migration as a plugin. Returns `false` when something goes wrong.
 
 
 
-> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L134)
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L137)
+
+<Divider></Divider>
+#### `migrateAfterInit()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:promise" label="Promise"/></ApiBlock> \{#method-migrateAfterInit}
+Run this version migration as a plugin (after other plugins have loaded). Returns `false` when something goes wrong.
+
+
+
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L146)
 
 <Divider></Divider>
 

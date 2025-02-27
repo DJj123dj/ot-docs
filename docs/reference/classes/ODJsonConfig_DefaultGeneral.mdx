@@ -45,7 +45,7 @@ It doesn't add any extra features!
 
 This default class is made for the `general.json` config!
 
-> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L86)
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L250)
 
 <FlexHorizontal>
 <div style={{width:"30%"}} className="otdocs-flex-mobile-width">
@@ -81,10 +81,10 @@ This default class is made for the `general.json` config!
 
 ## Properties
 <Divider></Divider>
-#### `data` <M color="brown">type</M> <ApiBlock>\{_INFO:\{discord:<ApiUrl url="js:string" label="string"/>, support:<ApiUrl url="js:string" label="string"/>, version:<ApiUrl url="js:string" label="string"/>\}, globalAdmins:<ApiUrl url="js:string" label="string"/>[], language:<ApiUrl url="js:string" label="string"/>, mainColor:<ApiUrl url="https://discord.js.org/docs/packages/discord.js/main/ColorResolvable:TypeAlias" label="discord.ColorResolvable"/>, prefix:<ApiUrl url="js:string" label="string"/>, serverId:<ApiUrl url="js:string" label="string"/>, slashCommands:<ApiUrl url="js:boolean" label="boolean"/>, status:<ApiUrl url="interface:ODJsonConfig_DefaultStatusType" label="api.ODJsonConfig_DefaultStatusType"/>, system:\{disableVerifyBars:<ApiUrl url="js:boolean" label="boolean"/>, emojiStyle:"disabled"|"before"|"after"|"double", enableDeleteWithoutTranscript:<ApiUrl url="js:boolean" label="boolean"/>, enableTicketActionWithReason:<ApiUrl url="js:boolean" label="boolean"/>, enableTicketClaimButtons:<ApiUrl url="js:boolean" label="boolean"/>, enableTicketCloseButtons:<ApiUrl url="js:boolean" label="boolean"/>, enableTicketDeleteButtons:<ApiUrl url="js:boolean" label="boolean"/>, enableTicketPinButtons:<ApiUrl url="js:boolean" label="boolean"/>, limits:\{enabled:<ApiUrl url="js:boolean" label="boolean"/>, globalMaximum:<ApiUrl url="js:number" label="number"/>, userMaximum:<ApiUrl url="js:number" label="number"/>\}, logs:\{channel:<ApiUrl url="js:string" label="string"/>, enabled:<ApiUrl url="js:boolean" label="boolean"/>\}, messages:\{adding:<ApiUrl url="interface:ODJsonConfig_DefaultMessageSettingsType" label="api.ODJsonConfig_DefaultMessageSettingsType"/>, blacklisting:<ApiUrl url="interface:ODJsonConfig_DefaultMessageSettingsType" label="api.ODJsonConfig_DefaultMessageSettingsType"/>, claiming:<ApiUrl url="interface:ODJsonConfig_DefaultMessageSettingsType" label="api.ODJsonConfig_DefaultMessageSettingsType"/>, closing:<ApiUrl url="interface:ODJsonConfig_DefaultMessageSettingsType" label="api.ODJsonConfig_DefaultMessageSettingsType"/>, creation:<ApiUrl url="interface:ODJsonConfig_DefaultMessageSettingsType" label="api.ODJsonConfig_DefaultMessageSettingsType"/>, deleting:<ApiUrl url="interface:ODJsonConfig_DefaultMessageSettingsType" label="api.ODJsonConfig_DefaultMessageSettingsType"/>, moving:<ApiUrl url="interface:ODJsonConfig_DefaultMessageSettingsType" label="api.ODJsonConfig_DefaultMessageSettingsType"/>, pinning:<ApiUrl url="interface:ODJsonConfig_DefaultMessageSettingsType" label="api.ODJsonConfig_DefaultMessageSettingsType"/>, removing:<ApiUrl url="interface:ODJsonConfig_DefaultMessageSettingsType" label="api.ODJsonConfig_DefaultMessageSettingsType"/>, renaming:<ApiUrl url="interface:ODJsonConfig_DefaultMessageSettingsType" label="api.ODJsonConfig_DefaultMessageSettingsType"/>, reopening:<ApiUrl url="interface:ODJsonConfig_DefaultMessageSettingsType" label="api.ODJsonConfig_DefaultMessageSettingsType"/>, roleAdding:<ApiUrl url="interface:ODJsonConfig_DefaultMessageSettingsType" label="api.ODJsonConfig_DefaultMessageSettingsType"/>, roleRemoving:<ApiUrl url="interface:ODJsonConfig_DefaultMessageSettingsType" label="api.ODJsonConfig_DefaultMessageSettingsType"/>\}, permissions:\{add:<ApiUrl url="js:string" label="string"/>, autoclose:<ApiUrl url="js:string" label="string"/>, autodelete:<ApiUrl url="js:string" label="string"/>, blacklist:<ApiUrl url="js:string" label="string"/>, claim:<ApiUrl url="js:string" label="string"/>, clear:<ApiUrl url="js:string" label="string"/>, close:<ApiUrl url="js:string" label="string"/>, delete:<ApiUrl url="js:string" label="string"/>, help:<ApiUrl url="js:string" label="string"/>, move:<ApiUrl url="js:string" label="string"/>, panel:<ApiUrl url="js:string" label="string"/>, pin:<ApiUrl url="js:string" label="string"/>, remove:<ApiUrl url="js:string" label="string"/>, rename:<ApiUrl url="js:string" label="string"/>, reopen:<ApiUrl url="js:string" label="string"/>, stats:<ApiUrl url="js:string" label="string"/>, ticket:<ApiUrl url="js:string" label="string"/>, unclaim:<ApiUrl url="js:string" label="string"/>, unpin:<ApiUrl url="js:string" label="string"/>\}, preferSlashOverText:<ApiUrl url="js:boolean" label="boolean"/>, questionFieldsInCodeBlock:<ApiUrl url="js:boolean" label="boolean"/>, removeParticipantsOnClose:<ApiUrl url="js:boolean" label="boolean"/>, replyOnReactionRole:<ApiUrl url="js:boolean" label="boolean"/>, replyOnTicketCreation:<ApiUrl url="js:boolean" label="boolean"/>, sendErrorOnUnknownCommand:<ApiUrl url="js:boolean" label="boolean"/>, useRedErrorEmbeds:<ApiUrl url="js:boolean" label="boolean"/>, useTranslatedConfigChecker:<ApiUrl url="js:boolean" label="boolean"/>\}, textCommands:<ApiUrl url="js:boolean" label="boolean"/>, token:<ApiUrl url="js:string" label="string"/>, tokenFromENV:<ApiUrl url="js:boolean" label="boolean"/>\}</ApiBlock> \{#prop-data}
+#### `data` <M color="gray">interface</M> <ApiBlock><ApiUrl url="interface:ODJsonConfig_DefaultGeneralData" label="api.ODJsonConfig_DefaultGeneralData"/></ApiBlock> \{#prop-data}
 An object/array of the entire config file! Variables inside it can be edited while the bot is running!
 
-> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L87)
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/defaults/config.ts#L251)
 
 <Divider></Divider>
 #### <C color="blue">inherited</C> `file` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-file}
@@ -96,7 +96,7 @@ The name of the file with extension.
 #### <C color="purple">inherited</C> `id` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODId" label="api.ODId"/></ApiBlock> \{#prop-id}
 The id of this data.
 
-> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L172)
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L177)
 
 <Divider></Divider>
 #### <C color="blue">inherited</C> `path` <M color="blue">string</M> <ApiBlock><ApiUrl url="js:string" label="string"/></ApiBlock> \{#prop-path}
@@ -126,7 +126,7 @@ Trigger an `onChange()` event in the parent `ODManager` of this class.
 
 
 
-> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L108)
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L113)
 
 <Divider></Divider>
 #### <C color="orange">inherited</C> `changed()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:void" label="void"/></ApiBlock> \{#method-changed}
@@ -137,7 +137,7 @@ Trigger an `onChange()` event in the parent `ODManager` of this class.
 - **`callback`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|(() => <ApiUrl url="js:void" label="void"/>)</ApiBlock> - Parameter Description Lorem Ipsum.
 </details>
 
-> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L119)
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L124)
 
 <Divider></Divider>
 #### <C color="orange">inherited</C> `init()` <M color="orange">function</M> <ApiBlock><ApiUrl url="type:ODPromiseVoid" label="api.ODPromiseVoid"/></ApiBlock> \{#method-init}

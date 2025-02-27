@@ -87,7 +87,7 @@ Check if you're running a beta version of Open Ticket.
 > [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/startup/init.ts#L74)
 
 <Divider></Divider>
-#### `ODVersionMigration` <M color="orange">function</M> <ApiBlock>(version:<ApiUrl url="class:ODVersion" label="api.ODVersion"/>, func:() => <ApiUrl url="js:void" label="void"/>|<ApiUrl url="js:promise" label="Promise"/>) => <ApiUrl url="class:ODVersionMigration" label="api.ODVersionMigration"/></ApiBlock> \{#prop-ODVersionMigration}
+#### `ODVersionMigration` <M color="orange">function</M> <ApiBlock>(version:<ApiUrl url="class:ODVersion" label="api.ODVersion"/>, func:() => <ApiUrl url="js:void" label="void"/>|<ApiUrl url="js:promise" label="Promise"/>, afterInitFunc:() => <ApiUrl url="js:void" label="void"/>|<ApiUrl url="js:promise" label="Promise"/>) => <ApiUrl url="class:ODVersionMigration" label="api.ODVersionMigration"/></ApiBlock> \{#prop-ODVersionMigration}
 This class is used to manage data migration between Open Ticket versions.
 
 It shouldn't be used by plugins because this is an internal API feature!

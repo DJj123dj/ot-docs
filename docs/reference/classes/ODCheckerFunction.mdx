@@ -45,7 +45,7 @@ This is an Open Ticket config checker function.
 It is a global function that will be executed after all config checkers. It can do additional checks for invalid/missing configurations.
 It's mostly used for things that need to be checked globally!
 
-> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L227)
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L232)
 
 <FlexHorizontal>
 <div style={{width:"30%"}} className="otdocs-flex-mobile-width">
@@ -75,16 +75,16 @@ It's mostly used for things that need to be checked globally!
 
 ## Properties
 <Divider></Divider>
-#### `func` <M color="orange">function</M> <ApiBlock>(manager:<ApiUrl url="class:ODCheckerManager" label="api.ODCheckerManager"/>, functions:<ApiUrl url="class:ODCheckerFunctionManager" label="api.ODCheckerFunctionManager"/>) => <ApiUrl url="interface:ODCheckerResult" label="api.ODCheckerResult"/></ApiBlock> \{#prop-func}
-The function itself :)
+#### `func` <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODCheckerFunctionCallback" label="api.ODCheckerFunctionCallback"/></ApiBlock> \{#prop-func}
+The function which will be executed globally after all config checkers.
 
-> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L229)
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L234)
 
 <Divider></Divider>
 #### <C color="purple">inherited</C> `id` <M color="purple">class</M> <ApiBlock><ApiUrl url="class:ODId" label="api.ODId"/></ApiBlock> \{#prop-id}
 The id of this data.
 
-> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L172)
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L177)
 
 <Divider></Divider>
 
@@ -96,10 +96,10 @@ The id of this data.
 <details>
 <summary>**View Parameters (2)**</summary>
 - **`id`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODValidId" label="api.ODValidId"/></ApiBlock> - Parameter Description Lorem Ipsum.
-- **`func`:** <M color="orange">function</M> <ApiBlock>(manager:<ApiUrl url="class:ODCheckerManager" label="api.ODCheckerManager"/>, functions:<ApiUrl url="class:ODCheckerFunctionManager" label="api.ODCheckerFunctionManager"/>) => <ApiUrl url="interface:ODCheckerResult" label="api.ODCheckerResult"/></ApiBlock> - Parameter Description Lorem Ipsum.
+- **`func`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="type:ODCheckerFunctionCallback" label="api.ODCheckerFunctionCallback"/></ApiBlock> - Parameter Description Lorem Ipsum.
 </details>
 
-> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L231)
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/checker.ts#L236)
 
 <Divider></Divider>
 #### <C color="orange">inherited</C> <C color="orange">protected</C> `_change()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:void" label="void"/></ApiBlock> \{#method-_change}
@@ -107,7 +107,7 @@ Trigger an `onChange()` event in the parent `ODManager` of this class.
 
 
 
-> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L108)
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L113)
 
 <Divider></Divider>
 #### <C color="orange">inherited</C> `changed()` <M color="orange">function</M> <ApiBlock><ApiUrl url="js:void" label="void"/></ApiBlock> \{#method-changed}
@@ -118,7 +118,7 @@ Trigger an `onChange()` event in the parent `ODManager` of this class.
 - **`callback`:** <M color="brown">type</M> <ApiBlock><ApiUrl url="js:null" label="null"/>|(() => <ApiUrl url="js:void" label="void"/>)</ApiBlock> - Parameter Description Lorem Ipsum.
 </details>
 
-> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L119)
+> [**View Source**](https://otgithub.dj-dj.be/tree/main/src/core/api/modules/base.ts#L124)
 
 <Divider></Divider>
 

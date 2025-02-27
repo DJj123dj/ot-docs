@@ -198,7 +198,7 @@ const config = {
                     title: 'Developer',
                     items: [
                         {
-                            label: 'Get Started',
+                            label: 'Getting Started',
                             to: '/docs/framework/get-started',
                         },
                         {
@@ -208,6 +208,10 @@ const config = {
                         {
                             label: 'API Reference',
                             to: '/docs/reference/get-started',
+                        },
+                        {
+                            label: 'Your First Plugin',
+                            to: '/docs/framework/basic-plugins/first-plugin',
                         }
                     ],
                 },
@@ -250,6 +254,10 @@ const config = {
                         {
                             label: 'Translation',
                             href: 'https://otgithub.dj-dj.be/tree/dev/.github/CONTRIBUTING.md',
+                        },
+                        {
+                            label: 'Support Us',
+                            href: 'https://github.com/sponsors/DJj123dj',
                         },
                     ],
                 },

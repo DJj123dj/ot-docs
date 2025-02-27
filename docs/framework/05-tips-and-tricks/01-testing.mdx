@@ -8,44 +8,71 @@ keywords: [open-ticket, open ticket, developer, plugins, discord ticket bot, fra
 </head>
 import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
 
-## TODO TODO TODO
+# ✅ Testing Your Plugin
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+Hi there! In this guide, we will walk through the process of <C color="blue">**testing, running, and executing**</C> your Open Ticket plugin.  
 
-#### ✅ Basic Testing Setup  
+By the end of this article, you will know how to properly **load, debug, and verify** that your plugin works as expected. We'll cover essential testing techniques to ensure everything runs smoothly.
+Testing is a crucial part of plugin development, so be sure to follow along carefully.
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+    <StyledTitle title="Framework Article" description="Tips & Tricks - Testing Your Plugin"></StyledTitle>
+</div>
+</FlexHorizontal>
 
-1. **Ensure Open Ticket is running** – Your bot must be online to load the plugin.  
-2. **Place your plugin in the `/plugins/` directory** – Each plugin should have its own folder inside the `plugins/` directory.  
+<Divider></Divider>
+## ✅ Basic Testing Setup  
+1. **Ensure Open Ticket is configured** – Your bot must be configured correctly and should run without problems.  
+2. **Place your plugin in the `./plugins/` directory** – Each plugin should have its own folder inside the `./plugins/` directory.  
 3. **Check your `plugin.json` file** – Make sure your plugin ID, version, and dependencies are correctly defined.  
 
-#### 🔄 Enabling & Reloading Plugins  
+> *If you are unable to succesfully create a plugin, please read the following article (again).*
+> <LinkBlock mode="emoji" emoji="🛠️" url="/docs/framework/basic-plugins/first-plugin" isdoc="true" name="Your First Plugin" description="Setting up a basic Open Ticket plugin."/>
 
-- To enable your plugin, set `"enabled": true` in `plugin.json`.  
-- Restart Open Ticket, or use the **reload command** to apply changes without restarting the bot.  
+## 🎯 Enabling Plugins  
+- To enable your plugin, set `"enabled"` to `true` in `plugin.json`.  
+- Restart Open Ticket and your plugin should show up in the startscreen of the bot. 
 
-```bash
-# Restart Open Ticket
-npm run start  
-
-# OR reload plugins in runtime (if supported)
-/ticket reload-plugins
+```sh title="Restart Open Ticket"
+npm start  
 ```
 
-✅ *The reload command is useful for quick iterations without needing a full restart!*  
+If successful, your plugin should appear in the list found in the console.
+<ScaleImage size="70%" src="/img/docs-v4/startscreen-plugins.png" alt="The Open Ticket startscreen with a few disabled plugins."></ScaleImage>
 
-#### 📜 Checking for Errors  
+#### 🎨 Color, Emoji & Status
+- <C color="gray">**💤 Gray**</C> - Your plugin has not been enabled. Please set `"enabled"` to `true` in `plugin.json`.
+- <C color="green">**✅ Green**</C> - Your plugin has been enabled succesfully!
+- <C color="red">**❌ Red**</C> - Your plugin has crashed. Check for any errors in the console.
 
+## 📜 Checking For Errors  
 If your plugin isn’t working as expected:  
-
 - **Check the bot console** – Any syntax errors or missing dependencies will show up in the logs.  
-- **Enable debug mode** – You can start Open Ticket with debug mode enabled for more detailed logs:  
-
-```bash
-npm run start --debug
-```
-
+- **Check `otdebug.txt`** – It's a more in-depth version of the console logs.
 - **Check the plugin loader logs** – If your plugin fails to load, Open Ticket will usually provide an error message explaining why.  
+- **Ask the community** – Never be scared to ask for help! We are happy to help you in our [**discord server**](https://discord.dj-dj.be)!
 
-#### 🚀 Advanced Testing & Debugging  
 
-For in-depth testing, including live debugging, breakpoints, and performance monitoring, check out the dedicated guide below:  
+<Divider></Divider>
+## 🎉 Congratulations!  
+You've successfully built & tested your Open Ticket plugin! 🚀  
 
-<LinkBlock mode="emoji" emoji="🔍" url="/docs/framework/advanced-plugins/testing-plugins" isdoc="true" name="Advanced Plugin Testing" description="A complete guide on debugging and testing Open Ticket plugins."/>  
+### Related
+<LinkBlock mode="emoji" emoji="📄" url="/docs/reference/tips-and-tricks/common-mistakes" isdoc="true" name="Common Mistakes" description="Debugging common issues."/>  
+<LinkBlock mode="emoji" emoji="📄" url="/docs/reference/tips-and-tricks/troubleshooting" isdoc="true" name="Troubleshooting & Debugging Techniques" description="Finding and fixing errors."/>  
+
+### Learn More
+<LinkBlock mode="emoji" emoji="📖" url="/docs/reference/get-started" isdoc="true" name="API Reference" description="Explore the available functions, events, and utilities."/>  
+<LinkBlock mode="emoji" emoji="🔌" url="https://odplugins.dj-dj.be" isdoc="false" name="Plugin Repository" description="Browse existing Open Ticket plugins for ideas and best practices."/>  
+<LinkBlock mode="emoji" emoji="💡" url="/docs/category/framework-tips" isdoc="true" name="Tips & Tricks" description="Helpful tricks to optimize your plugin development."/>  
+
+### Go Further
+<LinkBlock mode="emoji" emoji="📗" url="/docs/category/framework-basic" isdoc="true" name="Basic Plugins" description="Beginner guides for Open Ticket plugin development."/>  
+<LinkBlock mode="emoji" emoji="📘" url="/docs/category/framework-intermediate" isdoc="true" name="Intermediate Plugins" description="Expand your knowledge with more advanced Open Ticket plugins."/>  
+<LinkBlock mode="emoji" emoji="📙" url="/docs/category/framework-advanced" isdoc="true" name="Advanced Plugins" description="Take your plugins to the next level with advanced features."/>  
+<LinkBlock mode="emoji" emoji="📕" url="/docs/category/framework-expert" isdoc="true" name="Expert Plugins" description="Master the Open Ticket framework with expert-level guides."/>  
+
+### Useful Resources
+<LinkBlock mode="emoji" emoji="⚡" url="/docs/framework/tips-and-tricks/best-practices" isdoc="true" name="Best Practices" description="Write better Open Ticket plugins with these best practices."/>  
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Discord Server" description="DJdj Development"></LinkBlock>

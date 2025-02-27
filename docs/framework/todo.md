@@ -41,7 +41,7 @@
 ---  
 
 ### **5. Tips & Tricks**  
-- 📝 **Best Practices** – Clean, efficient code.
+- ⚡ **Best Practices** – Clean, efficient code.
 - 🛠️ **Common Mistakes** – Debugging common issues.
 - 🎨 **Styling & Layout** – Making your plugin look good and fit into the Open Ticket ecosystem.
 - 🔍 **Troubleshooting & Debugging Techniques** – Finding and fixing errors.

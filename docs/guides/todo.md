@@ -1,9 +1,49 @@
-# Frequently Problems
+# 🏗️ TODO
+
+## Articles & Guides
+- Getting Started (Quick Setup)
+- Installation
+  - Download & System Requirements
+  - Configuration
+  - Permissions
+  - Config Errors
+  - Troubleshooting
+- Hosting
+  - Pterodactyl
+  - PM2 + VPS
+  - Heroku
+  - Replit
+  - Vercel
+  - Deno + Bun
+- Structures
+  - Question
+  - Option (ticket, website, role)
+  - Panel
+- Features
+  - Actions
+  - Languages
+  - Permissions
+  - Transcripts
+  - Reaction Roles
+- Advanced Guides
+  - Custom Translations
+  - Customisation
+  - Database Management
+  - Optimizing Large Servers
+- Plugins
+- Updating Versions
+- Open Ticket v3 Migration
+- Public Roadmap
+
+## Other Parts
+- (API Reference) Startup Flags
+
+## Problems & FAQ
 ### General
 - how to find ... ID?
 - how to insert a custom emoji?
 - how to install a plugin?
-- how to add multiple ticket types?
+- how to add multiple ticket types? => see below (config checker)
 - where to store my token?
 - how to reset database?
 - how to manually edit database?
@@ -22,6 +62,9 @@
 - how to fix invalid token?
 - how to fix "options".2.mode == "add"|"remove"|"add&remove" ...?
 - how to fix .... any of the errors :)
+- how to fix invalid role/category/user id?
+- how to ignore/empty "claimedCategory"?
+- how to create multiple options/questions/panels?
 
 ### JSON errors
 - I'm getting ... error (unknown character at idk)

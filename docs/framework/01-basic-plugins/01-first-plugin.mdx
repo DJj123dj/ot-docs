@@ -62,7 +62,7 @@ Now, inside this folder, create a `plugin.json` file. This file contains metadat
     "incompatiblePlugins":[],
 
     "details":{
-        "author":"DJj123dj",
+        "author":"<your-username>",
         "shortDescription":"A simple template for an Open Ticket v4 plugin!",
         "longDescription":"A simple example of an Open Ticket v4 plugin!",
         "imageUrl":"",
@@ -73,12 +73,12 @@ Now, inside this folder, create a `plugin.json` file. This file contains metadat
 ```
 
 #### 🔍 Understanding `plugin.json`  
-- **`"id"`:** <M color="blue">string</M> - The unique identifier of the plugin. <C color="red">**This must match the folder name!**</C>
 - **`"name"`:** <M color="blue">string</M> - The display name of the plugin.
-- **`"description"`:** <M color="blue">string</M> - A short description of what the plugin does. (Also visible in the logs)
+- **`"id"`:** <M color="blue">string</M> - The unique identifier of the plugin. <C color="red">**This must match the folder name!**</C>
 - **`"version"`:** <M color="blue">string</M> - The version of the plugin.
-- **`"author"`:** <M color="blue">string</M> - Your Discord/Github username.
+- **`"startFile"`:** <M color="blue">string</M> - The file which will be executed on startup of the bot.
 - **`"enabled"`:** <M color="red">boolean</M> - If set to `false`, the plugin will be ignored by Open Ticket.
+- **`"priority"`:** <M color="green">number</M> - Plugins with a higher priority will be executed first.
 - [**Explore Additional Properties...**](/docs/reference/config/plugin.mdx)
 
 Now that our plugin is registered, let's create the main script file.
@@ -138,6 +138,7 @@ declare module "#opendiscord-types" {
 
 ### 2️⃣ Registering a Custom Configuration
 To store plugin settings, we can register a configuration file.
+> *If you want an in-depth guide about this topic, check [**this article**](./02-simple-config.mdx).*
 
 ```ts showLineNumbers title="index.ts"
 opendiscord.events.get("onConfigLoad").listen((configManager) => {
@@ -153,8 +154,8 @@ opendiscord.events.get("onConfigLoad").listen((configManager) => {
   - **`"config.json"`** → The **filename** of the config.
   - **`"./plugins/example-plugin/"`** → The **directory** where the file is stored.
 
-:::tip config directory location
-**📌 Why store configs inside `./plugins/example-plugin/` instead of `./config/`?**  
+:::note config location
+**Why store configs inside `./plugins/example-plugin/` instead of `./config/`?**  
 This keeps all plugin-related files **self-contained**, avoiding clutter in the main config directory.
 :::
 ---
@@ -204,17 +205,6 @@ opendiscord.events.get("afterTicketCreated").listen((ticket, creator, channel) =
 - You can use the `ticket`, `creator` and `channel` variables to execute your own actions.
 
 <Divider></Divider>
-## ✅ Summary (What Did We Build?)
-- ✅ A plugin with **Ensured compatibility** with Open Ticket.
-- ✅ **TypeScript autocomplete support** for a smoother coding experience.
-- ✅ Registered a **custom configuration file** for our plugin.
-- ✅ **Listened for ticket creation events**:
-  - `onTicketCreate` → Runs **before** the ticket is made.
-  - `afterTicketCreated` → Runs **after** the ticket is created.
-
-This concludes our **first Open Ticket plugin**! 🎉 In the next steps, we’ll explore how to **test and refine** our plugin.
-
-<Divider></Divider>
 ## ⚙️ Testing Your Plugin
 To test the plugin, make sure the plugin is enabled in `plugin.json` and restart your Open Ticket bot:
 
@@ -236,14 +226,32 @@ If you don't see these messages, ensure:
 - There are no syntax errors in `index.ts`
 - The bot has been configured correctly
 - The compilation succeeded
+- For **more advanced testing**, check out the [Testing Your Plugin](/docs/framework/05-tips-and-tricks/01-testing.mdx) guide.
 
-:::tip
-For **more advanced testing**, check out the [Testing Your Plugin](/docs/framework/05-tips-and-tricks/01-testing.mdx) guide.
+### 💡 Exercises
+Every article will contain a few **Exercise** dialogs. Use these to improve your Open Ticket knowledge!
+:::deprecated exercises
+Now it's your turn! Try to listen for a few other events and react to them accordingly.
+
+#### Exercises
+- 🟢 Listen for ticket deletion.
+- 🟠 Listen for after a ticket has been closed.
+- 🔴 Send a message when a ticket is going to get claimed.
 :::
 
 <Divider></Divider>
-## 🎉 Congratulations!  
-You've successfully built your first Open Ticket plugin! 🚀  
+## 🏆 Summary
+Congratulations! You've successfully built your first Open Ticket plugin!
+
+What did we build in this tutorial?
+- ✅ A plugin with **Ensured compatibility** with Open Ticket.
+- ✅ **TypeScript autocomplete support** for a smoother coding experience.
+- ✅ Registered a **custom configuration file** for our plugin.
+- ✅ **Listened for ticket creation events**:
+  - `onTicketCreate` → Runs **before** the ticket is made.
+  - `afterTicketCreated` → Runs **after** the ticket is created.
+
+This concludes our **first Open Ticket plugin**! 🎉 In the next steps, we’ll explore how to **test and refine** our plugin.
 
 ### Next Steps
 <LinkBlock mode="emoji" emoji="📄" url="/docs/reference/basic-plugins/simple-config" isdoc="true" name="Simple Config" description="How to store, retrieve & check plugin settings."/>  

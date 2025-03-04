@@ -1,4 +1,4 @@
-# 🏗️ TODO
+# TODO
 
 ## Articles & Guides
 - Getting Started (Quick Setup)

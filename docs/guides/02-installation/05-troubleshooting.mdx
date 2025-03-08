@@ -1,10 +1,52 @@
 ---
-title: Coming Soon!
-description: A temporary page for hosting!
+title: 🛠 Troubleshooting
+description: The ultimate place of finding solutions!
+keywords: [open-ticket, open ticket, discord ticket bot, config, configuration, settings, options, tutorial, guide, article]
 ---
 <head>
     <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
 </head>
 import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
 
-under construction
+# 🛠 Troubleshooting
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+Hello there! If you read this article, you're probably experiencing <C color="blue">**issues with Open Ticket**</C>.
+
+Don't worry about it! This guide contains solutions to many common problems other people have had with Open Ticket.
+
+If you still can't find anything useful in this guide, feel free to join our [**discord server**](https://discord.dj-dj.be) for further assistance!
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+    <StyledTitle title="Troubleshooting" description="The ultimate place of finding solutions!"></StyledTitle>
+</div>
+</FlexHorizontal>
+
+<Divider></Divider>
+## 🛠 Troubleshooting \{#troubleshooting}
+### `Unable to parse config ""..."` <M color="red">error</M> \{#config-parse-error}
+This error is almost always produced when the JSON syntax is invalid.  
+Try checking your config files with a code editor for possible issues.
+
+<ScaleImage src="/img/troubleshooting/config-parse-error.png" alt="Failiure when loading general.json config." size="80%"/>
+
+### `Cannot read property '...'  of undefined` <M color="red">error</M> \{#discordjs-missing}
+Sometimes caused by invalid/uninstalled package versions. **Try re-installing all npm packages**.
+
+<ScaleImage src="/img/troubleshooting/discordjs-missing.png" alt="Failed to load variables from discord.js because it wasn't installed." size="80%"/>
+
+### `Syntax error: Unexpected token '?'` <M color="red">error</M> \{#nodejs-version-invalid}
+This error is almost always produced when the `node.js` version is too low.  
+Try re-installing node.js `v18` or above.
+
+<ScaleImage src="/img/troubleshooting/nodejs-version-invalid.png" alt="Open Ticket console on config failure" size="80%"/>
+
+### `Unexpected token ] in JSON at position ...` <M color="red">error</M> \{#unexpected-config-json}
+This error is almost always produced when the JSON syntax is invalid.  
+Try checking your config files with a code editor for possible issues.
+
+<ScaleImage src="/img/troubleshooting/unexpected-config-json.png" alt="Open Ticket console on config failure" size="80%"/>
+
+## 💬 Discord Support
+Still haven't found the solution? Join our discord server and we will help you further!
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Discord Server" description="Join our community for support and feature discussions."/>

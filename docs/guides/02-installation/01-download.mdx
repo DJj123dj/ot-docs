@@ -1,10 +1,155 @@
 ---
-title: Coming Soon!
-description: A temporary page for hosting! (also edit keywords!!!!)
+title: 📥 Downloading
+description: How to download Open Ticket?
+keywords: [open-ticket, open ticket, discord ticket bot, download, installation, tutorial, guide, article]
 ---
 <head>
     <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
 </head>
 import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
 
-under construction
+# 📥 Downloading
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+Hello there! Welcome to the <C color="blue">***ultimate guide***</C> on how to download Open Ticket from the official GitHub repository!
+
+Now, let’s be honest, downloading a project from GitHub isn’t exactly rocket science. But hey, we wouldn’t want you to get lost in the large jungle of **ZIP files**, so here we are.  
+
+This guide will walk you through the process step by step, even if the hardest part is just ***clicking a button***.  
+
+Good luck! *Not that you’ll need it… but we believe in you! 😉*
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+    <StyledTitle title="Downloading" description="How to download Open Ticket?"></StyledTitle>
+</div>
+</FlexHorizontal>
+
+<Divider></Divider>
+## 💾 System Requirements \{#requirements}
+To run Open Ticket smoothly in large Discord servers we recommend the following system requirements:
+
+<FlexHorizontal>
+<div style={{width:"33%"}} className="otdocs-flex-mobile-width">
+#### Minimum (Small Servers)
+- **OS: <C color="red">Windows, MacOS, Linux</C>**
+- **Node.js: <C color="red">v18+</C>** [(Download)](https://nodejs.org/)
+- **Memory (Peaks): <C color="red">600MB</C>**
+- **Memory (Idle): <C color="red">100MB</C>**
+- **Storage: <C color="red">200MB</C>**
+- **A good internet connection**
+
+#### Is Optimized For
+- **Members: <C color="red">1 - 500</C>**
+- **Ticket Rates: <C color="red">~10/hour</C>**
+- **Message Activity: <C color="red">~200/hour</C>**
+
+</div>
+<div style={{width:"33%"}} className="otdocs-flex-mobile-width">
+#### Recommended (Large Servers)
+- **OS: <C color="green">Linux</C>**
+- **Node.js: <C color="green">v22+</C>** [(Download)](https://nodejs.org/)
+- **Memory (Peaks): <C color="green">1.5GB</C>**
+- **Memory (Idle): <C color="green">300MB</C>**
+- **Storage: <C color="green">1GB</C>**
+- **A good internet connection**
+
+#### Is Optimized For
+- **Members: <C color="green">500 - 50k</C>**
+- **Ticket Rates: <C color="green">~200/hour</C>**
+- **Message Activity: <C color="green">~5000/hour</C>**
+
+</div>
+<div style={{width:"33%"}} className="otdocs-flex-mobile-width">
+#### Overkill (Huge Servers)
+- **OS: <C color="blue">Linux</C>**
+- **Node.js: <C color="blue">v22+</C>** [(Download)](https://nodejs.org/)
+- **Memory (Peaks): <C color="blue">5GB</C>**
+- **Memory (Idle): <C color="blue">1GB</C>**
+- **Storage: <C color="blue">5GB</C>**
+- **A good internet connection**
+
+#### Is Optimized For
+- **Members: <C color="blue">50k - 100k</C>**
+- **Ticket Rates: <C color="blue">~500/hour</C>**
+- **Message Activity: <C color="blue">~10k/hour</C>**
+
+</div>
+</FlexHorizontal>
+
+<Divider></Divider>
+## 📥 Downloading \{#downloading}
+
+Downloading Open Ticket is **quick and easy**! Follow this guide to install the bot on your server and get it up and running in no time.  
+
+The latest version of Open Ticket is available on [**GitHub**](https://www.github.com/DJj123dj/open-ticket). We recommend downloading from the **official repository** to ensure you're using a secure and up-to-date version.  
+
+You can download Open Ticket in two ways:
+### 1️⃣ Download as a ZIP file <C color="green">(recommended)</C> \{#downloading-zip}
+- Visit the [**Open Ticket Github Repository**](https://otgithub.dj-dj.be)
+- Click the green **"Code"** button on GitHub and select **"Download ZIP"**.
+- Extract the ZIP file to a folder on your computer.
+- Open your code editor in the extracted folder (where `index.js` is located).
+<ScaleImage src="/img/installation/download.png" alt="Open Ticket Github Repository" size="40%"/>
+
+### 2️⃣ Clone the repository <C color="red">(not recommended)</C> \{#downloading-clone}
+```bash
+git clone https://github.com/DJj123dj/open-ticket.git
+cd open-ticket
+```
+<Divider></Divider>
+## 📦 Installing Dependencies \{#dependencies}
+
+Before running Open Ticket, you need to install the required npm packages.  
+
+1. Open a terminal or command prompt in the **Open Ticket** folder (where `index.js` is located).  
+2. Run the following command to install all necessary dependencies:  
+```bash
+npm install
+```
+
+Some plugins might require additional packages. Install them using:
+```bash
+npm install <package-name>
+```
+
+## ⚙️ Choosing a JavaScript Engine \{#engine}
+Open Ticket runs on **Node.js** (`v18` or above) but also supports alternative engines like **Deno** and **Bun**.  
+<C color="green">**You can skip this section if you're using an external hosting provider or dashboard.**</C>
+
+:::warning recommended engine  
+Bun & Deno are **not officially supported** by Open Ticket. Use them at your own risk!  
+If you're new to this, we strongly suggest using **Node.js**, as it's the default and most supported option.  
+:::  
+
+#### 🔗 Download the engine of your choice: \{#engine-choice}
+<LinkBlock mode="image" image="/img/logo/nodejs.png" isdoc="false" url="https://nodejs.org/en/download" name="Node.js Downloads" description="Install Node.js (Recommended)"></LinkBlock>  
+<LinkBlock mode="image" image="/img/logo/bun.png" isdoc="false" url="https://bun.sh" name="Bun Downloads" description="Install Bun (Faster, but experimental)"></LinkBlock>  
+<LinkBlock mode="image" image="/img/logo/deno.svg" isdoc="false" url="https://deno.com" name="Deno Downloads" description="Install Deno (More secure, but unofficial)"></LinkBlock>  
+
+Once you've installed your engine, you're ready to **configure Open Ticket**! 🚀
+
+<Divider></Divider>
+## 🏆 Summary \{#summary}
+Congratulations! Open Ticket should now be installed on your computer. 🚀
+
+Here’s what we covered in this guide:  
+- ✅ **Downloaded Open Ticket** from Github.  
+- ✅ **Installed dependencies** using `npm install`.  
+- ✅ **You've read a useless tutorial** 😄.
+
+:::note ⭐ awesome ⭐
+**Don't forget to give Open Ticket a star on Github to help us grow!**
+:::
+
+### Next Steps \{#summary-next}
+<LinkBlock mode="emoji" emoji="⚙️" url="/docs/guides/installation/configuration" isdoc="true" name="Configuration" description="How to configure Open Ticket correctly?"></LinkBlock>  
+<LinkBlock mode="emoji" emoji="🛡️" url="/docs/guides/installation/permissions" isdoc="true" name="Bot Permissions" description="Configure all required permissions for Open Ticket to work."/>   
+<LinkBlock mode="emoji" emoji="❌" url="/docs/guides/installation/config-errors" isdoc="true" name="Config Errors" description="A list of common issues with your Open Ticket configuration."/>   
+<LinkBlock mode="emoji" emoji="🛠" url="/docs/guides/installation/troubleshooting" isdoc="true" name="Installation Troubleshooting" description="Troubleshoot unknown issues with your Open Ticket configuration."/>   
+<LinkBlock mode="emoji" emoji="🌐" url="/docs/guides/hosting/category" isdoc="true" name="Hosting" description="How to host Open Ticket 24/7?"/>  
+
+### Learn More \{#summary-learn}
+<LinkBlock mode="emoji" emoji="💻" url="/docs/framework/get-started" isdoc="true" name="Create Plugins" description="Start developing Open Ticket plugins."/>  
+<LinkBlock mode="emoji" emoji="📘" url="/docs/reference/get-started" isdoc="true" name="API Reference" description="Dive into the Open Ticket API for more advanced customization."/>  
+<LinkBlock mode="emoji" emoji="🗺️" url="/docs/guides/roadmap" isdoc="true" name="Public Roadmap" description="View features that will be added in the future or help with contributing."/>  
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Discord Server" description="Join our community for support and feature discussions."/>

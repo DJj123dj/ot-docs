@@ -1,10 +1,268 @@
 ---
-title: Coming Soon!
-description: A temporary page for hosting!
+title: ⚙ Configuration
+description: How to configure Open Ticket?
+keywords: [open-ticket, open ticket, discord ticket bot, config, configuration, settings, options, tutorial, guide, article]
 ---
 <head>
     <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
 </head>
 import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
 
-under construction
+# ⚙ Configuration
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+Hello there! Welcome to the <C color="blue">**configuration guide**</C> on how to configure Open Ticket without any problems!
+
+Many people fail with correctly writing the configuration, but that's mostly because they can't write [**JSON**](https://www.youtube.com/watch?v=iiADhChRriM).
+
+This guide also contains a small **FAQ section** for frequently occuring problems.
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+    <StyledTitle title="Configuration" description="How to configure Open Ticket?"></StyledTitle>
+</div>
+</FlexHorizontal>
+
+<Divider></Divider>
+## ⚙ Configuration \{#config}
+Open Ticket is fully configurable using <C color="blue">**five JSON config files**</C>.
+Each file controls a different aspect of the bot, allowing you to customize everything from ticket options to panel layouts.
+Here’s a breakdown of each config file and what they do:  
+
+### 💼 [`config/general.json`](/docs/reference/config/general.mdx) – General Bot Settings \{#config-general}
+This file contains the **core settings** of Open Ticket, including:  
+- **Bot token** - never share this 
+- **Bot Status** - configure the bot status 
+- **Primary Color** - for embeds and messages  
+- **Permissions** - who can manage tickets
+- **Extra settings** - button visibility, emojis & additional settings
+
+📌 *This is the most important config file!*  
+
+### ❓ [`config/questions.json`](/docs/reference/config/questions.mdx) – Custom Ticket Questions \{#config-questions}
+This file defines **questions** that users must answer before opening a ticket.  
+- Each question is shown in a form (modal) before ticket creation.  
+- You can add **up to 5 questions** per ticket type.  
+- Questions can have custom names, placeholders, and input limits.  
+
+📌 *If no questions are configured, tickets will open immediately!*  
+
+### 🎟 [`config/options.json`](/docs/reference/config/options.mdx) – Ticket Types & Buttons \{#config-options}
+This file defines the **ticket options**, which appear as buttons or dropdown items in your panel.  
+- Each option represents a **ticket type, website link, or reaction role**.  
+- You can customize **admins, embeds, and button layouts** per option.  
+- Options can be linked to **specific questions** (from `questions.json`).  
+- Options can be used in **panels** (from `panels.json`) to show them.  
+
+📌 *If no options are configured, users won't be able to create tickets!*  
+
+### [📜 `config/panels.json`](/docs/reference/config/panels.mdx) – Ticket Panels & Embeds \{#config-panels}
+Panels are the **embeds/messages** that display the ticket options in Discord.  
+- Each panel contains buttons/dropdowns linked to ticket options.  
+- You can create **multiple panels** for different categories.  
+- Panels can be fully customized with text, embeds, and layouts.  
+- Panels can be linked to **specific options** (from `options.json`).
+
+📌 *After configuring a panel, use the `/panel` command to send it to a channel!*  
+
+### [📂 `config/transcripts.json`](/docs/reference/config/transcripts.mdx) – Transcript Settings \{#config-transcripts}
+This file controls **how ticket transcripts are saved** when a ticket is deleted.  
+- Choose between **HTML or text transcripts**.  
+- Customize the **transcript layout, colors, and format**.  
+- Transcripts are disabled by default.
+
+📌 *Transcripts let you keep a record of past tickets for future reference!*  
+
+### 🔧 How to Edit the Config \{#config-edit}
+1. Navigate to the `config/` folder inside your bot’s files.  
+2. Open the JSON file you want to edit using a text editor.  
+3. Modify the settings to fit your needs.  
+4. Save your changes and restart the bot for them to take effect.  
+
+📌 *Need more details? Check out the* [**full config reference**](/docs/category/api-config)!
+
+**That’s it! You're ready to test the bot. 🎉**
+
+<Divider></Divider>
+## 💡 Frequently Asked Questions \{#faq}
+### How to add multiple questions, options or panels? \{#faq-multi-config}
+To create multiple questions, options or panels, you need to <C color="red">**copy everything between and including the brackets (`{...}`)**</C>.  
+Then you <C color="green">**paste it after the last question (`{...}`)**</C> and make sure that they are <C color="blue">**seperated by a comma**</C>.
+
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+#### Before
+```json showLineNumbers
+[
+    {
+        "id":"example",
+        "lorem":"ipsum",
+        /* ... more settings (1) */
+    },
+    {
+        "id":"example-2",
+        "lorem":"ipsum",
+        /* ... more settings (2) */
+    }
+]
+
+
+
+
+
+```
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+#### After
+```json showLineNumbers
+[
+    {
+        "id":"example",
+        "lorem":"ipsum",
+        /* ... more settings (1) */
+    },
+    {
+        "id":"example-2",
+        "lorem":"ipsum",
+        /* ... more settings (2) */
+    },
+    //highlight-start
+    {
+        "id":"example-3",
+        "lorem":"ipsum",
+        /* ... more settings (3) */
+    }
+    //highlight-end
+]
+```
+</div>
+</FlexHorizontal>
+
+### How to remove the website & reaction role options? \{#faq-remove-options}
+To remove options that you don't want (e.g. website or reaction roles), you need to <C color="red">**delete everything between and including the brackets (`{...}`)**</C> from the option you want to remove.
+Then you make sure that <C color="blue">**the comma also has been removed**</C>.
+
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+#### Before
+```json showLineNumbers
+[
+    {
+        "id":"example-ticket",
+        "type":"ticket",
+        /* ... more settings (Option 1) */
+    },
+    {
+        "id":"example-ticket-2",
+        "type":"ticket",
+        /* ... more settings (Option 2) */
+    },
+    //highlight-start
+    {
+        "id":"example-website",
+        "type":"website",
+        /* ... more settings (Option 3) */
+    },
+    {
+        "id":"example-role",
+        "type":"role",
+        /* ... more settings (Option 4) */
+    }
+    //highlight-end
+]
+```
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+#### After
+```json showLineNumbers
+[
+    {
+        "id":"example-ticket",
+        "type":"ticket",
+        /* ... more settings (Option 1) */
+    },
+    {
+        "id":"example-ticket-2",
+        "type":"ticket",
+        /* ... more settings (Option 2) */
+    }
+]
+
+
+
+
+
+
+
+
+
+
+```
+</div>
+</FlexHorizontal>
+
+### Can I ignore or leave ... empty? \{#faq-empty-array}
+Within the config, there are a lot of settings which are optional. These are most of the times lists/arrays (e.g. `["some list"]`), if you want to ignore it, you need to <C color="red">**leave it empty by setting it to (`[]`)**</C>.
+Nothing else is required to be done, just make sure that <C color="green">**the list is empty**</C> by setting it to `[]`.
+
+#### Use Cases
+- **`general.json`** - `"globalAdmins"`, ...
+- **`options.json`** - `"ticketAdmins"`, `"readonlyAdmins"`, `"questions"`, `"claimedCategory"`, ...
+- **`panels.json`** - `"options"`, `"fields"`, ...
+
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+#### Before (`options.json` example)
+```json showLineNumbers
+"channel":{
+    "prefix":"question-",
+    "suffix":"user-name",
+    "category":"",
+    "closedCategory":"",
+    "backupCategory":"",
+    //highlight-start
+    "claimedCategory":[
+        {"user":"user id","category":"category id"}
+    ],
+    //highlight-end
+    "description":"This is a question ticket"
+},
+```
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+#### After (`options.json` example)
+```json showLineNumbers
+"channel":{
+    "prefix":"question-",
+    "suffix":"user-name",
+    "category":"",
+    "closedCategory":"",
+    "backupCategory":"",
+    //highlight-next-line
+    "claimedCategory":[],
+    "description":"This is a question ticket"
+},
+
+
+```
+</div>
+</FlexHorizontal>
+
+<Divider></Divider>
+## 🏆 Summary \{#summary}
+Congratulations! Open Ticket should now be configured correctly. 🚀
+
+:::note ⭐ awesome ⭐
+**Don't forget to give Open Ticket a star on Github to help us grow!**
+:::
+
+### Next Steps \{#summary-next}
+<LinkBlock mode="emoji" emoji="🛡️" url="/docs/guides/installation/permissions" isdoc="true" name="Bot Permissions" description="Configure all required permissions for Open Ticket to work."/>   
+<LinkBlock mode="emoji" emoji="❌" url="/docs/guides/installation/config-errors" isdoc="true" name="Config Errors" description="A list of common issues with your Open Ticket configuration."/>   
+<LinkBlock mode="emoji" emoji="🛠" url="/docs/guides/installation/troubleshooting" isdoc="true" name="Installation Troubleshooting" description="Troubleshoot unknown issues with your Open Ticket configuration."/>   
+<LinkBlock mode="emoji" emoji="🌐" url="/docs/guides/hosting/category" isdoc="true" name="Hosting" description="How to host Open Ticket 24/7?"/>  
+
+### Learn More \{#summary-learn}
+<LinkBlock mode="emoji" emoji="💻" url="/docs/framework/get-started" isdoc="true" name="Create Plugins" description="Start developing Open Ticket plugins."/>  
+<LinkBlock mode="emoji" emoji="📘" url="/docs/reference/get-started" isdoc="true" name="API Reference" description="Dive into the Open Ticket API for more advanced customization."/>  
+<LinkBlock mode="emoji" emoji="🗺️" url="/docs/guides/roadmap" isdoc="true" name="Public Roadmap" description="View features that will be added in the future or help with contributing."/>  
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Discord Server" description="Join our community for support and feature discussions."/>

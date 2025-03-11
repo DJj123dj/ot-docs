@@ -1,2 +1,43 @@
+---
+title: 🗺️ Public Roadmap
+description: The official roadmap for the future of Open Ticket!
+keywords: [open-ticket, open ticket, discord ticket bot, tutorial, guide, article, roadmap, sneakpeaks, future, development]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
+
 # 🗺️ Public Roadmap
-under construction
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+The Open Ticket Public Roadmap gives you a clear view of upcoming features, ongoing work, and future plans.
+We aim to implement every feature request, as long as it's viable and useful.
+
+If a request is too specific or too large, we try make it available through plugins instead.
+
+*Open Ticket has always been built on the idea of being the <C color="blue">**most advanced Discord ticket bot ever**</C>, and we continue to push that goal forward with every update. 🚀*
+
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+    <StyledTitle title="Public Roadmap" description="The future of Open Ticket"></StyledTitle>
+</div>
+</FlexHorizontal>
+
+## 🗺️ Roadmap \{#roadmap}
+### 🟢 Minor Ideas
+- **Remote Opening** - Open a ticket for another user using `/ticket <user>`.
+- **Reopen Autoclose** - Disable autoclose when the ticket got reopened.
+- **Custom status state** - Set the `"state"` text of the custom status.
+- **Timed Blacklist** - Blacklist someone temporarily for a few hours.
+- **More Stats** - Yep, even more statistics.
+- **Translation Checker** - Built-in config checker for translations.
+- **Claim remove admins** - `removeAdminsOnClaim` option to remove all other admins when a ticket is claimed.
+    - allow global admin read
+    - allow global admin write
+    - allow ticket admin read
+    - allow ticket admin write
+- **Close Limits** - Enforce new limits for ticket closing + deletion
+    - `allowCloseBeforeCreatorMessage` option to disable closing the ticket when nothing has been sent in the ticket yet.
+    - `allowCloseBeforeAdminMessage` option to disable closing the ticket when nothing has been sent in the ticket yet by an admin.
+- **Pin Ticket Message** - Let's go back to Open Ticket v3! Add the `pinTicketMessage` option to pin the ticket message.

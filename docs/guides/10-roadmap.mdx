@@ -24,14 +24,27 @@ If a request is too specific or too large, we try make it available through plug
 </div>
 </FlexHorizontal>
 
-## 🗺️ Roadmap \{#roadmap}
-### 🟢 Minor Ideas
+Not all listed ideas on the roadmap will be implemented in the bot. Some of them will be concepts forever or might eventually be removed.
+Also note that this is not the full roadmap. There's also a private roadmap which contains even more features & details.
+
+If you ever have a suggestion, feel free to post it in our [**discord server**](https://discord.dj-dj.be)!
+
+## 🟢 Small Ideas \{#small}
+### 💡 Features \{#small-features}
 - **Remote Opening** - Open a ticket for another user using `/ticket <user>`.
 - **Reopen Autoclose** - Disable autoclose when the ticket got reopened.
 - **Custom status state** - Set the `"state"` text of the custom status.
 - **Timed Blacklist** - Blacklist someone temporarily for a few hours.
 - **More Stats** - Yep, even more statistics.
-- **Translation Checker** - Built-in config checker for translations.
+    - (messages,files,DM's,...) count
+    - logs created
+    - currently (open, closed, claimed, pinned) tickets
+    - ticket volume
+    - response time
+    - resolution time (when closed)
+    - average tickets per user
+    - total system uptime
+    - ticket duration
 - **Claim remove admins** - `removeAdminsOnClaim` option to remove all other admins when a ticket is claimed.
     - allow global admin read
     - allow global admin write
@@ -41,3 +54,52 @@ If a request is too specific or too large, we try make it available through plug
     - `allowCloseBeforeCreatorMessage` option to disable closing the ticket when nothing has been sent in the ticket yet.
     - `allowCloseBeforeAdminMessage` option to disable closing the ticket when nothing has been sent in the ticket yet by an admin.
 - **Pin Ticket Message** - Let's go back to Open Ticket v3! Add the `pinTicketMessage` option to pin the ticket message.
+- **Autodelete After Close** - Adds `"autodeleteRequiresClosedTicket"`. When enabled, autodelete only works when a ticket has been closed.
+- **Reaction Role Logs** - It's that simple :) Logs for reaction roles.
+
+### 🎨 Customisability \{#small-customisability}
+- **Native Footer Images** - no more plugins needed!
+- **Pin Emoji** - Customise the emoji used for pinning tickets.
+- **Always Show Reason** - When enabled, the reason field in embeds will always be shown. Even when an invalid reason is provided (in DM logs + server logs)
+- **Fields & Questions** - `allowFieldsWithQuestions` option to allow fields while an option contains questions that are displayed in the embed fields.
+
+### 😄 User Friendliness \{#small-friendliness}
+- **Autocomplete Ids** - Instead of slash commands using 'choices' for panel & ticket ids, use the interaction autocomplete feature!
+- **Improved Config Checker UI** - The array index in the config checker report will also contain a humanized index (e.g. 1st, 2nd, 3rd, 4th, 5th, 6th, ...th)
+
+### ⚙️ Plugins & API \{#small-plugins}
+- **Silent Mode** - A new flag called `--silent` to reduce the amount of logs sent to the console. It will show the startscreen directly.
+- **Translation Checker** - Built-in config checker for translations.
+- **Updated `plugin.json`** -
+     - **Multiple Authors** - Allow multiple plugin authors & contributors. The old author(`string`) field should still work to keep backwards compatibility.
+     - **Versions** - A list of compatible versions for the plugin to work with (e.g. `OTv4.0.x`, `OTv4.1.x`, `OTv4.0.0`, `ODv1.0.0`, ... the letters in the beginning specify the project: OT, OD, OM, OU) 
+     - **Read Before TSC** - Read the `plugin.json` from all plugins before doing TS compilation & search for required `npm dependencies` (auto download?)
+
+## 🔵 Large Ideas \{#large}
+### 💡 Features \{#large-features}
+- **Advanced prefix+suffix system** - `"channelName":["question","<userid>","-","<random-num>"]`
+- **Inline Variables** - Use inline variables in the config text/embeds/fields of any message! (e.g. ticket creator, closer, ...)
+- **Custom Button Row Length** - Option `panelButtonRowLength` to set the amount of buttons per row.
+- **Alert System** - Alert the creator of the ticket when he/she hasn't said replied yet. (Configurable: `first-time-only` or `all-messages`, timing & `/alert disable/enable` cmd)
+- **Context Commands** - Allow commands like stats, blacklist, close, delete, ... in the context menu for both user and messages in tickets.
+- **Restore Ticket Messages** - The ability to restore the "ticket message" from a ticket when it was accidentally deleted.
+- **Sub-Panels** - New `subpanel` option. Will show one a second panel in ephemeral for more options.
+
+### 📢 Commands \{#large-commands}
+- **`/topic` command** - Change the channel topic/description
+- **`/priority` command** - Set the ticket priority. Will also add an emoji infront of the channel name.
+
+### ⚙️ Plugins & API \{#large-plugins}
+- **Plugin CLI Downloads** - Yep, just download plugins from the console.
+- **JSONC Config** - Use [JSONC](https://www.npmjs.com/package/jsonc) (json with comments) in config files.
+- **Improved Pterodactyl Support** - Detect pterodactyl dashboards based on the `/home/container/` map. Also auto-enables new `--pterodactyl` flag. Support Eggs?
+- **Error-Safe API Validation** - Validate all params for invalid values in every API method & function.
+
+## 🟠 Translations
+- New translations for future commands & features.
+- New translations for the current update.
+- Missing translations (labeled as `//TODO TRANSLATION!!!`)
+- Maybe add translations for plugins?
+
+## 🔴 HTML Transcripts v3
+Some features that will drop together with this update are still *a small secret* and will be announced later. 👀

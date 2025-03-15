@@ -1,0 +1,84 @@
+---
+title: ❓ Questions
+description: The definition and customisable settings for Open Ticket questions.
+keywords: [open-ticket, open ticket, discord ticket bot, tutorial, guide, article, structures, definition, question, modal, field]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
+
+# ❓ Questions
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+Hi there! This guide will explain what a question is in Open Ticket and how it works.
+
+A question is <C color="blue">**a prompt that users must answer before creating a ticket**</C>.
+It helps collect important information upfront, making ticket management more efficient.
+Questions are displayed in a Discord modal before the ticket is created.
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+    <StyledTitle title="Questions" description="What are Open Ticket questions?"></StyledTitle>
+</div>
+</FlexHorizontal>
+
+<Divider></Divider>
+## ❓ What Are Questions? \{#about}
+A **question** in Open Ticket is a customizable prompt that users must answer when creating a ticket. Questions allow you to gather relevant information from users before a ticket is submitted, ensuring that staff have all necessary details.  
+
+When a user starts the ticket creation process, all configured questions are displayed in a **Discord modal**, where they can fill in their responses.  
+
+### 🎯 Purpose of Questions \{#about-purpose}
+Questions are great for the following purposes:  
+- ✅ Collecting information before a ticket is created.  
+- ✅ Reducing back-and-forth by gathering essential details upfront.  
+- ✅ Ensuring users provide structured input, improving support efficiency.  
+
+<ScaleImage src="/img/docs-v4/question-modal.png" alt="Example of a question modal made using Open Ticket." size="50%"/>  
+
+:::tip advanced questions
+If you need more and complexer questions, we recommend the [**OT Ticket Forms Plugin**](https://github.com/DJj123dj/open-discord-plugins/tree/main/open-ticket/ot-ticket-forms).
+It can also provide multiple choice and dropdown questions. 
+:::
+
+<Divider></Divider>
+## 📍 Where Are Questions Used? \{#usage}
+Questions are **defined in the `questions.json` file** and are referenced in the **`options.json`** config.  
+To use a question, its **`id`** must be added to the `"questions"` array in `options.json`.  
+
+- **File:** `questions.json` → Defines all available questions.  
+- **File:** `options.json` → Determines which questions are used in tickets.  
+
+<LinkBlock mode="emoji" emoji="❔" url="/docs/reference/config/questions" isdoc="true" name="questions.json (Questions Config)" description="Configure modal questions for ticket options."/>
+
+<Divider></Divider> 
+## 🎨 Customization Options \{#customisation}
+Questions in Open Ticket can be **fully customized** to match your needs. Here are some key customization options:  
+- **Input Types** – Choose between a **short** single-line input or a **paragraph** for longer responses.  
+- **Required or Optional** – Decide if a question must be answered before creating a ticket.  
+- **Placeholders** – Provide example text inside the input field to guide users.  
+- **Character Limits** – Set minimum and maximum lengths for responses.  
+
+### 💡 Best Practices \{#best-practises}
+✔️ Use **clear and concise** question names.  
+✔️ Set `"required": true` only for **important** questions.  
+✔️ Avoid excessive `"length"` limits that may frustrate users.  
+✔️ Use `"placeholder"` to guide users on how to answer.  
+
+<Divider></Divider>
+## 🏆 Summary \{#summary}
+Congratulations! Now you know how questions work. 🚀
+
+:::note ⭐ awesome ⭐
+**Don't forget to give Open Ticket a star on Github to help us grow!**
+:::
+
+### Next Steps \{#summary-next}
+<LinkBlock mode="emoji" emoji="⚙️" url="/docs/guides/structures/options" isdoc="true" name="Options (options.json)" description="Discover different option types (ticket, website, role) and how to use them."/>  
+<LinkBlock mode="emoji" emoji="🎛️" url="/docs/guides/structures/panels" isdoc="true" name="Panels (panels.json)" description="Understand what a panel is and how to customize it for your needs."/>  
+
+### Learn More \{#summary-learn}
+<LinkBlock mode="emoji" emoji="💻" url="/docs/framework/get-started" isdoc="true" name="Create Plugins" description="Start developing Open Ticket plugins."/>  
+<LinkBlock mode="emoji" emoji="📘" url="/docs/reference/get-started" isdoc="true" name="API Reference" description="Dive into the Open Ticket API for more advanced customization."/>  
+<LinkBlock mode="emoji" emoji="🗺️" url="/docs/guides/roadmap" isdoc="true" name="Public Roadmap" description="View features that will be added in the future or help with contributing."/>  
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Discord Server" description="Join our community for support and feature discussions."/>

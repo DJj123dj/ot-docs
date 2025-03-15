@@ -277,7 +277,8 @@ const config = {
         }),
     scripts:[
         "/js/openticket.js",
-        "https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
+        "/js/twemoji.min.js"
+        //"https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
     ]
 };
 

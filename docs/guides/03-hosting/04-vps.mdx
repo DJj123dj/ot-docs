@@ -21,7 +21,7 @@ PM2 is a process manager for node.js. It can run multiple bots on your server in
 </FlexHorizontal>
 
 <Divider></Divider>
-## 📥 Installing PM2
+## 📥 Installing PM2 \{#installing-pm2}
 :::warning node.js
 Make sure you have Node.js installed on your VPS before proceeding!
 :::
@@ -37,13 +37,13 @@ pm2 --version
 ```
 
 <Divider></Divider>
-## ✅ Starting Open Ticket
+## ✅ Starting Open Ticket \{#startup}
 Once PM2 is installed, <C color="red">**navigate to your Open Ticket folder**</C> and start the bot using PM2:
 ```sh
 pm2 start npm --name="<bot-name>" -- start
 ```
 
-#### 📌 Explanation:
+#### 📌 Explanation \{#explaination}
 - `pm2 start npm` → Runs an npm script using PM2.
 - `--name="<bot-name>"` → Assigns a name to the process (you can change this).
 - `-- start` → Runs the `start` script from Open Ticket’s `package.json`.
@@ -58,10 +58,10 @@ If everything is correct, you should see Open Ticket in the process list.
 <LinkBlock mode="image" image="/img/logo/pm2.png" isdoc="false" url="https://pm2.keymetrics.io/" name="PM2 Documentation" description="The official documentation for PM2."></LinkBlock>  
 
 <Divider></Divider>
-## 💡 Managing PM2 Processes
+## 💡 Managing PM2 Processes \{#managing-pm2}
 Once Open Ticket is running with PM2, you can control it with various commands.
 
-### ▶️ Start or Restart the Bot
+### ▶️ Start or Restart the Bot \{#pm2-start-restart}
 If the bot is stopped or crashes, restart it with:
 ```sh
 pm2 restart <bot-name>
@@ -72,7 +72,7 @@ If you need to start it again after stopping:
 pm2 start <bot-name>
 ```
 
-### ⏹️ Stop or Delete the Bot
+### ⏹️ Stop or Delete the Bot \{#pm2-stop-delete}
 To temporarily stop the bot:
 ```sh
 pm2 stop <bot-name>
@@ -83,7 +83,7 @@ To completely remove it from PM2:
 pm2 delete <bot-name>
 ```
 
-### 📜 Viewing Logs
+### 📜 Viewing Logs \{#pm2-logs-monit}
 If something isn’t working, check the logs with:
 ```sh
 pm2 logs <bot-name>
@@ -94,7 +94,7 @@ You can also view real-time logs:
 pm2 monit
 ```
 
-### 🔄 Auto-Restart on Server Reboot
+### 🔄 Auto-Restart on Server Reboot \{#pm2-auto-start}
 To ensure Open Ticket starts automatically when your VPS reboots, run:
 ```sh
 pm2 startup
@@ -106,7 +106,17 @@ pm2 save
 ```
 
 <Divider></Divider>
-## 🏆 Summary
+## 🏆 Summary \{#summary}
 With PM2, Open Ticket will run 24/7 on your VPS.
 It will automatically restart if it crashes and can be configured to start on boot.
 Use the commands above to manage your bot and keep it running smoothly.
+
+:::note ⭐ awesome ⭐
+**Don't forget to give Open Ticket a star on Github to help us grow!**
+:::
+
+### Learn More \{#summary-learn}
+<LinkBlock mode="emoji" emoji="💻" url="/docs/framework/get-started" isdoc="true" name="Create Plugins" description="Start developing Open Ticket plugins."/>  
+<LinkBlock mode="emoji" emoji="📘" url="/docs/reference/get-started" isdoc="true" name="API Reference" description="Dive into the Open Ticket API for more advanced customization."/>  
+<LinkBlock mode="emoji" emoji="🗺️" url="/docs/guides/roadmap" isdoc="true" name="Public Roadmap" description="View features that will be added in the future or help with contributing."/>  
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Discord Server" description="Join our community for support and feature discussions."/>

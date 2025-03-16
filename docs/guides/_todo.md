@@ -1,28 +1,11 @@
 # TODO
 
 ## Articles & Guides
-- Getting Started (Quick Setup)
-- Installation
-  - Download & System Requirements
-  - Configuration
-  - Permissions
-  - Config Errors
-  - Troubleshooting
-- Hosting
-  - Pterodactyl
-  - PM2 + VPS
-  - Heroku
-  - Replit
-  - Vercel
-  - Deno + Bun
-- Structures
-  - Question
-  - Option (ticket, website, role)
-  - Panel
 - Features
-  - Actions
+  - Ticket Actions
   - Languages
   - Permissions
+  - Commands
   - Transcripts
   - Reaction Roles
 - Advanced Guides
@@ -34,6 +17,7 @@
 - Updating Versions
 - Open Ticket v3 Migration
 - Public Roadmap
+- FAQ
 
 ## Other Parts
 - (API Reference) Startup Flags

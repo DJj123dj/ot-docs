@@ -1,0 +1,103 @@
+---
+title: 📢 Commands
+description: Which commands are available within Open Ticket?
+keywords: [open-ticket, open ticket, discord ticket bot, tutorial, guide, article, commands, slash, text, reference, help]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
+
+# 📢 Commands
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+Hi there! Welcome to the <C color="blue">**command guide**</C> for Open Ticket!  
+Here, you'll find a complete list of available **slash** (`/`) and **text** (`!ticket ...`) commands, along with their functions and messages.  
+
+Open Ticket provides both **administrative** and **ticket-related** commands to manage your support system efficiently.
+If this is still not enough, <C color="green">**you can use plugins to add even more commands!**</C>
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+    <StyledTitle title="Commands" description="All available commands in Open Ticket"></StyledTitle>
+</div>
+</FlexHorizontal>
+
+<Divider></Divider>  
+## 🎯 Command Overview \{#overview}
+Below is a list of **all available commands** in Open Ticket, categorized by functionality.  
+
+### 🌐 Global Commands \{#global}
+The following commands can be used everywhere in the server. Some of them can even be used in DM.
+| Command | Reference | Description |
+|---------|-----------|-------------|
+| **`/help`** | [**Full Explaination**](/docs/reference/commands/help.mdx) | View the help menu. |
+| **`/panel`** | [**Full Explaination**](/docs/reference/commands/panel.mdx) | Spawn a ticket panel. |
+| **`/ticket`** | [**Full Explaination**](/docs/reference/commands/ticket.mdx) | Directly create a ticket without using a panel. <C color="red">**(slash command only)**</C> |
+| **`/clear`** | [**Full Explaination**](/docs/reference/commands/clear.mdx) | Delete multiple tickets at the same time using filters. |
+
+### 🎫 Ticket Management \{#management}
+The following commands can only be used in valid ticket channels. They allow you to manage tickets easily.
+| Command | Reference | Description |
+|---------|-----------|------------|
+| **`/close`** | [**Full Explaination**](/docs/reference/commands/close.mdx) | Close a ticket. |
+| **`/reopen`** | [**Full Explaination**](/docs/reference/commands/reopen.mdx) | Reopen a closed ticket. |
+| **`/delete`** | [**Full Explaination**](/docs/reference/commands/delete.mdx) | Delete a ticket permanently. |
+| **`/claim`** | [**Full Explaination**](/docs/reference/commands/claim.mdx) | Claim a ticket as your own. |
+| **`/unclaim`** | [**Full Explaination**](/docs/reference/commands/unclaim.mdx) | Unclaim a previously claimed ticket. |
+| **`/pin`** | [**Full Explaination**](/docs/reference/commands/pin.mdx) | Pin the channel to the top of the category. |
+| **`/unpin`** | [**Full Explaination**](/docs/reference/commands/unpin.mdx) | Unpin a previously pinned ticket. |
+| **`/add`** | [**Full Explaination**](/docs/reference/commands/add.mdx) | Add a user to a ticket. |
+| **`/remove`** | [**Full Explaination**](/docs/reference/commands/remove.mdx) | Remove a user from a ticket. |
+| **`/rename`** | [**Full Explaination**](/docs/reference/commands/rename.mdx) | Rename the ticket channel. |
+| **`/move`** | [**Full Explaination**](/docs/reference/commands/move.mdx) | Move the ticket to a different option type. |
+
+### 📊 Ticket Statistics \{#stats}
+The following commands allow you to view statistics in the server, a ticket or from a user.
+| Command | Reference | Description |
+|---------|-----------|------------|
+| **`/stats global`** | [**Full Explaination**](/docs/reference/commands/stats.mdx) | View global ticket statistics. |
+| **`/stats ticket`** | [**Full Explaination**](/docs/reference/commands/stats.mdx) | View statistics of the current ticket. |
+| **`/stats user`** | [**Full Explaination**](/docs/reference/commands/stats.mdx) | View ticket statistics for a specific user. |
+| **`/stats reset`** | [**Full Explaination**](/docs/reference/commands/stats.mdx) | Reset ticket statistics. |
+
+### 🚫 Blacklist Management \{#blacklist}
+The following commands allow you to view and manage the user blacklist.
+| Command | Reference | Description |
+|---------|-----------|------------|
+| **`/blacklist view`** | [**Full Explaination**](/docs/reference/commands/blacklist.mdx) | View the current blacklist. |
+| **`/blacklist get`** | [**Full Explaination**](/docs/reference/commands/blacklist.mdx) | Check if a user is blacklisted. |
+| **`/blacklist add`** | [**Full Explaination**](/docs/reference/commands/blacklist.mdx) | Add a user to the blacklist. |
+| **`/blacklist remove`** | [**Full Explaination**](/docs/reference/commands/blacklist.mdx) | Remove a user from the blacklist. |
+
+### ⌛ Auto Ticket Actions \{#auto-actions}
+The following commands allow you to automatically manage, close & delete tickets.
+| Command | Reference | Description |
+|---------|-----------|------------|
+| **`/autoclose enable`** | [**Full Explaination**](/docs/reference/commands/autoclose.mdx) | Enable auto-closing of inactive tickets. |
+| **`/autoclose disable`** | [**Full Explaination**](/docs/reference/commands/autoclose.mdx) | Disable auto-closing of inactive tickets. |
+| **`/autodelete enable`** | [**Full Explaination**](/docs/reference/commands/autodelete.mdx) | Enable auto-deletion of old tickets. |
+| **`/autodelete disable`** | [**Full Explaination**](/docs/reference/commands/autodelete.mdx) | Disable auto-deletion of old tickets. |
+
+<Divider></Divider>  
+## 🏆 Summary \{#summary}  
+Now you know:  
+✅ **All available commands** and their usage.  
+✅ **How to manage tickets efficiently** with Open Ticket.  
+✅ **How to control ticket lifecycle, blacklist users, and track stats.**  
+
+:::note ⭐ awesome ⭐  
+**Don't forget to give Open Ticket a star on GitHub to help us grow!**  
+:::
+
+### Next Steps \{#summary-next}  
+<LinkBlock mode="emoji" emoji="🎫" url="/docs/guides/features/ticket-actions" isdoc="true" name="Ticket Actions" description="Learn which ticket actions and commands are available within Open Ticket."/>  
+<LinkBlock mode="emoji" emoji="🌐" url="/docs/guides/features/languages" isdoc="true" name="Languages" description="Discover all languages in which Open Ticket has been translated."/>  
+<LinkBlock mode="emoji" emoji="🔑" url="/docs/guides/features/permissions" isdoc="true" name="Permissions" description="Understand which commands and buttons require which permissions."/>  
+<LinkBlock mode="emoji" emoji="📄" url="/docs/guides/features/transcripts" isdoc="true" name="Transcripts" description="A simple setup guide and information about Open Ticket HTML & Text Transcripts."/>  
+<LinkBlock mode="emoji" emoji="👥" url="/docs/guides/features/reaction-roles" isdoc="true" name="Reaction Roles" description="Learn how to use reaction roles in Open Ticket. Even tough it's a ticket bot."/>  
+
+### Learn More \{#summary-learn}  
+<LinkBlock mode="emoji" emoji="💻" url="/docs/framework/get-started" isdoc="true" name="Create Plugins" description="Start developing Open Ticket plugins."/>  
+<LinkBlock mode="emoji" emoji="📘" url="/docs/reference/get-started" isdoc="true" name="API Reference" description="Dive into the Open Ticket API for more advanced customization."/>  
+<LinkBlock mode="emoji" emoji="🗺️" url="/docs/guides/roadmap" isdoc="true" name="Public Roadmap" description="View features that will be added in the future or help with contributing."/>  
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Discord Server" description="Join our community for support and feature discussions."/>

@@ -1,0 +1,95 @@
+---
+title: 🌐 Languages
+description: Discover all languages in which Open Ticket has been translated.
+keywords: [open-ticket, open ticket, discord ticket bot, tutorial, guide, article, TODOTODOTODTODOTDOTODOTODO]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
+
+# 🌐 Languages
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+Hello there! Welcome to the guide about <C color="blue">**Languages**</C> in Open Ticket.
+Here, we will explain how to change the bot's language, customize translations, and contribute new languages.
+
+Open Ticket supports multiple languages, allowing users to interact with the bot in their preferred language.
+You can easily change the language using the `general.json` config file and even create your own custom translation.
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+    <StyledTitle title="Languages" description="Supported languages and how to use them"></StyledTitle>
+</div>
+</FlexHorizontal>
+
+<Divider></Divider>  
+## 📖 Using a Language \{#usage}
+To change the bot's language, update the [**`"language"`** property](/docs/reference/config/general.mdx#language) in the `general.json` config file.
+
+You can set `"language"` to any **Config Value** from the table below.
+
+This list was last updated on `16 February 2025`!
+
+|Config Value              |Language              |Maintainer (discord name) |Status                       |
+|--------------------------|----------------------|--------------------------|-----------------------------|
+|`"english"`               |🇬🇧 English            |djj123dj                  |🟢 Up To Date                |
+|`"dutch"`                 |🇳🇱 Dutch              |djj123dj                  |🟢 Up To Date                |
+|`"german"`                |🇩🇪 German             |benzorich                 |🟢 Up To Date                |
+|`"spanish"`               |🇪🇸 Spanish            |redactado & josuens       |🟢 Up To Date                |
+|`"portuguese"`            |🇵🇹 Portuguese         |quiradon                  |🟢 Up To Date                |
+|`"catalan"`               |❓ Catalan            |guillee3                  |🟢 Up To Date                |
+|`"czech"`                 |🇨🇿 Czech              |spyeye_                   |🟢 Up To Date                |
+|`"hungarian"`             |🇭🇺 Hungarian          |kornel0706                |🟢 Up To Date                |
+|`"romanian"`              |🇷🇴 Romanian           |sankedev                  |🟢 Up To Date                |
+|`"ukrainian"`             |🇺🇦 Ukrainian          |anderskiy                 |🟢 Up To Date                |
+|`"indonesian"`            |🇮🇩 Indonesian         |erxg                      |🟢 Up To Date                |
+|`"italian"`               |🇮🇹 Italian            |fraden1mvp.               |🟢 Up To Date                |
+|`"danish"`                |🇩🇰 Danish             |the_gamer                 |🟢 Up To Date                |
+|`"thai"`                  |🇹🇭 Thai               |modshd                    |🟢 Up To Date                |
+|`"turkish"`               |🇹🇷 Turkish            |palestinian               |🟢 Up To Date                |
+|`"french"`                |🇫🇷 French             |guillee.3                 |🟢 Up To Date                |
+|`"arabic"`                |🇦🇪 Arabic             |palestinian               |🟢 Up To Date                |
+|`"hindi"`                 |🇮🇳 Hindi              |an_developer              |🟢 Up To Date                |
+|`"lithuanian"`            |🇱🇹 Lithuanian         |tsgindrius                |🟢 Up To Date                |
+|`"polish"`                |🇵🇱 Polish             |danoglez                  |🟢 Up To Date                |
+|`"estonian"`              |🇪🇪 Estonian           |iamnotmega                |🔵 Up To Date (ChatGPT)      |
+|`"finnish"`               |🇫🇮 Finnish            |iamnotmega                |🔵 Up To Date (ChatGPT)      |
+
+<Divider></Divider>  
+## ✏️ Custom Translation \{#custom}
+If you want to:  
+- Add a **new** language that is not currently supported.  
+- Modify an **existing** translation to better suit your server.  
+
+You can edit the `./languages/custom.json` file and set the [**`"language"`** property](/docs/reference/config/general.mdx#language) to `"custom"` as the language in `general.json`.  
+
+:::availability translators wanted
+Hi there! If you are speaking a language which is not available in the list,  
+feel free to help us translate! We really need them 😉. [(Contributing Guidelines)](https://otgithub.dj-dj.be/tree/dev/.github/CONTRIBUTING.md)
+
+You can create a pull-request or join our [**discord server**](https://discord.dj-dj.be) for more information.
+:::
+
+<Divider></Divider>  
+## 🏆 Summary \{#summary}  
+Now you know how to:  
+- ✅ **Change the bot’s language** in `general.json`.  
+- ✅ **Use a custom translation** by modifying `custom.json`.  
+- ✅ **Check the list of supported languages** and contribute new ones!  
+
+:::note ⭐ awesome ⭐  
+**Don't forget to give Open Ticket a star on GitHub to help us grow!**  
+:::  
+
+### Next Steps \{#summary-next}  
+<LinkBlock mode="emoji" emoji="🎫" url="/docs/guides/features/ticket-actions" isdoc="true" name="Ticket Actions" description="Learn which ticket actions and commands are available within Open Ticket."/>  
+<LinkBlock mode="emoji" emoji="🔑" url="/docs/guides/features/permissions" isdoc="true" name="Permissions" description="Understand which commands and buttons require which permissions."/>  
+<LinkBlock mode="emoji" emoji="📢" url="/docs/guides/features/commands" isdoc="true" name="Commands" description="Which commands are available within Open Ticket?"/>  
+<LinkBlock mode="emoji" emoji="📄" url="/docs/guides/features/transcripts" isdoc="true" name="Transcripts" description="A simple setup guide and information about Open Ticket HTML & Text Transcripts."/>  
+<LinkBlock mode="emoji" emoji="👥" url="/docs/guides/features/reaction-roles" isdoc="true" name="Reaction Roles" description="Learn how to use reaction roles in Open Ticket. Even tough it's a ticket bot."/>  
+
+### Learn More \{#summary-learn}  
+<LinkBlock mode="emoji" emoji="💻" url="/docs/framework/get-started" isdoc="true" name="Create Plugins" description="Start developing Open Ticket plugins."/>  
+<LinkBlock mode="emoji" emoji="📘" url="/docs/reference/get-started" isdoc="true" name="API Reference" description="Dive into the Open Ticket API for more advanced customization."/>  
+<LinkBlock mode="emoji" emoji="🗺️" url="/docs/guides/roadmap" isdoc="true" name="Public Roadmap" description="View features that will be added in the future or help with contributing."/>  
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Discord Server" description="Join our community for support and feature discussions."/>

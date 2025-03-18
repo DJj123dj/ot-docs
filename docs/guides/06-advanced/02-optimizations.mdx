@@ -1,0 +1,134 @@
+---
+title: ⚡ Server Optimizations
+description: Optimise Open Ticket for large servers with plugins and best practices.
+keywords: [open-ticket, open ticket, discord ticket bot, tutorial, guide, article, advanced, optimization, large, huge, server, large server]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
+
+# ⚡ Server Optimizations
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+Hello there! Welcome to the guide about <C color="blue">**Server Optimization**</C> for Open Ticket.
+This guide will help you scale Open Ticket efficiently for <C color="green">**large Discord servers.**</C>
+
+Running Open Ticket on a **small server** is easy, but when your server grows to <C color="green">**thousands of members**</C>,
+things like **database efficiency and hosting power** become more important.
+
+Here, we’ll cover the best ways to keep your bot running smoothly!  
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+    <StyledTitle title="Optimizations" description="For huge and busy Discord servers"></StyledTitle>
+</div>
+</FlexHorizontal>
+
+<Divider></Divider>
+## 💾 System Requirements \{#requirements}
+If you're running Open Ticket in a large server, **shared hosting or low-end VPS setups** may not be enough. Here's what you should consider:  
+
+- **CPU & RAM:** Open Ticket is lightweight, but make sure you have at least **1-2 CPU cores** and **1GB+ RAM**.
+- **Disk Type:** A **SSD or NVMe drive** is recommended, especially if you’re using a local (`json` or `sqlite`) database.  
+- **Uptime & Stability:** Consider using a **dedicated VPS** with good uptime. 
+
+<FlexHorizontal>
+<div style={{width:"33%"}} className="otdocs-flex-mobile-width">
+#### Minimum (Small Servers)
+- **OS: <C color="red">Windows, MacOS, Linux</C>**
+- **Node.js: <C color="red">v18+</C>** [(Download)](https://nodejs.org/)
+- **Memory (Peaks): <C color="red">600MB</C>**
+- **Memory (Idle): <C color="red">100MB</C>**
+- **Storage/SSD: <C color="red">200MB</C>**
+- **Good internet connection**
+- **VPS with good uptime**
+
+#### Is Optimized For
+- **Members: <C color="red">1 - 500</C>**
+- **Ticket Rates: <C color="red">~10/hour</C>**
+- **Message Activity: <C color="red">~200/hour</C>**
+
+</div>
+<div style={{width:"33%"}} className="otdocs-flex-mobile-width">
+#### Recommended (Large Servers)
+- **OS: <C color="green">Linux</C>**
+- **Node.js: <C color="green">v22+</C>** [(Download)](https://nodejs.org/)
+- **Memory (Peaks): <C color="green">2GB</C>**
+- **Memory (Idle): <C color="green">300MB</C>**
+- **Storage/SSD: <C color="green">1GB</C>**
+- **Good internet connection**
+- **VPS with good uptime**
+
+#### Is Optimized For
+- **Members: <C color="green">500 - 50k</C>**
+- **Ticket Rates: <C color="green">~200/hour</C>**
+- **Message Activity: <C color="green">~5000/hour</C>**
+
+</div>
+<div style={{width:"33%"}} className="otdocs-flex-mobile-width">
+#### Overkill (Huge Servers)
+- **OS: <C color="blue">Linux</C>**
+- **Node.js: <C color="blue">v22+</C>** [(Download)](https://nodejs.org/)
+- **Memory (Peaks): <C color="blue">5GB</C>**
+- **Memory (Idle): <C color="blue">1GB</C>**
+- **Storage/SSD: <C color="blue">5GB</C>**
+- **Good internet connection**
+- **VPS with good uptime**
+
+#### Is Optimized For
+- **Members: <C color="blue">50k - 100k</C>**
+- **Ticket Rates: <C color="blue">~500/hour</C>**
+- **Message Activity: <C color="blue">~10k/hour</C>**
+
+</div>
+</FlexHorizontal>
+
+<Divider></Divider>
+## 🗄️ SQLite Database \{#database}
+By default, Open Ticket **stores data in JSON files**.
+While this works for small servers, it can **slow down** with thousands of tickets.
+Switching to an <C color="blue">**SQLite database**</C> improves **speed and reliability**.  
+
+For most servers, **SQLite** is a great alternative to JSON. It’s lightweight and doesn’t need extra setup. 
+- **✅ Faster ticket loading and saving**  
+- **✅ Faster command responses**  
+- **✅ Reduces file corruption risks**  
+- **✅ No external database server needed**  
+
+<LinkBlock mode="emoji" emoji="📥" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-sqlite-database" isdoc="false" name="OT SQLite Database" description="Download the OT SQlite Database plugin."/>  
+
+<Divider></Divider>  
+## 🛠️ Optimizing Plugins & Features  
+Not all features are **needed for every server**. Disabling unnecessary options reduces **CPU & memory usage**.  
+
+#### 🔧 Reduce Heavy Features  
+- <C color="red">**Disable Unused Commands:**</C> If you don’t use certain commands, **disable them** in the settings.  
+- <C color="red">**Limit Active Options:**</C> Too many different options will slow down the bot.
+- <C color="red">**Limit Active Panels:**</C> If you have **many ticket panels**, only keep the essential ones.  
+- <C color="red">**Disable Logs:**</C> If the ticket logs slow down the bot a lot, consider turning them off.
+
+#### 🎯 Set Limits
+- <C color="green">**Enable Global Limits:**</C> Only one ticket per user.
+- <C color="green">**Enable Ticket Limits:**</C> Only one ticket per user per ticket/option type.
+- <C color="green">**Enable Ticket Cooldowns:**</C> Users can create a ticket and have to wait an hour to create the next one.
+
+<Divider></Divider>  
+## 🏆 Summary \{#summary}  
+Now you know:  
+✅ **How to optimize** Open Ticket.  
+✅ **How to properly host** Open Ticket on a VPS.  
+✅ **Which plugins to use for large servers.**  
+
+:::note ⭐ awesome ⭐  
+**Don't forget to give Open Ticket a star on GitHub to help us grow!**  
+:::
+
+### Next Steps \{#summary-next}  
+<LinkBlock mode="emoji" emoji="🎨" url="/docs/guides/advanced/customisation" isdoc="true" name="Customisation" description="Learn what can be customised within Open Ticket."/>  
+<LinkBlock mode="emoji" emoji="🗄️" url="/docs/guides/advanced/database-management" isdoc="true" name="Database Management" description="Understand how to read, modify & transfer the Open Ticket database and how use database plugins."/>  
+
+### Learn More \{#summary-learn}  
+<LinkBlock mode="emoji" emoji="💻" url="/docs/framework/get-started" isdoc="true" name="Create Plugins" description="Start developing Open Ticket plugins."/>  
+<LinkBlock mode="emoji" emoji="📘" url="/docs/reference/get-started" isdoc="true" name="API Reference" description="Dive into the Open Ticket API for more advanced customization."/>  
+<LinkBlock mode="emoji" emoji="🗺️" url="/docs/guides/roadmap" isdoc="true" name="Public Roadmap" description="View features that will be added in the future or help with contributing."/>  
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Discord Server" description="Join our community for support and feature discussions."/>

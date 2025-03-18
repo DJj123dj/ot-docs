@@ -1,0 +1,133 @@
+---
+title: 🎨 Customisation
+description: Learn what can be customised within Open Ticket.
+keywords: [open-ticket, open ticket, discord ticket bot, tutorial, guide, article, advanced, customisation]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
+
+# 🎨 Customisation
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+Hello there! Welcome to the **customisation** guide for Open Ticket.
+Open Ticket isn't just a basic ticket bot, it's <C color="blue">**designed to be fully customisable**</C> to fit your server's needs!  
+
+From **embeds and messages** to **buttons, commands, and even transcripts**, almost every aspect of the bot can be adjusted.
+If this still is not enough customisation, you can change all aspects of the bot using advanced plugins!
+
+🎉 *Open Ticket has all the flexibility you will ever need!*
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+    <StyledTitle title="Customisation" description="Make Open Ticket fit your server's style!"></StyledTitle>
+</div>
+</FlexHorizontal>
+
+<Divider></Divider>
+## 🎨 Types Of Customisation \{#types}
+Open Ticket can be customised in all aspects of the bot! Here's a list of just a few of the things you can change:
+
+### 📋 Messages & Embeds \{#messages-embeds}
+Open Ticket allows you to change **almost every message** the bot sends, including:  
+
+- Ticket **panel messages** ([`panels.json`](/docs/reference/config/panels.mdx))
+- Custom **welcome messages** when opening a ticket ([`options.json`](/docs/reference/config/options.mdx))
+- Embed **colors, titles, descriptions, and footers** (All configs)
+- The way **emojis** are used **in embed titles** ([`general.json`](/docs/reference/config/general.mdx))
+- Error messages & other system messages ([`general.json`](/docs/reference/config/general.mdx))
+
+✅ *You can make your bot feel **unique** to your server, whether it's professional, fun, or something in between!*
+
+:::tip advanced customisation
+Fully customised **system embeds & messages** are only possible with plugins.  
+The default config only provides a basic amount of customisation for these messages.
+:::
+
+### 🎛️ Buttons, Dropdowns & Interactions \{#buttons-dropdowns-interactions}
+Not every button is needed for every server. Open Ticket allows you to:  
+
+- **Remove unnecessary buttons** like `Close` or `Claim` ([`general.json`](/docs/reference/config/general.mdx))
+- **Change panel button colors** to match your theme ([`options.json`](/docs/reference/config/options.mdx))
+- **Change system button colors** to match your theme ([Plugin Required](https://odplugins.dj-dj.be/tree/main/open-ticket/ot-customise-buttons))
+
+:::tip advanced customisation
+More advanced button, dropdown & interaction customisation is only possible with plugins.  
+The default config only provides a basic amount of customisation.
+:::
+
+### 📢 Commands \{#commands}
+Don't need certain commands? **Disable them!**  
+
+- You can **disable specific commands** that you don't want users to access. ([`general.json`](/docs/reference/config/general.mdx))
+- This can be useful if you only want **certain features** of Open Ticket.
+
+:::tip adding & modifying commands
+To modify or add a new command, you will need to create a plugin.
+A lot of new commands are already available in the [**official plugins repository**](https://odplugins.dj-dj.be/tree/main/open-ticket/)!
+:::
+
+### 📄 Transcripts\{#transcripts}
+Ticket transcripts can be **adjusted** to fit your needs:  
+
+- Choose between **HTML** and **plain text** transcripts  
+- Modify the **layout & colors** of HTML transcripts  
+- Control how and where transcripts are **saved**  
+
+:::tip advanced customisation
+Modifying Text Transcripts can be easily done via the **API using a plugin.**  
+Modifying HTML Transcripts is currently **not possible**, but it will be possible in an upcoming version!
+:::
+
+### 🔄 Bot Status \{#bot-status}
+Make Open Ticket fit **your branding** by changing its status:  
+
+- Set a **custom status message** (e.g., “Need help? Open a ticket!”)  
+- Choose between **online, idle, dnd, or invisible**  
+
+### 🌍 Translation & Languages \{#translation}
+Open Ticket is available in **multiple languages** and supports full translation:  
+
+- Change the bot’s language to match your community  
+- Modify individual **messages and embeds** for different languages  
+- [Contribute to the translation system to help add new languages](https://otgithub.dj-dj.be/tree/dev/.github/CONTRIBUTING.md)  
+
+If your language isn't supported yet, you can **manually** translate the bot through its `./languages/custom.json` file!  
+
+### 🛠️ Plugins & Addons \{#plugins}
+Want to go beyond the built-in features? Open Ticket supports **plugins** that let you:  
+
+- Add **custom logic** to ticket handling  
+- Integrate with **external services** (like databases or APIs)  
+- Extend the bot’s functionality without modifying the core code  
+
+Plugins allow **developers** to tailor Open Ticket even further, making it perfect for servers with **specific** or **unique** needs.  
+
+### 💡 Other Customisable Features\{#other-customisation}
+Beyond the big changes, Open Ticket also lets you tweak:  
+
+- **Role-based access** for ticket actions  
+- **Cooldowns** for ticket creation  
+- **Ticket limits** per user  
+- And much more!
+
+<Divider></Divider>  
+## 🏆 Summary \{#summary}  
+Now you know:  
+✅ **What can be customised** in Open Ticket.  
+✅ **Where to customise features** in Open Ticket.  
+✅ **How to expand Open Ticket using plugins.**  
+
+:::note ⭐ awesome ⭐  
+**Don't forget to give Open Ticket a star on GitHub to help us grow!**  
+:::
+
+### Next Steps \{#summary-next}  
+<LinkBlock mode="emoji" emoji="⚡" url="/docs/guides/advanced/optimizations" isdoc="true" name="Server Optimizations" description="Optimise Open Ticket for large servers with plugins and best practices."/>  
+<LinkBlock mode="emoji" emoji="🗄️" url="/docs/guides/advanced/database-management" isdoc="true" name="Database Management" description="Understand how to read, modify & transfer the Open Ticket database and how use database plugins."/>  
+
+### Learn More \{#summary-learn}  
+<LinkBlock mode="emoji" emoji="💻" url="/docs/framework/get-started" isdoc="true" name="Create Plugins" description="Start developing Open Ticket plugins."/>  
+<LinkBlock mode="emoji" emoji="📘" url="/docs/reference/get-started" isdoc="true" name="API Reference" description="Dive into the Open Ticket API for more advanced customization."/>  
+<LinkBlock mode="emoji" emoji="🗺️" url="/docs/guides/roadmap" isdoc="true" name="Public Roadmap" description="View features that will be added in the future or help with contributing."/>  
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Discord Server" description="Join our community for support and feature discussions."/>

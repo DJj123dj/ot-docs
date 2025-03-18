@@ -1,22 +1,13 @@
 # TODO
 
 ## Articles & Guides
-- Features
-  - Ticket Actions
-  - Languages
-  - Permissions
-  - Commands
-  - Transcripts
-  - Reaction Roles
 - Advanced Guides
-  - Custom Translations
   - Customisation
   - Database Management
   - Optimizing Large Servers
 - Plugins
 - Updating Versions
 - Open Ticket v3 Migration
-- Public Roadmap
 - FAQ
 
 ## Other Parts

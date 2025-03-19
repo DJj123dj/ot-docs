@@ -1,2 +1,119 @@
+---
+title: 🧩 Plugins
+description: Extending Open Ticket's functionality by installing plugins & addons.
+keywords: [open-ticket, open ticket, discord ticket bot, tutorial, guide, article, plugin, addon, install, extend, mod, modification]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
+
 # 🧩 Plugins
-under construction
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+Welcome to the Open Ticket guide about <C color="blue">**installing & managing plugins**</C> in Open Ticket.
+
+Plugins allow you to <C color="green">**extend Open Ticket’s functionality**</C> beyond the default features.
+This guide will explain **what plugins are, how to install them, and where to find them.**
+At the end, you’ll also find a list of **recommended plugins** to get started.
+
+> Visit **[this guide](/docs/framework/00-get-started.mdx)** if you want to develop your own plugins
+
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+    <StyledTitle title="Plugins" description="Extending Open Ticket's functionality"></StyledTitle>
+</div>
+</FlexHorizontal>
+
+<Divider></Divider>
+## 🔍 What Are Plugins? \{#about}
+Plugins are **extra modules** that modify or expand Open Ticket. The posibilities are endless, but here are a few examples of what they allow you to do:  
+- ✅ **Use alternative databases** instead of JSON files.  
+- ✅ **Log tickets & actions** to external services.  
+- ✅ **Add custom automation** for ticket management.  
+- ✅ **Add new commands** to the bot.  
+- ✅ **Edit all messages, embeds, buttons & dropdowns.**  
+- ✅ **Replace existing features** of the bot.  
+- ✅ **Modify how Open Ticket handles users, messages, stats and commands.**  
+- *And so much more!*
+
+Plugins are **optional** but highly recommended for **advanced customization and large servers.**  
+
+<Divider></Divider>
+## 📥 Installing Plugins \{#installation}
+### 📌 Where to Get Plugins? \{#plugin-repo}
+All official Open Ticket plugins can be found at the Open Discord plugin repository.
+All plugins in this repository are <C color="green">**malware-free and tested for virusses, bugs and vulnerabilities!**</C>
+Downloading plugins from any other location are not guaranteed to have this protection.
+
+<LinkBlock mode="emoji" emoji="📥" url="https://odplugins.dj-dj.be/tree/main/open-ticket" isdoc="false" name="Open Discord Plugin Repository" description="The official repository to download Open Discord compatible plugins."/>  
+
+:::tip why Open Discord?
+Why does it say **`Open Discord`**? Well, Open Discord is the framework on which Open Ticket is built.
+All plugins are technically using the Open Discord API. If we ever decide to create another Open Discord based bot, most plugins will also work with those bots!
+:::
+
+### 📦 How to Install a Plugin? \{#install-plugin}
+1. **Download the plugin folder** from the [**official plugin repository**](https://odplugins.dj-dj.be/tree/main/open-ticket).  
+2. **Unzip the plugin & move it to the Open Ticket `./plugins/` folder.**  
+3. Open Ticket will **automatically detect** and load the plugin when restarted.  
+4. Make sure `"enabled"` is set to `true` in `plugin.json`.
+5. Some plugins might also require additional configuration in their `config.json`.
+
+### 🔄 Updating Plugins \{#update-plugin}
+1. Check the plugin repository regularly for updates.  
+2. Replace the old plugin folder with the new version and follow the installation steps.
+3. Restart Open Ticket to apply the changes.  
+
+### 💻 Developing Plugins \{#develop-plugins}
+Start developing Open Ticket plugins by following this guide:
+<LinkBlock mode="emoji" emoji="💻" url="/docs/framework/get-started" isdoc="true" name="Create Plugins" description="Start developing Open Ticket plugins."/>
+
+<Divider></Divider>
+## 🧩 Recommended Plugins \{#recommended}
+### 📦 Official Plugins (by DJdj Development) \{#official}
+#### Example
+<LinkBlock mode="emoji" emoji="📄" url="https://odplugins.dj-dj.be/tree/main/open-ticket/example-plugin" isdoc="false" name="Example Plugin" description="An example plugin for developers who want to create their own plugins."/>  
+<LinkBlock mode="emoji" emoji="📄" url="https://odplugins.dj-dj.be/tree/main/open-ticket/example-command" isdoc="false" name="Example Command" description="A sample custom command using the Open Discord system."/>  
+
+#### Command
+<LinkBlock mode="emoji" emoji="📢" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-jump-to-top" isdoc="false" name="OT Jump To Top" description="Adds a command to jump to the top of a ticket."/>  
+<LinkBlock mode="emoji" emoji="📢" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-kill-switch" isdoc="false" name="OT Kill Switch" description="Temporarily disable the ticket system with a kill switch."/>  
+<LinkBlock mode="emoji" emoji="📢" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-hosting-status" isdoc="false" name="OT Hosting Status" description="Sends hosting status updates to a channel via a command."/>  
+<LinkBlock mode="emoji" emoji="📢" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-shutdown" isdoc="false" name="OT Shutdown" description="A command to shut down the bot (server & bot owner only)."/>  
+
+#### Utility
+<LinkBlock mode="emoji" emoji="⚙️" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-sqlite-database" isdoc="false" name="OT SQLite Database" description="Stores Open Ticket data in an SQLite database instead of JSON files. A must-have for large servers!"/>  
+<LinkBlock mode="emoji" emoji="⚙️" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-no-slash-clear" isdoc="false" name="OT No Slash Clear" description="Disables the automatic removal of non-Open Ticket slash commands."/>  
+<LinkBlock mode="emoji" emoji="⚙️" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-migrate-v3" isdoc="false" name="OT Migrate v3" description="Migrate all tickets from Open Ticket v3 to v4."/>  
+
+#### Customisation
+<LinkBlock mode="emoji" emoji="🎨" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-ticket-message-extras" isdoc="false" name="OT Ticket Message Extras" description="Adds additional customization options to the ticket message."/>  
+<LinkBlock mode="emoji" emoji="🎨" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-rename-keep-prefix" isdoc="false" name="OT Rename Keep Prefix" description="Keeps the ticket prefix when using the /rename command."/>  
+<LinkBlock mode="emoji" emoji="🎨" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-customise-buttons" isdoc="false" name="OT Customise Buttons" description="Modify almost all built-in buttons, including claim, reopen, close, and delete."/>  
+<LinkBlock mode="emoji" emoji="🎨" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-ephemeral-messages" isdoc="false" name="OT Ephemeral Messages" description="Customize which messages should be ephemeral."/>  
+<LinkBlock mode="emoji" emoji="🎨" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-footers" isdoc="false" name="OT Footers" description="Adds footers to all Open Ticket embeds."/>  
+
+#### Management
+<LinkBlock mode="emoji" emoji="💼" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-alt-detector" isdoc="false" name="OT Alt Detector" description="Use the discord-alt-detector npm package inside Open Ticket."/>  
+<LinkBlock mode="emoji" emoji="💼" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-embeds" isdoc="false" name="OT Embeds" description="Create premade embeds in the config or generate them using a command."/>  
+<LinkBlock mode="emoji" emoji="💼" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-move-actions" isdoc="false" name="OT Move Actions" description="Automatically unclaim/unpin a ticket when moved with `/move`."/>  
+<LinkBlock mode="emoji" emoji="💼" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-reviews" isdoc="false" name="OT Reviews" description="Adds a review system for Open Ticket with lots of customization options."/>  
+<LinkBlock mode="emoji" emoji="💼" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-tags" isdoc="false" name="OT Tags" description="Use pre-written tags to quickly reply to tickets."/>  
+
+#### Client
+<LinkBlock mode="emoji" emoji="🤖" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-better-status" isdoc="false" name="OT Better Status" description="Advanced status rotation with dynamic variables."/>  
+
+### ✅ Verified Plugins (by the Community) \{#community}
+#### Utility
+<LinkBlock mode="emoji" emoji="⚙️" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-config-reload" isdoc="false" name="OT Config Reload" description="Adds a command to reload Open Ticket’s config files without restarting the bot."/>  
+
+#### Management
+<LinkBlock mode="emoji" emoji="💼" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-ticket-forms" isdoc="false" name="OT Ticket Forms" description="An advanced forms plugin for Open Ticket."/>  
+<LinkBlock mode="emoji" emoji="💼" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-feedback" isdoc="false" name="OT Feedback" description="Gather feedback about your support service directly in Open Ticket."/>  
+<LinkBlock mode="emoji" emoji="💼" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-assign-role" isdoc="false" name="OT Assign Role" description="Automatically assigns a role to users when they create a ticket."/>  
+<LinkBlock mode="emoji" emoji="💼" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-volume-warning" isdoc="false" name="OT Volume Warning" description="Warns users when too many tickets are open, indicating possible response delays."/>  
+<LinkBlock mode="emoji" emoji="💼" url="https://odplugins.dj-dj.be/tree/main/open-ticket/od-reminders" isdoc="false" name="OT Reminders" description="Set reminders that will be sent to a channel at regular intervals."/>  
+
+#### Client
+<LinkBlock mode="emoji" emoji="🤖" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-translate-cmds" isdoc="false" name="OT Translate Commands" description="Translate all built-in command names, descriptions, and options."/>  

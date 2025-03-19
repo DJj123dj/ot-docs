@@ -1,2 +1,111 @@
+---
+title: 🔀 Migrating From Open Ticket v3
+description: Migrating data, config & plugins from Open Ticket v3 to Open Ticket v4.
+keywords: [open-ticket, open ticket, discord ticket bot, tutorial, guide, article, migrate, v3, v4, config, change, new, transfer]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
+
 # 🔀 Migrating From Open Ticket v3
-under construction
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+Welcome to the guide about <C color="blue">**migrating**</C> from Open Ticket v3 to Open Ticket v4.
+
+Since Open Ticket v4 is a **complete rewrite**, **the database & config from v3 is <C color="red">not compatible</C> with v4.**
+This guide will help you **transition smoothly** while keeping as much of your data as possible.
+
+We try to make this process as user-friendly as possible, but all migrated tickets will sadly enough still have limited functionality.
+The full v4 experience is only available with newly created tickets.
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+    <StyledTitle title="Migrating From v3" description="Transfering data & settings from Open Ticket v3"></StyledTitle>
+</div>
+</FlexHorizontal>
+
+<Divider></Divider>
+## ❓ What's New? \{#whatsnew}
+Open Ticket v4 introduces **many fundamental changes** compared to v3.  
+Here’s an overview of the most important differences:
+
+### 🎯 Differences \{#whatsnew-diff}
+| Feature                   | Open Ticket v3                           | Open Ticket v4                            |
+|---------------------------|------------------------------------------|-------------------------------------------|
+| **Programming Language**  | JavaScript                               | TypeScript (Compiles to JS for `node.js`) |
+| **Configuration Files**   | `config.json` & `transcriptconfig.json`  | `./config/` folder (multiple files)       |
+| **Database Location**     | `./storage/`                             | `./database/`                             |
+| **Plugin System**         | v3 Plugins (not compatible)              | v4 Plugins (10x more advanced)            |
+| **Buttons & Tickets**     | v3 Ticket Buttons (not compatible)       | New Ticket System (v3 tickets won't work) |
+| **Log File**              | `openticketdebug.txt`                    | `otdebug.txt`                             |
+
+### 🎉 New Features \{#whatsnew-new}
+- 🧩 Very Advanced Plugins
+- 📝 Modal Questions (before ticket creation)
+- ✏️ Close, Delete, Reopen, Claim, ... with reason (previously only possible with `close`)
+- 📌 Pin & Unpin Tickets
+- ⛔ Blacklist Users
+- 📊 Advanced Statistics
+- 🎨 Even More Customization!
+- ⏱️ Autoclose Revamp & Autodelete
+- 🦇 Pterodactyl Panel Support
+- ⚙️ Improved Config Checker
+- 📋 Fully-Revamped Panels & Options
+- *And so much more!*
+
+Migrating from Open Ticket v3 **requires manual steps**. v3 tickets **will not work by default** in v4 without additional settings & plugins!
+
+<Divider></Divider>
+## 📂 Creating A Backup \{#backup}
+Before you start, **back up your existing v3 setup** to a safe location to ensure you don’t lose anything:
+- `config.json`, `transcriptconfig.json`, `./storage/`
+- Open Ticket v3 plugins won't work in Open Ticket v4 anymore
+
+<Divider></Divider>
+## 🔄 Migrating to Open Ticket v4 \{#migrating}
+### 1️⃣ Install Open Ticket v4 \{#step1-install}
+- Download the latest version of Open Ticket v4 from **[GitHub](https://otgithub.dj-dj.be)**.  
+- Follow the **[Setup Guide](/docs/guides/01-get-started.mdx)** to install it.  
+- Run `npm install` to install all required dependencies.  
+
+### 2️⃣ Convert Configuration Files \{#step2-config}
+Since v4 **completely changes** how configuration works, you **cannot** reuse `config.json` and `transcriptconfig.json`.  
+Instead, manually **recreate** your settings in the new config folder:
+- **General settings** → Moved to `./config/general.json`
+- **Options** → Moved to `./config/options.json`
+- **Panels/Messages** → Moved to `./config/panels.json`
+- **Transcript settings** → Moved to `./config/transcripts.json`
+- **Ticket questions <C color="green">(NEW)</C>** → Available in `./config/questions.json`  
+
+If you're stuck, try reading the **[Configuration Guide](/docs/guides/02-installation/02-configuration.mdx)** for more details.
+
+### 3️⃣ Migrate Tickets (Optional) \{#step3-tickets}
+
+To transfer old tickets from v3 to v4, you can use the **OT Migrate v3** plugin. When starting the bot, all tickets will receive a message with the associated instructions.
+
+<LinkBlock mode="emoji" emoji="🔄" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-migrate-v3" isdoc="false" name="OT Migrate v3" description="Migrate all tickets from Open Ticket v3 to v4."/>  
+
+Ticket migration is **limited**. Some features **will sadly enough not** transfer correctly, and migrated tickets will have **reduced functionality**.
+
+<Divider></Divider>
+## 🛠️ Downloading Plugins \{#plugins}
+**Open Ticket v3 plugins are NOT compatible with v4.** You'll have to download all v4 versions from the official plugin repository.
+
+Check the Official Open Ticket Plugins repository for v4-compatible plugins:
+<LinkBlock mode="emoji" emoji="📥" url="https://odplugins.dj-dj.be/tree/main/open-ticket" isdoc="false" name="Open Discord Plugin Repository" description="The official repository to download Open Discord compatible plugins."/>  
+
+:::tip support with plugin migration
+If you have a v3 plugin and you don't now how to migrate it to v4, please join our [**discord server**](https://discord.dj-dj.be) and we will help you further!
+:::
+
+<Divider></Divider>
+## 🚀 Final Steps \{#final-steps}
+Once everything is set up:  
+- Start the bot using `npm start` or `node index.js`.  
+- Open a **test ticket** to verify everything works. 
+- Migrate **existing tickets** by clicking the button which appears in valid ticket channels. 
+- If you encounter errors, check the new log file: `otdebug.txt`.
+
+**Congratulations! 🎉 You've successfully migrated to Open Ticket v4!**  
+For any additional issues, please join our discord server:
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Discord Server" description="Join our community for support and feature discussions."/>

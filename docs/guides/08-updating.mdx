@@ -1,2 +1,97 @@
+---
+title: 🔄 Updating Versions
+description: DESCRIPTION
+keywords: [open-ticket, open ticket, discord ticket bot, tutorial, guide, article, TODOTODOTODTODOTDOTODOTODO]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
+
 # 🔄 Updating Versions
-under construction
+<FlexHorizontal>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+Hi there! This guide will be about how to <C color="blue">**update Open Ticket to a newer version**</C> while preserving all data, configs & plugins!
+
+When a new version of **Open Ticket** is released, you may want to update your bot to benefit from **bug fixes, improvements, and new features**.
+This guide explains how to safely update from one version to another (e.g., **`v4.0.0` → `v4.0.1`**).  
+
+Before updating, <C color="red">**always make a backup of your bot’s important files**</C> to prevent data loss.
+</div>
+<div style={{width:"50%"}} className="otdocs-flex-mobile-width">
+    <StyledTitle title="Updating Versions" description="Safely updating to a newer version"></StyledTitle>
+</div>
+</FlexHorizontal>
+
+<Divider></Divider>
+## 🔄 Steps To Update \{#steps}
+Follow these steps to update Open Ticket properly:  
+
+### 1️⃣ Backup Your Important Files \{#step1-backup}
+Before updating, **copy** the following folders to a <C color="green">**safe location:**</C>
+- `./database/`, `./config/` and `./plugins/`
+
+These folders store **ticket data, configurations, and installed plugins**.  
+Keeping a backup ensures you can restore your setup if needed.  
+
+<Divider></Divider>
+### 2️⃣ Download the Latest Version \{#step2-download}
+Go to the **[Open Ticket GitHub repository](https://otgithub.dj-dj.be)** and download the latest version.
+
+You can download Open Ticket in two ways:
+#### 1️⃣ Download as a ZIP file <C color="green">(recommended)</C> \{#downloading-zip}
+- Visit the [**Open Ticket Github Repository**](https://otgithub.dj-dj.be)
+- Click the green **"Code"** button on GitHub and select **"Download ZIP"**.
+- Extract the ZIP file to a folder on your computer.
+- Open your code editor in the extracted folder (where `index.js` is located).
+<ScaleImage src="/img/installation/download.png" alt="Open Ticket Github Repository" size="40%"/>
+
+#### 2️⃣ Clone the repository <C color="red">(not recommended)</C> \{#downloading-clone}
+```bash
+git clone https://github.com/DJj123dj/open-ticket.git
+cd open-ticket
+```
+<Divider></Divider>
+### 3️⃣ Install Dependencies \{#step3-dependencies}
+After downloading the update, navigate to the bot’s directory and **install required dependencies**:  
+```sh
+npm install
+```  
+
+Make sure the bot starts correctly by running:  
+```sh
+node index.js
+```  
+
+If everything works, continue to the next step.  
+
+<Divider></Divider>
+### 4️⃣ Restore Your Data \{#step4-restore}
+Copy-paste back your **database, config, and plugins** folders from the backup:  
+- `./database/`, `./config/` and `./plugins/`
+
+:::warning config & plugin update
+Some versions of Open Ticket have new or modified config variables. Be sure to always read the `Changelog` for config changes.
+You will need to manually apply these changes to the config.
+
+*If your configuration is invalid, the config checker will help you further.*
+
+Some plugins might also be incompatible with a new version. Please download them again from the official repository. The database will update automatically.
+:::
+
+<Divider></Divider>
+### 5️⃣ Start Open Ticket \{#step5-start}
+Run the bot again to verify that everything works as expected:  
+```sh
+node index.js
+```  
+
+If the bot runs **without errors**, the update is complete! 🎉  
+
+#### 🛠️ Troubleshooting  
+If you encounter issues after updating, try the following:  
+- **Missing dependencies?** Run `npm install` again.  
+- **Bot doesn’t start?** Check the error message and verify your **config files** are correctly restored.  
+- **Database issues?** Make sure your `./database/` folder is correctly placed.
+
+If you experience unexpected issues, consider joining our [**discord server**](https://discord.dj-dj.be) or **restore your backup**.  

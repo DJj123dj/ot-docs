@@ -11,14 +11,92 @@ import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,Ap
 # 🗄️ Database Management
 <FlexHorizontal>
 <div style={{width:"50%"}} className="otdocs-flex-mobile-width">
-Hello there! Welcome to <C color="blue">**some random guide**</C> about Open Ticket. We're still working on this guide!
+Hello there! Welcome to the <C color="blue">**Database management guide**</C> for Open Ticket. Here we will try to help you with managing, migrating and fixing corrupt tickets.
 
-Lorem Ipsum or something
+Managing your Open Ticket database allows you to **read, modify, transfer, and back up** your data and tickets.
+By default, Open Ticket stores all data in **JSON files**, but **database plugins** can be used for optimized performance.
 </div>
 <div style={{width:"50%"}} className="otdocs-flex-mobile-width">
-    <StyledTitle title="Database Management" description="Lorem Ipsum Description"></StyledTitle>
+    <StyledTitle title="DB Management" description="Modifying, fixing & transfering databases"></StyledTitle>
 </div>
 </FlexHorizontal>
 
-<Divider></Divider>
-## 🏗️ Under Construction
+<Divider></Divider>  
+## 📂 Database Structure \{#db-structure}
+By default, Open Ticket stores all data inside the `./database/` folder, divided into <C color="blue">**five JSON files:**</C>
+
+- **`global.json`** – Stores global variables, including the **last Open Ticket version used**, IDs of auto-updating panels, and other general data.  
+- **`tickets.json`** – Stores all ticket-related data, including **creation time, participant IDs, ticket status and plugin data.**  
+- **`users.json`** – Currently <C color="red">**not used**</C> but reserved for plugins to store **custom user data.**  
+- **`stats.json`** – Holds **global, user, and ticket statistics** (e.g., total tickets created).  
+- **`options.json`** – Keeps a <C color="green">**backup of all ticket options**</C> used from the `options.json` config. If an option is missing from the config, it **retrieves it from here.**  
+
+<Divider></Divider>  
+## ✏️ Manually Editing The Database \{#manual-edit}
+Since Open Ticket stores data in **raw JSON files**, you can open and edit them using any **text editor** (VS Code, Notepad++, etc).
+
+#### 📖 JSON File Structure \{#json-structure}
+All data in Open Ticket is structured as an **array of objects** using a `"category"`, `"key"`, and `"value"`:  
+```json
+[   {"category": "openticket:variable-type", "key": "user/message/ticket id", "value":null}   ]
+```
+
+- **`category`** – Defines what type of variable is stored (e.g. `openticket:ticket`).  
+- **`key`** – The unique identifier, such as a **user ID, message ID, or ticket ID**.  
+- **`value`** – The stored data (could be a `string`, `number`, `boolean`, `object`, `array` or `null`).  
+
+:::warning
+- **Never modify the database structure** (keep the `category`, `key`, and `value` format).  
+- **Back up your files** before making any manual changes.  
+- **Stop the bot** before editing the database to prevent corruption.
+:::
+
+<Divider></Divider>  
+## 🔄 Transferring Your Database \{#transfer}
+All **database-related plugins** will contain a built-in feature to migrate the JSON database to its own system.  
+If you want to transfer your database to a new Open Ticket version, see the guide below:
+
+### ⬆️ Updating Open Ticket \{#updating-openticket}
+Follow these steps when you want to update Open Ticket:
+1. **Copy the `./database/`, `./config/` & `./plugins/` folders** to another separate location.  
+2. Update the bot by downloading a new version from Github.
+3. Install all required npm dependencies and make sure the bot is able to start.
+4. **Paste back the original `./database/`, `./config/` & `./plugins/` folders** in the new bot.
+
+<Divider></Divider>  
+## 🛠️ Using Database Plugins
+Open Ticket supports **database plugins** to replace JSON storage with **SQLite, Redis, MongoDB or other options.** <C color="red">*(some plugins do not exist yet)*</C>  
+
+<LinkBlock mode="emoji" emoji="📥" url="https://odplugins.dj-dj.be/tree/main/open-ticket/ot-sqlite-database" isdoc="false" name="OT SQLite Database" description="Download the OT SQlite Database plugin."/>  
+
+#### 📌 Why Use Database Plugins?*
+✅ **Improved Performance** – Faster queries compared to reading JSON files.  
+✅ **Better Scalability** – Required for large servers with thousands of tickets.  
+✅ **Reduced Corruption Risk** – Unlike JSON, databases handle concurrent writes properly.  
+
+<Divider></Divider>  
+## 💡 Best Practices
+- **🔄 Make Regular Backups** – Copy the `./database/` folder or export your database plugin data.  
+- **⚡ Use a Database Plugin for Large Servers** – JSON storage is fine for small servers, but **SQLite is better** for large-scale use.  
+- **🚧 Avoid Manual Editing If Possible** – Use plugins or Open Ticket’s built-in commands to modify data safely.  
+
+<Divider></Divider>  
+## 🏆 Summary \{#summary}  
+Now you know:  
+✅ **Which databases exist in Open Ticket.**
+✅ **How to properly edit the database.**  
+✅ **How to optimize the database for large servers.**
+
+:::note ⭐ awesome ⭐  
+**Don't forget to give Open Ticket a star on GitHub to help us grow!**  
+:::
+
+### Next Steps \{#summary-next}  
+<LinkBlock mode="emoji" emoji="🎨" url="/docs/guides/advanced/customisation" isdoc="true" name="Customisation" description="Learn what can be customised within Open Ticket."/>  
+<LinkBlock mode="emoji" emoji="⚡" url="/docs/guides/advanced/optimizations" isdoc="true" name="Server Optimizations" description="Optimise Open Ticket for large servers with plugins and best practices."/>  
+
+### Learn More \{#summary-learn}  
+<LinkBlock mode="emoji" emoji="💻" url="/docs/framework/get-started" isdoc="true" name="Create Plugins" description="Start developing Open Ticket plugins."/>  
+<LinkBlock mode="emoji" emoji="📘" url="/docs/reference/get-started" isdoc="true" name="API Reference" description="Dive into the Open Ticket API for more advanced customization."/>  
+<LinkBlock mode="emoji" emoji="🗺️" url="/docs/guides/roadmap" isdoc="true" name="Public Roadmap" description="View features that will be added in the future or help with contributing."/>  
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Discord Server" description="Join our community for support and feature discussions."/>

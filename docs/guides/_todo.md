@@ -1,17 +1,21 @@
 # TODO
 
-## Articles & Guides
-- Advanced Guides
-  - Customisation
-  - Database Management
-  - Optimizing Large Servers
-- Plugins
-- Updating Versions
-- Open Ticket v3 Migration
+## Guides
 - FAQ
 
-## Other Parts
-- (API Reference) Startup Flags
+## API Reference
+- Startup Flags
+
+## Framework Guides
+- Basic Plugins
+- Intermediate Plugins
+- Advanced Plugins
+- Expert Plugins
+- Tips & Tricks
+
+## Blog
+- All changelogs before v3.3.0 until v1.0.0
+- Changelog for v3.5.9 & v4.0.0
 
 ## Problems & FAQ
 ### General

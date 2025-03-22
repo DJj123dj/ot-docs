@@ -1,0 +1,197 @@
+---
+title: 🏷️ Startup Flags
+description: A reference list of all available console flags when starting Open Ticket.
+sidebar_position: 3
+keywords: [open-ticket, open ticket, api reference, discord ticket bot, reference, flags, api, startup, console, terminal, cmd, disable, tags]
+---
+<head>
+    <link rel="apple-touch-icon" href="/img/logo_vertical.png"/>
+</head>
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
+
+# 🏷️ Startup Flags
+In Open Ticket, you can use **startup flags** when starting the bot from the console. This is useful for temporarily disabling some systems or enabling additional features in the bot.  
+A flag is inserted after the startup command (`node index.js` or `npm start --`). Every flag starts with `--` and doesn't contain any spaces.
+
+#### Flag Examples:
+- **`--dev-config`:** Use the `./devconfig/` folder instead of `./config`. Used by the Open Ticket developers.
+- **`--debug`:** Enable the `debug mode` in the bot. This will log almost everything to the console.
+- **`--crash`:** Crash the bot when an unexpected error happens.
+- **`--no-checker`:** Disable the config checker and start the bot without validating the config.
+- **`--no-plugins`:** Disable all plugins. This will start Open Ticket without modifications.
+- **`--force-slash`:** Force the bot to update all slash commands. This is useful when the slash commands are glitched for some reason.
+- *And so much more!*
+
+#### Usage Examples:
+- **`node index.js --debug --crash`**
+- **`npm start -- --debug --crash`** <C color="red">**(the extra `--` is required!)**</C>
+
+If you need help with enabling flags, feel free to join our discord server!
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Join our discord server!" description="DJdj Development"></LinkBlock>
+
+# Table Of Contents
+- **[No Migration](#flag-no-migration)**
+- **[Developer Config](#flag-dev-config)**
+- **[Developer Database](#flag-dev-database)**
+- **[Debug Mode](#flag-debug)**
+- **[Crash Mode](#flag-crash)**
+- **[Full Config Checker](#flag-checker)**
+- **[No Config Checker](#flag-no-checker)**
+- **[No Transcripts](#flag-no-transcripts)**
+- **[No Easter Eggs](#flag-no-easter)**
+- **[No Plugins](#flag-no-plugins)**
+- **[Soft Plugin Crash](#flag-soft-plugins)**
+- **[Force Slash Update](#flag-force-slash)**
+- **[No Compile](#flag-no-compile)**
+- **[Compile Only](#flag-compile-only)**
+
+<Divider></Divider>
+### No Migration (`--no-migration`) \{#flag-no-migration}
+**Aliases:** `-nm`  
+**Default Value:** `false`  
+**API Identifier:** `opendiscord:no-migration`  
+
+Using this flag, you can disable Open Ticket data migration when the bot updates. Data migration is the process of modifying the Open Ticket database to a newer version **(e.g. `v4.0.0` to `v4.1.0`)**.
+
+**✅ Disabling this feature may result in unexpected problems when running the bot.**
+
+<Divider></Divider>
+### Developer Config (`--dev-config`) \{#flag-dev-config}
+**Aliases:** `-dc`  
+**Default Value:** `false`  
+**API Identifier:** `opendiscord:dev-config`  
+
+Using this flag, the bot will read all built-in config files from `./devconfig/` instead of `./config/`. This is **used by the developers from Open Ticket** to test the bot without modifying the actual `./config/` directory.  
+This is a **technical flag** used mainly for development.
+
+**✅ You can also use this to test 2 different bots for plugin development.**
+
+<Divider></Divider>
+### Developer Database (`--dev-database`) \{#flag-dev-database}
+**Aliases:** `-dd`  
+**Default Value:** `false`  
+**API Identifier:** `opendiscord:dev-database`  
+
+Using this flag, the bot will read all built-in database files from `./devdatabase/` instead of `./database/`. This is **used by the developers from Open Ticket** to test the bot without modifying the actual `./database/` directory.  
+This is a **technical flag** used mainly for development.
+
+**✅ You can also use this to test 2 different bots for plugin development.**
+
+<Divider></Divider>
+### Debug Mode (`--debug`) \{#flag-debug}
+**Aliases:** `-d`  
+**Default Value:** `false`  
+**API Identifier:** `opendiscord:debug`  
+
+Couldn't find the error? Try running the bot with this flag!  
+This enables **detailed debugging logs** for plugin developers to help identify issues during execution.  
+This is a **technical flag** used mainly for development.
+
+**✅ The output in the console will now be the same as in `otdebug.txt`.**
+
+<Divider></Divider>
+### Crash Mode (`--crash`) \{#flag-crash}
+**Aliases:** `-cr`  
+**Default Value:** `false`  
+**API Identifier:** `opendiscord:crash`  
+
+If enabled, the bot will **crash immediately** on an unknown error instead of trying to recover.
+
+**✅ Use this if your hosting has its own error handling system.**
+
+<Divider></Divider>
+### Full Config Checker (`--checker`) \{#flag-checker}
+**Aliases:** `-c`  
+**Default Value:** `false`  
+**API Identifier:** `opendiscord:checker`  
+
+Enables the **full Config Checker**, which renders **extra details** about the bot’s config files.
+
+**✅ This will also log `optional` issues with your config and recommendations.**
+
+<Divider></Divider>
+### No Config Checker (`--no-checker`) \{#flag-no-checker}
+**Aliases:** `-nc`  
+**Default Value:** `false`  
+**API Identifier:** `opendiscord:no-checker`  
+
+Disables the Config Checker entirely. Useful when debugging issues or testing specific scenarios.
+
+**✅ Use this when developing plugins or when experiencing issues with the config checker.**
+
+<Divider></Divider>
+### No Transcripts (`--no-transcripts`) \{#flag-no-transcripts}
+**Aliases:** `-nt`  
+**Default Value:** `false`  
+**API Identifier:** `opendiscord:no-transcripts`  
+
+Disables the creation and uploading of **HTML transcripts** for debugging purposes.  
+This is a **technical flag** used mainly for development.
+
+**✅ This flag will has a higher priority than the `transcripts.json` config enable/disable switch.**
+
+<Divider></Divider>
+### No Easter Eggs (`--no-easter`) \{#flag-no-easter}
+**Aliases:** `-ne`  
+**Default Value:** `false`  
+**API Identifier:** `opendiscord:no-easter`  
+
+Removes **all hidden easter eggs** in Open Ticket.  
+Use this if you want a serious, no-surprises bot experience.
+
+**✅ Open Ticket currently only contain one small easter egg in the `/stats` command which is related to contributors.**
+
+<Divider></Divider>
+### No Plugins (`--no-plugins`) \{#flag-no-plugins}
+**Aliases:** `-np`  
+**Default Value:** `false`  
+**API Identifier:** `opendiscord:no-plugins`  
+
+Disables **all** Open Ticket plugins.  
+This is useful for testing core bot functionality **without** plugins.
+
+**✅ Be aware that custom stats from plugins will be removed from the database when the plugin is not enabled!**
+
+<Divider></Divider>
+### Soft Plugin Crash (`--soft-plugins`) \{#flag-soft-plugins}
+**Aliases:** `-sp`  
+**Default Value:** `false`  
+**API Identifier:** `opendiscord:soft-plugins`  
+
+If enabled, the bot **won't crash** when a plugin fails.  
+Instead, the bot will **continue running** while skipping the faulty plugin.
+
+**✅ This is not recommended for production usage. Please use it for development purposes only.**
+
+<Divider></Divider>
+### Force Slash Update (`--force-slash`) \{#flag-force-slash}
+**Aliases:** `-fs`  
+**Default Value:** `false`  
+**API Identifier:** `opendiscord:force-slash-update`  
+
+Forces an **immediate update** of all registered slash commands.  
+Use this when making **slash command changes** that aren’t updating properly.
+
+**✅ This is useful when the current slash commands are glitched/missing and you want to re-enable them.**
+
+<Divider></Divider>
+### No Compile (`--no-compile`) \{#flag-no-compile}
+**Aliases:** *(None)*  
+**Default Value:** `false`  
+**API Identifier:** `opendiscord:no-compile`  
+
+Disables automatic **compilation** of plugins and bot code before startup.  
+This is a **technical flag** used mainly for development.
+
+**✅ Use this to run the bot without re-compiling it after you made changes. Perfect for plugin developers.**
+
+<Divider></Divider>
+### Compile Only (`--compile-only`) \{#flag-compile-only}
+**Aliases:** *(None)*  
+**Default Value:** `false`  
+**API Identifier:** `opendiscord:compile-only`  
+
+This flag **only compiles** the bot and plugins **without** starting Open Ticket.  
+This is a **technical flag** used mainly for development.
+
+**✅ Use this to compile the bot without immediately starting it. Perfect for plugin developers.**

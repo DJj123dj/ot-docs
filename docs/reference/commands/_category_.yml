@@ -1,7 +1,7 @@
 label: 🔨 Commands
-position: 3
+position: 4
 link:
   type: generated-index
-  title: Commands
+  title: 🔨 Commands
   slug: category/api-commands
   description: In this category you can find all default Open Ticket commands and what they do.

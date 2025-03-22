@@ -1,7 +1,7 @@
 label: 📦 Utilities
-position: 10
+position: 11
 link:
   type: generated-index
-  title: Utilities
+  title: 📦 Utilities
   slug: category/api-utilities
   description: Utilities are global functions available in Open Ticket that that can be used everywhere.

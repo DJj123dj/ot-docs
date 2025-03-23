@@ -170,27 +170,31 @@ const config = {
             style: 'dark',
             links: [
                 {
-                    title: 'Docs (TODO)',
+                    title: 'Docs',
                     items: [
                         {
-                            label: 'Get Started (TODO)',
-                            to: '/docs/current/docs/get-started',
+                            label: 'Getting Started',
+                            to: '/docs/guides/get-started',
                         },
                         {
-                            label: 'Ticket Flow (TODO)',
-                            to: '/docs/current/docs/system/ticket-flow',
+                            label: 'Downloading',
+                            to: '/docs/guides/installation/download',
                         },
                         {
-                            label: 'Transcripts (TODO)',
-                            to: '/docs/current/docs/system/transcripts',
+                            label: 'Configuration',
+                            to: '/docs/guides/installation/configuration',
                         },
                         {
-                            label: 'Translation (TODO)',
-                            to: '/docs/current/docs/translation',
+                            label: 'Hosting 24/7',
+                            to: '/docs/guides/hosting/category',
                         },
                         {
-                            label: 'Configuration (TODO)',
-                            to: '/docs/current/docs/config',
+                            label: 'Features',
+                            to: '/docs/guides/features/category',
+                        },
+                        {
+                            label: 'Plugins',
+                            to: '/docs/guides/plugins',
                         }
                     ],
                 },
@@ -212,6 +216,14 @@ const config = {
                         {
                             label: 'Your First Plugin',
                             to: '/docs/framework/basic-plugins/first-plugin',
+                        },
+                        {
+                            label: 'Your First Config',
+                            to: '/docs/framework/basic-plugins/simple-config',
+                        },
+                        {
+                            label: 'Your First Command',
+                            to: '/docs/framework/basic-plugins/simple-command',
                         }
                     ],
                 },
@@ -227,12 +239,16 @@ const config = {
                             href: 'https://www.dj-dj.be',
                         },
                         {
-                            label: 'Twitter',
-                            href: 'https://twitter.com/djdjdevelopment',
+                            label: 'X (Twitter)',
+                            href: 'https://x.com/djdjdevelopment',
                         },
                         {
                             label:"Youtube",
                             href:"https://www.youtube.com/@djdjdevelopment"
+                        },
+                        {
+                            label:"Daily.dev",
+                            href:"https://dly.to/gCKkr7Bkoor"
                         }
                     ],
                 },

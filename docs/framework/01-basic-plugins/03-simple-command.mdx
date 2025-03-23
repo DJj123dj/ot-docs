@@ -1,5 +1,5 @@
 ---
-title: 💨 Simple Command
+title: 📢 Simple Command
 description: Adding a basic slash & text command to Open Ticket.
 keywords: [open-ticket, open ticket, developer, plugins, discord ticket bot, framework, guide]
 ---
@@ -8,7 +8,7 @@ keywords: [open-ticket, open ticket, developer, plugins, discord ticket bot, fra
 </head>
 import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
 
-# 💨 Simple Command
+# 📢 Simple Command
 <FlexHorizontal>
 <div style={{width:"50%"}} className="otdocs-flex-mobile-width">
 Welcome! In this guide, we will walk through the process of <C color="blue">**creating a simple text & slash command**</C> for your Open Ticket plugin.
@@ -31,16 +31,287 @@ Before we start, ensure that you have the following:
 - You have a basic knowledge about how slash & text commands work in [**discord.js**](https://www.discordjs.guide).
 
 <Divider></Divider>
+## ⚙️ Registering
+To create a **`ping` command**, we'll register it as both a **slash** and **text** command in Open Ticket.  
+If the bot's prefix is <C color="blue">`!ticket`</C>, the text command should be <C color="blue">`!ticket ping`</C>, while the slash command will be <C color="blue">`/ping`</C>.
 
+Additionally, the command will include a **test parameter** (`test`), which accepts a **number between or equal to `0` and `10`**.
 
+### ❓ Text Command
+To register the text command, we need to add it to Open Ticket’s internal text command manager (`opendiscord.client.textCommands`).  
+Once registered, the bot will automatically **detect the command** and **trigger an event** when used.  
 
+#### 📌 Important Notes
+- You don’t need to manually validate parameters. **Open Ticket handles that for you.**  
+- Text commands should always be registered inside the **`onTextCommandLoad`** event.  
+- Registering a text command does not handle responding. It only handles parameter parsing and firing events.
 
+#### 📝 Code Example
+Below is the correct way to register a text command in Open Ticket.  
+This example also **fetches the bot's prefix** from `general.json`:
 
+```ts showLineNumbers title="index.ts"
+//Additional TypeScript autocomplete support (optional)
+//Please add this inside the existing < declare module "#opendiscord-types" {...} >
+declare module "#opendiscord-types" {
+    export interface ODTextCommandManagerIds_Default {
+        "example-command:ping":api.ODTextCommand
+    }
+}
 
+//highlight-start
+//REGISTER TEXT COMMAND
+opendiscord.events.get("onTextCommandLoad").listen(() => {
+    //let's fetch our general.json config for the prefix
+    const generalConfig = opendiscord.configs.get("opendiscord:general")
 
+    opendiscord.client.textCommands.add(new api.ODTextCommand("example-command:ping",{
+        name:"ping",
+        prefix:generalConfig.data.prefix,
+        dmPermission:false, //disable in DM
+        guildPermission:true, //allow in servers
+        options:[
+            {
+                type:"number",
+                name:"test",
+                required:true,
+                min:0,
+                max:10
+            }
+        ]
+    }))
+})
+//highlight-end
+```
 
-:::warning under construction
-We are still working this **Article**! This page might be incomplete or doesn't contain all details!
+✅ **After running this code, the `ping` command is registered successfully as a text command.**  
+Now, let’s register the **slash command** next.
 
-If you would like to contribute, please visit the [OT Docs Repository](https://github.com/DJj123dj/ot-docs).
+### 📢 Slash Command
+To make the `ping` command available as a **slash command**, we need to register it in Open Ticket’s slash command manager (`opendiscord.client.slashCommands`).  
+Once registered, the bot will automatically **detect and listen for the command** when a user invokes it.
+
+#### 📌 Key Differences from Text Commands
+- Slash commands require a **description**.
+- Slash commands are easier to use and are prefered over text commands.
+- Unlike text commands, they don't need a prefix.
+- Slash commands must be explicitly defined for a **context** (`Guild`) and an **integration type** (`GuildInstall`).
+
+#### 📝 Code Example
+Below is the correct way to register a **slash command** in Open Ticket:  
+
+```ts showLineNumbers title="index.ts"
+//Additional TypeScript autocomplete support (optional)
+//Please add this inside the existing < declare module "#opendiscord-types" {...} >
+declare module "#opendiscord-types" {
+    export interface ODSlashCommandManagerIds_Default {
+        "example-command:ping":api.ODSlashCommand
+    }
+}
+
+//highlight-start
+//REGISTER SLASH COMMAND
+opendiscord.events.get("onSlashCommandLoad").listen(() => {
+    opendiscord.client.slashCommands.add(new api.ODSlashCommand("example-command:ping",{
+        name:"ping",
+        description:"Pong!",
+        //type must be "discord.ApplicationCommandType.ChatInput" for a slash command.
+        type:discord.ApplicationCommandType.ChatInput,
+        //context & integrationTypes define that the command should be installed in a guild/server, not in a user account.
+        contexts:[discord.InteractionContextType.Guild],
+        integrationTypes:[discord.ApplicationIntegrationType.GuildInstall],
+        options:[
+            {
+                type:discord.ApplicationCommandOptionType.Number,
+                name:"test",
+                description:"A simple test value.",
+                required:true,
+                minValue:0,
+                maxValue:10
+            }
+        ]
+    }))
+})
+//highlight-end
+```
+
+✅ **After running this code, the `ping` command is now available as a slash command!**  
+Now that the commands are registered, let’s move on to handling their responses.
+
+<Divider></Divider>
+## 💬 Responding
+To respond to a command, we use **Message Builders** and **Responders**.  
+
+- <C color="green">**Message Builders**</C> format the response before sending it.  
+- <C color="green">**Responders**</C> handle command execution and determine the response.  
+- <C color="green">**Workers**</C> are the interactive functions from builders & responders. 
+
+The embed builder is registered in the `onEmbedBuilderLoad` event. It adds a new embed with a specified ID, then assigns **a worker to modify its contents dynamically.**
+The same happens with message builders, but in the `onMessageBuilderLoad` event.
+
+:::tip
+By using the **built-in Open Ticket builders** instead of the discord.js embed, message & button builders, you can ensure future compatibility and lot's of cool additions!
+
+Other plugins will also be able to **use, modify & integrate with your plugin messages & embeds** for even more customisation!
 :::
+
+### 🏗️ Message Builders  
+**Message Builders** create structured responses using embeds, text, and other components.
+
+For our example, we'll define:  
+- ✅ **An Embed Builder** (`example-command:ping-embed`) – Creates an embed with a title, description, and color.  
+- ✅ **A Message Builder** (`example-command:ping-message`) – Uses the embed and constructs the full message.  
+
+#### 📝 Code Example
+```ts showLineNumbers title="index.ts"
+//Additional TypeScript autocomplete support (optional)
+//Please add this inside the existing < declare module "#opendiscord-types" {...} >
+declare module "#opendiscord-types" {
+    export interface ODEmbedManagerIds_Default {
+        "example-command:ping-embed":{source:"slash"|"text"|"other",params:{test:number},workers:"example-command:ping-embed"},
+    }
+    export interface ODMessageManagerIds_Default {
+        "example-command:ping-message":{source:"slash"|"text"|"other",params:{test:number},workers:"example-command:ping-message"},
+    }
+}
+
+//REGISTER EMBED BUILDER
+opendiscord.events.get("onEmbedBuilderLoad").listen(() => {
+    //create the embed builder.
+    opendiscord.builders.embeds.add(new api.ODEmbed("example-command:ping-embed"))
+    //add a new "worker/function" to the embed builder which contains the instructions on how to build this embed.
+    opendiscord.builders.embeds.get("example-command:ping-embed").workers.add(
+        //a worker is just a Javascript function but with additional features like a priority, source, params, canceling & a shared instance.
+        new api.ODWorker("example-command:ping-embed",0,(instance,params,source,cancel) => {
+            const {test} = params
+            const generalConfig = opendiscord.configs.get("opendiscord:general")
+            instance.setTitle("Pong! Your number is: "+test)
+            instance.setColor(generalConfig.data.mainColor)
+            instance.setDescription("You've now used the example command!")
+        })
+    )
+})
+
+//REGISTER MESSAGE BUILDER
+opendiscord.events.get("onMessageBuilderLoad").listen(() => {
+    //create the message builder.
+    opendiscord.builders.messages.add(new api.ODMessage("example-command:ping-message"))
+    //add a new "worker/function" to the message builder which contains the instructions on how to build this message.
+    opendiscord.builders.messages.get("example-command:ping-message").workers.add(
+        //a worker is just a Javascript function but with additional features like a priority, source, params, canceling & a shared instance.
+        new api.ODWorker("example-command:ping-message",0,async (instance,params,source,cancel) => {
+            const {test} = params
+            instance.addEmbed(await opendiscord.builders.embeds.getSafe("example-command:ping-embed").build(source,{test}))
+        })
+    )
+})
+```
+
+🔹 The **Embed Builder** creates a **"Pong!"** embed with a dynamic color from the bot’s config.  
+🔹 The **Message Builder** creates the final message, but in this example it **retrieves the embed** and attaches it to the response message.  
+
+### 📣 Responders  
+**Responders** receive the event from our previously registered **slash & text commands**, **process the data and actions** that need to happen and **determine what response should be sent.** 
+
+For our example, we'll register:  
+- ✅ **A Command Worker** (`example-command:ping`) – Processes the command and does the actual work.
+- ✅ **A Logging Worker** (`example-command:logs`) – Logs command usage for analytics and the console.
+
+:::note splitting across multiple workers
+Why do we split the logs & the command processing over different workers? Well, every worker in Open Ticket has its own crash-handling system.
+
+This means that when our first worker crashes, the other ones aren't affected. As a result, the logs will still work when the command crashes. 
+:::
+
+✅ *In Open Ticket, you only need to write one responder for both `slash` & `text` commands!*
+
+#### 📝 Code Example
+```ts showLineNumbers title="index.ts"
+//Additional TypeScript autocomplete support (optional)
+//Please add this inside the existing < declare module "#opendiscord-types" {...} >
+declare module "#opendiscord-types" {
+    export interface ODCommandResponderManagerIds_Default {
+        "example-command:ping":{source:"slash"|"text",params:{test:number},workers:"example-command:ping"|"example-command:logs"},
+    }
+}
+
+//REGISTER COMMAND RESPONDER
+opendiscord.events.get("onCommandResponderLoad").listen((commands) => {
+    const generalConfig = opendiscord.configs.get("opendiscord:general")
+
+    commands.add(new api.ODCommandResponder("example-command:ping",generalConfig.data.prefix,"ping"))
+    commands.get("example-command:ping").workers.add([
+        new api.ODWorker("example-command:ping",0,async (instance,params,source,cancel) => {
+            const {guild,channel,user} = instance
+            const {test} = params
+            if (!guild){
+                instance.reply(await opendiscord.builders.messages.getSafe("opendiscord:error-not-in-guild").build(source,{channel,user}))
+                return cancel()
+            }
+            await instance.reply(await opendiscord.builders.messages.getSafe("example-command:ping-message").build(source,{test}))
+        }),
+        new api.ODWorker("example-command:logs",-1,(instance,params,source,cancel) => {
+            opendiscord.log(instance.user.displayName+" used the 'ping' command!","plugin",[
+                {key:"user",value:instance.user.username},
+                {key:"userid",value:instance.user.id,hidden:true},
+                {key:"channelid",value:instance.channel.id,hidden:true},
+                {key:"method",value:source}
+            ])
+        })
+    ])
+})
+```
+
+Our responder:  
+🔹 **Checks if the command is used in a guild** (if not, sends an error message).  
+🔹 **Replies with a formatted message** using the message builder.  
+🔹 **Logs command usage**, including the user and channel.  
+
+With this setup, the `/ping` or `!ticket ping` command is fully functional! 🚀  
+But we could still improve it by adding the command to the help menu!
+
+<Divider></Divider>
+## 📖 Help Menu (Optional)
+To improve the user experience, we can add our command to the help menu! This will allow users to view the available commands and required options for the command to work.
+
+```ts showLineNumbers title="index.ts"
+//REGISTER HELP MENU
+opendiscord.events.get("onHelpMenuComponentLoad").listen((menu) => {
+    menu.get("opendiscord:extra").add(new api.ODHelpMenuCommandComponent("example-command:ping",0,{
+        slashName:"ping",
+        textName:"ping",
+        slashDescription:"Test Command!",
+        textDescription:"Test Command!"
+    }))
+})
+```
+
+
+<Divider></Divider>
+## 🏆 Summary  
+Great job! 🎉 You have successfully:  
+- ✅ Created a **simple text & slash command** for your plugin.  
+- ✅ **Created an embed & message** in Open Ticket.  
+- ✅ Added a command to the **help menu** to improve the user experience.
+
+Now, you're ready to **build more complex commands** or even to **edit existing commands**! 🚀
+
+### Next Steps
+<LinkBlock mode="emoji" emoji="📄" url="/docs/reference/basic-plugins/respond-events" isdoc="true" name="Responding To Events" description="Listening to basic Open Ticket events in your plugin."/>  
+<LinkBlock mode="emoji" emoji="📄" url="/docs/reference/basic-plugins/using-database" isdoc="true" name="Using The Database" description="Storing and retrieving permanent data in your plugin."/>  
+<LinkBlock mode="emoji" emoji="📄" url="/docs/reference/basic-plugins/message-editing" isdoc="true" name="Message Editing" description="Modifying Open Ticket’s built-in messages."/>  
+
+### Learn More
+<LinkBlock mode="emoji" emoji="📖" url="/docs/reference/get-started" isdoc="true" name="API Reference" description="Explore the available functions, events, and utilities."/>  
+<LinkBlock mode="emoji" emoji="🔌" url="https://odplugins.dj-dj.be" isdoc="false" name="Plugin Repository" description="Browse existing Open Ticket plugins for ideas and best practices."/>  
+<LinkBlock mode="emoji" emoji="💡" url="/docs/category/framework-tips" isdoc="true" name="Tips & Tricks" description="Helpful tricks to optimize your plugin development."/>  
+
+### Go Further
+<LinkBlock mode="emoji" emoji="📗" url="/docs/category/framework-basic" isdoc="true" name="Basic Plugins" description="Beginner guides for Open Ticket plugin development."/>  
+<LinkBlock mode="emoji" emoji="📘" url="/docs/category/framework-intermediate" isdoc="true" name="Intermediate Plugins" description="Expand your knowledge with more advanced Open Ticket plugins."/>  
+<LinkBlock mode="emoji" emoji="📙" url="/docs/category/framework-advanced" isdoc="true" name="Advanced Plugins" description="Take your plugins to the next level with advanced features."/>  
+<LinkBlock mode="emoji" emoji="📕" url="/docs/category/framework-expert" isdoc="true" name="Expert Plugins" description="Master the Open Ticket framework with expert-level guides."/>  
+
+### Useful Resources
+<LinkBlock mode="emoji" emoji="⚡" url="/docs/framework/tips-and-tricks/best-practices" isdoc="true" name="Best Practices" description="Write better Open Ticket plugins with these best practices."/>  
+<LinkBlock mode="image" image="/img/logo/discord.png" isdoc="false" url="https://discord.dj-dj.be" name="Discord Server" description="DJdj Development"></LinkBlock>

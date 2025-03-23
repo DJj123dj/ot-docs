@@ -1,7 +1,7 @@
 ### **1. Basic Plugins**  
 - 🛠️ **Your First Plugin** – Setting up a basic Open Ticket plugin.
 - 📄 **Simple Config File** – How to store, retrieve & check plugin settings.
-- 💨 **Simple Command** – Adding a basic slash & text command to Open Ticket.
+- 📢 **Simple Command** – Adding a basic slash & text command to Open Ticket.
 - 📜 **Responding To Events** – Listening to basic Open Ticket events in your plugin.
 - 📦 **Using The Database** – Storing and retrieving permanent data in your plugin.
 - ✏️ **Message Editing** – Modifying Open Ticket’s built-in messages.

@@ -3,9 +3,6 @@
 ## Guides
 - FAQ
 
-## API Reference
-- Startup Flags
-
 ## Framework Guides
 - Basic Plugins
 - Intermediate Plugins

@@ -160,7 +160,7 @@ const config = {
                     className:"header-discord-link"
                 },
                 {
-                    href: 'https://github.com/DJj123dj/open-ticket',
+                    href: 'https://github.com/open-discord-bots/open-ticket',
                     position: 'right',
                     className:"header-github-link"
                 },

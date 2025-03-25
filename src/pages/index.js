@@ -22,7 +22,7 @@ export default function Home() {
                 </div>
                 <p className='my-2 text-lg font-bold'>OR</p>
                 <div className='flex gap-2 mt-0 items-center justify-center'>
-                    <a href='https://www.github.com/DJj123dj/open-ticket/releases/latest' target='_blank' className='text-lg text-center'>Download (Latest)</a> -
+                    <a href='https://www.github.com/open-discord-bots/open-ticket/releases/latest' target='_blank' className='text-lg text-center'>Download (Latest)</a> -
                     <a href='https://github.com/sponsors/DJj123dj' target='_blank' className='text-lg text-center'>Sponsors</a> - 
                     <a href='/contributing' className='text-lg text-center'>Contributing</a> - 
                     <a href='https://discord.dj-dj.be' target='_blank' className='text-lg text-center'>Support Server</a>

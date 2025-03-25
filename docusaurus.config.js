@@ -31,7 +31,7 @@ const config = {
         ({
             docs: {
                 sidebarPath: require.resolve('./sidebars.js'),
-                editUrl:'https://github.com/DJj123dj/ot-docs/blob/main',
+                editUrl:'https://github.com/open-discord-bots/ot-docs/blob/main',
                 includeCurrentVersion:true,
                 admonitions: {
                     keywords: [
@@ -54,7 +54,7 @@ const config = {
             },
             blog: {
                 showReadingTime: true,
-                editUrl:'https://github.com/DJj123dj/ot-docs/blob/main',
+                editUrl:'https://github.com/open-discord-bots/ot-docs/blob/main',
                 blogTitle:"Blog",
                 blogDescription:"Here, you will find news & updates from Open Ticket!",
                 blogSidebarTitle:"All posts",

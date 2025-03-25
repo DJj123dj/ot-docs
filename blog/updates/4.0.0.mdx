@@ -1,0 +1,102 @@
+---
+slug: update-v4.0.0
+title: Update v4.0.0
+authors: [djj123dj]
+tags: [update,v4.0]
+date: 2025-03-26T18:00
+---
+import {C,M,ScaleImage,LinkBlock,InlineLink,FlexHorizontal,Divider,Hex,ApiUrl,ApiBlock,StyledTitle} from "@site/src/components/openticket.jsx"
+
+## Full Rewrite Update
+A full-rewrite of Open Ticket with many new improvements, additions, better stability and reduced bugs!
+
+### <C color="green">Added:</C>
+- All code has been rewriten (now available in `./src/`).
+- Fully rewriten plugin system (advanced plugins).
+- Modal questions (before ticket creation).
+- Close with reason in all ticket actions (Close, Delete, Reopen, Claim, Pin, ...).
+- Pin & unpin tickets (moves ticket to top of category).
+- Blacklist users (disable ticket creation for specific users).
+- Improved statistics (added more stats in the `/stats` command).
+- 5x more customization (and even more with pugins).
+- Autodelete functionality.
+- Translated config checker for better user experience.
+- Native Pterodactyl Panel support.
+- Native Docker compatibility. 
+- The ability to choose a different suffix for tickets (username, userid, counter, random, ...)
+- The ability to disable features like claiming, pinning & closing completely.
+- The ability to retry creating a HTML Transcript when the bot fails to send it to the server.
+- A documentation generator for the API using `typedoc` for the `OT Docs` repository.
+- Progress bars for in the console (e.g. used in slash command registration).
+- More than 7 new flags in the console for additional debugging purposes.
+- A new livestatus system which will improve the communication ability.
+- The `--debug` flag for additional debugging methods.
+- `/autodelete` & `/autoclose` commands.
+- `/stats reset` command.
+- `/blacklist` command.
+- `/pin` & `/unpin` command.
+- `/clear` command (delete multiple tickets at the same time).
+
+### <C color="yellow">Improved:</C>
+- Switched to Typescript which compiles to Javascript.
+- `config.json` & `transcriptconfig.json` have been splitted into multiple files in `./config/`.
+     - Added `general.json`,  `questions.json`,  `options.json`,  `panels.json` & `transcripts.json`.
+- All databases are now stored in `./database/` instead of `./storage/`.
+- Rewrote the entire plugin system. OTv3 plugins are not compatible.
+- The log file has been revamped and is now called `otdebug.txt` instead of `openticketdebug.txt`
+    - Added improved timestamps & formatting for logs
+    - The log file maximum size has been increased to 5000 lines.
+    - Removed useless `discord.js` debug logs from the log file.
+- Revamped config checker.
+- Revamped panels & options.
+- Revamped reaction role option.
+- More embed/message customisation for ticket options & panels.
+- Improved permissions system (fully customisable for each command).
+- Improved contributing, security & issue templates.
+- Improved `README.md` design.
+- Improved startup time (decreased by 5 seconds).
+- The database will now automatically clean itself when unused variables are found.
+- Typescript interfaces & types for plugins.
+- Typescript autocomplete ability for plugins using a special syntax.
+- Made small improvements for Open Ticket deluxe edition.
+- Improved response time from commands & buttons by reducing unnecessary code.
+- Improved documentation for OTv4.
+- Updated the startscreen which now displays even more information on startup.
+- Updated all npm dependencies to the latest version.
+- Improved metadata in all translation files.
+
+### <C color="orange">Fixed:</C>
+- Missing translations from OTv3.
+- Compatibility with windows in certain situations.
+- Some emoji's not being recognized by the config checker.
+- Certain console flags not loading correctly.
+- Slash commands glitching from time-to-time when updating the config.
+- Typo's in `README.md` and other github related markdown files.
+- Typo's in the original english translation of the bot.
+- Tickets breaking when the linked option has been removed from the config.
+- Certain limits on names, descriptions & titles of embeds, buttons & dropdowns.
+- Slash command registration becoming stuck with a bad internet connection.
+- HTML Transcripts slash command name source being deprecated.
+- HTML Transcripts `Member Not Found` error.
+- Ephemeral messages in `discord.js` now using flags instead of a separate property.
+- Bot throwing `Invalid Token` error with valid discord tokens.
+- Bot throwing `Invalid Discord ... Id` error with valid channel, user, category, ... id.
+- The bot status displaying 2 times on discord mobile.
+- Busy tickets are now resetted every time the bot restarts.
+- DM's are now sent to the creator of the ticket instead of the user that used the button/command.
+- Stats not being created due to async/promise issues in the database.
+- A crash resulted by non-returning statements in button responders as a result of the verifybars.
+- Decreased `/clear` speed to minimize discord & HTML Transcripts ratelimits.
+- A ticket will from now on still work when the ticket message is accidentally deleted.
+
+### <C color="red">Removed:</C>
+- Support for OTv3 tickets & buttons. Old buttons won't work anymore. Old Tickets can be migrated.
+- Removed deprecated languages from OTv3.
+- Ticket messages are not pinned anymore in the channel because this is not required anymore by the bot. (An optional version will still be added later)
+- Unused data from the database/storage.
+- The bot doesn't use the ticket message & channel name for data storage anymore.
+- The dynamicdatabase system. It has now been replaced with database plugins.
+- Support for OTv3 plugins. Join our discord server to help migrating them to OTv4.
+- The extra `api.json` config file. It has now been replaced with `defaults` in the Open Discord API using plugins.
+
+{/* truncate */}

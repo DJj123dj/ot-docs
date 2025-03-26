@@ -145,6 +145,10 @@ const config = {
                     position: 'left'
                 },
                 {
+                    type: 'search',
+                    position: 'right',
+                },
+                {
                     href: 'https://odplugins.dj-dj.be/tree/main/open-ticket',
                     position: 'right',
                     label:"🧩 Plugins"
@@ -290,7 +294,7 @@ const config = {
                 autoCollapseCategories:true
             }
         }
-        }),
+    }),
     scripts:[
         "/js/openticket.js",
         "/js/twemoji.min.js"

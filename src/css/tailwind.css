@@ -135,3 +135,7 @@ img.emoji {
 .otdocs-flex-mobile-width {
     @apply max-lg:w-full !important
 }
+
+kbd {
+    @apply text-sm text-neutral-400 bg-neutral-800 border-neutral-700 outline-none shadow-neutral-800 shadow px-1.5 font-mono
+}
